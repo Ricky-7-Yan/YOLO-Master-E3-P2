@@ -1,0 +1,512 @@
+{
+  "method": {
+    "unit": "one seed x sample x router-module aligned comparison",
+    "weighting": "each comparison receives equal weight",
+    "probability_space": "original-image pixels after exact letterbox inverse and expert re-normalization",
+    "correlation_policy": "undefined when either aligned expert map is constant",
+    "interpretation_boundary": "random-initialization pipeline diagnostic; no learned robustness claim"
+  },
+  "comparison_count": 480,
+  "by_type_family_resolution": {
+    "horizontal_flip:moa:64": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 6.860793445528982e-07,
+        "min": 0.0,
+        "max": 6.314899871123219e-06
+      },
+      "probability_rmse": {
+        "mean": 9.76759344130017e-07,
+        "min": 0.0,
+        "max": 9.379765034099417e-06
+      },
+      "probability_max_abs_error": {
+        "mean": 3.763784964879354e-06,
+        "min": 0.0,
+        "max": 3.948807716369629e-05
+      },
+      "mean_total_variation_distance": {
+        "mean": 1.0291190168293475e-06,
+        "min": 0.0,
+        "max": 9.472349806684829e-06
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 6.0200368642689674e-12,
+        "min": 0.0,
+        "max": 9.897803536571718e-11
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 0.6596112962096516,
+        "min": 0.18901702182952182,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 7.310286977029325e-07,
+        "min": 0.0,
+        "max": 5.781643972622128e-06
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 7.096126114479718e-07,
+        "min": 0.0,
+        "max": 5.992759713350631e-06
+      },
+      "expert_pearson": {
+        "defined_count": 116,
+        "undefined_count": 28,
+        "defined_mean": 0.2144102472971942,
+        "defined_min": -0.6370605465758804,
+        "defined_max": 0.9999999999999999
+      }
+    },
+    "horizontal_flip:moa:128": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 5.267333958797343e-07,
+        "min": 0.0,
+        "max": 4.264418324104912e-06
+      },
+      "probability_rmse": {
+        "mean": 7.901660371383329e-07,
+        "min": 0.0,
+        "max": 6.959519297878668e-06
+      },
+      "probability_max_abs_error": {
+        "mean": 4.355485240618388e-06,
+        "min": 0.0,
+        "max": 4.220008850097656e-05
+      },
+      "mean_total_variation_distance": {
+        "mean": 7.901000938196014e-07,
+        "min": 0.0,
+        "max": 6.3966274861573676e-06
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 3.813704836008222e-12,
+        "min": 0.0,
+        "max": 5.448960170258374e-11
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 0.7554803410697061,
+        "min": 0.3759225571725572,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 7.515992604065677e-07,
+        "min": 0.0,
+        "max": 5.8388930606091115e-06
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 7.599665013512415e-07,
+        "min": 0.0,
+        "max": 5.9069144757088084e-06
+      },
+      "expert_pearson": {
+        "defined_count": 119,
+        "undefined_count": 25,
+        "defined_mean": 0.42668440676215413,
+        "defined_min": -0.4717710257807808,
+        "defined_max": 0.953646118278319
+      }
+    },
+    "horizontal_flip:moa:256": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 4.3598370478549013e-07,
+        "min": 0.0,
+        "max": 3.7322679438434717e-06
+      },
+      "probability_rmse": {
+        "mean": 6.896534364388313e-07,
+        "min": 0.0,
+        "max": 6.269914220835976e-06
+      },
+      "probability_max_abs_error": {
+        "mean": 4.809349775314331e-06,
+        "min": 0.0,
+        "max": 4.4286251068115234e-05
+      },
+      "mean_total_variation_distance": {
+        "mean": 6.539755571782351e-07,
+        "min": 0.0,
+        "max": 5.598401915765208e-06
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 2.9541846818487676e-12,
+        "min": 0.0,
+        "max": 4.4226021875046384e-11
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 0.8056215995358579,
+        "min": 0.5345972803347281,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 7.846390966784629e-07,
+        "min": 0.0,
+        "max": 5.863267605698953e-06
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 7.864047540206958e-07,
+        "min": 0.0,
+        "max": 5.9283489943176426e-06
+      },
+      "expert_pearson": {
+        "defined_count": 121,
+        "undefined_count": 23,
+        "defined_mean": 0.5519592304168311,
+        "defined_min": -0.31114337127480146,
+        "defined_max": 0.9662556750201698
+      }
+    },
+    "horizontal_flip:mot:64": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_rmse": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_max_abs_error": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_total_variation_distance": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "expert_pearson": {
+        "defined_count": 0,
+        "undefined_count": 144,
+        "defined_mean": null,
+        "defined_min": null,
+        "defined_max": null
+      }
+    },
+    "horizontal_flip:mot:128": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_rmse": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_max_abs_error": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_total_variation_distance": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "expert_pearson": {
+        "defined_count": 0,
+        "undefined_count": 144,
+        "defined_mean": null,
+        "defined_min": null,
+        "defined_max": null
+      }
+    },
+    "horizontal_flip:mot:256": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_rmse": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_max_abs_error": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_total_variation_distance": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "expert_pearson": {
+        "defined_count": 0,
+        "undefined_count": 144,
+        "defined_mean": null,
+        "defined_min": null,
+        "defined_max": null
+      }
+    },
+    "resolution_vs_reference:moa:128": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 3.788769908359267e-07,
+        "min": 0.0,
+        "max": 2.553473007890696e-06
+      },
+      "probability_rmse": {
+        "mean": 5.218618614073734e-07,
+        "min": 0.0,
+        "max": 3.7558922725652626e-06
+      },
+      "probability_max_abs_error": {
+        "mean": 2.817561229070028e-06,
+        "min": 0.0,
+        "max": 2.3186206817626953e-05
+      },
+      "mean_total_variation_distance": {
+        "mean": 5.683154862538902e-07,
+        "min": 0.0,
+        "max": 3.830209511836044e-06
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 1.3423013890907439e-12,
+        "min": 0.0,
+        "max": 1.587015039555902e-11
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 0.7686495091537179,
+        "min": 0.5421972453222453,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 7.310286977029325e-07,
+        "min": 0.0,
+        "max": 5.781643972622128e-06
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 7.515992604065677e-07,
+        "min": 0.0,
+        "max": 5.8388930606091115e-06
+      },
+      "expert_pearson": {
+        "defined_count": 117,
+        "undefined_count": 27,
+        "defined_mean": 0.5596165448540688,
+        "defined_min": -0.15750359590732044,
+        "defined_max": 0.9104558636933717
+      }
+    },
+    "resolution_vs_reference:moa:256": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 5.231086996147092e-07,
+        "min": 0.0,
+        "max": 3.8226626182351605e-06
+      },
+      "probability_rmse": {
+        "mean": 7.252502474204716e-07,
+        "min": 0.0,
+        "max": 5.6792949782979025e-06
+      },
+      "probability_max_abs_error": {
+        "mean": 3.840774297714233e-06,
+        "min": 0.0,
+        "max": 3.579258918762207e-05
+      },
+      "mean_total_variation_distance": {
+        "mean": 7.846630494220637e-07,
+        "min": 0.0,
+        "max": 5.733993927352741e-06
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 2.6829464078956186e-12,
+        "min": 0.0,
+        "max": 3.62864196435329e-11
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 0.7029298438933061,
+        "min": 0.3203517060367454,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 7.310286977029325e-07,
+        "min": 0.0,
+        "max": 5.781643972622128e-06
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 7.846390966784629e-07,
+        "min": 0.0,
+        "max": 5.863267605698953e-06
+      },
+      "expert_pearson": {
+        "defined_count": 117,
+        "undefined_count": 27,
+        "defined_mean": 0.39159755861018636,
+        "defined_min": -0.3992086396453166,
+        "defined_max": 0.841857381682196
+      }
+    },
+    "resolution_vs_reference:mot:128": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_rmse": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_max_abs_error": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_total_variation_distance": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "expert_pearson": {
+        "defined_count": 0,
+        "undefined_count": 144,
+        "defined_mean": null,
+        "defined_min": null,
+        "defined_max": null
+      }
+    },
+    "resolution_vs_reference:mot:256": {
+      "comparison_count": 48,
+      "probability_mae": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_rmse": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "probability_max_abs_error": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_total_variation_distance": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "mean_jensen_shannon_divergence_nats": {
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "dominant_expert_agreement_fraction": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "reference_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "candidate_top1_margin_mean": {
+        "mean": 0.25,
+        "min": 0.0,
+        "max": 1.0
+      },
+      "expert_pearson": {
+        "defined_count": 0,
+        "undefined_count": 144,
+        "defined_mean": null,
+        "defined_min": null,
+        "defined_max": null
+      }
+    }
+  }
+}

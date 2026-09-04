@@ -41,3 +41,19 @@
 - Added archived ground-truth previews and an interactive annotation toggle to the demo.
 - Re-ran the full five-family experiment, unit/lint suite, desktop interaction flow, mobile layout flow and
   independent SHA-256 verification.
+
+## CPU resolution and flip diagnostics
+
+- Added a committed, CPU-only protocol covering 64/128/256 inputs, identity/horizontal-flip transformations,
+  three initialization seeds, four fixed images and all four MoT/MoA router layers.
+- Restored every expert distribution to original-image pixels, re-normalized after interpolation and horizontally
+  unflipped transformed observations before comparison.
+- Added probability MAE/RMSE/max error, total variation, float64 Jensen-Shannon divergence, dominant-expert
+  agreement, Top-1 margin context and explicit undefined handling for constant-map Pearson correlation.
+- Added source-state, module-order, hook-output, repeat-inference, Top-K, normalization and hook-cleanup invariants.
+- Added per-resolution ground-truth token coverage to quantify when coarse grids cannot support foreground versus
+  background comparison.
+- Generated 576 spatial captures, 1,440 raw arrays, 480 aligned comparisons and a compact visual overview.
+- Increased the unit suite to 33 passing tests and independently rehashed all 22 formal evidence files.
+- Corrected historical browser evidence wording: those passes used Playwright with installed Edge; they did not
+  establish that the Codex Browser plugin was unavailable.

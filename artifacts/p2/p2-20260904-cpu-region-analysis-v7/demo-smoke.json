@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "url": "http://127.0.0.1:8767/demo.html",
-  "browser_path": "regular Playwright with installed Microsoft Edge; Browser plugin unavailable",
+  "browser_path": "regular Playwright with installed Microsoft Edge; the Codex Browser plugin was not part of this automated pass",
   "target_flow": "open formal demo, switch family/sample/layer/view, toggle archived GT, copy metadata, verify mobile layout",
   "viewports": {
     "desktop": [1440, 1000],

@@ -1,8 +1,10 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU resolution/flip diagnostics · reproducible local demo
 
 ![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
+
+![CPU routing stability overview](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/robustness-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -33,6 +35,15 @@ for every supported capture, and MoA mean `1.16e-06` (maximum `6.35e-06`). These
 not evidence of semantic routing. A larger pooled MoT contrast (`0.00309`) is retained only as a diagnostic example
 of why unpaired token pooling can be misleading.
 
+The CPU-only stability extension fixes each model state while comparing 64/128/256 inputs and horizontally
+flipped inputs restored to the same original-image coordinates. Across 3 seeds, 4 images and 4 router layers per
+family it produced 576 captures and 480 aligned comparisons. MoA's mean probability MAE remained between
+`3.79e-07` and `6.86e-07`, yet its mean dominant-expert agreement ranged from `65.96%` to `80.56%`. This is
+consistent with its mean cold-start Top-1 margin of roughly `1e-06`: tiny probability changes can swap an almost
+tied argmax. MoT comparisons were exactly equal, but its maps were spatially constant and all Pearson values were
+therefore correctly marked undefined; this is not treated as learned robustness. Raising the input from 64 to 128
+removed all five `INSUFFICIENT_TOKENS` cases per family in this four-image mechanism test.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -50,6 +61,7 @@ From Windows CMD:
 cd /d C:\path\to\YOLO-Master-E3-P2
 run_tests.cmd
 run_p2.cmd --run-id my-p2-run
+run_robustness.cmd --run-id my-robustness-run
 run_demo.cmd
 ```
 
@@ -69,6 +81,11 @@ model output changes.
 - [`demo.html`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/demo.html): original/ground-truth/overlay viewer and evidence export.
 - [`demo-smoke.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/demo-smoke.json): desktop/mobile rendered-browser validation.
 - [`manifest.sha256.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/manifest.sha256.json): byte length and SHA-256 for every evidence file.
+- [`CPU robustness summary`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/summary.json): run scope, source binding, invariants and region coverage.
+- [`Stability aggregate`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/stability-aggregate.json): equal-weight resolution/flip metrics.
+- [`Per-comparison evidence`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/stability-comparisons.json): all 480 aligned comparisons.
+- [`Resolution coverage`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/region-resolution-coverage.json): foreground/background/padding counts and support status.
+- [`CPU robustness protocol`](docs/ROBUSTNESS_PROTOCOL.md) and [`formal result`](docs/ROBUSTNESS_RESULTS.md): predeclared method and interpretation.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

@@ -19,8 +19,8 @@
     },
     {
       "path": "demo-smoke.json",
-      "bytes": 1527,
-      "sha256": "5aa3f23d32bc6d4358a9a5045fdba267451b892a4b0d29f0c55df97695ef9421"
+      "bytes": 1561,
+      "sha256": "5b4d62a4439fb540e14214dd84dbb6de02782db6396f4ffe6cbee7da4b199f54"
     },
     {
       "path": "demo.html",
