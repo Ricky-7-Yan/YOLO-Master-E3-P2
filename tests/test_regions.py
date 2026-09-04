@@ -6,6 +6,7 @@ import pytest
 from e3_p2.geometry import LetterboxMeta
 from e3_p2.regions import (
     YoloBox,
+    aggregate_region_diagnostics,
     label_path_for_image,
     parse_yolo_labels,
     region_routing_diagnostics,
@@ -88,3 +89,31 @@ def test_region_diagnostics_marks_empty_group_without_inventing_values():
     assert diagnostics["status"] == "INSUFFICIENT_TOKENS"
     assert diagnostics["foreground"]["mean_expert_probability"] is None
     assert diagnostics["contrast"] is None
+
+
+def test_aggregate_reports_pooled_and_equal_weight_paired_contrasts():
+    first = region_routing_diagnostics(
+        np.asarray([[[0.9, 0.2], [0.9, 0.2]], [[0.1, 0.8], [0.1, 0.8]]], dtype=np.float32),
+        {
+            "foreground": np.asarray([[True, False], [True, False]]),
+            "background": np.asarray([[False, True], [False, True]]),
+            "padding": np.asarray([[False, False], [False, False]]),
+        },
+    )
+    second = region_routing_diagnostics(
+        np.asarray([[[0.6, 0.4], [0.6, 0.4]], [[0.4, 0.6], [0.4, 0.6]]], dtype=np.float32),
+        {
+            "foreground": np.asarray([[True, False], [True, False]]),
+            "background": np.asarray([[False, True], [False, True]]),
+            "padding": np.asarray([[False, False], [False, False]]),
+        },
+    )
+    aggregate = aggregate_region_diagnostics(
+        [
+            {"family": "mot", "module": "router", "region_diagnostics": first},
+            {"family": "mot", "module": "router", "region_diagnostics": second},
+        ]
+    )["by_family"]["mot"]
+    assert aggregate["pooled_contrast"]["total_variation_distance"] == pytest.approx(0.45)
+    assert aggregate["paired_capture_contrast"]["capture_count"] == 2
+    assert aggregate["paired_capture_contrast"]["total_variation_distance"]["mean"] == pytest.approx(0.45)

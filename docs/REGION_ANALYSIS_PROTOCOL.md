@@ -38,8 +38,12 @@ dominant-expert counts and fractions, normalized entropy, and Top-1 margin. The 
 - Jensen-Shannon divergence in natural-log units;
 - foreground-minus-background normalized entropy and Top-1 margin.
 
-Family and module summaries are token weighted. A capture with no foreground or no valid background token is
-labelled `INSUFFICIENT_TOKENS`; missing measurements remain `null` instead of being replaced with zero.
+Family and module region summaries are token weighted. Their `pooled_contrast` compares the pooled foreground and
+background distributions. A separate `paired_capture_contrast` gives each capture containing both groups equal
+weight and reports mean/min/max, so pooled token imbalance is visible rather than hidden. Captures sharing an
+image are not treated as statistically independent replicates. A capture with no foreground or no valid
+background token is labelled `INSUFFICIENT_TOKENS`; missing measurements remain `null` instead of being replaced
+with zero.
 
 ## Interpretation and acceptance
 

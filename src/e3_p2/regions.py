@@ -236,7 +236,7 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
 
         foreground = region("foreground")
         background = region("background")
-        contrast = None
+        pooled_contrast = None
         if foreground["token_count"] and background["token_count"]:
             fg_prob = np.asarray(foreground["mean_expert_probability"], dtype=np.float64)
             bg_prob = np.asarray(background["mean_expert_probability"], dtype=np.float64)
@@ -246,7 +246,7 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
                 keep = left > 0
                 return float(np.sum(left[keep] * np.log(left[keep] / right[keep])))
 
-            contrast = {
+            pooled_contrast = {
                 "foreground_minus_background_expert_probability": [float(item) for item in fg_prob - bg_prob],
                 "total_variation_distance": float(0.5 * np.abs(fg_prob - bg_prob).sum()),
                 "jensen_shannon_divergence_nats": float(0.5 * kl(fg_prob, mean_prob) + 0.5 * kl(bg_prob, mean_prob)),
@@ -257,6 +257,32 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
                     foreground["top1_margin_mean"] - background["top1_margin_mean"]
                 ),
             }
+        paired_contrast = None
+        if supported:
+            contrasts = [item["region_diagnostics"]["contrast"] for item in supported]
+
+            def distribution(key: str) -> dict[str, float]:
+                values = np.asarray([contrast[key] for contrast in contrasts], dtype=np.float64)
+                return {"mean": float(values.mean()), "min": float(values.min()), "max": float(values.max())}
+
+            paired_contrast = {
+                "capture_count": len(supported),
+                "weighting": "each supported capture receives equal weight",
+                "foreground_minus_background_expert_probability_mean": [
+                    float(
+                        np.mean(
+                            [contrast["foreground_minus_background_expert_probability"][expert] for contrast in contrasts]
+                        )
+                    )
+                    for expert in range(expert_count)
+                ],
+                "total_variation_distance": distribution("total_variation_distance"),
+                "jensen_shannon_divergence_nats": distribution("jensen_shannon_divergence_nats"),
+                "foreground_minus_background_entropy": distribution("foreground_minus_background_entropy"),
+                "foreground_minus_background_top1_margin": distribution(
+                    "foreground_minus_background_top1_margin"
+                ),
+            }
         return {
             "capture_count": len(items),
             "supported_capture_count": len(supported),
@@ -264,7 +290,8 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
             "foreground": foreground,
             "background": background,
             "padding_token_count": sum(item["region_diagnostics"]["padding_token_count"] for item in items),
-            "contrast": contrast,
+            "pooled_contrast": pooled_contrast,
+            "paired_capture_contrast": paired_contrast,
         }
 
     families = sorted({item["family"] for item in captures})
@@ -274,6 +301,7 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
             "assignment_rule": "valid token center inside any ground-truth box",
             "padding_policy": "excluded from both foreground and background",
             "aggregation": "token-weighted within each family/module",
+            "contrast_reporting": "pooled token contrast plus equal-weight paired-capture descriptive distribution",
             "inference_boundary": "descriptive random-initialization baseline; no learned specialization claim",
         },
         "capture_count": len(captures),
