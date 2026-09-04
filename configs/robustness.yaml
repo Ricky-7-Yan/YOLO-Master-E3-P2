@@ -1,4 +1,4 @@
-run_id: p2r-20260905-cpu-resolution-flip-v2
+run_id: p2r-20260905-cpu-resolution-flip-v3
 require_committed_source: true
 
 runtime_root: ../YOLO-Master-main-07d3303

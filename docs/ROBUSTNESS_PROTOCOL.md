@@ -29,7 +29,10 @@ Each expert grid is bilinearly upsampled into letterbox input space, cropped wit
 - Mean and maximum total-variation distance across the expert distribution at each pixel.
 - Mean and maximum Jensen-Shannon divergence in natural-log units.
 - Dominant-expert agreement fraction.
+- Reference and candidate mean top-1 probability margins, retained so near-tie `argmax` changes are not mistaken for large probability shifts.
 - Per-expert Pearson correlation. If either map is constant, correlation is recorded as `null` with `UNDEFINED_CONSTANT_INPUT`; it is never replaced by a convenient numeric value.
+
+Jensen-Shannon divergence is mathematically non-negative. Values below zero caused only by floating-point roundoff are clipped to zero before aggregation.
 
 Each seed × sample × router-module comparison has equal weight in aggregate summaries. Raw per-comparison records remain available so pooled values can be audited.
 

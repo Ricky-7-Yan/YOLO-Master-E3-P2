@@ -414,6 +414,16 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         "spatial_capture_count": len(capture_metadata),
         "raw_array_count": len(arrays),
         "aligned_comparison_count": len(comparisons),
+        "restoration_validation": {
+            "max_pre_normalization_expert_sum_error": max(
+                item["restoration_validation"]["pre_normalization_max_expert_sum_error"]
+                for item in capture_metadata
+            ),
+            "max_post_normalization_expert_sum_error": max(
+                item["restoration_validation"]["post_normalization_max_expert_sum_error"]
+                for item in capture_metadata
+            ),
+        },
         "representative_invariants": invariants,
         "region_resolution_coverage": coverage["by_family_resolution"],
         "interpretation_boundary": "random initialization; pipeline and sensitivity evidence only, not learned robustness",

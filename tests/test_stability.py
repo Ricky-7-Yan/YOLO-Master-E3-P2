@@ -35,6 +35,8 @@ def test_known_probability_change_has_expected_mae_tv_and_dominant_agreement():
     assert result["probability_mae"] == pytest.approx(0.3)
     assert result["mean_total_variation_distance"] == pytest.approx(0.3)
     assert result["dominant_expert_agreement_fraction"] == pytest.approx(0.5)
+    assert result["mean_jensen_shannon_divergence_nats"] >= 0.0
+    assert result["reference_top1_margin_mean"] == pytest.approx(0.7)
 
 
 def test_horizontal_unflip_restores_the_same_coordinate_system():

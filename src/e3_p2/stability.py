@@ -63,8 +63,12 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
     def kl(first: np.ndarray, second: np.ndarray) -> np.ndarray:
         return np.where(first > 0.0, first * np.log(np.clip(first, tiny, None) / np.clip(second, tiny, None)), 0.0)
 
-    js_per_pixel = 0.5 * np.sum(kl(left, midpoint) + kl(right, midpoint), axis=0)
+    js_per_pixel = np.maximum(0.0, 0.5 * np.sum(kl(left, midpoint) + kl(right, midpoint), axis=0))
     tv_per_pixel = 0.5 * np.sum(difference, axis=0)
+    ordered_left = np.sort(left, axis=0)
+    ordered_right = np.sort(right, axis=0)
+    reference_margin = ordered_left[-1] - ordered_left[-2] if left.shape[0] > 1 else np.ones(left.shape[1:])
+    candidate_margin = ordered_right[-1] - ordered_right[-2] if right.shape[0] > 1 else np.ones(right.shape[1:])
     correlations = []
     for expert in range(left.shape[0]):
         first = left[expert].reshape(-1).astype(np.float64)
@@ -105,6 +109,10 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
         "mean_jensen_shannon_divergence_nats": float(js_per_pixel.mean()),
         "max_jensen_shannon_divergence_nats": float(js_per_pixel.max()),
         "dominant_expert_agreement_fraction": float(dominant_agreement.mean()),
+        "reference_top1_margin_mean": float(reference_margin.mean()),
+        "reference_top1_margin_max": float(reference_margin.max()),
+        "candidate_top1_margin_mean": float(candidate_margin.mean()),
+        "candidate_top1_margin_max": float(candidate_margin.max()),
         "expert_pearson": correlations,
         "defined_pearson_count": len(defined),
         "undefined_pearson_count": len(correlations) - len(defined),
@@ -122,6 +130,8 @@ def aggregate_stability_comparisons(comparisons: list[dict[str, Any]]) -> dict[s
         "mean_total_variation_distance",
         "mean_jensen_shannon_divergence_nats",
         "dominant_expert_agreement_fraction",
+        "reference_top1_margin_mean",
+        "candidate_top1_margin_mean",
     )
 
     def summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
