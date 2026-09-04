@@ -4,7 +4,7 @@ import pytest
 import yaml
 
 from e3_p2.demo import resolve_run_dir
-from e3_p2.runner import _load_config, _slug, _verify_project_source_state
+from e3_p2.runner import _demo_html, _load_config, _slug, _verify_project_source_state
 
 
 def _config() -> dict:
@@ -13,6 +13,7 @@ def _config() -> dict:
         "sample_indices": [0],
         "spatial_profiles": {"mot": {}, "moa": {}},
         "non_spatial_profiles": {"moe": {}, "latent": {}, "molora": {}},
+        "batch_equivalence_sizes": [2],
     }
 
 
@@ -46,3 +47,20 @@ def test_demo_requires_both_index_and_html(tmp_path: Path):
 def test_repository_implementation_state_is_inspectable():
     state = _verify_project_source_state(False)
     assert set(state) == {"commit", "tree", "implementation_status_porcelain", "implementation_clean"}
+
+
+def test_invalid_batch_equivalence_size_is_rejected(tmp_path: Path):
+    config = _config()
+    config["batch_equivalence_sizes"] = [1]
+    path = tmp_path / "config.yaml"
+    path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    with pytest.raises(ValueError, match=">= 2"):
+        _load_config(path)
+
+
+def test_demo_exposes_original_entropy_margin_and_failure_state():
+    html = _demo_html()
+    assert 'id=\"original\"' in html
+    assert "Normalized routing entropy" in html
+    assert "Top-1 routing margin" in html
+    assert "Evidence failed to load" in html

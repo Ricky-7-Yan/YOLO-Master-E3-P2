@@ -52,6 +52,37 @@ def save_probability_overlay(
     }
 
 
+def save_metric_overlay(
+    original: Image.Image,
+    feature_field: np.ndarray,
+    meta: LetterboxMeta,
+    destination: str,
+    *,
+    color: tuple[int, int, int],
+    alpha: float,
+) -> dict[str, float]:
+    """Blend a bounded routing diagnostic while preserving its absolute ``[0,1]`` scale."""
+
+    values = np.asarray(feature_field, dtype=np.float32)
+    if values.ndim != 2 or not np.isfinite(values).all():
+        raise ValueError("metric field must be a finite 2D array")
+    if float(values.min()) < 0.0 or float(values.max()) > 1.0:
+        raise ValueError("metric field must stay within [0,1]")
+    restored = restore_heatmap(values, meta)
+    base = np.asarray(original.convert("RGB"), dtype=np.float32)
+    heat = _probability_color(restored, np.asarray(color, dtype=np.float32))
+    strength = restored[..., None] * float(alpha)
+    blended = np.clip(base * (1.0 - strength) + heat * strength, 0, 255).astype(np.uint8)
+    Image.fromarray(blended).save(destination)
+    return {
+        "feature_min": float(values.min()),
+        "feature_max": float(values.max()),
+        "feature_mean": float(values.mean()),
+        "restored_min": float(restored.min()),
+        "restored_max": float(restored.max()),
+    }
+
+
 def save_dominant_overlay(
     original: Image.Image,
     weights: np.ndarray,

@@ -8,6 +8,7 @@ import logging
 import os
 import random
 import re
+import shutil
 import subprocess
 import sys
 import time
@@ -18,10 +19,10 @@ import numpy as np
 import yaml
 from PIL import Image
 
-from .capture import SpatialRouterCollector, max_output_delta, tensor_shapes
+from .capture import SpatialRouterCollector, max_output_delta, routing_diagnostics, routing_metric_fields, tensor_shapes
 from .geometry import LetterboxMeta, letterbox
 from .io_utils import environment, sha256_file, write_json, write_manifest
-from .plotting import save_dominant_overlay, save_overview, save_probability_overlay
+from .plotting import save_dominant_overlay, save_metric_overlay, save_overview, save_probability_overlay
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RUN_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}")
@@ -48,6 +49,10 @@ def _load_config(config_path: Path, run_id_override: str | None = None) -> dict[
         raise ValueError("P2 spatial_profiles must be exactly MoT and MoA")
     if set(config.get("non_spatial_profiles", {})) != {"moe", "latent", "molora"}:
         raise ValueError("P2 non_spatial_profiles must be exactly MoE, Latent and MoLoRA")
+    batch_sizes = config.get("batch_equivalence_sizes", [])
+    if not isinstance(batch_sizes, list) or any(int(size) < 2 for size in batch_sizes):
+        raise ValueError("batch_equivalence_sizes must contain integers >= 2")
+    config["batch_equivalence_sizes"] = [int(size) for size in batch_sizes]
     return config
 
 
@@ -180,6 +185,165 @@ def _slug(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-")
 
 
+def _archive_input_previews(paths: list[Path], inputs: list[dict[str, Any]], run_dir: Path) -> None:
+    destination_root = run_dir / "inputs"
+    destination_root.mkdir(parents=True, exist_ok=True)
+    for path, metadata in zip(paths, inputs):
+        relative = Path("inputs") / f"sample-{metadata['sample_index']}--{path.name}"
+        shutil.copyfile(path, run_dir / relative)
+        metadata["artifact_path"] = relative.as_posix()
+
+
+def _aggregate_spatial_diagnostics(captures: list[dict[str, Any]]) -> dict[str, Any]:
+    def summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
+        diagnostics = [item["diagnostics"] for item in items]
+        token_count = sum(item["token_count"] for item in diagnostics)
+        expert_count = len(diagnostics[0]["dominant_token_count"])
+        dominant_counts = [
+            sum(item["dominant_token_count"][expert] for item in diagnostics) for expert in range(expert_count)
+        ]
+        def weighted(key: str) -> float:
+            return sum(item[key]["mean"] * item["token_count"] for item in diagnostics) / token_count
+        return {
+            "capture_count": len(items),
+            "token_count": token_count,
+            "dominant_token_count": dominant_counts,
+            "dominant_token_fraction": [count / token_count for count in dominant_counts],
+            "active_dominant_experts": sum(count > 0 for count in dominant_counts),
+            "normalized_entropy_mean": weighted("normalized_entropy"),
+            "top1_margin_mean": weighted("top1_margin"),
+            "neighbor_probability_l1_mean": sum(
+                item["neighbor_probability_l1_mean"] * item["token_count"] for item in diagnostics
+            )
+            / token_count,
+        }
+
+    families = sorted({item["family"] for item in captures})
+    modules = sorted({(item["family"], item["module"]) for item in captures})
+    return {
+        "capture_count": len(captures),
+        "by_family": {
+            family: summarize([item for item in captures if item["family"] == family]) for family in families
+        },
+        "by_module": {
+            f"{family}:{module}": summarize(
+                [item for item in captures if item["family"] == family and item["module"] == module]
+            )
+            for family, module in modules
+        },
+    }
+
+
+def _validate_demo_assets(
+    run_dir: Path, entries: list[dict[str, Any]], inputs: list[dict[str, Any]]
+) -> dict[str, Any]:
+    expected_sizes = {
+        item["sample_index"]: (item["geometry"]["original_width"], item["geometry"]["original_height"])
+        for item in inputs
+    }
+    paths = [entry["path"] for entry in entries]
+    if len(paths) != len(set(paths)):
+        raise RuntimeError("demo contains duplicate rendered asset paths")
+    checked = 0
+    for entry in entries:
+        path = run_dir / entry["path"]
+        if not path.is_file():
+            raise FileNotFoundError(f"demo asset is missing: {path}")
+        with Image.open(path) as image:
+            if image.size != expected_sizes[entry["sample_index"]]:
+                raise RuntimeError(
+                    f"demo asset size mismatch: {entry['path']} has {image.size}, "
+                    f"expected {expected_sizes[entry['sample_index']]}"
+                )
+        original_path = run_dir / entry["original_path"]
+        if not original_path.is_file():
+            raise FileNotFoundError(f"demo original asset is missing: {original_path}")
+        checked += 1
+    return {
+        "status": "PASS",
+        "entry_count": checked,
+        "unique_rendered_asset_count": len(set(paths)),
+        "all_rendered_assets_match_original_size": True,
+        "all_original_assets_present": True,
+    }
+
+
+def _batch_equivalence(
+    *,
+    model: Any,
+    family: str,
+    router_class: str,
+    tensors: list[Any],
+    records_per_sample: list[list[Any]],
+    batch_sizes: list[int],
+    torch_module: Any,
+    tolerance: float = 1e-5,
+) -> dict[str, Any]:
+    """Prove that the batch axis maps back to the same per-sample router grids."""
+
+    results = []
+    for batch_size in batch_sizes:
+        if batch_size > len(tensors):
+            raise ValueError(f"batch equivalence size {batch_size} exceeds {len(tensors)} selected samples")
+        weight_delta = 0.0
+        logit_delta = 0.0
+        indices_equal = True
+        compared_samples = 0
+        compared_records = 0
+        for start in range(0, len(tensors), batch_size):
+            stop = min(start + batch_size, len(tensors))
+            if stop - start != batch_size:
+                continue
+            collector = SpatialRouterCollector(family=family, router_class=router_class)
+            registered = collector.register(model)
+            try:
+                with torch_module.inference_mode():
+                    model(torch_module.cat(tensors[start:stop], dim=0))
+            finally:
+                collector.remove()
+            if collector.handles or len(collector.records) != len(registered):
+                raise RuntimeError(f"batch capture count or hook cleanup failed for family={family}, size={batch_size}")
+            for module_index, batched in enumerate(collector.records):
+                for offset, sample_index in enumerate(range(start, stop)):
+                    single = records_per_sample[sample_index][module_index]
+                    if batched.module_name != single.module_name:
+                        raise RuntimeError("batch and single module order differ")
+                    weight_delta = max(
+                        weight_delta,
+                        float(np.max(np.abs(batched.weights[offset] - single.weights[0]))),
+                    )
+                    logit_delta = max(
+                        logit_delta,
+                        float(np.max(np.abs(batched.logits[offset] - single.logits[0]))),
+                    )
+                    if batched.indices is not None:
+                        indices_equal = indices_equal and bool(
+                            np.array_equal(batched.indices[offset], single.indices[0])
+                        )
+                    compared_records += 1
+            compared_samples += stop - start
+        if not compared_samples:
+            raise RuntimeError(f"batch size {batch_size} produced no complete comparison group")
+        if weight_delta > tolerance or logit_delta > tolerance or not indices_equal:
+            raise RuntimeError(
+                f"single-vs-batch routing mismatch for family={family}, size={batch_size}: "
+                f"weights={weight_delta}, logits={logit_delta}, indices_equal={indices_equal}"
+            )
+        results.append(
+            {
+                "batch_size": batch_size,
+                "compared_samples": compared_samples,
+                "compared_router_records": compared_records,
+                "max_weight_abs_delta": weight_delta,
+                "max_logit_abs_delta": logit_delta,
+                "indices_equal": indices_equal if family == "mot" else None,
+                "tolerance": tolerance,
+                "status": "PASS",
+            }
+        )
+    return {"status": "PASS", "sizes": results}
+
+
 def _run_spatial_family(
     *,
     family: str,
@@ -193,6 +357,7 @@ def _run_spatial_family(
     torch_module: Any,
     yolo_class: Any,
     logger: logging.Logger,
+    batch_equivalence_sizes: list[int],
 ) -> tuple[dict[str, Any], list[dict[str, Any]], dict[str, np.ndarray], list[dict[str, str]]]:
     model_config = source_root / profile["model_config"]
     wrapper = yolo_class(model_config)
@@ -250,6 +415,16 @@ def _run_spatial_family(
             f"indices_equal={repeat_indices_equal}"
         )
 
+    batch_equivalence = _batch_equivalence(
+        model=model,
+        family=family,
+        router_class=profile["router_class"],
+        tensors=tensors,
+        records_per_sample=records_per_sample,
+        batch_sizes=batch_equivalence_sizes,
+        torch_module=torch_module,
+    )
+
     arrays: dict[str, np.ndarray] = {}
     demo_entries: list[dict[str, Any]] = []
     overview_cards: list[dict[str, str]] = []
@@ -267,6 +442,10 @@ def _run_spatial_family(
             arrays[f"{key}__logits"] = record.logits
             if record.indices is not None:
                 arrays[f"{key}__indices"] = record.indices
+            metric_fields = routing_metric_fields(weights)
+            diagnostics = routing_diagnostics(weights)
+            arrays[f"{key}__normalized_entropy"] = metric_fields["normalized_entropy"]
+            arrays[f"{key}__top1_margin"] = metric_fields["top1_margin"]
             dominant_relative = (
                 Path("overlays") / family / f"sample-{sample_meta['sample_index']}--{module_slug}--dominant.png"
             )
@@ -333,6 +512,41 @@ def _run_spatial_family(
                         "stats": stats,
                     }
                 )
+            metric_stats = {}
+            metric_specs = {
+                "normalized_entropy": ("entropy", "normalized routing entropy", (166, 108, 255)),
+                "top1_margin": ("margin", "top-1 routing margin", (0, 229, 255)),
+            }
+            for field_name, (view_name, label, color) in metric_specs.items():
+                relative = (
+                    Path("overlays")
+                    / family
+                    / f"sample-{sample_meta['sample_index']}--{module_slug}--{view_name}.png"
+                )
+                stats = save_metric_overlay(
+                    original,
+                    metric_fields[field_name],
+                    geometry,
+                    str(run_dir / relative),
+                    color=color,
+                    alpha=alpha,
+                )
+                metric_stats[field_name] = stats
+                demo_entries.append(
+                    {
+                        "family": family,
+                        "sample_index": sample_meta["sample_index"],
+                        "sample_name": sample_meta["name"],
+                        "module": record.module_name,
+                        "layer_index": layer_index,
+                        "view": view_name,
+                        "expert_index": None,
+                        "expert_label": label,
+                        "path": relative.as_posix(),
+                        "source_shape": record.validation["shape"],
+                        "stats": stats,
+                    }
+                )
             capture_metadata.append(
                 {
                     "family": family,
@@ -344,6 +558,8 @@ def _run_spatial_family(
                     "indices_key": f"{key}__indices" if record.indices is not None else None,
                     "validation": record.validation,
                     "expert_stats": expert_stats,
+                    "metric_stats": metric_stats,
+                    "diagnostics": diagnostics,
                 }
             )
     grids = sorted({tuple(item["validation"]["shape"][2:]) for item in capture_metadata})
@@ -366,6 +582,7 @@ def _run_spatial_family(
         "deterministic_repeat": "PASS",
         "repeat_max_weight_or_logit_abs_delta": repeat_max_delta,
         "repeat_indices_equal": repeat_indices_equal,
+        "single_vs_batch_equivalence": batch_equivalence,
         "hooks_removed": True,
     }
     logger.info(
@@ -487,24 +704,25 @@ def _demo_html() -> str:
 <title>E3 P2 Routing Lens</title><style>
 :root{color-scheme:dark;--bg:#061022;--panel:#0b1932;--line:#1d4264;--cyan:#00e5ff;--violet:#a66cff;--text:#eaf4ff;--muted:#89a4c2}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#112b4d 0,var(--bg) 42%);font:15px system-ui;color:var(--text)}
-.shell{max-width:1280px;margin:auto;padding:28px}.hero{border:1px solid var(--line);background:linear-gradient(100deg,#07172cdd,#120c2add);padding:22px 26px;border-radius:18px;box-shadow:0 0 40px #00e5ff14}
+.shell{max-width:1440px;margin:auto;padding:28px}.hero{border:1px solid var(--line);background:linear-gradient(100deg,#07172cdd,#120c2add);padding:22px 26px;border-radius:18px;box-shadow:0 0 40px #00e5ff14}
 .eyebrow{color:var(--cyan);letter-spacing:.18em;font:700 12px ui-monospace}.hero h1{margin:8px 0 6px;font-size:30px}.hero p{margin:0;color:var(--muted)}
-.notice{margin-top:14px;padding:11px 14px;border-left:3px solid #ffc400;background:#ffc40012;color:#ffe7a0}.grid{display:grid;grid-template-columns:300px 1fr;gap:18px;margin-top:18px}
+.notice{margin-top:14px;padding:11px 14px;border-left:3px solid #ffc400;background:#ffc40012;color:#ffe7a0}.grid{display:grid;grid-template-columns:310px 1fr;gap:18px;margin-top:18px}
 .panel{border:1px solid var(--line);background:#09162bcc;border-radius:16px;padding:18px}.control{margin-bottom:14px}.control label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
 select,button,a.button{width:100%;border:1px solid #285474;background:#0d203b;color:var(--text);padding:10px;border-radius:9px;text-decoration:none;display:block}button,a.button{cursor:pointer;text-align:center;margin-top:9px;background:linear-gradient(90deg,#006f8c,#53359a);font-weight:700}
-.viewer{min-height:580px;display:flex;flex-direction:column}.viewer img{width:100%;height:500px;object-fit:contain;background:#050b16;border-radius:12px;border:1px solid #173653}.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.chip{background:#102748;border:1px solid #214b70;border-radius:999px;padding:6px 10px;color:#bcd5ee;font-size:12px}
-.matrix{margin-top:18px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.family{padding:12px;border:1px solid var(--line);border-radius:12px;background:#08172d}.ok{color:#42e58c}.no{color:#ff889c}pre{white-space:pre-wrap;color:#aac4df;font-size:12px}@media(max-width:800px){.grid{grid-template-columns:1fr}.matrix{grid-template-columns:1fr}.viewer img{height:auto}}
-</style></head><body><main class=\"shell\"><section class=\"hero\"><div class=\"eyebrow\">E3://SPATIAL ROUTING LENS</div><h1>Token routing, mapped back without distortion</h1><p>Choose a coco8 sample, routing family, layer and expert. Every displayed pixel starts from a real [B,E,H,W] router tensor.</p>
-<div class=\"notice\">Interpretation boundary: this run uses random initialization. Uniform maps validate the capture and geometry pipeline; they do not demonstrate learned expert specialization.</div></section>
-<section class=\"matrix\" id=\"matrix\"></section><section class=\"grid\"><aside class=\"panel\"><div class=\"control\"><label>Family</label><select id=\"family\"></select></div><div class=\"control\"><label>Sample</label><select id=\"sample\"></select></div><div class=\"control\"><label>Layer</label><select id=\"layer\"></select></div><div class=\"control\"><label>View / expert</label><select id=\"view\"></select></div><a class=\"button\" id=\"download\" download>Export current PNG</a><button id=\"copy\">Copy evidence metadata</button><pre id=\"detail\"></pre></aside><div class=\"panel viewer\"><img id=\"image\" alt=\"routing overlay\"><div class=\"meta\" id=\"chips\"></div></div></section></main>
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.frame{margin:0}.frame figcaption{color:var(--muted);font:700 11px ui-monospace;letter-spacing:.1em;margin:0 0 7px}.frame img{display:block;width:100%;height:430px;object-fit:contain;background:#050b16;border-radius:12px;border:1px solid #173653}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.chip{background:#102748;border:1px solid #214b70;border-radius:999px;padding:6px 10px;color:#bcd5ee;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.stat{padding:10px 12px;border:1px solid #214b70;background:#08172d;border-radius:10px}.stat b{display:block;color:var(--cyan);font:700 17px ui-monospace}.stat small{color:var(--muted)}
+.matrix{margin-top:18px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.family{padding:12px;border:1px solid var(--line);border-radius:12px;background:#08172d}.ok{color:#42e58c}.no{color:#ff889c}.status{margin-top:10px;color:#7ee8b2;font-size:12px}pre{max-height:210px;overflow:auto;white-space:pre-wrap;color:#aac4df;font-size:11px}@media(max-width:900px){.grid{grid-template-columns:1fr}.matrix{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.shell{padding:14px}.hero h1{font-size:24px}.matrix,.compare,.stats{grid-template-columns:1fr}.frame img{height:auto}}
+</style></head><body><main class=\"shell\"><section class=\"hero\"><div class=\"eyebrow\">E3://SPATIAL ROUTING LENS</div><h1>Token routing, mapped back without distortion</h1><p>Original and overlay stay side by side. Switch sample, family, layer, probability, entropy or margin without losing the evidence source.</p>
+<div class=\"notice\">Interpretation boundary: this run uses random initialization. Uniform maps validate capture, batch identity and geometry; they do not demonstrate learned expert specialization.</div></section>
+<section class=\"matrix\" id=\"matrix\" aria-label=\"Five-family feasibility\"></section><section class=\"grid\"><aside class=\"panel\"><div class=\"control\"><label for=\"family\">Family</label><select id=\"family\"></select></div><div class=\"control\"><label for=\"sample\">Sample</label><select id=\"sample\"></select></div><div class=\"control\"><label for=\"layer\">Layer</label><select id=\"layer\"></select></div><div class=\"control\"><label for=\"view\">View / expert</label><select id=\"view\"></select></div><a class=\"button\" id=\"download\" download>Export current PNG</a><button id=\"copy\">Copy evidence metadata</button><div class=\"status\" id=\"status\" role=\"status\">Loading evidence…</div><pre id=\"detail\"></pre></aside><section class=\"panel\"><div class=\"compare\"><figure class=\"frame\"><figcaption>ORIGINAL INPUT</figcaption><img id=\"original\" alt=\"original coco8 input\"></figure><figure class=\"frame\"><figcaption>ROUTING OVERLAY</figcaption><img id=\"image\" alt=\"routing overlay\"></figure></div><div class=\"meta\" id=\"chips\"></div><div class=\"stats\" id=\"stats\"></div></section></section></main>
 <script>
-let data, entries; const q=id=>document.getElementById(id); const unique=(xs)=>[...new Set(xs)];
+let entries;const q=id=>document.getElementById(id);const unique=xs=>[...new Set(xs)];
 function options(el,values,label){const old=el.value;el.innerHTML=values.map(v=>`<option value=\"${v}\">${label(v)}</option>`).join('');if(values.includes(old))el.value=old;}
-function cascade(source){let f=q('family').value;if(source==='family'||!f){options(q('family'),unique(entries.map(x=>x.family)),x=>x.toUpperCase());f=q('family').value}
-let pool=entries.filter(x=>x.family===f);options(q('sample'),unique(pool.map(x=>String(x.sample_index))),x=>`${x} · ${pool.find(y=>String(y.sample_index)===x).sample_name}`);pool=pool.filter(x=>String(x.sample_index)===q('sample').value);
-options(q('layer'),unique(pool.map(x=>x.module)),x=>x);pool=pool.filter(x=>x.module===q('layer').value);options(q('view'),pool.map((_,i)=>String(i)),i=>{const x=pool[Number(i)];return x.view==='dominant'?'Dominant expert':`Expert ${x.expert_index} · ${x.expert_label}`});render(pool[Number(q('view').value||0)]);}
-function render(x){if(!x)return;q('image').src=x.path;q('download').href=x.path;q('chips').innerHTML=[x.family.toUpperCase(),x.sample_name,x.module,`shape ${x.source_shape.join('×')}`,x.expert_label].map(v=>`<span class=\"chip\">${v}</span>`).join('');q('detail').textContent=JSON.stringify(x,null,2);q('copy').onclick=()=>navigator.clipboard.writeText(q('detail').textContent);}
-fetch('demo-index.json').then(r=>r.json()).then(x=>{data=x;entries=x.entries;q('matrix').innerHTML=Object.entries(x.feasibility).map(([k,v])=>`<div class=\"family\"><b>${k.toUpperCase()}</b><div class=\"${v.token_overlay==='supported'?'ok':'no'}\">${v.token_overlay}</div><small>${v.reason||v.evidence_kind}</small></div>`).join('');['family','sample','layer','view'].forEach(id=>q(id).onchange=()=>cascade(id));cascade('family');});
+function viewLabel(x){if(x.view==='dominant')return'Dominant expert';if(x.view==='entropy')return'Normalized routing entropy';if(x.view==='margin')return'Top-1 routing margin';return`Expert ${x.expert_index} · ${x.expert_label}`;}
+function cascade(source){let family=q('family').value;if(source==='family'||!family){options(q('family'),unique(entries.map(x=>x.family)),x=>x.toUpperCase());family=q('family').value}let pool=entries.filter(x=>x.family===family);options(q('sample'),unique(pool.map(x=>String(x.sample_index))),x=>`${x} · ${pool.find(y=>String(y.sample_index)===x).sample_name}`);pool=pool.filter(x=>String(x.sample_index)===q('sample').value);options(q('layer'),unique(pool.map(x=>x.module)),x=>x);pool=pool.filter(x=>x.module===q('layer').value);options(q('view'),pool.map((_,i)=>String(i)),i=>viewLabel(pool[Number(i)]));render(pool[Number(q('view').value||0)]);}
+function renderStats(x){let values;if(x.stats){values=[['min',x.stats.feature_min],['mean',x.stats.feature_mean],['max',x.stats.feature_max]]}else{const d=x.diagnostics;values=[['entropy',d.normalized_entropy.mean],['top-1 margin',d.top1_margin.mean],['active experts',d.active_dominant_experts]]}q('stats').innerHTML=values.map(([label,value])=>`<div class=\"stat\"><b>${typeof value==='number'?value.toFixed(6):value}</b><small>${label}</small></div>`).join('');}
+function render(x){if(!x)return;q('original').src=x.original_path;q('image').src=x.path;q('download').href=x.path;q('chips').innerHTML=[x.family.toUpperCase(),x.sample_name,x.module,`shape ${x.source_shape.join('×')}`,x.expert_label].map(v=>`<span class=\"chip\">${v}</span>`).join('');renderStats(x);q('detail').textContent=JSON.stringify(x,null,2);q('status').textContent=`Ready · ${viewLabel(x)} · original-size export`;q('copy').onclick=async()=>{try{await navigator.clipboard.writeText(q('detail').textContent);q('status').textContent='Evidence metadata copied'}catch(error){q('status').textContent=`Copy failed: ${error.message}`}};}
+fetch('demo-index.json').then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()}).then(data=>{entries=data.entries;q('matrix').innerHTML=Object.entries(data.feasibility).map(([key,value])=>`<div class=\"family\"><b>${key.toUpperCase()}</b><div class=\"${value.token_overlay==='supported'?'ok':'no'}\">${value.token_overlay}</div><small>${value.reason||value.evidence_kind}</small></div>`).join('');['family','sample','layer','view'].forEach(id=>q(id).onchange=()=>cascade(id));cascade('family');document.body.dataset.ready='true'}).catch(error=>{q('status').textContent=`Evidence failed to load: ${error.message}`;q('status').style.color='#ff889c'});
 </script></body></html>"""
 
 
@@ -541,6 +759,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
 
     paths, dataset_meta = _resolve_images(config["dataset"], config["dataset_split"], config["sample_indices"])
     tensors, originals, inputs = _prepare_inputs(paths, config["sample_indices"], int(config["image_size"]), torch)
+    _archive_input_previews(paths, inputs, run_dir)
     input_record = {**dataset_meta, "selected_image_count": len(inputs), "images": inputs}
     input_record["input_set_sha256"] = hashlib.sha256(
         "\n".join(f"{item['sample_index']}:{item['sha256']}" for item in inputs).encode("utf-8")
@@ -568,6 +787,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
             torch_module=torch,
             yolo_class=YOLO,
             logger=logger,
+            batch_equivalence_sizes=config["batch_equivalence_sizes"],
         )
         feasibility[family] = family_summary
         capture_metadata.extend(family_metadata)
@@ -592,6 +812,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
 
     np.savez_compressed(run_dir / "spatial-routing-raw.npz", **arrays)
     write_json(run_dir / "spatial-captures.json", capture_metadata)
+    write_json(run_dir / "spatial-diagnostics.json", _aggregate_spatial_diagnostics(capture_metadata))
     write_json(run_dir / "family-feasibility.json", feasibility)
     save_overview(overview_cards, str(run_dir / "routing-overview.png"))
 
@@ -614,6 +835,10 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
             "expert_label": "dominant expert",
             "path": dominant_path.as_posix(),
             "source_shape": shape,
+            "original_path": next(
+                item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
+            ),
+            "diagnostics": metadata["diagnostics"],
         }
         if dominant_path.is_file() or (run_dir / dominant_path).is_file():
             demo_entries.append(dominant_entry)
@@ -638,13 +863,46 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
                     "path": relative.as_posix(),
                     "source_shape": shape,
                     "stats": stats,
+                    "original_path": next(
+                        item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
+                    ),
                 }
             )
+        metric_specs = {
+            "normalized_entropy": ("entropy", "normalized routing entropy"),
+            "top1_margin": ("margin", "top-1 routing margin"),
+        }
+        for field_name, (view_name, label) in metric_specs.items():
+            relative = Path("overlays") / family / f"sample-{sample_index}--{module_slug}--{view_name}.png"
+            demo_entries.append(
+                {
+                    "family": family,
+                    "sample_index": sample_index,
+                    "sample_name": sample_name,
+                    "module": module,
+                    "view": view_name,
+                    "expert_index": None,
+                    "expert_label": label,
+                    "path": relative.as_posix(),
+                    "source_shape": shape,
+                    "stats": metadata["metric_stats"][field_name],
+                    "original_path": next(
+                        item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
+                    ),
+                }
+            )
+    demo_asset_validation = _validate_demo_assets(run_dir, demo_entries, inputs)
     demo_index = {
         "schema_version": config["schema_version"],
         "run_id": config["run_id"],
         "interpretation": "random initialization validates capture and geometry only; it does not prove learned specialization",
         "feasibility": feasibility,
+        "evidence_counts": {
+            "spatial_captures": len(capture_metadata),
+            "raw_arrays": len(arrays),
+            "demo_views": len(demo_entries),
+        },
+        "asset_validation": demo_asset_validation,
         "entries": demo_entries,
     }
     write_json(run_dir / "demo-index.json", demo_index)
@@ -673,6 +931,10 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         "true_spatial_capture_count": len(capture_metadata),
         "raw_array_count": len(arrays),
         "demo_entry_count": len(demo_entries),
+        "demo_asset_validation": demo_asset_validation,
+        "single_vs_batch_equivalence": {
+            family: feasibility[family]["single_vs_batch_equivalence"] for family in supported
+        },
         "hook_output_equivalence": "PASS",
         "geometry_contract": "letterbox upsample -> exact integer unpad -> original-size bilinear mapping",
         "interpretation_boundary": "random initialization; pipeline evidence only, not learned specialization",

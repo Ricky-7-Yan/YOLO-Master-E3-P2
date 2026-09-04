@@ -10,6 +10,56 @@ import numpy as np
 from .geometry import validate_probability_grid
 
 
+def routing_metric_fields(weights: np.ndarray) -> dict[str, np.ndarray]:
+    """Derive bounded token diagnostics from a truthful ``[E,H,W]`` probability grid."""
+
+    values = np.asarray(weights, dtype=np.float32)
+    if values.ndim != 3:
+        raise ValueError(f"expected [E,H,W], got shape={list(values.shape)}")
+    validate_probability_grid(values[None, ...])
+    expert_count = values.shape[0]
+    safe = np.clip(values, np.finfo(np.float32).tiny, 1.0)
+    entropy = -np.sum(values * np.log(safe), axis=0) / np.log(float(expert_count))
+    ordered = np.sort(values, axis=0)
+    margin = ordered[-1] - ordered[-2] if expert_count > 1 else np.ones_like(ordered[-1])
+    return {
+        "normalized_entropy": np.clip(entropy, 0.0, 1.0).astype(np.float32),
+        "top1_margin": np.clip(margin, 0.0, 1.0).astype(np.float32),
+    }
+
+
+def routing_diagnostics(weights: np.ndarray) -> dict[str, Any]:
+    """Summarize spatial routing without discarding the raw grid evidence."""
+
+    values = np.asarray(weights, dtype=np.float32)
+    fields = routing_metric_fields(values)
+    dominant = np.argmax(values, axis=0)
+    token_count = int(dominant.size)
+    horizontal = np.abs(np.diff(values, axis=2)).reshape(-1)
+    vertical = np.abs(np.diff(values, axis=1)).reshape(-1)
+    variation_values = np.concatenate([horizontal, vertical])
+
+    def stats(field: np.ndarray) -> dict[str, float]:
+        return {
+            "min": float(field.min()),
+            "max": float(field.max()),
+            "mean": float(field.mean()),
+        }
+
+    return {
+        "token_count": token_count,
+        "mean_expert_probability": [float(item) for item in values.mean(axis=(1, 2))],
+        "dominant_token_count": [int(np.sum(dominant == expert)) for expert in range(values.shape[0])],
+        "dominant_token_fraction": [
+            float(np.sum(dominant == expert) / token_count) for expert in range(values.shape[0])
+        ],
+        "active_dominant_experts": int(np.unique(dominant).size),
+        "normalized_entropy": stats(fields["normalized_entropy"]),
+        "top1_margin": stats(fields["top1_margin"]),
+        "neighbor_probability_l1_mean": float(variation_values.mean()) if variation_values.size else 0.0,
+    }
+
+
 def tensor_shapes(value: Any) -> list[list[int]]:
     shapes: list[list[int]] = []
     if hasattr(value, "shape"):

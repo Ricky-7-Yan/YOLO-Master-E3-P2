@@ -17,6 +17,7 @@ dataset_split: val
 sample_indices: [0, 1, 2, 3]
 image_size: 64
 overlay_alpha: 0.58
+batch_equivalence_sizes: [2, 4]
 
 spatial_profiles:
   mot:
