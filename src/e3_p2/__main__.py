@@ -13,6 +13,12 @@ def main() -> None:
     run_parser.add_argument("--config", type=Path, default=Path("configs/p2.yaml"))
     run_parser.add_argument("--run-id")
     run_parser.add_argument("--no-latest", action="store_true")
+    robustness_parser = subparsers.add_parser(
+        "robustness", help="run CPU resolution and horizontal-flip diagnostics"
+    )
+    robustness_parser.add_argument("--config", type=Path, default=Path("configs/robustness.yaml"))
+    robustness_parser.add_argument("--run-id")
+    robustness_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -24,6 +30,11 @@ def main() -> None:
 
         output = run(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 evidence: {output}")
+    elif args.command == "robustness":
+        from .robustness_runner import run as run_robustness
+
+        output = run_robustness(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 robustness evidence: {output}")
     else:
         from .demo import serve
 
