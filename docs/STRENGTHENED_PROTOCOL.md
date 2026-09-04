@@ -47,7 +47,7 @@ With four coco8 validation images, four routed modules in MoT and four in MoA, t
 | Evidence | Expected minimum |
 | --- | ---: |
 | True spatial captures | 32 |
-| Single-versus-batch sample comparisons | 64 per family across batch sizes 2 and 4 |
+| Single-versus-batch router-record comparisons | 32 per family across batch sizes 2 and 4 |
 | Raw arrays | 144 |
 | Demo views | 192 |
 | Archived original inputs | 4 |

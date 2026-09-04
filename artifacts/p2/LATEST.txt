@@ -1,1 +1,1 @@
-p2-20260904-cpu-five-family-v3
+p2-20260904-cpu-batch-diagnostics-v4

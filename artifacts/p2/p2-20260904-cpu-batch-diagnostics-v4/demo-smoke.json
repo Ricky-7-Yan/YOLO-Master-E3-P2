@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "url": "http://127.0.0.1:8766/demo.html",
+  "browser_path": "regular Playwright with installed Microsoft Edge; Browser plugin unavailable",
+  "viewports": {
+    "desktop": [1440, 1000],
+    "mobile": [390, 844]
+  },
+  "assertions": {
+    "page_identity": true,
+    "meaningful_content": true,
+    "five_family_cards": true,
+    "paired_images_visible": true,
+    "entropy_interaction": true,
+    "paired_original_size": true,
+    "export_matches_overlay": true,
+    "stats_rendered": true,
+    "copy_feedback": true,
+    "mobile_margin_interaction": true,
+    "mobile_no_horizontal_overflow": true,
+    "console_clean": true,
+    "network_clean": true
+  },
+  "desktop_interaction": {
+    "family": "moa",
+    "sample_index": 2,
+    "module": "model.16.m.0.router",
+    "view": "normalized routing entropy",
+    "original_asset": "inputs/sample-2--000000000049.jpg",
+    "rendered_asset": "overlays/moa/sample-2--model.16.m.0.router--entropy.png",
+    "original_natural_size_wh": [381, 500],
+    "rendered_natural_size_wh": [381, 500],
+    "download_href_matches_rendered_asset": true,
+    "stat_card_count": 3,
+    "copy_feedback": "Evidence metadata copied"
+  },
+  "mobile_interaction": {
+    "family": "mot",
+    "view": "top-1 routing margin",
+    "rendered_asset": "overlays/mot/sample-0--model.13.m.0.router--margin.png",
+    "viewport_wh": [390, 844],
+    "paired_images_visible": true,
+    "horizontal_overflow": false
+  },
+  "console_errors_or_warnings": [],
+  "http_4xx_or_5xx_responses": []
+}

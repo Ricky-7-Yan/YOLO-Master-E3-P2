@@ -1,0 +1,56 @@
+[
+  {
+    "path": "ultralytics/nn/modules/mot/router.py",
+    "expected_sha256": "0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1",
+    "actual_sha256": "0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1",
+    "match": true
+  },
+  {
+    "path": "ultralytics/nn/modules/moa/router.py",
+    "expected_sha256": "ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f",
+    "actual_sha256": "ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f",
+    "match": true
+  },
+  {
+    "path": "ultralytics/nn/modules/latent_mixture.py",
+    "expected_sha256": "7ee5b0516a20709c9bc96b8c966da13447ca527c8cba7c7051f41aaf61f52b51",
+    "actual_sha256": "7ee5b0516a20709c9bc96b8c966da13447ca527c8cba7c7051f41aaf61f52b51",
+    "match": true
+  },
+  {
+    "path": "ultralytics/nn/modules/moe/gated.py",
+    "expected_sha256": "5e73e35fa6c53ee45381b934771585314e68e66fb3e6f66786a6ce68af8f4727",
+    "actual_sha256": "5e73e35fa6c53ee45381b934771585314e68e66fb3e6f66786a6ce68af8f4727",
+    "match": true
+  },
+  {
+    "path": "ultralytics/nn/peft/molora/router.py",
+    "expected_sha256": "a8c5c924d76b6906bb8e8c44fe35995798741df1db269a931174c908d4c7db4c",
+    "actual_sha256": "a8c5c924d76b6906bb8e8c44fe35995798741df1db269a931174c908d4c7db4c",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-mot-n.yaml",
+    "expected_sha256": "739aca4279cd2ae7813f4b0b5a16211efd68c74a1beaacc71d2431101dca6fda",
+    "actual_sha256": "739aca4279cd2ae7813f4b0b5a16211efd68c74a1beaacc71d2431101dca6fda",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-moa-n.yaml",
+    "expected_sha256": "20a57222cd4a51b11b39d51ca959a2d250e46c5e42b4ecf9fe6a9808e3147310",
+    "actual_sha256": "20a57222cd4a51b11b39d51ca959a2d250e46c5e42b4ecf9fe6a9808e3147310",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-n.yaml",
+    "expected_sha256": "135ae1f18197f42039dbd67d4e6104cd531c7d9d65ede77c8edb4d0afa11a223",
+    "actual_sha256": "135ae1f18197f42039dbd67d4e6104cd531c7d9d65ede77c8edb4d0afa11a223",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-latent-n.yaml",
+    "expected_sha256": "08307e7ca5e7aa68cb41f4a39d2eb0901e8cd20a9f3784edd2dd96ab0da11219",
+    "actual_sha256": "08307e7ca5e7aa68cb41f4a39d2eb0901e8cd20a9f3784edd2dd96ab0da11219",
+    "match": true
+  }
+]

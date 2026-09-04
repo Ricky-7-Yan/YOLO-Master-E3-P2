@@ -21,9 +21,11 @@ The implementation runs against YOLO-Master runtime ref
 | MoT sparse consistency | Selected mass is one; unselected probability is zero; indices in range | per-capture validation | PASS |
 | Non-invasive collection | Compare full model tensors with/without hook | MoT/MoA max abs delta `0` | PASS |
 | Repeatability | Repeat weights/logits exactly; MoT indices exactly | `family-feasibility.json` | PASS |
+| Batch/sample identity | Compare every batch=2/4 router record against its single-image source | 64 comparisons; max probability delta `0` | PASS |
+| Uncertainty is not visual guesswork | Fixed-scale normalized entropy and Top-1 margin derived from raw probabilities | `spatial-diagnostics.json`, raw NPZ | PASS |
 | More families | Runtime audit MoE, MoT, Latent, MoA, MoLoRA | `family-feasibility.json` | PASS |
 | Honest unsupported path | Singleton or absent spatial axes must fail closed | code + negative tests | PASS |
-| Two-minute demo | One command; select sample/layer/expert; export current PNG | `demo.html`, `demo-smoke.json` | PASS |
+| Two-minute demo | One command; paired original/overlay; select sample/layer/view; copy metadata; export PNG | `demo.html`, `demo-smoke.json` | PASS |
 | Reproducible evidence | Config, command, input hashes, environment, source hashes, full log, manifest | formal run directory | PASS |
 
 ## Non-goals
@@ -32,4 +34,3 @@ The implementation runs against YOLO-Master runtime ref
 - No model forward implementation is modified to manufacture visualization state.
 - No claim is made about trained specialization, detector accuracy, CUDA behavior or GPU performance.
 - MoE/Latent/MoLoRA are not interpolated into image heatmaps when their runtime contract has no token grid.
-

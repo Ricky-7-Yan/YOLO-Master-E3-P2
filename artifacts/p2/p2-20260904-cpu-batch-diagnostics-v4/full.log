@@ -1,0 +1,9 @@
+2026-09-04 23:12:38,894 | INFO | scope=E3 P2 five-family feasibility and truthful spatial overlay
+2026-09-04 23:12:38,894 | INFO | source_ref=07d330325b5a26b75aabfc75389f9bcbc0d40245 source_tree=e4a900338bd6679d5ad9f8673e466b250ba2c711
+2026-09-04 23:12:38,895 | INFO | device=cpu cuda_available=False seed=0
+2026-09-04 23:12:48,127 | INFO | family=mot supported modules=4 samples=4 captures=16 grids=[(2, 2), (4, 4), (8, 8)] output_delta=0 repeat_delta=0
+2026-09-04 23:12:55,488 | INFO | family=moa supported modules=4 samples=4 captures=16 grids=[(2, 2), (4, 4), (8, 8)] output_delta=0 repeat_delta=0
+2026-09-04 23:12:56,415 | INFO | family=moe unsupported observed_shapes=[[1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2], [1, 2]]
+2026-09-04 23:12:56,695 | INFO | family=latent unsupported captures=[{'module': 'model.23', 'routing_probs_shape': [1, 4], 'routing_axis': 'expert'}, {'module': 'model.24', 'routing_probs_shape': [1, 4], 'routing_axis': 'expert'}, {'module': 'model.25', 'routing_probs_shape': [1, 4], 'routing_axis': 'expert'}]
+2026-09-04 23:13:05,923 | INFO | family=molora unsupported variants=[{'router_type': 'LinearRouter', 'input_shape': [1, 16, 8, 8], 'output_shape': [1, 4]}, {'router_type': 'SpatialRouter', 'input_shape': [1, 16, 8, 8], 'output_shape': [1, 4]}, {'router_type': 'HybridRouter', 'input_shape': [1, 16, 8, 8], 'output_shape': [1, 4]}]
+2026-09-04 23:13:07,178 | INFO | status=PASS supported=['moa', 'mot'] unsupported=['latent', 'moe', 'molora'] captures=32 demo_entries=192

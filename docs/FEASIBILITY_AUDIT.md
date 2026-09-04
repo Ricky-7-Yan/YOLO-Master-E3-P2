@@ -31,3 +31,7 @@ range is only `4.0948391e-05`; probabilities stay between `0.33330452` and `0.33
 near-uniform cold-start results, not evidence of expert specialization. The value of this run is the verified
 capture/mapping mechanism and the explicit feasibility boundary.
 
+The strengthened diagnostics quantify that boundary. Across 400 aggregated feature tokens per family, MoT has
+normalized entropy `0.6056926`, Top-1 margin `0.04` and zero neighboring-token variation; its dominant expert owns
+all 400 tokens. MoA has entropy `1.0`, margin `3.365e-06` and neighboring-token variation `2.555e-06`. Although its
+argmax view splits tokens `221 / 59 / 120`, those regions are near-tie discretization, not semantic specialization.
