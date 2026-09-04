@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "url": "http://127.0.0.1:8766/demo.html",
+  "browser_path": "regular Playwright with installed Microsoft Edge; Browser plugin unavailable",
+  "desktop_viewport": [1440, 1000],
+  "mobile_viewport": [390, 844],
+  "page_title": "E3 P2 Routing Lens",
+  "meaningful_content_rendered": true,
+  "family_matrix_cards": 5,
+  "selectable_overlay_families": ["mot", "moa"],
+  "interaction": {
+    "family": "moa",
+    "sample_index": 2,
+    "module": "model.16.m.0.router",
+    "view": "Expert 2 · global",
+    "rendered_asset": "overlays/moa/sample-2--model.16.m.0.router--expert-2-global.png",
+    "rendered_original_size_wh": [381, 500],
+    "download_href_matches_rendered_asset": true
+  },
+  "mobile_horizontal_overflow": false,
+  "console_errors_or_warnings": []
+}

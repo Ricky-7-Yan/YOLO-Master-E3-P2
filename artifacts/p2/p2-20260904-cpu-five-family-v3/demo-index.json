@@ -1,0 +1,3227 @@
+{
+  "schema_version": "e3.spatial-routing/v1.0.0",
+  "run_id": "p2-20260904-cpu-five-family-v3",
+  "interpretation": "random initialization validates capture and geometry only; it does not prove learned specialization",
+  "feasibility": {
+    "mot": {
+      "status": "SUPPORTED",
+      "token_overlay": "supported",
+      "evidence_kind": "full_detector_forward",
+      "model_config": "ultralytics/cfg/models/26/yolo26-master-mot-n.yaml",
+      "model_parameters": 2927512,
+      "router_class": "_MoTRouter",
+      "registered_modules": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "registered_module_count": 4,
+      "samples": 4,
+      "capture_count": 16,
+      "feature_grids_hw": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "expert_labels": [
+        "local",
+        "window",
+        "deformable"
+      ],
+      "probability_validation": "PASS",
+      "hook_output_equivalence": "PASS",
+      "max_output_abs_delta": 0.0,
+      "deterministic_repeat": "PASS",
+      "repeat_max_weight_or_logit_abs_delta": 0.0,
+      "repeat_indices_equal": true,
+      "hooks_removed": true
+    },
+    "moa": {
+      "status": "SUPPORTED",
+      "token_overlay": "supported",
+      "evidence_kind": "full_detector_forward",
+      "model_config": "ultralytics/cfg/models/26/yolo26-master-moa-n.yaml",
+      "model_parameters": 2450630,
+      "router_class": "_MoARouter",
+      "registered_modules": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "registered_module_count": 4,
+      "samples": 4,
+      "capture_count": 16,
+      "feature_grids_hw": [
+        [
+          2,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "expert_labels": [
+        "local",
+        "regional",
+        "global"
+      ],
+      "probability_validation": "PASS",
+      "hook_output_equivalence": "PASS",
+      "max_output_abs_delta": 0.0,
+      "deterministic_repeat": "PASS",
+      "repeat_max_weight_or_logit_abs_delta": 0.0,
+      "repeat_indices_equal": true,
+      "hooks_removed": true
+    },
+    "moe": {
+      "status": "UNSUPPORTED",
+      "token_overlay": "unsupported",
+      "evidence_kind": "full_detector_nested_router_forward",
+      "model_config": "ultralytics/cfg/models/26/yolo26-master-n.yaml",
+      "reason": "router decisions are image/sample-level; singleton H/W axes are broadcast containers, not token maps",
+      "captured_modules": [
+        {
+          "module": "model.4.m.0.0.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "module": "model.4.m.0.1.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "module": "model.6.m.0.0.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "module": "model.6.m.0.1.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "module": "model.8.m.0.0.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        {
+          "module": "model.8.m.0.1.mlp",
+          "router_output_shapes": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        }
+      ],
+      "observed_shapes": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "spatial_shape_count": 0
+    },
+    "latent": {
+      "status": "UNSUPPORTED",
+      "token_overlay": "unsupported",
+      "evidence_kind": "full_detector_runtime_state",
+      "model_config": "ultralytics/cfg/models/26/yolo26-master-latent-n.yaml",
+      "reason": "routing axes are expert or scale-by-expert after spatial pooling; no reversible H/W token axis exists",
+      "captured_modules": [
+        {
+          "module": "model.23",
+          "routing_probs_shape": [
+            1,
+            4
+          ],
+          "routing_axis": "expert"
+        },
+        {
+          "module": "model.24",
+          "routing_probs_shape": [
+            1,
+            4
+          ],
+          "routing_axis": "expert"
+        },
+        {
+          "module": "model.25",
+          "routing_probs_shape": [
+            1,
+            4
+          ],
+          "routing_axis": "expert"
+        }
+      ],
+      "spatial_shape_count": 0
+    },
+    "molora": {
+      "status": "UNSUPPORTED",
+      "token_overlay": "unsupported",
+      "evidence_kind": "isolated_official_router_contract",
+      "reason": "all official MoLoRA router variants reduce spatial features and return one [B,E] decision per image",
+      "captured_router_variants": [
+        {
+          "router_type": "LinearRouter",
+          "input_shape": [
+            1,
+            16,
+            8,
+            8
+          ],
+          "output_shape": [
+            1,
+            4
+          ]
+        },
+        {
+          "router_type": "SpatialRouter",
+          "input_shape": [
+            1,
+            16,
+            8,
+            8
+          ],
+          "output_shape": [
+            1,
+            4
+          ]
+        },
+        {
+          "router_type": "HybridRouter",
+          "input_shape": [
+            1,
+            16,
+            8,
+            8
+          ],
+          "output_shape": [
+            1,
+            4
+          ]
+        }
+      ],
+      "spatial_shape_count": 0
+    }
+  },
+  "entries": [
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-0--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-0--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-0--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-0--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 1.0,
+        "feature_max": 1.0,
+        "feature_mean": 1.0,
+        "restored_min": 1.0,
+        "restored_max": 1.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-1--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-1--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-1--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-1--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 1.0,
+        "feature_max": 1.0,
+        "feature_mean": 1.0,
+        "restored_min": 1.0,
+        "restored_max": 1.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-2--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-2--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-2--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-2--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 1.0,
+        "feature_max": 1.0,
+        "feature_mean": 1.0,
+        "restored_min": 1.0,
+        "restored_max": 1.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-3--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-3--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-3--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.5,
+        "feature_max": 0.5,
+        "feature_mean": 0.5,
+        "restored_min": 0.5,
+        "restored_max": 0.5
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/mot/sample-3--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 1.0,
+        "feature_max": 1.0,
+        "feature_mean": 1.0,
+        "restored_min": 1.0,
+        "restored_max": 1.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "window",
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-1-window.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "window",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "mot",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "deformable",
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-2-deformable.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "deformable",
+        "feature_min": 0.0,
+        "feature_max": 0.0,
+        "feature_mean": 0.0,
+        "restored_min": 0.0,
+        "restored_max": 0.0
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-0--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33333325386047363,
+        "feature_max": 0.3333336412906647,
+        "feature_mean": 0.33333343267440796,
+        "restored_min": 0.33333325386047363,
+        "restored_max": 0.3333336412906647
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.333333283662796,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.333333283662796,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333330750465393,
+        "feature_max": 0.33333343267440796,
+        "feature_mean": 0.33333322405815125,
+        "restored_min": 0.3333330750465393,
+        "restored_max": 0.33333343267440796
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-0--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33332523703575134,
+        "feature_max": 0.33334922790527344,
+        "feature_mean": 0.3333359360694885,
+        "restored_min": 0.333326131105423,
+        "restored_max": 0.333344429731369
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333275616168976,
+        "feature_max": 0.33333954215049744,
+        "feature_mean": 0.3333342969417572,
+        "restored_min": 0.33332809805870056,
+        "restored_max": 0.33333948254585266
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333118259906769,
+        "feature_max": 0.3333425521850586,
+        "feature_mean": 0.3333297371864319,
+        "restored_min": 0.33331766724586487,
+        "restored_max": 0.33334195613861084
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-0--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33333298563957214,
+        "feature_max": 0.33333349227905273,
+        "feature_mean": 0.33333322405815125,
+        "restored_min": 0.33333298563957214,
+        "restored_max": 0.33333349227905273
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33333292603492737,
+        "feature_max": 0.3333335220813751,
+        "feature_mean": 0.333333283662796,
+        "restored_min": 0.33333292603492737,
+        "restored_max": 0.3333335220813751
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.33333319425582886,
+        "feature_max": 0.3333338499069214,
+        "feature_mean": 0.33333349227905273,
+        "restored_min": 0.33333319425582886,
+        "restored_max": 0.3333338499069214
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-0--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 0,
+      "sample_name": "000000000036.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-1--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33333325386047363,
+        "feature_max": 0.33333370089530945,
+        "feature_mean": 0.33333343267440796,
+        "restored_min": 0.33333325386047363,
+        "restored_max": 0.33333370089530945
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33333322405815125,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.33333322405815125,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333330452442169,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.33333325386047363,
+        "restored_min": 0.3333330452442169,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-1--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333224654197693,
+        "feature_max": 0.3333483934402466,
+        "feature_mean": 0.3333362638950348,
+        "restored_min": 0.33332282304763794,
+        "restored_max": 0.3333483636379242
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333238363265991,
+        "feature_max": 0.3333407938480377,
+        "feature_mean": 0.3333337903022766,
+        "restored_min": 0.33332476019859314,
+        "restored_max": 0.33334067463874817
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333108723163605,
+        "feature_max": 0.333346426486969,
+        "feature_mean": 0.3333299458026886,
+        "restored_min": 0.3333110213279724,
+        "restored_max": 0.33334583044052124
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-1--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333328664302826,
+        "feature_max": 0.3333335220813751,
+        "feature_mean": 0.33333322405815125,
+        "restored_min": 0.3333328664302826,
+        "restored_max": 0.3333335220813751
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333331346511841,
+        "feature_max": 0.33333343267440796,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333331346511841,
+        "restored_max": 0.33333343267440796
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333331048488617,
+        "feature_max": 0.3333338499069214,
+        "feature_mean": 0.33333346247673035,
+        "restored_min": 0.3333331048488617,
+        "restored_max": 0.3333338499069214
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-1--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 1,
+      "sample_name": "000000000042.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-2--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.333333283662796,
+        "feature_max": 0.3333337604999542,
+        "feature_mean": 0.33333343267440796,
+        "restored_min": 0.333333283662796,
+        "restored_max": 0.3333337604999542
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33333322405815125,
+        "feature_max": 0.33333343267440796,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.33333322405815125,
+        "restored_max": 0.33333343267440796
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.33333298563957214,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.33333325386047363,
+        "restored_min": 0.33333298563957214,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-2--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333185017108917,
+        "feature_max": 0.3333485722541809,
+        "feature_mean": 0.3333355188369751,
+        "restored_min": 0.33331871032714844,
+        "restored_max": 0.3333444595336914
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33332982659339905,
+        "feature_max": 0.33334124088287354,
+        "feature_mean": 0.33333444595336914,
+        "restored_min": 0.33333006501197815,
+        "restored_max": 0.333340585231781
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333125710487366,
+        "feature_max": 0.33334943652153015,
+        "feature_mean": 0.33333006501197815,
+        "restored_min": 0.33331766724586487,
+        "restored_max": 0.3333490788936615
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-2--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33333268761634827,
+        "feature_max": 0.3333335518836975,
+        "feature_mean": 0.33333319425582886,
+        "restored_min": 0.33333268761634827,
+        "restored_max": 0.3333335518836975
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33333292603492737,
+        "feature_max": 0.3333336114883423,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.33333292603492737,
+        "restored_max": 0.3333336114883423
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333330750465393,
+        "feature_max": 0.3333340287208557,
+        "feature_mean": 0.33333349227905273,
+        "restored_min": 0.3333330750465393,
+        "restored_max": 0.3333340287208557
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-2--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 2,
+      "sample_name": "000000000049.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-3--model.13.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.333333283662796,
+        "feature_max": 0.3333336114883423,
+        "feature_mean": 0.33333343267440796,
+        "restored_min": 0.333333283662796,
+        "restored_max": 0.3333336114883423
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.33333325386047363,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.33333325386047363,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.13.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333330750465393,
+        "feature_max": 0.3333333730697632,
+        "feature_mean": 0.33333325386047363,
+        "restored_min": 0.3333330750465393,
+        "restored_max": 0.3333333730697632
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-3--model.16.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.33332303166389465,
+        "feature_max": 0.33335134387016296,
+        "feature_mean": 0.333335816860199,
+        "restored_min": 0.33332353830337524,
+        "restored_max": 0.3333500027656555
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333275318145752,
+        "feature_max": 0.33334407210350037,
+        "feature_mean": 0.3333343267440796,
+        "restored_min": 0.33332839608192444,
+        "restored_max": 0.3333429992198944
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.16.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333045244216919,
+        "feature_max": 0.3333454728126526,
+        "feature_mean": 0.33332982659339905,
+        "restored_min": 0.3333069980144501,
+        "restored_max": 0.33334460854530334
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-3--model.19.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.333332896232605,
+        "feature_max": 0.33333349227905273,
+        "feature_mean": 0.33333319425582886,
+        "restored_min": 0.333332896232605,
+        "restored_max": 0.33333349227905273
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333331346511841,
+        "feature_max": 0.33333343267440796,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333331346511841,
+        "restored_max": 0.33333343267440796
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.19.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        4,
+        4
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.33333316445350647,
+        "feature_max": 0.33333370089530945,
+        "feature_mean": 0.33333349227905273,
+        "restored_min": 0.33333316445350647,
+        "restored_max": 0.33333370089530945
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "dominant",
+      "expert_index": null,
+      "expert_label": "dominant expert",
+      "path": "overlays/moa/sample-3--model.22.m.0.router--dominant.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 0,
+      "expert_label": "local",
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-0-local.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 0,
+        "expert_label": "local",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 1,
+      "expert_label": "regional",
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-1-regional.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 1,
+        "expert_label": "regional",
+        "feature_min": 0.3333333432674408,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333432674408,
+        "restored_min": 0.3333333432674408,
+        "restored_max": 0.3333333432674408
+      }
+    },
+    {
+      "family": "moa",
+      "sample_index": 3,
+      "sample_name": "000000000061.jpg",
+      "module": "model.22.m.0.router",
+      "view": "probability",
+      "expert_index": 2,
+      "expert_label": "global",
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-2-global.png",
+      "source_shape": [
+        1,
+        3,
+        2,
+        2
+      ],
+      "stats": {
+        "expert_index": 2,
+        "expert_label": "global",
+        "feature_min": 0.3333333134651184,
+        "feature_max": 0.3333333432674408,
+        "feature_mean": 0.3333333134651184,
+        "restored_min": 0.3333333134651184,
+        "restored_max": 0.3333333432674408
+      }
+    }
+  ]
+}
