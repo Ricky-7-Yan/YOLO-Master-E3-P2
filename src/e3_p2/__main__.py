@@ -1,0 +1,34 @@
+"""Command-line entry points for the P2 evidence run and local demo."""
+
+from __future__ import annotations
+
+import argparse
+from pathlib import Path
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="YOLO-Master E3 P2 tooling")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+    run_parser = subparsers.add_parser("run", help="generate a fresh P2 evidence bundle")
+    run_parser.add_argument("--config", type=Path, default=Path("configs/p2.yaml"))
+    run_parser.add_argument("--run-id")
+    run_parser.add_argument("--no-latest", action="store_true")
+    demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
+    demo_parser.add_argument("--host", default="127.0.0.1")
+    demo_parser.add_argument("--port", type=int, default=8766)
+    demo_parser.add_argument("--run-dir", type=Path)
+    args = parser.parse_args()
+
+    if args.command == "run":
+        from .runner import run
+
+        output = run(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 evidence: {output}")
+    else:
+        from .demo import serve
+
+        serve(host=args.host, port=args.port, run_dir=args.run_dir)
+
+
+if __name__ == "__main__":
+    main()

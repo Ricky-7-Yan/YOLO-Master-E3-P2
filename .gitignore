@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+*.egg-info/
+
+# Evidence is committed deliberately; scratch runs remain local.
+artifacts/p2/*-scratch*/
+
