@@ -1,4 +1,4 @@
-run_id: p2r-20260905-cpu-resolution-flip-v1
+run_id: p2r-20260905-cpu-resolution-flip-v2
 require_committed_source: true
 
 runtime_root: ../YOLO-Master-main-07d3303
@@ -27,4 +27,4 @@ source_fingerprints:
   ultralytics/nn/modules/mot/router.py: 0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1
   ultralytics/nn/modules/moa/router.py: ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f
   ultralytics/cfg/models/26/yolo26-master-mot-n.yaml: 739aca4279cd2ae7813f4b0b5a16211efd68c74a1beaacc71d2431101dca6fda
-  ultralytics/cfg/models/26/yolo26-master-moa-n.yaml: 20a57222cd4a51b11b39d51a11b39d51a11b39d51a11b39d51a11b39d51a11b39d51
+  ultralytics/cfg/models/26/yolo26-master-moa-n.yaml: 20a57222cd4a51b11b39d51ca959a2d250e46c5e42b4ecf9fe6a9808e3147310
