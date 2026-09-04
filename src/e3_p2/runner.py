@@ -1039,6 +1039,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
             "artifact": "region-routing-analysis.json",
             "assignment_rule": region_analysis["method"]["assignment_rule"],
             "padding_policy": region_analysis["method"]["padding_policy"],
+            "primary_conclusion_basis": region_analysis["method"]["primary_conclusion_basis"],
         },
         "interpretation_boundary": "random initialization; pipeline evidence only, not learned specialization",
         "duration_seconds_observation_only": time.perf_counter() - started,

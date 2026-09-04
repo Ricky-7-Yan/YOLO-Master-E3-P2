@@ -302,6 +302,7 @@ def aggregate_region_diagnostics(captures: list[dict[str, Any]]) -> dict[str, An
             "padding_policy": "excluded from both foreground and background",
             "aggregation": "token-weighted within each family/module",
             "contrast_reporting": "pooled token contrast plus equal-weight paired-capture descriptive distribution",
+            "primary_conclusion_basis": "paired_capture_contrast; pooled_contrast is diagnostic only",
             "inference_boundary": "descriptive random-initialization baseline; no learned specialization claim",
         },
         "capture_count": len(captures),

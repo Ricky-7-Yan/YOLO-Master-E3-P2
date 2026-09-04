@@ -45,6 +45,10 @@ image are not treated as statistically independent replicates. A capture with no
 background token is labelled `INSUFFICIENT_TOKENS`; missing measurements remain `null` instead of being replaced
 with zero.
 
+The paired-capture result is the primary descriptive comparison. The pooled contrast is diagnostic only: when
+router layers have different baseline distributions and different foreground/background token availability,
+pooling can create an apparent region difference even though every within-capture difference is zero.
+
 ## Interpretation and acceptance
 
 The current run is an instrumentation baseline because the repository has no compatible trained MoT/MoA
