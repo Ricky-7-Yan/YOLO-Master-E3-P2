@@ -14,6 +14,12 @@ def _config() -> dict:
         "spatial_profiles": {"mot": {}, "moa": {}},
         "non_spatial_profiles": {"moe": {}, "latent": {}, "molora": {}},
         "batch_equivalence_sizes": [2],
+        "region_analysis": {
+            "enabled": True,
+            "label_format": "yolo_detection_normalized_xywh",
+            "assignment_rule": "valid_token_center_inside_any_ground_truth_box",
+            "exclude_letterbox_padding": True,
+        },
     }
 
 
@@ -58,9 +64,20 @@ def test_invalid_batch_equivalence_size_is_rejected(tmp_path: Path):
         _load_config(path)
 
 
+def test_region_assignment_contract_cannot_be_silently_changed(tmp_path: Path):
+    config = _config()
+    config["region_analysis"]["exclude_letterbox_padding"] = False
+    path = tmp_path / "config.yaml"
+    path.write_text(yaml.safe_dump(config), encoding="utf-8")
+    with pytest.raises(ValueError, match="region_analysis"):
+        _load_config(path)
+
+
 def test_demo_exposes_original_entropy_margin_and_failure_state():
     html = _demo_html()
     assert 'id=\"original\"' in html
+    assert 'id=\"groundTruth\"' in html
     assert "Normalized routing entropy" in html
     assert "Top-1 routing margin" in html
+    assert "FG/BG TV" in html
     assert "Evidence failed to load" in html

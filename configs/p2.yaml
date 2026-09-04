@@ -19,6 +19,12 @@ image_size: 64
 overlay_alpha: 0.58
 batch_equivalence_sizes: [2, 4]
 
+region_analysis:
+  enabled: true
+  label_format: yolo_detection_normalized_xywh
+  assignment_rule: valid_token_center_inside_any_ground_truth_box
+  exclude_letterbox_padding: true
+
 spatial_profiles:
   mot:
     model_config: ultralytics/cfg/models/26/yolo26-master-mot-n.yaml

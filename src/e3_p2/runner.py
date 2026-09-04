@@ -22,7 +22,21 @@ from PIL import Image
 from .capture import SpatialRouterCollector, max_output_delta, routing_diagnostics, routing_metric_fields, tensor_shapes
 from .geometry import LetterboxMeta, letterbox
 from .io_utils import environment, sha256_file, write_json, write_manifest
-from .plotting import save_dominant_overlay, save_metric_overlay, save_overview, save_probability_overlay
+from .plotting import (
+    save_dominant_overlay,
+    save_ground_truth_overlay,
+    save_metric_overlay,
+    save_overview,
+    save_probability_overlay,
+)
+from .regions import (
+    YoloBox,
+    aggregate_region_diagnostics,
+    label_path_for_image,
+    parse_yolo_labels,
+    region_routing_diagnostics,
+    token_region_masks,
+)
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RUN_ID_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]{0,127}")
@@ -53,6 +67,15 @@ def _load_config(config_path: Path, run_id_override: str | None = None) -> dict[
     if not isinstance(batch_sizes, list) or any(int(size) < 2 for size in batch_sizes):
         raise ValueError("batch_equivalence_sizes must contain integers >= 2")
     config["batch_equivalence_sizes"] = [int(size) for size in batch_sizes]
+    region_analysis = config.get("region_analysis")
+    expected_region_analysis = {
+        "enabled": True,
+        "label_format": "yolo_detection_normalized_xywh",
+        "assignment_rule": "valid_token_center_inside_any_ground_truth_box",
+        "exclude_letterbox_padding": True,
+    }
+    if region_analysis != expected_region_analysis:
+        raise ValueError(f"region_analysis must preserve the audited contract: {expected_region_analysis}")
     return config
 
 
@@ -156,12 +179,18 @@ def _prepare_inputs(
         array = canvas.astype(np.float32).transpose(2, 0, 1) / 255.0
         tensors.append(torch_module.from_numpy(array).unsqueeze(0).contiguous())
         originals.append(image.copy())
+        label_path = label_path_for_image(path)
+        boxes = parse_yolo_labels(label_path)
         metadata.append(
             {
                 "sample_index": sample_index,
                 "name": path.name,
                 "path": str(path),
                 "sha256": sha256_file(path),
+                "label_path": str(label_path),
+                "label_sha256": sha256_file(label_path),
+                "ground_truth_box_count": len(boxes),
+                "ground_truth_boxes": [box.to_dict() for box in boxes],
                 "geometry": geometry.to_dict(),
                 "normalization": "RGB uint8 / 255.0",
             }
@@ -185,13 +214,28 @@ def _slug(value: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]+", "-", value).strip("-")
 
 
-def _archive_input_previews(paths: list[Path], inputs: list[dict[str, Any]], run_dir: Path) -> None:
+def _archive_input_previews(
+    paths: list[Path], originals: list[Image.Image], inputs: list[dict[str, Any]], run_dir: Path
+) -> None:
     destination_root = run_dir / "inputs"
     destination_root.mkdir(parents=True, exist_ok=True)
-    for path, metadata in zip(paths, inputs):
+    for path, original, metadata in zip(paths, originals, inputs):
         relative = Path("inputs") / f"sample-{metadata['sample_index']}--{path.name}"
         shutil.copyfile(path, run_dir / relative)
         metadata["artifact_path"] = relative.as_posix()
+        label_path = Path(metadata["label_path"])
+        label_relative = Path("inputs") / f"sample-{metadata['sample_index']}--{label_path.name}"
+        shutil.copyfile(label_path, run_dir / label_relative)
+        metadata["label_artifact_path"] = label_relative.as_posix()
+        annotated_relative = Path("inputs") / f"sample-{metadata['sample_index']}--ground-truth.png"
+        boxes = [YoloBox(**box) for box in metadata["ground_truth_boxes"]]
+        save_ground_truth_overlay(
+            original,
+            boxes,
+            LetterboxMeta(**metadata["geometry"]),
+            str(run_dir / annotated_relative),
+        )
+        metadata["annotated_artifact_path"] = annotated_relative.as_posix()
 
 
 def _aggregate_spatial_diagnostics(captures: list[dict[str, Any]]) -> dict[str, Any]:
@@ -258,6 +302,15 @@ def _validate_demo_assets(
         original_path = run_dir / entry["original_path"]
         if not original_path.is_file():
             raise FileNotFoundError(f"demo original asset is missing: {original_path}")
+        annotated_path = run_dir / entry["annotated_original_path"]
+        if not annotated_path.is_file():
+            raise FileNotFoundError(f"demo annotated original asset is missing: {annotated_path}")
+        with Image.open(annotated_path) as image:
+            if image.size != expected_sizes[entry["sample_index"]]:
+                raise RuntimeError(
+                    f"demo annotated asset size mismatch: {entry['annotated_original_path']} has {image.size}, "
+                    f"expected {expected_sizes[entry['sample_index']]}"
+                )
         checked += 1
     return {
         "status": "PASS",
@@ -265,6 +318,7 @@ def _validate_demo_assets(
         "unique_rendered_asset_count": len(set(paths)),
         "all_rendered_assets_match_original_size": True,
         "all_original_assets_present": True,
+        "all_annotated_original_assets_present_and_match_original_size": True,
     }
 
 
@@ -444,6 +498,16 @@ def _run_spatial_family(
                 arrays[f"{key}__indices"] = record.indices
             metric_fields = routing_metric_fields(weights)
             diagnostics = routing_diagnostics(weights)
+            masks = token_region_masks(
+                [YoloBox(**box) for box in sample_meta["ground_truth_boxes"]],
+                geometry,
+                int(weights.shape[1]),
+                int(weights.shape[2]),
+            )
+            region_diagnostics = region_routing_diagnostics(weights, masks)
+            arrays[f"{key}__foreground_mask"] = masks["foreground"]
+            arrays[f"{key}__background_mask"] = masks["background"]
+            arrays[f"{key}__padding_mask"] = masks["padding"]
             arrays[f"{key}__normalized_entropy"] = metric_fields["normalized_entropy"]
             arrays[f"{key}__top1_margin"] = metric_fields["top1_margin"]
             dominant_relative = (
@@ -560,6 +624,12 @@ def _run_spatial_family(
                     "expert_stats": expert_stats,
                     "metric_stats": metric_stats,
                     "diagnostics": diagnostics,
+                    "region_mask_keys": {
+                        "foreground": f"{key}__foreground_mask",
+                        "background": f"{key}__background_mask",
+                        "padding": f"{key}__padding_mask",
+                    },
+                    "region_diagnostics": region_diagnostics,
                 }
             )
     grids = sorted({tuple(item["validation"]["shape"][2:]) for item in capture_metadata})
@@ -708,20 +778,21 @@ def _demo_html() -> str:
 .eyebrow{color:var(--cyan);letter-spacing:.18em;font:700 12px ui-monospace}.hero h1{margin:8px 0 6px;font-size:30px}.hero p{margin:0;color:var(--muted)}
 .notice{margin-top:14px;padding:11px 14px;border-left:3px solid #ffc400;background:#ffc40012;color:#ffe7a0}.grid{display:grid;grid-template-columns:310px 1fr;gap:18px;margin-top:18px}
 .panel{border:1px solid var(--line);background:#09162bcc;border-radius:16px;padding:18px}.control{margin-bottom:14px}.control label{display:block;margin-bottom:6px;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.08em}
-select,button,a.button{width:100%;border:1px solid #285474;background:#0d203b;color:var(--text);padding:10px;border-radius:9px;text-decoration:none;display:block}button,a.button{cursor:pointer;text-align:center;margin-top:9px;background:linear-gradient(90deg,#006f8c,#53359a);font-weight:700}
+select,button,a.button{width:100%;border:1px solid #285474;background:#0d203b;color:var(--text);padding:10px;border-radius:9px;text-decoration:none;display:block}button,a.button{cursor:pointer;text-align:center;margin-top:9px;background:linear-gradient(90deg,#006f8c,#53359a);font-weight:700}.toggle{display:flex;gap:8px;align-items:center;color:var(--muted);margin:2px 0 12px}.toggle input{accent-color:var(--cyan)}
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:12px}.frame{margin:0}.frame figcaption{color:var(--muted);font:700 11px ui-monospace;letter-spacing:.1em;margin:0 0 7px}.frame img{display:block;width:100%;height:430px;object-fit:contain;background:#050b16;border-radius:12px;border:1px solid #173653}
 .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.chip{background:#102748;border:1px solid #214b70;border-radius:999px;padding:6px 10px;color:#bcd5ee;font-size:12px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}.stat{padding:10px 12px;border:1px solid #214b70;background:#08172d;border-radius:10px}.stat b{display:block;color:var(--cyan);font:700 17px ui-monospace}.stat small{color:var(--muted)}
 .matrix{margin-top:18px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.family{padding:12px;border:1px solid var(--line);border-radius:12px;background:#08172d}.ok{color:#42e58c}.no{color:#ff889c}.status{margin-top:10px;color:#7ee8b2;font-size:12px}pre{max-height:210px;overflow:auto;white-space:pre-wrap;color:#aac4df;font-size:11px}@media(max-width:900px){.grid{grid-template-columns:1fr}.matrix{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.shell{padding:14px}.hero h1{font-size:24px}.matrix,.compare,.stats{grid-template-columns:1fr}.frame img{height:auto}}
 </style></head><body><main class=\"shell\"><section class=\"hero\"><div class=\"eyebrow\">E3://SPATIAL ROUTING LENS</div><h1>Token routing, mapped back without distortion</h1><p>Original and overlay stay side by side. Switch sample, family, layer, probability, entropy or margin without losing the evidence source.</p>
 <div class=\"notice\">Interpretation boundary: this run uses random initialization. Uniform maps validate capture, batch identity and geometry; they do not demonstrate learned expert specialization.</div></section>
-<section class=\"matrix\" id=\"matrix\" aria-label=\"Five-family feasibility\"></section><section class=\"grid\"><aside class=\"panel\"><div class=\"control\"><label for=\"family\">Family</label><select id=\"family\"></select></div><div class=\"control\"><label for=\"sample\">Sample</label><select id=\"sample\"></select></div><div class=\"control\"><label for=\"layer\">Layer</label><select id=\"layer\"></select></div><div class=\"control\"><label for=\"view\">View / expert</label><select id=\"view\"></select></div><a class=\"button\" id=\"download\" download>Export current PNG</a><button id=\"copy\">Copy evidence metadata</button><div class=\"status\" id=\"status\" role=\"status\">Loading evidence…</div><pre id=\"detail\"></pre></aside><section class=\"panel\"><div class=\"compare\"><figure class=\"frame\"><figcaption>ORIGINAL INPUT</figcaption><img id=\"original\" alt=\"original coco8 input\"></figure><figure class=\"frame\"><figcaption>ROUTING OVERLAY</figcaption><img id=\"image\" alt=\"routing overlay\"></figure></div><div class=\"meta\" id=\"chips\"></div><div class=\"stats\" id=\"stats\"></div></section></section></main>
+<section class=\"matrix\" id=\"matrix\" aria-label=\"Five-family feasibility\"></section><section class=\"grid\"><aside class=\"panel\"><div class=\"control\"><label for=\"family\">Family</label><select id=\"family\"></select></div><div class=\"control\"><label for=\"sample\">Sample</label><select id=\"sample\"></select></div><div class=\"control\"><label for=\"layer\">Layer</label><select id=\"layer\"></select></div><div class=\"control\"><label for=\"view\">View / expert</label><select id=\"view\"></select></div><label class=\"toggle\"><input id=\"groundTruth\" type=\"checkbox\">Show archived ground-truth boxes</label><a class=\"button\" id=\"download\" download>Export current PNG</a><button id=\"copy\">Copy evidence metadata</button><div class=\"status\" id=\"status\" role=\"status\">Loading evidence…</div><pre id=\"detail\"></pre></aside><section class=\"panel\"><div class=\"compare\"><figure class=\"frame\"><figcaption>ORIGINAL / GROUND TRUTH</figcaption><img id=\"original\" alt=\"original coco8 input\"></figure><figure class=\"frame\"><figcaption>ROUTING OVERLAY</figcaption><img id=\"image\" alt=\"routing overlay\"></figure></div><div class=\"meta\" id=\"chips\"></div><div class=\"stats\" id=\"stats\"></div></section></section></main>
 <script>
 let entries;const q=id=>document.getElementById(id);const unique=xs=>[...new Set(xs)];
 function options(el,values,label){const old=el.value;el.innerHTML=values.map(v=>`<option value=\"${v}\">${label(v)}</option>`).join('');if(values.includes(old))el.value=old;}
 function viewLabel(x){if(x.view==='dominant')return'Dominant expert';if(x.view==='entropy')return'Normalized routing entropy';if(x.view==='margin')return'Top-1 routing margin';return`Expert ${x.expert_index} · ${x.expert_label}`;}
 function cascade(source){let family=q('family').value;if(source==='family'||!family){options(q('family'),unique(entries.map(x=>x.family)),x=>x.toUpperCase());family=q('family').value}let pool=entries.filter(x=>x.family===family);options(q('sample'),unique(pool.map(x=>String(x.sample_index))),x=>`${x} · ${pool.find(y=>String(y.sample_index)===x).sample_name}`);pool=pool.filter(x=>String(x.sample_index)===q('sample').value);options(q('layer'),unique(pool.map(x=>x.module)),x=>x);pool=pool.filter(x=>x.module===q('layer').value);options(q('view'),pool.map((_,i)=>String(i)),i=>viewLabel(pool[Number(i)]));render(pool[Number(q('view').value||0)]);}
-function renderStats(x){let values;if(x.stats){values=[['min',x.stats.feature_min],['mean',x.stats.feature_mean],['max',x.stats.feature_max]]}else{const d=x.diagnostics;values=[['entropy',d.normalized_entropy.mean],['top-1 margin',d.top1_margin.mean],['active experts',d.active_dominant_experts]]}q('stats').innerHTML=values.map(([label,value])=>`<div class=\"stat\"><b>${typeof value==='number'?value.toFixed(6):value}</b><small>${label}</small></div>`).join('');}
-function render(x){if(!x)return;q('original').src=x.original_path;q('image').src=x.path;q('download').href=x.path;q('chips').innerHTML=[x.family.toUpperCase(),x.sample_name,x.module,`shape ${x.source_shape.join('×')}`,x.expert_label].map(v=>`<span class=\"chip\">${v}</span>`).join('');renderStats(x);q('detail').textContent=JSON.stringify(x,null,2);q('status').textContent=`Ready · ${viewLabel(x)} · original-size export`;q('copy').onclick=async()=>{try{await navigator.clipboard.writeText(q('detail').textContent);q('status').textContent='Evidence metadata copied'}catch(error){q('status').textContent=`Copy failed: ${error.message}`}};}
+function renderStats(x){let values;if(x.stats){values=[['min',x.stats.feature_min],['mean',x.stats.feature_mean],['max',x.stats.feature_max]]}else{const d=x.diagnostics;values=[['entropy',d.normalized_entropy.mean],['top-1 margin',d.top1_margin.mean],['active experts',d.active_dominant_experts]]}const r=x.region_diagnostics;if(r){values.push(['foreground tokens',r.foreground.token_count],['background tokens',r.background.token_count],['FG/BG TV',r.contrast?r.contrast.total_variation_distance:'n/a'])}q('stats').innerHTML=values.map(([label,value])=>`<div class=\"stat\"><b>${typeof value==='number'?value.toFixed(6):value}</b><small>${label}</small></div>`).join('');}
+function renderOriginal(x){q('original').src=q('groundTruth').checked?x.annotated_original_path:x.original_path;}
+function render(x){if(!x)return;renderOriginal(x);q('image').src=x.path;q('download').href=x.path;q('chips').innerHTML=[x.family.toUpperCase(),x.sample_name,x.module,`shape ${x.source_shape.join('×')}`,x.expert_label].map(v=>`<span class=\"chip\">${v}</span>`).join('');renderStats(x);q('detail').textContent=JSON.stringify(x,null,2);q('status').textContent=`Ready · ${viewLabel(x)} · original-size export`;q('copy').onclick=async()=>{try{await navigator.clipboard.writeText(q('detail').textContent);q('status').textContent='Evidence metadata copied'}catch(error){q('status').textContent=`Copy failed: ${error.message}`}};q('groundTruth').onchange=()=>renderOriginal(x);}
 fetch('demo-index.json').then(response=>{if(!response.ok)throw new Error(`HTTP ${response.status}`);return response.json()}).then(data=>{entries=data.entries;q('matrix').innerHTML=Object.entries(data.feasibility).map(([key,value])=>`<div class=\"family\"><b>${key.toUpperCase()}</b><div class=\"${value.token_overlay==='supported'?'ok':'no'}\">${value.token_overlay}</div><small>${value.reason||value.evidence_kind}</small></div>`).join('');['family','sample','layer','view'].forEach(id=>q(id).onchange=()=>cascade(id));cascade('family');document.body.dataset.ready='true'}).catch(error=>{q('status').textContent=`Evidence failed to load: ${error.message}`;q('status').style.color='#ff889c'});
 </script></body></html>"""
 
@@ -759,10 +830,18 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
 
     paths, dataset_meta = _resolve_images(config["dataset"], config["dataset_split"], config["sample_indices"])
     tensors, originals, inputs = _prepare_inputs(paths, config["sample_indices"], int(config["image_size"]), torch)
-    _archive_input_previews(paths, inputs, run_dir)
+    _archive_input_previews(paths, originals, inputs, run_dir)
     input_record = {**dataset_meta, "selected_image_count": len(inputs), "images": inputs}
     input_record["input_set_sha256"] = hashlib.sha256(
         "\n".join(f"{item['sample_index']}:{item['sha256']}" for item in inputs).encode("utf-8")
+    ).hexdigest()
+    input_record["annotation_set_sha256"] = hashlib.sha256(
+        "\n".join(f"{item['sample_index']}:{item['label_sha256']}" for item in inputs).encode("utf-8")
+    ).hexdigest()
+    input_record["image_and_annotation_set_sha256"] = hashlib.sha256(
+        "\n".join(
+            f"{item['sample_index']}:{item['sha256']}:{item['label_sha256']}" for item in inputs
+        ).encode("utf-8")
     ).hexdigest()
     write_json(run_dir / "input.json", input_record)
     write_json(run_dir / "source-fingerprint-checks.json", checks)
@@ -813,6 +892,8 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
     np.savez_compressed(run_dir / "spatial-routing-raw.npz", **arrays)
     write_json(run_dir / "spatial-captures.json", capture_metadata)
     write_json(run_dir / "spatial-diagnostics.json", _aggregate_spatial_diagnostics(capture_metadata))
+    region_analysis = aggregate_region_diagnostics(capture_metadata)
+    write_json(run_dir / "region-routing-analysis.json", region_analysis)
     write_json(run_dir / "family-feasibility.json", feasibility)
     save_overview(overview_cards, str(run_dir / "routing-overview.png"))
 
@@ -838,7 +919,11 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
             "original_path": next(
                 item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
             ),
+            "annotated_original_path": next(
+                item["annotated_artifact_path"] for item in inputs if item["sample_index"] == sample_index
+            ),
             "diagnostics": metadata["diagnostics"],
+            "region_diagnostics": metadata["region_diagnostics"],
         }
         if dominant_path.is_file() or (run_dir / dominant_path).is_file():
             demo_entries.append(dominant_entry)
@@ -866,6 +951,12 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
                     "original_path": next(
                         item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
                     ),
+                    "annotated_original_path": next(
+                        item["annotated_artifact_path"]
+                        for item in inputs
+                        if item["sample_index"] == sample_index
+                    ),
+                    "region_diagnostics": metadata["region_diagnostics"],
                 }
             )
         metric_specs = {
@@ -889,6 +980,12 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
                     "original_path": next(
                         item["artifact_path"] for item in inputs if item["sample_index"] == sample_index
                     ),
+                    "annotated_original_path": next(
+                        item["annotated_artifact_path"]
+                        for item in inputs
+                        if item["sample_index"] == sample_index
+                    ),
+                    "region_diagnostics": metadata["region_diagnostics"],
                 }
             )
     demo_asset_validation = _validate_demo_assets(run_dir, demo_entries, inputs)
@@ -937,6 +1034,12 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         },
         "hook_output_equivalence": "PASS",
         "geometry_contract": "letterbox upsample -> exact integer unpad -> original-size bilinear mapping",
+        "region_analysis": {
+            "status": "PASS",
+            "artifact": "region-routing-analysis.json",
+            "assignment_rule": region_analysis["method"]["assignment_rule"],
+            "padding_policy": region_analysis["method"]["padding_policy"],
+        },
         "interpretation_boundary": "random initialization; pipeline evidence only, not learned specialization",
         "duration_seconds_observation_only": time.perf_counter() - started,
     }

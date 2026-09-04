@@ -6,6 +6,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
 from .geometry import LetterboxMeta, restore_heatmap
+from .regions import YoloBox, box_xyxy_original
 
 COLORS = np.asarray(
     [
@@ -124,3 +125,26 @@ def save_overview(cards: list[dict[str, str]], destination: str) -> None:
         sheet.paste(image, (x + (thumb_width - image.width) // 2, y))
         draw.text((x + 12, y + thumb_height + 8), card["caption"], fill=(230, 238, 255), font=font)
     sheet.save(destination)
+
+
+def save_ground_truth_overlay(
+    original: Image.Image, boxes: list[YoloBox], meta: LetterboxMeta, destination: str
+) -> None:
+    """Draw archived dataset boxes on an original-size copy for demo inspection."""
+
+    rendered = original.convert("RGB").copy()
+    draw = ImageDraw.Draw(rendered)
+    line_width = max(2, round(min(rendered.size) / 220))
+    font = ImageFont.load_default()
+    for index, box in enumerate(boxes):
+        coordinates = box_xyxy_original(box, meta)
+        color = tuple(int(value) for value in COLORS[index % len(COLORS)])
+        draw.rectangle(coordinates, outline=color, width=line_width)
+        label = f"GT {box.class_id}"
+        x1, y1, _, _ = coordinates
+        text_box = draw.textbbox((x1, y1), label, font=font)
+        top = max(0.0, y1 - (text_box[3] - text_box[1]) - 4)
+        right = x1 + (text_box[2] - text_box[0]) + 6
+        draw.rectangle((x1, top, right, y1), fill=color)
+        draw.text((x1 + 3, top + 1), label, fill=(7, 14, 32), font=font)
+    rendered.save(destination)
