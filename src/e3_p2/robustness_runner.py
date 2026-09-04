@@ -157,42 +157,84 @@ def _coverage_summary(records: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def _save_overview(aggregate: dict[str, Any], coverage: dict[str, Any], path: Path) -> None:
-    canvas = Image.new("RGB", (1800, 1120), "#061022")
+    canvas = Image.new("RGB", (1800, 1120), "#050c1b")
     draw = ImageDraw.Draw(canvas)
-    font = ImageFont.load_default()
-    draw.rounded_rectangle((45, 40, 1755, 1080), radius=28, fill="#0b1932", outline="#1d5d80", width=3)
-    draw.text((85, 75), "E3 P2 / CPU RESOLUTION + FLIP STABILITY", fill="#00e5ff", font=font)
-    draw.text((85, 108), "Random initialization: pipeline diagnostic, not learned robustness", fill="#ffcc66", font=font)
-    draw.text((85, 160), "ALIGNED PROBABILITY COMPARISONS", fill="#a66cff", font=font)
-    y = 205
-    header = "comparison / family / size       count    MAE(mean)     JS(mean,nats)    dominant agreement    Pearson defined/undefined"
-    draw.text((85, y), header, fill="#9bb8d6", font=font)
-    y += 32
-    for key, item in aggregate["by_type_family_resolution"].items():
-        pearson = item["expert_pearson"]
-        line = (
-            f"{key:<34} {item['comparison_count']:>5}    "
-            f"{item['probability_mae']['mean']:.8f}    "
-            f"{item['mean_jensen_shannon_divergence_nats']['mean']:.3e}        "
-            f"{item['dominant_expert_agreement_fraction']['mean']:.6f}            "
-            f"{pearson['defined_count']}/{pearson['undefined_count']}"
+    def font(size: int, *, mono: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+        candidates = ["C:/Windows/Fonts/consola.ttf"] if mono else ["C:/Windows/Fonts/segoeui.ttf"]
+        candidates += ["DejaVuSansMono.ttf"] if mono else ["DejaVuSans.ttf"]
+        for candidate in candidates:
+            try:
+                return ImageFont.truetype(candidate, size)
+            except OSError:
+                continue
+        return ImageFont.load_default()
+
+    title_font, section_font, body_font = font(38), font(23), font(18)
+    metric_font, small_font, mono_font = font(31, mono=True), font(15), font(16, mono=True)
+    draw.rounded_rectangle((42, 36, 1758, 1084), radius=30, fill="#09172d", outline="#21678d", width=3)
+    draw.text((82, 70), "E3 P2  /  CPU ROUTING STABILITY", fill="#00e5ff", font=title_font)
+    draw.text((84, 122), "3 seeds · 4 COCO8 images · 3 resolutions · identity + horizontal flip", fill="#9bb8d6", font=body_font)
+    draw.rounded_rectangle((1195, 66, 1708, 141), radius=16, fill="#221938", outline="#8f65db", width=2)
+    draw.text((1220, 83), "COLD-START DIAGNOSTIC", fill="#d5b7ff", font=section_font)
+    draw.text((1220, 113), "Not learned robustness", fill="#ffcc66", font=small_font)
+
+    cards = [("576", "true spatial captures"), ("480", "aligned comparisons"), ("0", "failed invariants")]
+    for index, (value, label) in enumerate(cards):
+        left = 82 + index * 340
+        draw.rounded_rectangle((left, 180, left + 310, 292), radius=18, fill="#0d223e", outline="#204d70", width=2)
+        draw.text((left + 22, 201), value, fill="#63e6a7", font=metric_font)
+        draw.text((left + 22, 252), label, fill="#a9c1da", font=small_font)
+
+    data = aggregate["by_type_family_resolution"]
+    flip = [data[f"horizontal_flip:moa:{size}"] for size in (64, 128, 256)]
+    cross = [data[f"resolution_vs_reference:moa:{size}"] for size in (128, 256)]
+    draw.text((82, 335), "MoA dominant-expert agreement", fill="#eaf4ff", font=section_font)
+    draw.text((82, 371), "Near-tie argmax sensitivity; inspect with probability MAE and margin", fill="#829fbd", font=small_font)
+    chart_left, chart_top, chart_width = 82, 418, 735
+    rows = [
+        ("flip 64", flip[0]), ("flip 128", flip[1]), ("flip 256", flip[2]),
+        ("64→128", cross[0]), ("64→256", cross[1]),
+    ]
+    for index, (label, item) in enumerate(rows):
+        y = chart_top + index * 67
+        agreement = item["dominant_expert_agreement_fraction"]["mean"]
+        draw.text((chart_left, y + 8), label, fill="#b5cce2", font=body_font)
+        draw.rounded_rectangle((chart_left + 135, y, chart_left + 135 + chart_width, y + 38), radius=9, fill="#10233c")
+        draw.rounded_rectangle(
+            (chart_left + 135, y, chart_left + 135 + int(chart_width * agreement), y + 38),
+            radius=9,
+            fill="#4d55d8" if "flip" in label else "#0e9fb0",
         )
-        draw.text((85, y), line, fill="#eaf4ff", font=font)
-        y += 30
-    y += 34
-    draw.text((85, y), "GROUND-TRUTH TOKEN COVERAGE BY RESOLUTION", fill="#a66cff", font=font)
-    y += 44
-    draw.text((85, y), "family / size                 captures    supported    insufficient    foreground    background    padding", fill="#9bb8d6", font=font)
-    y += 32
-    for key, item in coverage["by_family_resolution"].items():
-        line = (
-            f"{key:<29} {item['capture_count']:>8}    {item['supported_capture_count']:>9}    "
-            f"{item['insufficient_capture_count']:>12}    {item['foreground_token_count']:>10}    "
-            f"{item['background_token_count']:>10}    {item['padding_token_count']:>7}"
+        draw.text((chart_left + 150, y + 8), f"{agreement * 100:5.2f}%", fill="#ffffff", font=mono_font)
+        draw.text((chart_left + 890, y + 8), f"MAE {item['probability_mae']['mean']:.2e}", fill="#9bb8d6", font=mono_font)
+
+    draw.text((1050, 335), "GT region comparison coverage", fill="#eaf4ff", font=section_font)
+    draw.text((1050, 371), "Same geometry for MoT and MoA; 16 router captures per size", fill="#829fbd", font=small_font)
+    for index, size in enumerate((64, 128, 256)):
+        item = coverage["by_family_resolution"][f"moa:{size}"]
+        supported = item["supported_capture_count"]
+        y = 430 + index * 112
+        draw.text((1050, y), f"{size}px", fill="#b5cce2", font=body_font)
+        draw.rounded_rectangle((1140, y - 2, 1665, y + 42), radius=10, fill="#10233c")
+        draw.rounded_rectangle((1140, y - 2, 1140 + int(525 * supported / 16), y + 42), radius=10, fill="#00a879")
+        draw.text((1160, y + 8), f"{supported}/16 supported", fill="#ffffff", font=mono_font)
+        draw.text(
+            (1140, y + 58),
+            f"FG {item['foreground_token_count']}   BG {item['background_token_count']}   padding {item['padding_token_count']}",
+            fill="#8faecb",
+            font=small_font,
         )
-        draw.text((85, y), line, fill="#eaf4ff", font=font)
-        y += 30
-    draw.text((85, 1015), "Every value is regenerated from archived inputs, locked source fingerprints and raw router arrays.", fill="#63e6a7", font=font)
+
+    draw.rounded_rectangle((82, 820, 1710, 998), radius=18, fill="#081326", outline="#213c5a", width=2)
+    draw.text((110, 848), "Interpretation guardrails", fill="#a66cff", font=section_font)
+    notes = [
+        "MoA probability MAE stays below 7e-7 while mean top-1 margin is also about 1e-6: discrete argmax is tie-sensitive.",
+        "MoT maps are spatially constant at cold start: exact equality is real, but Pearson is undefined (0 defined / 144 undefined per group).",
+        "Raising input size from 64 to 128 removes all 5/16 INSUFFICIENT_TOKENS cases in this four-image mechanism test.",
+    ]
+    for index, note in enumerate(notes):
+        draw.text((115, 895 + index * 30), f"• {note}", fill="#c8d8e8", font=small_font)
+    draw.text((84, 1036), "SHA-256 manifest · locked upstream fingerprints · raw NPZ arrays · exact original-coordinate alignment", fill="#63e6a7", font=small_font)
     canvas.save(path)
 
 

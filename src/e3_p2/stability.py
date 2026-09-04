@@ -56,23 +56,25 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
     right = _validate_probability_stack(candidate, "candidate")
     if left.shape != right.shape:
         raise ValueError(f"probability map shapes differ: {list(left.shape)} != {list(right.shape)}")
-    difference = np.abs(left - right)
-    midpoint = 0.5 * (left + right)
-    tiny = np.finfo(np.float32).tiny
+    left64 = left.astype(np.float64)
+    right64 = right.astype(np.float64)
+    difference = np.abs(left64 - right64)
+    midpoint = 0.5 * (left64 + right64)
+    tiny = np.finfo(np.float64).tiny
 
     def kl(first: np.ndarray, second: np.ndarray) -> np.ndarray:
         return np.where(first > 0.0, first * np.log(np.clip(first, tiny, None) / np.clip(second, tiny, None)), 0.0)
 
-    js_per_pixel = np.maximum(0.0, 0.5 * np.sum(kl(left, midpoint) + kl(right, midpoint), axis=0))
+    js_per_pixel = np.maximum(0.0, 0.5 * np.sum(kl(left64, midpoint) + kl(right64, midpoint), axis=0))
     tv_per_pixel = 0.5 * np.sum(difference, axis=0)
-    ordered_left = np.sort(left, axis=0)
-    ordered_right = np.sort(right, axis=0)
+    ordered_left = np.sort(left64, axis=0)
+    ordered_right = np.sort(right64, axis=0)
     reference_margin = ordered_left[-1] - ordered_left[-2] if left.shape[0] > 1 else np.ones(left.shape[1:])
     candidate_margin = ordered_right[-1] - ordered_right[-2] if right.shape[0] > 1 else np.ones(right.shape[1:])
     correlations = []
     for expert in range(left.shape[0]):
-        first = left[expert].reshape(-1).astype(np.float64)
-        second = right[expert].reshape(-1).astype(np.float64)
+        first = left64[expert].reshape(-1)
+        second = right64[expert].reshape(-1)
         first_std = float(first.std())
         second_std = float(second.std())
         if first_std <= 1e-12 or second_std <= 1e-12:
@@ -102,7 +104,7 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
     return {
         "shape": [int(item) for item in left.shape],
         "probability_mae": float(difference.mean()),
-        "probability_rmse": float(np.sqrt(np.mean((left - right) ** 2))),
+        "probability_rmse": float(np.sqrt(np.mean((left64 - right64) ** 2))),
         "probability_max_abs_error": float(difference.max()),
         "mean_total_variation_distance": float(tv_per_pixel.mean()),
         "max_total_variation_distance": float(tv_per_pixel.max()),

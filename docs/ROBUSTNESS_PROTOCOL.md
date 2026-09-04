@@ -32,7 +32,7 @@ Each expert grid is bilinearly upsampled into letterbox input space, cropped wit
 - Reference and candidate mean top-1 probability margins, retained so near-tie `argmax` changes are not mistaken for large probability shifts.
 - Per-expert Pearson correlation. If either map is constant, correlation is recorded as `null` with `UNDEFINED_CONSTANT_INPUT`; it is never replaced by a convenient numeric value.
 
-Jensen-Shannon divergence is mathematically non-negative. Values below zero caused only by floating-point roundoff are clipped to zero before aggregation.
+All comparison arithmetic uses float64 even though the archived model arrays are float32. Jensen-Shannon divergence is mathematically non-negative; values below zero caused only by floating-point roundoff are clipped to zero before aggregation.
 
 Each seed × sample × router-module comparison has equal weight in aggregate summaries. Raw per-comparison records remain available so pooled values can be audited.
 
