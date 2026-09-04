@@ -26,3 +26,18 @@
 - Checked all demo paths, uniqueness, archived originals and original-size output dimensions before PASS.
 - Exercised the rendered demo at desktop and mobile widths and removed a favicon 404 found in the first browser pass.
 - Recalculated the evidence manifest after browser validation; all file hashes match.
+
+## Ground-truth region analysis
+
+- Audited local and official release assets and found no explicitly compatible trained MoT/MoA checkpoint; kept
+  the current result as an initialization baseline instead of partially loading mismatched weights.
+- Added strict YOLO label parsing, label hashes and archived label evidence for all selected images.
+- Added exact integer-letterbox token assignment with foreground, valid-background and padding masks; padding is
+  excluded from the semantic comparison.
+- Added per-capture expert probability, dominant load, entropy, margin, total-variation and Jensen-Shannon metrics.
+- Preserved empty-group cases as `INSUFFICIENT_TOKENS` and added tests proving missing metrics stay null.
+- Separated token-pooled and equal-weight within-capture contrasts after the pooled MoT result exposed a
+  composition effect; paired-capture evidence is the primary conclusion basis.
+- Added archived ground-truth previews and an interactive annotation toggle to the demo.
+- Re-ran the full five-family experiment, unit/lint suite, desktop interaction flow, mobile layout flow and
+  independent SHA-256 verification.

@@ -1,0 +1,875 @@
+{
+  "method": {
+    "assignment_rule": "valid token center inside any ground-truth box",
+    "padding_policy": "excluded from both foreground and background",
+    "aggregation": "token-weighted within each family/module",
+    "contrast_reporting": "pooled token contrast plus equal-weight paired-capture descriptive distribution",
+    "primary_conclusion_basis": "paired_capture_contrast; pooled_contrast is diagnostic only",
+    "inference_boundary": "descriptive random-initialization baseline; no learned specialization claim"
+  },
+  "capture_count": 32,
+  "by_family": {
+    "moa": {
+      "capture_count": 16,
+      "supported_capture_count": 11,
+      "insufficient_capture_count": 5,
+      "foreground": {
+        "token_count": 103,
+        "mean_expert_probability": [
+          0.3333346525442253,
+          0.3333334271768922,
+          0.33333188092824323
+        ],
+        "dominant_token_count": [
+          56,
+          16,
+          31
+        ],
+        "dominant_token_fraction": [
+          0.5436893203883495,
+          0.1553398058252427,
+          0.30097087378640774
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 2.773062625887359e-06
+      },
+      "background": {
+        "token_count": 201,
+        "mean_expert_probability": [
+          0.3333341399235512,
+          0.33333385198270504,
+          0.33333203241006654
+        ],
+        "dominant_token_count": [
+          100,
+          32,
+          69
+        ],
+        "dominant_token_fraction": [
+          0.4975124378109453,
+          0.15920398009950248,
+          0.34328358208955223
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 3.5504796212269606e-06
+      },
+      "padding_token_count": 96,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          5.126206740757588e-07,
+          -4.2480581285975205e-07,
+          -1.5148182330726456e-07
+        ],
+        "total_variation_distance": 5.444541551213877e-07,
+        "jensen_shannon_divergence_nats": 1.7478265541499985e-13,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": -7.774169953396016e-07
+      },
+      "paired_capture_contrast": {
+        "capture_count": 11,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          4.172325134277344e-07,
+          -3.1698833812366833e-07,
+          -1.1649998751553622e-07
+        ],
+        "total_variation_distance": {
+          "mean": 1.159581271084872e-06,
+          "min": 0.0,
+          "max": 6.3478946685791016e-06
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 3.206774809047933e-12,
+          "min": 0.0,
+          "max": 2.8741709797694797e-11
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": -3.523571911821157e-07,
+          "min": -3.228585001124884e-06,
+          "max": 2.1688247215934098e-06
+        }
+      }
+    },
+    "mot": {
+      "capture_count": 16,
+      "supported_capture_count": 11,
+      "insufficient_capture_count": 5,
+      "foreground": {
+        "token_count": 103,
+        "mean_expert_probability": [
+          0.5242718446601942,
+          0.47572815533980584,
+          0.0
+        ],
+        "dominant_token_count": [
+          103,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6003021349027319,
+        "top1_margin_mean": 0.04854368932038835
+      },
+      "background": {
+        "token_count": 201,
+        "mean_expert_probability": [
+          0.527363184079602,
+          0.472636815920398,
+          0.0
+        ],
+        "dominant_token_count": [
+          201,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.5964012833970103,
+        "top1_margin_mean": 0.05472636815920398
+      },
+      "padding_token_count": 96,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          -0.003091339419407868,
+          0.0030913394194078125,
+          0.0
+        ],
+        "total_variation_distance": 0.0030913394194078403,
+        "jensen_shannon_divergence_nats": 4.790970988143039e-06,
+        "foreground_minus_background_entropy": 0.003900851505721614,
+        "foreground_minus_background_top1_margin": -0.006182678838815632
+      },
+      "paired_capture_contrast": {
+        "capture_count": 11,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 1.625581221147017e-08,
+          "min": -5.960464477539063e-08,
+          "max": 5.960464477539063e-08
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    }
+  },
+  "by_module": {
+    "moa:model.13.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 3,
+      "insufficient_capture_count": 1,
+      "foreground": {
+        "token_count": 16,
+        "mean_expert_probability": [
+          0.3333334531635046,
+          0.33333333767950535,
+          0.33333322778344154
+        ],
+        "dominant_token_count": [
+          11,
+          4,
+          1
+        ],
+        "dominant_token_fraction": [
+          0.6875,
+          0.25,
+          0.0625
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 1.60187477948881e-07
+      },
+      "background": {
+        "token_count": 32,
+        "mean_expert_probability": [
+          0.3333334047347307,
+          0.33333332370966673,
+          0.3333332883194089
+        ],
+        "dominant_token_count": [
+          15,
+          12,
+          5
+        ],
+        "dominant_token_fraction": [
+          0.46875,
+          0.375,
+          0.15625
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 9.965151592794541e-08
+      },
+      "padding_token_count": 16,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          4.842877388000488e-08,
+          1.3969838619232178e-08,
+          -6.05359673500061e-08
+        ],
+        "total_variation_distance": 6.146728992462158e-08,
+        "jensen_shannon_divergence_nats": 2.326914765454116e-15,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": 6.053596202093559e-08
+      },
+      "paired_capture_contrast": {
+        "capture_count": 3,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          7.947285970052083e-08,
+          0.0,
+          -8.940696716308594e-08
+        ],
+        "total_variation_distance": {
+          "mean": 1.341104507446289e-07,
+          "min": 4.470348358154297e-08,
+          "max": 2.2351741790771484e-07
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 1.4099832322852529e-14,
+          "min": 1.6653347702026676e-15,
+          "max": 2.964295182596359e-14
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 7.04217792228216e-08,
+          "min": -4.635916894812908e-08,
+          "max": 2.2186172543570137e-07
+        }
+      }
+    },
+    "moa:model.16.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 4,
+      "insufficient_capture_count": 0,
+      "foreground": {
+        "token_count": 66,
+        "mean_expert_probability": [
+          0.3333353924028801,
+          0.33333348234494525,
+          0.33333105571342236
+        ],
+        "dominant_token_count": [
+          37,
+          10,
+          19
+        ],
+        "dominant_token_fraction": [
+          0.5606060606060606,
+          0.15151515151515152,
+          0.2878787878787879
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 4.225607964062047e-06
+      },
+      "background": {
+        "token_count": 126,
+        "mean_expert_probability": [
+          0.33333461909067064,
+          0.33333418388215325,
+          0.3333312329791841
+        ],
+        "dominant_token_count": [
+          64,
+          16,
+          46
+        ],
+        "dominant_token_fraction": [
+          0.5079365079365079,
+          0.12698412698412698,
+          0.36507936507936506
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 5.5699593787490844e-06
+      },
+      "padding_token_count": 64,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          7.733122094899514e-07,
+          -7.015372079921534e-07,
+          -1.7726576173604514e-07
+        ],
+        "total_variation_distance": 8.260575896090749e-07,
+        "jensen_shannon_divergence_nats": 4.206316996506032e-13,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": -1.3443514146870372e-06
+      },
+      "paired_capture_contrast": {
+        "capture_count": 4,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          1.1548399925231934e-06,
+          -9.238719940185547e-07,
+          -2.7567148208618164e-07
+        ],
+        "total_variation_distance": {
+          "mean": 2.9206275939941406e-06,
+          "min": 1.1920928955078125e-06,
+          "max": 6.3478946685791016e-06
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 8.783325634250113e-12,
+          "min": 8.10021648388781e-13,
+          "max": 2.8741709797694797e-11
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": -1.0161692785004561e-06,
+          "min": -3.228585001124884e-06,
+          "max": 2.1688247215934098e-06
+        }
+      }
+    },
+    "moa:model.19.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 3,
+      "insufficient_capture_count": 1,
+      "foreground": {
+        "token_count": 16,
+        "mean_expert_probability": [
+          0.33333320915699005,
+          0.33333331532776356,
+          0.33333348855376244
+        ],
+        "dominant_token_count": [
+          3,
+          2,
+          11
+        ],
+        "dominant_token_fraction": [
+          0.1875,
+          0.125,
+          0.6875
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 2.6077032444504766e-07
+      },
+      "background": {
+        "token_count": 32,
+        "mean_expert_probability": [
+          0.3333332622423768,
+          0.3333332482725382,
+          0.33333348110318184
+        ],
+        "dominant_token_count": [
+          11,
+          3,
+          18
+        ],
+        "dominant_token_fraction": [
+          0.34375,
+          0.09375,
+          0.5625
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 2.691522285047654e-07
+      },
+      "padding_token_count": 16,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          -5.3085386753082275e-08,
+          6.705522537231445e-08,
+          7.450580596923828e-09
+        ],
+        "total_variation_distance": 6.379559636116028e-08,
+        "jensen_shannon_divergence_nats": 2.7637403195384353e-15,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": -8.381904059717726e-09
+      },
+      "paired_capture_contrast": {
+        "capture_count": 3,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          -8.940696716308594e-08,
+          6.953875223795573e-08,
+          2.9802322387695312e-08
+        ],
+        "total_variation_distance": {
+          "mean": 2.2351741790771484e-07,
+          "min": 1.7881393432617188e-07,
+          "max": 2.980232238769531e-07
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 3.2973621852751124e-14,
+          "min": 1.7985617022334035e-14,
+          "max": 5.262456590122293e-14
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": -7.505775556637673e-09,
+          "min": -1.7550257780385436e-07,
+          "max": 2.0265579792067e-07
+        }
+      }
+    },
+    "moa:model.22.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 1,
+      "insufficient_capture_count": 3,
+      "foreground": {
+        "token_count": 5,
+        "mean_expert_probability": [
+          0.3333333432674408,
+          0.3333333432674408,
+          0.33333331942558286
+        ],
+        "dominant_token_count": [
+          5,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 0.0
+      },
+      "background": {
+        "token_count": 11,
+        "mean_expert_probability": [
+          0.3333333432674408,
+          0.3333333432674408,
+          0.33333332159302453
+        ],
+        "dominant_token_count": [
+          10,
+          1,
+          0
+        ],
+        "dominant_token_fraction": [
+          0.9090909090909091,
+          0.09090909090909091,
+          0.0
+        ],
+        "normalized_entropy_mean": 1.0,
+        "top1_margin_mean": 2.7093020352450285e-09
+      },
+      "padding_token_count": 0,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          0.0,
+          0.0,
+          -2.1674416705863564e-09
+        ],
+        "total_variation_distance": 1.0837208352931782e-09,
+        "jensen_shannon_divergence_nats": 1.761676329056235e-18,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": -2.7093020352450285e-09
+      },
+      "paired_capture_contrast": {
+        "capture_count": 1,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "mot:model.13.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 3,
+      "insufficient_capture_count": 1,
+      "foreground": {
+        "token_count": 16,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          16,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6309298053383827,
+        "top1_margin_mean": 0.0
+      },
+      "background": {
+        "token_count": 32,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          32,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6309297904372215,
+        "top1_margin_mean": 0.0
+      },
+      "padding_token_count": 16,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": 0.0,
+        "jensen_shannon_divergence_nats": 0.0,
+        "foreground_minus_background_entropy": 1.4901161193847656e-08,
+        "foreground_minus_background_top1_margin": 0.0
+      },
+      "paired_capture_contrast": {
+        "capture_count": 3,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 1.9868214925130207e-08,
+          "min": 0.0,
+          "max": 5.960464477539063e-08
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "mot:model.16.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 4,
+      "insufficient_capture_count": 0,
+      "foreground": {
+        "token_count": 66,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          66,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.630929789759896,
+        "top1_margin_mean": 0.0
+      },
+      "background": {
+        "token_count": 126,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          126,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6309297728160072,
+        "top1_margin_mean": 0.0
+      },
+      "padding_token_count": 64,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": 0.0,
+        "jensen_shannon_divergence_nats": 0.0,
+        "foreground_minus_background_entropy": 1.694388884754261e-08,
+        "foreground_minus_background_top1_margin": 0.0
+      },
+      "paired_capture_contrast": {
+        "capture_count": 4,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 1.4901161193847656e-08,
+          "min": -5.960464477539063e-08,
+          "max": 5.960464477539063e-08
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "mot:model.19.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 3,
+      "insufficient_capture_count": 1,
+      "foreground": {
+        "token_count": 16,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          16,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6309298053383827,
+        "top1_margin_mean": 0.0
+      },
+      "background": {
+        "token_count": 32,
+        "mean_expert_probability": [
+          0.5,
+          0.5,
+          0.0
+        ],
+        "dominant_token_count": [
+          32,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.6309297904372215,
+        "top1_margin_mean": 0.0
+      },
+      "padding_token_count": 16,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": 0.0,
+        "jensen_shannon_divergence_nats": 0.0,
+        "foreground_minus_background_entropy": 1.4901161193847656e-08,
+        "foreground_minus_background_top1_margin": 0.0
+      },
+      "paired_capture_contrast": {
+        "capture_count": 3,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 1.9868214925130207e-08,
+          "min": 0.0,
+          "max": 5.960464477539063e-08
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    },
+    "mot:model.22.m.0.router": {
+      "capture_count": 4,
+      "supported_capture_count": 1,
+      "insufficient_capture_count": 3,
+      "foreground": {
+        "token_count": 5,
+        "mean_expert_probability": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "dominant_token_count": [
+          5,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.0,
+        "top1_margin_mean": 1.0
+      },
+      "background": {
+        "token_count": 11,
+        "mean_expert_probability": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "dominant_token_count": [
+          11,
+          0,
+          0
+        ],
+        "dominant_token_fraction": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "normalized_entropy_mean": 0.0,
+        "top1_margin_mean": 1.0
+      },
+      "padding_token_count": 0,
+      "pooled_contrast": {
+        "foreground_minus_background_expert_probability": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": 0.0,
+        "jensen_shannon_divergence_nats": 0.0,
+        "foreground_minus_background_entropy": 0.0,
+        "foreground_minus_background_top1_margin": 0.0
+      },
+      "paired_capture_contrast": {
+        "capture_count": 1,
+        "weighting": "each supported capture receives equal weight",
+        "foreground_minus_background_expert_probability_mean": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "total_variation_distance": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "jensen_shannon_divergence_nats": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_entropy": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "foreground_minus_background_top1_margin": {
+          "mean": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "executable": "C:\\Users\\23145\\Desktop\\腾讯犀牛鸟\\实战阶段\\YOLO-Master-baseline\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 197 Stepping 2, GenuineIntel",
+  "torch": "2.13.0+cpu",
+  "cuda_available": false,
+  "cuda_version": null,
+  "device_requested": "cpu",
+  "cpu_threads": 16,
+  "project_commit": "3b4ab528428d836d6bf45682d0f5048aeb6374b7",
+  "project_tree": "848c3023c43b10c2ad35b1b636ea69bfbbcbd903",
+  "source_root": "C:\\Users\\23145\\Desktop\\腾讯犀牛鸟\\实战阶段\\YOLO-Master-main-07d3303",
+  "source_git_commit": null,
+  "cwd": "C:\\Users\\23145\\Desktop\\腾讯犀牛鸟\\实战阶段\\YOLO-Master-E3-P2"
+}

@@ -40,6 +40,10 @@ its original input and rendered overlay. Before the run may report PASS, the gen
 - every overlay has exactly the original image width and height;
 - raw arrays, per-capture diagnostics and demo metadata remain available separately from PNGs.
 
+Every input now also archives its strict YOLO label file and an original-size ground-truth preview. Region masks
+partition each router grid into foreground, valid background and letterbox padding. See
+`REGION_ANALYSIS_PROTOCOL.md` for the primary paired-capture comparison and the diagnostic pooled comparison.
+
 ## 4. Formal expected coverage
 
 With four coco8 validation images, four routed modules in MoT and four in MoA, the expected formal coverage is:
@@ -48,18 +52,20 @@ With four coco8 validation images, four routed modules in MoT and four in MoA, t
 | --- | ---: |
 | True spatial captures | 32 |
 | Single-versus-batch router-record comparisons | 32 per family across batch sizes 2 and 4 |
-| Raw arrays | 144 |
+| Raw arrays | 240 |
 | Demo views | 192 |
 | Archived original inputs | 4 |
+| Archived labels and ground-truth previews | 4 each |
 
 The exact counts, source fingerprints, environment and validation deltas are machine-readable in `summary.json`,
-`family-feasibility.json`, `spatial-captures.json`, `spatial-diagnostics.json` and the SHA-256 manifest.
+`family-feasibility.json`, `spatial-captures.json`, `spatial-diagnostics.json`,
+`region-routing-analysis.json` and the SHA-256 manifest.
 
 ## 5. Browser acceptance
 
 The two-minute demo must pass a rendered-browser flow:
 
-`load -> five-family matrix -> choose family/sample/layer -> choose probability/entropy/margin -> original and overlay update together -> export points to the rendered asset`.
+`load -> five-family matrix -> choose family/sample/layer -> choose probability/entropy/margin -> toggle archived ground truth -> original and overlay update together -> export points to the rendered asset`.
 
 Desktop and mobile checks cover page identity, meaningful content, missing assets, console errors or warnings,
 horizontal overflow and at least one complete interaction path.

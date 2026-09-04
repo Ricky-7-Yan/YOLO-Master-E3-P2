@@ -1,0 +1,1106 @@
+{
+  "algorithm": "sha256",
+  "file_count": 220,
+  "files": [
+    {
+      "path": "command.txt",
+      "bytes": 12,
+      "sha256": "94e5976689d9453f578fef41376933f8ac452c7c783ee1a93074d5f852925288"
+    },
+    {
+      "path": "config.resolved.yaml",
+      "bytes": 2617,
+      "sha256": "72f69a285746989cf196409ab63f10ac89b0f35aad8b6d7a20171b3ae2422633"
+    },
+    {
+      "path": "demo-index.json",
+      "bytes": 472066,
+      "sha256": "098a9d5019465602bae385f282488634b3eb4345b4a0973498cadce285408327"
+    },
+    {
+      "path": "demo-smoke.json",
+      "bytes": 1999,
+      "sha256": "5e67b2a4ec0cd4e49437aa4030bfd3a62660f989bb05b7968bcf29f7d5631610"
+    },
+    {
+      "path": "demo.html",
+      "bytes": 8080,
+      "sha256": "6f8b856dd0314796b33da77e833baead7007f5d6baa06e7dfa109c594010c4e5"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 826,
+      "sha256": "1bd35c4b03aa3f9d229d2d263e749bdc74dc690fc204e059dbcb79d1b47814db"
+    },
+    {
+      "path": "family-feasibility.json",
+      "bytes": 7584,
+      "sha256": "e6a6656a11f258f9a5e336ab8d674d3c3178f6f19b15416535edd28ea8e21aef"
+    },
+    {
+      "path": "full.log",
+      "bytes": 1562,
+      "sha256": "e5f489677710efa9d50ae561767848e03431f8018442eed1ca5c08965ff79495"
+    },
+    {
+      "path": "input.json",
+      "bytes": 7864,
+      "sha256": "0c0f22f21e27adef7cd69a3e221f50109da3303a26d9f5ce0a4ffc456f7b962a"
+    },
+    {
+      "path": "inputs/sample-0--000000000036.jpg",
+      "bytes": 49262,
+      "sha256": "4c28394898302bef227834d63498a0fc54e4295f11c590c8a8ebcba51347bc03"
+    },
+    {
+      "path": "inputs/sample-0--000000000036.txt",
+      "bytes": 77,
+      "sha256": "638773d69e1348c8d213cc0fdaf4107d170df7811af56f2cce372ca245556149"
+    },
+    {
+      "path": "inputs/sample-0--ground-truth.png",
+      "bytes": 579361,
+      "sha256": "37d3b1df9c9249a571c3a19964ade8fe8377f7c7dad6b1dc1f0783237604978c"
+    },
+    {
+      "path": "inputs/sample-1--000000000042.jpg",
+      "bytes": 42264,
+      "sha256": "c87afb6dfe55db1cada52479ed939a231e030d64f5e3c3eaf7eb1544591f853a"
+    },
+    {
+      "path": "inputs/sample-1--000000000042.txt",
+      "bytes": 35,
+      "sha256": "c0e1ac95cf47310a3de9692cf0505fbf1ddcabceed575a3ecfac3c87f184f168"
+    },
+    {
+      "path": "inputs/sample-1--ground-truth.png",
+      "bytes": 524831,
+      "sha256": "82d2526b27666221403e9226c4f2c43ea1c9cfafab16e08d38b61b6e67afc7f1"
+    },
+    {
+      "path": "inputs/sample-2--000000000049.jpg",
+      "bytes": 30297,
+      "sha256": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3"
+    },
+    {
+      "path": "inputs/sample-2--000000000049.txt",
+      "bytes": 328,
+      "sha256": "0c0973cfb10a591266b92769e7cd43686133ea12faaa9d583702bf1c55e126e3"
+    },
+    {
+      "path": "inputs/sample-2--ground-truth.png",
+      "bytes": 291551,
+      "sha256": "04083d29fb26ff27eff9d8f8cc8536b644f1cce76437581c3c1cf7b112543597"
+    },
+    {
+      "path": "inputs/sample-3--000000000061.jpg",
+      "bytes": 99547,
+      "sha256": "6460e4a7cc80e34815aba8910a23152a16a24a416fa598138bd9231cccd413e2"
+    },
+    {
+      "path": "inputs/sample-3--000000000061.txt",
+      "bytes": 193,
+      "sha256": "d7988d745a68480c7331b323adeec29adb1b0a4df53b072ed45d9650893eb812"
+    },
+    {
+      "path": "inputs/sample-3--ground-truth.png",
+      "bytes": 834583,
+      "sha256": "3b706c8ae1a55b083cd2595a0e3934cbe1d5f57f56c085dde438833361ca7a46"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--dominant.png",
+      "bytes": 482877,
+      "sha256": "31bb65d1240c85ddcc7931d2fc86acb71e30ef04784a921b84442973bf7623d5"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--entropy.png",
+      "bytes": 480953,
+      "sha256": "5c641b95abd1becee74f3f1d7d7cbc02d75e4cdc1d0bccf6c0f6f71d86cc7841"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-0-local.png",
+      "bytes": 586286,
+      "sha256": "8d3248faba956eb6ec7548873809cac811e6eff8ea64e13fa10dd4af56b20d4d"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-1-regional.png",
+      "bytes": 586286,
+      "sha256": "e2ed5757f06ff8beec807a1de3720881cd17f7d94d2fa7a2f2a373f0141fd6ab"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--expert-2-global.png",
+      "bytes": 587264,
+      "sha256": "99b0fddc3e53ca66f79b797f432a41e2b02731c9529d4f60fd9607a5efca26f3"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.13.m.0.router--margin.png",
+      "bytes": 587246,
+      "sha256": "f49f8a2d0e08f459fe9afe2019673bdf08ce97cf15bd01e569f8df2a6f902053"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--dominant.png",
+      "bytes": 486547,
+      "sha256": "98ec26bcbc0183aee723f5fc7d60783c5bae42b16a707ac9f56f16ab2a8eff85"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--entropy.png",
+      "bytes": 480878,
+      "sha256": "aa67504aff19e53a623c2e00fd59aff06a6a4c150e0b67874f68b632a8a9a8ea"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-0-local.png",
+      "bytes": 586286,
+      "sha256": "8d3248faba956eb6ec7548873809cac811e6eff8ea64e13fa10dd4af56b20d4d"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-1-regional.png",
+      "bytes": 586309,
+      "sha256": "697882315f0cfa9425c69eba148faa8927fd82ba930c82436f9c958653ce3c64"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--expert-2-global.png",
+      "bytes": 587264,
+      "sha256": "99b0fddc3e53ca66f79b797f432a41e2b02731c9529d4f60fd9607a5efca26f3"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.16.m.0.router--margin.png",
+      "bytes": 586481,
+      "sha256": "450400f39b527fddc3c46704e4a8871a1b82e3728bdce23a9b60870d9247b4ec"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--dominant.png",
+      "bytes": 483387,
+      "sha256": "c309596e613489884d517def37b049f83f884db26381a925844ab06b066f572c"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--entropy.png",
+      "bytes": 480980,
+      "sha256": "6c42a39b55a6419970baa7f2c1991742692ac5ac6dc9bf79a8f7b27604cae505"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-0-local.png",
+      "bytes": 586286,
+      "sha256": "8d3248faba956eb6ec7548873809cac811e6eff8ea64e13fa10dd4af56b20d4d"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-1-regional.png",
+      "bytes": 586349,
+      "sha256": "1c401d474a5d3e2291b34a711697c5eed410ea4cc9f285565c02b31a81837ca7"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--expert-2-global.png",
+      "bytes": 587264,
+      "sha256": "99b0fddc3e53ca66f79b797f432a41e2b02731c9529d4f60fd9607a5efca26f3"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.19.m.0.router--margin.png",
+      "bytes": 587030,
+      "sha256": "2879a51e897ef4a21fd65d722c902e11827654aa27fa673bd4f2fe4eb2435352"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--dominant.png",
+      "bytes": 481545,
+      "sha256": "649cf92d2780ce44694fa00082894f91e270cf3fcad13aef64ca1c19dc49da16"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--entropy.png",
+      "bytes": 480959,
+      "sha256": "54b748de2883b58de716292d4f6ce27cabad1e7dc2a2c220e738aefcce1d7690"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-0-local.png",
+      "bytes": 586286,
+      "sha256": "8d3248faba956eb6ec7548873809cac811e6eff8ea64e13fa10dd4af56b20d4d"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-1-regional.png",
+      "bytes": 586317,
+      "sha256": "07611d1945a931b9461310cdd0b4b9803052997cf865340835baf63f3baa2df9"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--expert-2-global.png",
+      "bytes": 587264,
+      "sha256": "99b0fddc3e53ca66f79b797f432a41e2b02731c9529d4f60fd9607a5efca26f3"
+    },
+    {
+      "path": "overlays/moa/sample-0--model.22.m.0.router--margin.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--dominant.png",
+      "bytes": 422770,
+      "sha256": "a4413f9246b9510b55483a333d9db477c8059afc07b517495f4c347db4db142e"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--entropy.png",
+      "bytes": 420954,
+      "sha256": "ace03fc68ab7234aaba9628136cd8da47d43fe7b5e088339ed67a56abd988bd5"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-0-local.png",
+      "bytes": 521512,
+      "sha256": "48b28223c382eeda138cb679035ab3c327d15d362d6234a32ffbea1578dbd7f9"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-1-regional.png",
+      "bytes": 521343,
+      "sha256": "39e9e6502836aa96a2e12904da6ff90f19ccf2c32cabd153274e8cf9efd6fcdb"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--expert-2-global.png",
+      "bytes": 521674,
+      "sha256": "9e83d452473b743406bf038fefeb18b09ccb503fc127f442a80222e773192d06"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.13.m.0.router--margin.png",
+      "bytes": 529665,
+      "sha256": "51d752ddbdc15ac91f92589b2c3bed896bf52133fbc0446776476b1fdb0216bb"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--dominant.png",
+      "bytes": 423173,
+      "sha256": "5bf3f156082776511e3929b32b28760168e99f73d1ee98747527890dbb1bc64a"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--entropy.png",
+      "bytes": 420944,
+      "sha256": "ee8ff61e38ed82c5858c800d370f3c9bfd62e014a7c6871cf6c33203d5b1a2f8"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-0-local.png",
+      "bytes": 521512,
+      "sha256": "48b28223c382eeda138cb679035ab3c327d15d362d6234a32ffbea1578dbd7f9"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-1-regional.png",
+      "bytes": 521332,
+      "sha256": "d9ee29dcfb36825f8c393760d73ea1762fd638bc3cb8b8ebd28ded6ba25a732a"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--expert-2-global.png",
+      "bytes": 521674,
+      "sha256": "9e83d452473b743406bf038fefeb18b09ccb503fc127f442a80222e773192d06"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.16.m.0.router--margin.png",
+      "bytes": 530705,
+      "sha256": "d21d063b4e1a34719be8993aac23359a35347f982d814c7cf6ed99014102e02c"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--dominant.png",
+      "bytes": 423165,
+      "sha256": "640123b0848222ccb88aebd710689f2dd7a60e1b3722714a7e078f327d518b2f"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--entropy.png",
+      "bytes": 420894,
+      "sha256": "c378f27242a822c0eb555fbcb9d405a085b86edbcdd7354b57d01194e14c30c2"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-0-local.png",
+      "bytes": 521512,
+      "sha256": "48b28223c382eeda138cb679035ab3c327d15d362d6234a32ffbea1578dbd7f9"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-1-regional.png",
+      "bytes": 521321,
+      "sha256": "61663bd3407261813865046847ccf3ecbf1715e185b0025baeb3ae0d2e11496d"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--expert-2-global.png",
+      "bytes": 521674,
+      "sha256": "9e83d452473b743406bf038fefeb18b09ccb503fc127f442a80222e773192d06"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.19.m.0.router--margin.png",
+      "bytes": 529478,
+      "sha256": "8cd0cb23680722fdb9a4d2c0eecc4855c7798ae9e11603fb445b7711d2f812ac"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--dominant.png",
+      "bytes": 420690,
+      "sha256": "859784a80f8a5ebb03cae9ebe64fae06d629824881ca3b98a0862ab80ae4fe85"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--entropy.png",
+      "bytes": 420894,
+      "sha256": "c378f27242a822c0eb555fbcb9d405a085b86edbcdd7354b57d01194e14c30c2"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-0-local.png",
+      "bytes": 521512,
+      "sha256": "48b28223c382eeda138cb679035ab3c327d15d362d6234a32ffbea1578dbd7f9"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-1-regional.png",
+      "bytes": 521339,
+      "sha256": "c227caa3a0fa06703d5ddc5e684c170b645e360f1b9d68cfe9b6ef51b850cc0d"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--expert-2-global.png",
+      "bytes": 521674,
+      "sha256": "9e83d452473b743406bf038fefeb18b09ccb503fc127f442a80222e773192d06"
+    },
+    {
+      "path": "overlays/moa/sample-1--model.22.m.0.router--margin.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--dominant.png",
+      "bytes": 255100,
+      "sha256": "8297409de6dcd7d1fa7e0414c174f4a33ca0187942a0dc889da5f24551a9c416"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--entropy.png",
+      "bytes": 255274,
+      "sha256": "8e872302235ebec852426b289ae4528fb430e9623cf1f3d765bd655c855d7e8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-0-local.png",
+      "bytes": 305760,
+      "sha256": "32e0c1e1258b9ed5059208e6f6046cdf6e7da9e76bc9edac54dd02ead0593e8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-1-regional.png",
+      "bytes": 306486,
+      "sha256": "210bdf1e93263720c70732c5a85794b8d0b8d881c705c3f62e6063f487b83d8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--expert-2-global.png",
+      "bytes": 306717,
+      "sha256": "7975befef38c1bd210db9aef94c6eab9a1dbc6d50e2226671281428330f30792"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.13.m.0.router--margin.png",
+      "bytes": 306341,
+      "sha256": "d4480ef2a554b58575a6eb9de8981ce3f520769451948b72d6a6242b0ab7f3b7"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--dominant.png",
+      "bytes": 256512,
+      "sha256": "575752edda3daeb66e852034d5b0c766622161b087d18999732b0501118e79c5"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--entropy.png",
+      "bytes": 255193,
+      "sha256": "a61304d8dba01e233e221cec4783bbaf0e556166eca07ffb5ff2e83f682eca15"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-0-local.png",
+      "bytes": 305760,
+      "sha256": "32e0c1e1258b9ed5059208e6f6046cdf6e7da9e76bc9edac54dd02ead0593e8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-1-regional.png",
+      "bytes": 306435,
+      "sha256": "97776e25ec6100f4c74934dc42c0387c2fa841909394ffd72d05cbd395811906"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--expert-2-global.png",
+      "bytes": 306717,
+      "sha256": "7975befef38c1bd210db9aef94c6eab9a1dbc6d50e2226671281428330f30792"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.16.m.0.router--margin.png",
+      "bytes": 306953,
+      "sha256": "948c4bc7e63a75a2a9ca6308037f53ff4c72ebda3cd56098b3bc50424965096a"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--dominant.png",
+      "bytes": 255697,
+      "sha256": "14eb5c3967225493c5d02f57d2dd11f6a3fcde81522564e9a03216d4e7dacee7"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--entropy.png",
+      "bytes": 255209,
+      "sha256": "419f6f018dca060cfe70bc340039d212f11c92e3cd91d318950a4612f74f8c91"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-0-local.png",
+      "bytes": 305760,
+      "sha256": "32e0c1e1258b9ed5059208e6f6046cdf6e7da9e76bc9edac54dd02ead0593e8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-1-regional.png",
+      "bytes": 306488,
+      "sha256": "5dabd26c6219c3030ebb6c0b9d85cbaad4ab68a5a6ae2891fd0718b63d719fc4"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--expert-2-global.png",
+      "bytes": 306717,
+      "sha256": "7975befef38c1bd210db9aef94c6eab9a1dbc6d50e2226671281428330f30792"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.19.m.0.router--margin.png",
+      "bytes": 307808,
+      "sha256": "1f28e18bde7273f73f03d6f717b3a1ed216ae674a1724bc214ed3e67eb50fa38"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--dominant.png",
+      "bytes": 254123,
+      "sha256": "caf748fe50370e33d02a1d2c56a7dae159591811429fdc41749ab11f8b339267"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--entropy.png",
+      "bytes": 255209,
+      "sha256": "419f6f018dca060cfe70bc340039d212f11c92e3cd91d318950a4612f74f8c91"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-0-local.png",
+      "bytes": 305760,
+      "sha256": "32e0c1e1258b9ed5059208e6f6046cdf6e7da9e76bc9edac54dd02ead0593e8f"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-1-regional.png",
+      "bytes": 306485,
+      "sha256": "a2d72d9a549e230f8b4e60182934f78f774f6da4a339a48430c0114e62eda309"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--expert-2-global.png",
+      "bytes": 306717,
+      "sha256": "7975befef38c1bd210db9aef94c6eab9a1dbc6d50e2226671281428330f30792"
+    },
+    {
+      "path": "overlays/moa/sample-2--model.22.m.0.router--margin.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--dominant.png",
+      "bytes": 696019,
+      "sha256": "d0d147ef54443759991e79262be3a4f88cf51051d1902991bdeff45198184550"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--entropy.png",
+      "bytes": 695030,
+      "sha256": "6e00b0dbcb31ab439cf043df84e7b83881df7392294442c2c2853e305ba46440"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-0-local.png",
+      "bytes": 822141,
+      "sha256": "735e8b50f04419d297c62d7d089fcb799bd811ea6f8c3d2ba62d55d6c12bab0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-1-regional.png",
+      "bytes": 822370,
+      "sha256": "16abfa675410f1e52a54cf5b3bb869f162168bba7533d4a4394a18046027ff59"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--expert-2-global.png",
+      "bytes": 822277,
+      "sha256": "d587ab13bd437edd77bc7090c6601f115d62894a2e3721eb3ea3e6fe7ce1e0c0"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.13.m.0.router--margin.png",
+      "bytes": 843619,
+      "sha256": "e1908fb3c7a1984237ca8e1cdd3c11d3ecf7cc3edcc3d5cb92124b3743693125"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--dominant.png",
+      "bytes": 699324,
+      "sha256": "58d21db8e1a4e0ce86fa6eea5266d33a3f1f56c3a6ad9f022cce3d586b7d8778"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--entropy.png",
+      "bytes": 695050,
+      "sha256": "1bb534b0bc2a38167629457ecd4eb80c791f3f3a91726725827614ffe405d4cf"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-0-local.png",
+      "bytes": 822141,
+      "sha256": "735e8b50f04419d297c62d7d089fcb799bd811ea6f8c3d2ba62d55d6c12bab0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-1-regional.png",
+      "bytes": 822359,
+      "sha256": "da0ba41675d6f1f485e28f70ca7a7915a7d385aaab136f7b2452cd933bb0c13d"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--expert-2-global.png",
+      "bytes": 822277,
+      "sha256": "d587ab13bd437edd77bc7090c6601f115d62894a2e3721eb3ea3e6fe7ce1e0c0"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.16.m.0.router--margin.png",
+      "bytes": 842873,
+      "sha256": "c3ef3c1cd353739b2f20d1c3ee909f7243e8d58faf675b578192829f15ca2c7e"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--dominant.png",
+      "bytes": 697572,
+      "sha256": "70b80c071163dd1801d64a3a6d9592c01467e48b8ed84e86fa028a8346f2ae9a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--entropy.png",
+      "bytes": 695033,
+      "sha256": "b0055711e6ab9c458cdec2100544e6a4faa9fd7cbaa0d5224853ddef1c65ec0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-0-local.png",
+      "bytes": 822141,
+      "sha256": "735e8b50f04419d297c62d7d089fcb799bd811ea6f8c3d2ba62d55d6c12bab0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-1-regional.png",
+      "bytes": 822369,
+      "sha256": "9cbc483ba86ff9037022b15b027fa41101e30038076640cac58735e7cd8f1f70"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--expert-2-global.png",
+      "bytes": 822277,
+      "sha256": "d587ab13bd437edd77bc7090c6601f115d62894a2e3721eb3ea3e6fe7ce1e0c0"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.19.m.0.router--margin.png",
+      "bytes": 844008,
+      "sha256": "b94184e2ee48cc8b5ac34fdb8821878290549a38c283b736a1a398ddf2ca5615"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--dominant.png",
+      "bytes": 695416,
+      "sha256": "3c1d8b66b2dad4b780488061b934c1a4624e38201f79200221c2055ecd00f6de"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--entropy.png",
+      "bytes": 695033,
+      "sha256": "b0055711e6ab9c458cdec2100544e6a4faa9fd7cbaa0d5224853ddef1c65ec0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-0-local.png",
+      "bytes": 822141,
+      "sha256": "735e8b50f04419d297c62d7d089fcb799bd811ea6f8c3d2ba62d55d6c12bab0a"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-1-regional.png",
+      "bytes": 822375,
+      "sha256": "a9c2eaf7d1c4f319b9014ec1dd42d692fcb2d1dd6d1e4a15bc127fe72dc069e4"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--expert-2-global.png",
+      "bytes": 822277,
+      "sha256": "d587ab13bd437edd77bc7090c6601f115d62894a2e3721eb3ea3e6fe7ce1e0c0"
+    },
+    {
+      "path": "overlays/moa/sample-3--model.22.m.0.router--margin.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--dominant.png",
+      "bytes": 481545,
+      "sha256": "649cf92d2780ce44694fa00082894f91e270cf3fcad13aef64ca1c19dc49da16"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--entropy.png",
+      "bytes": 548632,
+      "sha256": "8b5892d152537c0c4265a6fae24088eaac670077bd37f1b462eaae59bc0b9e65"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-0-local.png",
+      "bytes": 566768,
+      "sha256": "fcb5702bb574131a1a698ed0a5546ee4ab68d744d67575b801e605778a97cac4"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-1-window.png",
+      "bytes": 567193,
+      "sha256": "645df2de277404fcf86ded512cef3fcf6f4bb3a07f52dab82c7f1b794475e6cb"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--expert-2-deformable.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.13.m.0.router--margin.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--dominant.png",
+      "bytes": 481545,
+      "sha256": "649cf92d2780ce44694fa00082894f91e270cf3fcad13aef64ca1c19dc49da16"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--entropy.png",
+      "bytes": 548632,
+      "sha256": "8b5892d152537c0c4265a6fae24088eaac670077bd37f1b462eaae59bc0b9e65"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-0-local.png",
+      "bytes": 566768,
+      "sha256": "fcb5702bb574131a1a698ed0a5546ee4ab68d744d67575b801e605778a97cac4"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-1-window.png",
+      "bytes": 567193,
+      "sha256": "645df2de277404fcf86ded512cef3fcf6f4bb3a07f52dab82c7f1b794475e6cb"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--expert-2-deformable.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.16.m.0.router--margin.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--dominant.png",
+      "bytes": 481545,
+      "sha256": "649cf92d2780ce44694fa00082894f91e270cf3fcad13aef64ca1c19dc49da16"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--entropy.png",
+      "bytes": 548632,
+      "sha256": "8b5892d152537c0c4265a6fae24088eaac670077bd37f1b462eaae59bc0b9e65"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-0-local.png",
+      "bytes": 566768,
+      "sha256": "fcb5702bb574131a1a698ed0a5546ee4ab68d744d67575b801e605778a97cac4"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-1-window.png",
+      "bytes": 567193,
+      "sha256": "645df2de277404fcf86ded512cef3fcf6f4bb3a07f52dab82c7f1b794475e6cb"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--expert-2-deformable.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.19.m.0.router--margin.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--dominant.png",
+      "bytes": 481545,
+      "sha256": "649cf92d2780ce44694fa00082894f91e270cf3fcad13aef64ca1c19dc49da16"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--entropy.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-0-local.png",
+      "bytes": 481448,
+      "sha256": "6ada6761a4365b4068aac7934e65099ccc3da6c0c324c5826c458dd902c7033f"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-1-window.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--expert-2-deformable.png",
+      "bytes": 585761,
+      "sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee"
+    },
+    {
+      "path": "overlays/mot/sample-0--model.22.m.0.router--margin.png",
+      "bytes": 481448,
+      "sha256": "6ada6761a4365b4068aac7934e65099ccc3da6c0c324c5826c458dd902c7033f"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--dominant.png",
+      "bytes": 420690,
+      "sha256": "859784a80f8a5ebb03cae9ebe64fae06d629824881ca3b98a0862ab80ae4fe85"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--entropy.png",
+      "bytes": 483626,
+      "sha256": "0106a147ebe338276005d7f10a7e15a55cc9ec0a88e6d8b81862b38164a56498"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-0-local.png",
+      "bytes": 501979,
+      "sha256": "f4c261ab75fc0a209c336e9aa54b914bde19cb6a98743d1db30f2a9d2d9cae25"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-1-window.png",
+      "bytes": 501992,
+      "sha256": "e24f9067597f2e7dd9b60127f500e8389467c1ada011085dade224250f6e81de"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--expert-2-deformable.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.13.m.0.router--margin.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--dominant.png",
+      "bytes": 420690,
+      "sha256": "859784a80f8a5ebb03cae9ebe64fae06d629824881ca3b98a0862ab80ae4fe85"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--entropy.png",
+      "bytes": 483626,
+      "sha256": "0106a147ebe338276005d7f10a7e15a55cc9ec0a88e6d8b81862b38164a56498"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-0-local.png",
+      "bytes": 501979,
+      "sha256": "f4c261ab75fc0a209c336e9aa54b914bde19cb6a98743d1db30f2a9d2d9cae25"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-1-window.png",
+      "bytes": 501992,
+      "sha256": "e24f9067597f2e7dd9b60127f500e8389467c1ada011085dade224250f6e81de"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--expert-2-deformable.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.16.m.0.router--margin.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--dominant.png",
+      "bytes": 420690,
+      "sha256": "859784a80f8a5ebb03cae9ebe64fae06d629824881ca3b98a0862ab80ae4fe85"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--entropy.png",
+      "bytes": 483626,
+      "sha256": "0106a147ebe338276005d7f10a7e15a55cc9ec0a88e6d8b81862b38164a56498"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-0-local.png",
+      "bytes": 501979,
+      "sha256": "f4c261ab75fc0a209c336e9aa54b914bde19cb6a98743d1db30f2a9d2d9cae25"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-1-window.png",
+      "bytes": 501992,
+      "sha256": "e24f9067597f2e7dd9b60127f500e8389467c1ada011085dade224250f6e81de"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--expert-2-deformable.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.19.m.0.router--margin.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--dominant.png",
+      "bytes": 420690,
+      "sha256": "859784a80f8a5ebb03cae9ebe64fae06d629824881ca3b98a0862ab80ae4fe85"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--entropy.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-0-local.png",
+      "bytes": 420664,
+      "sha256": "563ef890217f579a3652eb0369314da4cbaee324e30a0b5d0b47d9ca8565e7c5"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-1-window.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--expert-2-deformable.png",
+      "bytes": 527499,
+      "sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d"
+    },
+    {
+      "path": "overlays/mot/sample-1--model.22.m.0.router--margin.png",
+      "bytes": 420664,
+      "sha256": "563ef890217f579a3652eb0369314da4cbaee324e30a0b5d0b47d9ca8565e7c5"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--dominant.png",
+      "bytes": 252914,
+      "sha256": "e9377ce996d0d04ba3ab93ee003766d75e2c715cec498f520669398e73cd4eb0"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--entropy.png",
+      "bytes": 288823,
+      "sha256": "85d57cba57d08a1f1f0a19c0d3d86d3cfdd09fcb8ebdb15da8a46a6516bf5121"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-0-local.png",
+      "bytes": 298011,
+      "sha256": "1b0c311a1b2596844063c26ce86f982ce3ba9ba5628829dfffd65c084587fa32"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-1-window.png",
+      "bytes": 297141,
+      "sha256": "e0b60f489b718e9ab55922151fc44496169389ae172499ad77002ceb2999948b"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--expert-2-deformable.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.13.m.0.router--margin.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--dominant.png",
+      "bytes": 252914,
+      "sha256": "e9377ce996d0d04ba3ab93ee003766d75e2c715cec498f520669398e73cd4eb0"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--entropy.png",
+      "bytes": 288823,
+      "sha256": "85d57cba57d08a1f1f0a19c0d3d86d3cfdd09fcb8ebdb15da8a46a6516bf5121"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-0-local.png",
+      "bytes": 298011,
+      "sha256": "1b0c311a1b2596844063c26ce86f982ce3ba9ba5628829dfffd65c084587fa32"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-1-window.png",
+      "bytes": 297141,
+      "sha256": "e0b60f489b718e9ab55922151fc44496169389ae172499ad77002ceb2999948b"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--expert-2-deformable.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.16.m.0.router--margin.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--dominant.png",
+      "bytes": 252914,
+      "sha256": "e9377ce996d0d04ba3ab93ee003766d75e2c715cec498f520669398e73cd4eb0"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--entropy.png",
+      "bytes": 288823,
+      "sha256": "85d57cba57d08a1f1f0a19c0d3d86d3cfdd09fcb8ebdb15da8a46a6516bf5121"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-0-local.png",
+      "bytes": 298011,
+      "sha256": "1b0c311a1b2596844063c26ce86f982ce3ba9ba5628829dfffd65c084587fa32"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-1-window.png",
+      "bytes": 297141,
+      "sha256": "e0b60f489b718e9ab55922151fc44496169389ae172499ad77002ceb2999948b"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--expert-2-deformable.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.19.m.0.router--margin.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--dominant.png",
+      "bytes": 252914,
+      "sha256": "e9377ce996d0d04ba3ab93ee003766d75e2c715cec498f520669398e73cd4eb0"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--entropy.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-0-local.png",
+      "bytes": 252972,
+      "sha256": "d588fddc5590bccc34e623aea6799ab0a9057befc7db5b1e3f88ceb043f0ed9a"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-1-window.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--expert-2-deformable.png",
+      "bytes": 301657,
+      "sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11"
+    },
+    {
+      "path": "overlays/mot/sample-2--model.22.m.0.router--margin.png",
+      "bytes": 252972,
+      "sha256": "d588fddc5590bccc34e623aea6799ab0a9057befc7db5b1e3f88ceb043f0ed9a"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--dominant.png",
+      "bytes": 695416,
+      "sha256": "3c1d8b66b2dad4b780488061b934c1a4624e38201f79200221c2055ecd00f6de"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--entropy.png",
+      "bytes": 781609,
+      "sha256": "1efeaa1c08607487920892a6dccee849c26699cdf3e7868d5d1d8a3aa03d9544"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-0-local.png",
+      "bytes": 801964,
+      "sha256": "5f9b500ba69ca07ba035e6a7e9b3cab451b5cd0d8a8cfb86906d46598fde7fc1"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-1-window.png",
+      "bytes": 801725,
+      "sha256": "7607495aaa5a0866bf64dc96f20daf04af7d7780b3201a2d4775240ca2843850"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--expert-2-deformable.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.13.m.0.router--margin.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--dominant.png",
+      "bytes": 695416,
+      "sha256": "3c1d8b66b2dad4b780488061b934c1a4624e38201f79200221c2055ecd00f6de"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--entropy.png",
+      "bytes": 781609,
+      "sha256": "1efeaa1c08607487920892a6dccee849c26699cdf3e7868d5d1d8a3aa03d9544"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-0-local.png",
+      "bytes": 801964,
+      "sha256": "5f9b500ba69ca07ba035e6a7e9b3cab451b5cd0d8a8cfb86906d46598fde7fc1"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-1-window.png",
+      "bytes": 801725,
+      "sha256": "7607495aaa5a0866bf64dc96f20daf04af7d7780b3201a2d4775240ca2843850"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--expert-2-deformable.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.16.m.0.router--margin.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--dominant.png",
+      "bytes": 695416,
+      "sha256": "3c1d8b66b2dad4b780488061b934c1a4624e38201f79200221c2055ecd00f6de"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--entropy.png",
+      "bytes": 781609,
+      "sha256": "1efeaa1c08607487920892a6dccee849c26699cdf3e7868d5d1d8a3aa03d9544"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-0-local.png",
+      "bytes": 801964,
+      "sha256": "5f9b500ba69ca07ba035e6a7e9b3cab451b5cd0d8a8cfb86906d46598fde7fc1"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-1-window.png",
+      "bytes": 801725,
+      "sha256": "7607495aaa5a0866bf64dc96f20daf04af7d7780b3201a2d4775240ca2843850"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--expert-2-deformable.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.19.m.0.router--margin.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--dominant.png",
+      "bytes": 695416,
+      "sha256": "3c1d8b66b2dad4b780488061b934c1a4624e38201f79200221c2055ecd00f6de"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--entropy.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-0-local.png",
+      "bytes": 695379,
+      "sha256": "d305459b5360f681007f7320d76ac108de18049c7fbead6eecd184dbab75681e"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-1-window.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--expert-2-deformable.png",
+      "bytes": 840973,
+      "sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba"
+    },
+    {
+      "path": "overlays/mot/sample-3--model.22.m.0.router--margin.png",
+      "bytes": 695379,
+      "sha256": "d305459b5360f681007f7320d76ac108de18049c7fbead6eecd184dbab75681e"
+    },
+    {
+      "path": "region-routing-analysis.json",
+      "bytes": 24935,
+      "sha256": "c303efc903fbf4382979c0a26144eba049f806452a161984ff0f84742b38e395"
+    },
+    {
+      "path": "routing-overview.png",
+      "bytes": 211598,
+      "sha256": "0bf0a497892ee093da45bff992704554cf03791d76dddd9c63c67442a29c3144"
+    },
+    {
+      "path": "source-fingerprint-checks.json",
+      "bytes": 2448,
+      "sha256": "5266f20275b68ea57a2cd150cef4dece0bc3957e19484a12a68c6e09ec7e9e86"
+    },
+    {
+      "path": "spatial-captures.json",
+      "bytes": 135363,
+      "sha256": "dfd6676c267a00defbdcc59cbda8067d5f2f131c7af00383cb6376948aee3d5a"
+    },
+    {
+      "path": "spatial-diagnostics.json",
+      "bytes": 4468,
+      "sha256": "d045049b891ff0ac278683a144a14dde3d8bda430f1e4cbf4f115882cb5fc0ca"
+    },
+    {
+      "path": "spatial-routing-raw.npz",
+      "bytes": 74123,
+      "sha256": "3673ea919c2c790d0ba0afc5c22ffe83c99fbc09c38e1d4f85c28769e6eeaa94"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 12062,
+      "sha256": "565782f2c56e294e3d4a2d78ab2bfe21a293e8f6373c8fe382c30a11679a7806"
+    }
+  ]
+}

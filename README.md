@@ -1,8 +1,8 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · reproducible local demo
 
-![P2 routing overview](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/routing-overview.png)
+![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -19,11 +19,19 @@ heatmaps.
 | Latent | Three modules emit `[B,4]` on the expert axis | No | explicit `UNSUPPORTED` |
 | MoLoRA | Linear/spatial/hybrid routers all emit `[B,4]` | No | explicit `UNSUPPORTED` |
 
-The strengthened CPU run used all four `coco8` validation images. It produced 32 true spatial captures, 144 raw
-arrays and 192 switchable demo views. MoT and MoA passed exact repeated-capture comparison; registered hooks
+The strengthened CPU run used all four `coco8` validation images and their 17 detection boxes. It produced 32 true
+spatial captures, 240 raw arrays and 192 switchable demo views. MoT and MoA passed exact repeated-capture
+comparison; registered hooks
 changed model output by a maximum absolute value of `0`. Single-image capture was also compared against batch
 sizes 2 and 4: probability differences were `0`, MoT indices were identical, and the largest logit difference was
-`1.24e-10`.
+`1.24e-10`. The region analysis additionally archives foreground/background/padding masks for every capture and
+excludes letterbox padding from both semantic groups.
+
+Of 32 captures, 22 contained both foreground and background tokens; the remaining 10 are explicitly marked
+`INSUFFICIENT_TOKENS`. The primary equal-weight within-capture comparison found MoT total-variation distance `0`
+for every supported capture, and MoA mean `1.16e-06` (maximum `6.35e-06`). These are cold-start near-equalities,
+not evidence of semantic routing. A larger pooled MoT contrast (`0.00309`) is retained only as a diagnostic example
+of why unpaired token pooling can be misleading.
 
 ## Reproduce
 
@@ -52,14 +60,15 @@ model output changes.
 
 ## Evidence map
 
-- [`summary.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/summary.json): machine-readable verdict and coverage.
-- [`family-feasibility.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/family-feasibility.json): five-family runtime decision record.
-- [`spatial-routing-raw.npz`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/spatial-routing-raw.npz): raw probabilities, logits, derived fields and MoT indices.
-- [`spatial-captures.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/spatial-captures.json): array keys, shapes and per-capture validation.
-- [`spatial-diagnostics.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/spatial-diagnostics.json): entropy, margin, dominant load and neighboring-token variation.
-- [`demo.html`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/demo.html): paired original/overlay viewer and evidence export.
-- [`demo-smoke.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/demo-smoke.json): desktop/mobile rendered-browser validation.
-- [`manifest.sha256.json`](artifacts/p2/p2-20260904-cpu-batch-diagnostics-v4/manifest.sha256.json): byte length and SHA-256 for every evidence file.
+- [`summary.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/summary.json): machine-readable verdict and coverage.
+- [`family-feasibility.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/family-feasibility.json): five-family runtime decision record.
+- [`spatial-routing-raw.npz`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/spatial-routing-raw.npz): raw routing values, diagnostic fields and region masks.
+- [`spatial-captures.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/spatial-captures.json): array keys, shapes and per-capture validation.
+- [`spatial-diagnostics.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/spatial-diagnostics.json): entropy, margin, dominant load and neighboring-token variation.
+- [`region-routing-analysis.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/region-routing-analysis.json): foreground/background token metrics and paired/pooled contrasts.
+- [`demo.html`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/demo.html): original/ground-truth/overlay viewer and evidence export.
+- [`demo-smoke.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/demo-smoke.json): desktop/mobile rendered-browser validation.
+- [`manifest.sha256.json`](artifacts/p2/p2-20260904-cpu-region-analysis-v7/manifest.sha256.json): byte length and SHA-256 for every evidence file.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

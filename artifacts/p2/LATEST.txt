@@ -1,1 +1,1 @@
-p2-20260904-cpu-batch-diagnostics-v4
+p2-20260904-cpu-region-analysis-v7
