@@ -11,6 +11,7 @@ from e3_p2.appearance_runner import (
     _apply_transform,
     _load_config,
     _prepare_inputs,
+    _summarize_input_effects,
 )
 from e3_p2.stability import probability_map_comparison
 
@@ -54,7 +55,11 @@ def test_config_rejects_identity_or_factor_contract_drift(tmp_path: Path):
 
 def test_prepared_inputs_archive_exact_model_canvas_and_hash(tmp_path: Path):
     source = tmp_path / "source.png"
-    Image.new("RGB", (10, 5), (20, 40, 80)).save(source)
+    gradient = np.zeros((5, 10, 3), dtype=np.uint8)
+    gradient[:, :, 0] = np.arange(10, dtype=np.uint8) * 20
+    gradient[:, :, 1] = np.arange(5, dtype=np.uint8)[:, None] * 30
+    gradient[:, :, 2] = 80
+    Image.fromarray(gradient).save(source)
     prepared, audit = _prepare_inputs(
         [source],
         [7],
@@ -71,6 +76,19 @@ def test_prepared_inputs_archive_exact_model_canvas_and_hash(tmp_path: Path):
     assert audit[0]["model_input_rgb_bytes_sha256"] == hashlib.sha256(identity["canvas"].tobytes()).hexdigest()
     assert (tmp_path / audit[0]["transformed_artifact"]).is_file()
     assert (tmp_path / audit[0]["model_input_artifact"]).is_file()
+    effects = _summarize_input_effects(prepared, [7], ["identity", "contrast_110"])
+    assert effects["all_candidate_samples_changed"] is True
+    assert effects["by_transform"]["contrast_110"]["changed_sample_count"] == 1
+
+
+def test_input_effect_gate_rejects_a_noop_candidate():
+    canvas = np.zeros((4, 4, 3), dtype=np.uint8)
+    prepared = {
+        (0, "identity"): {"canvas": canvas},
+        (0, "noop"): {"canvas": canvas.copy()},
+    }
+    with pytest.raises(RuntimeError, match="no-op"):
+        _summarize_input_effects(prepared, [0], ["identity", "noop"])
 
 
 def test_region_aggregate_keeps_foreground_and_background_separate():

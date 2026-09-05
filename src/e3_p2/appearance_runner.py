@@ -134,6 +134,51 @@ def _tensor(canvas: np.ndarray, torch_module: Any) -> Any:
     return torch_module.from_numpy(array).unsqueeze(0).contiguous()
 
 
+def _summarize_input_effects(
+    prepared: dict[tuple[int, str], dict[str, Any]], sample_indices: list[int], transform_names: list[str]
+) -> dict[str, Any]:
+    by_transform = {}
+    records = []
+    for transform_name in transform_names[1:]:
+        current = []
+        for sample_index in sample_indices:
+            reference = prepared[(sample_index, "identity")]["canvas"].astype(np.int16)
+            candidate = prepared[(sample_index, transform_name)]["canvas"].astype(np.int16)
+            difference = np.abs(reference - candidate)
+            record = {
+                "sample_index": sample_index,
+                "transform": transform_name,
+                "rgb_mae_0_255": float(difference.mean()),
+                "rgb_max_abs_error_0_255": int(difference.max()),
+                "changed_channel_fraction": float((difference > 0).mean()),
+                "model_input_changed": bool(np.any(difference)),
+            }
+            current.append(record)
+            records.append(record)
+        changed = sum(item["model_input_changed"] for item in current)
+        if changed != len(sample_indices):
+            raise RuntimeError(
+                f"transform {transform_name} was a no-op for {len(sample_indices) - changed} configured samples"
+            )
+        by_transform[transform_name] = {
+            "sample_count": len(current),
+            "changed_sample_count": changed,
+            "rgb_mae_0_255_mean": float(np.mean([item["rgb_mae_0_255"] for item in current])),
+            "rgb_mae_0_255_min": float(np.min([item["rgb_mae_0_255"] for item in current])),
+            "rgb_mae_0_255_max": float(np.max([item["rgb_mae_0_255"] for item in current])),
+            "changed_channel_fraction_mean": float(
+                np.mean([item["changed_channel_fraction"] for item in current])
+            ),
+        }
+    return {
+        "reference": "identity model-input uint8 canvas",
+        "scale": "absolute RGB difference on [0,255]",
+        "all_candidate_samples_changed": True,
+        "by_transform": by_transform,
+        "records": records,
+    }
+
+
 def _aggregate_region_comparisons(records: list[dict[str, Any]]) -> dict[str, Any]:
     grouped: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     for item in records:
@@ -277,6 +322,12 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         paths, config["sample_indices"], config["transformations"], int(config["resolution"]), run_dir
     )
     write_json(run_dir / "transformation-audit.json", transform_audit)
+    input_effects = _summarize_input_effects(
+        prepared,
+        config["sample_indices"],
+        [item["name"] for item in config["transformations"]],
+    )
+    write_json(run_dir / "transformation-effect.json", input_effects)
     input_record = {
         **dataset_meta,
         "selected_image_count": len(paths),
@@ -454,6 +505,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         "seeds": config["seeds"],
         "resolution": resolution,
         "transformations": config["transformations"],
+        "transformation_effect": input_effects["by_transform"],
         "sample_count": len(paths),
         "spatial_capture_count": len(capture_metadata),
         "raw_array_count": len(arrays),

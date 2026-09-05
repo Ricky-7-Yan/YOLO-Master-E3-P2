@@ -20,6 +20,9 @@ sensitivity in this mechanism test?
 
 Every transformed original and the exact 128×128 uint8 letterbox canvas consumed by the model are archived. The
 PNG file hash and raw RGB-byte hash are recorded before inference.
+Each candidate canvas is also compared against its identity canvas on the `[0,255]` RGB scale. The run fails if
+any configured perturbation becomes a no-op for any of the four selected samples; mean/min/max input MAE and
+changed-channel fraction remain in the evidence bundle.
 
 ## Measurements
 
