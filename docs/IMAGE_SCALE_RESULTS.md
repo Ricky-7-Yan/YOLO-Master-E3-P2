@@ -25,9 +25,11 @@ population generalization.
 | Manifest | 80 files, exact set, 0 hash or size mismatch |
 | Evidence directory size including manifest | 8,769,286 bytes |
 
-The tooling was committed at `fc58cc8d945649380c3f647e90f7fea85966bea6` before the run. Upstream
-fingerprints, clean source state, module order, repeat inference, hook cleanup, restored probability sums and the
-64 MiB evidence budget were all fail-closed checks. The manifest SHA-256 is
+The formal runner recorded local source commit `fc58cc8d945649380c3f647e90f7fea85966bea6` before the run. Its
+source tree is `373b6cda6f92635228f76faf2a4924dfc865fda6`; the publication-equivalent GitHub commit is
+`f40552a94adbff8e238f156d405f3d0404e56646` with that exact tree. Upstream fingerprints, clean source state,
+module order, repeat inference, hook cleanup, restored probability sums and the 64 MiB evidence budget were all
+fail-closed checks. The manifest SHA-256 is
 `42d85cb411ef3776bc03b857025dcb77304b5530c4b4b2b4218d0d773d8d45c1`.
 
 The hash rule selected two coco128 images whose label files are absent. They remain in the analysis as
