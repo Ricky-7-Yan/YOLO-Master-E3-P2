@@ -20,7 +20,11 @@
 - CPU results do not establish CUDA correctness, GPU overhead, memory cost or full-training performance.
 - Horizontal-flip and resolution comparisons cover only two perturbation families. They do not establish
   robustness to color, blur, crop, scale distribution shift or adversarial changes.
+- The appearance extension adds mild brightness, contrast and blur, but uses one strength per direction and only
+  four images. It is a controlled sensitivity probe, not a corruption benchmark.
 - MoA's cold-start probabilities are nearly tied. Dominant-expert agreement is therefore interpreted together
   with probability error and Top-1 margin, never as a stand-alone robustness score.
+- Foreground/background appearance differences change direction across perturbations and remain extremely small;
+  no semantic region-sensitivity conclusion is supported.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

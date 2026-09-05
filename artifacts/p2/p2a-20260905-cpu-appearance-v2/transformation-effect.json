@@ -1,0 +1,209 @@
+{
+  "reference": "identity model-input uint8 canvas",
+  "scale": "absolute RGB difference on [0,255]",
+  "all_candidate_samples_changed": true,
+  "by_transform": {
+    "brightness_090": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 10.619786580403645,
+      "rgb_mae_0_255_min": 9.46234130859375,
+      "rgb_mae_0_255_max": 11.200602213541666,
+      "changed_channel_fraction_mean": 0.7577667236328125
+    },
+    "brightness_110": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 8.523681640625,
+      "rgb_mae_0_255_min": 7.312601725260417,
+      "rgb_mae_0_255_max": 10.3358154296875,
+      "changed_channel_fraction_mean": 0.748748779296875
+    },
+    "contrast_090": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 4.027496337890625,
+      "rgb_mae_0_255_min": 3.2396240234375,
+      "rgb_mae_0_255_max": 5.11541748046875,
+      "changed_channel_fraction_mean": 0.7204945882161459
+    },
+    "contrast_110": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 3.4927469889322915,
+      "rgb_mae_0_255_min": 2.7472330729166665,
+      "rgb_mae_0_255_max": 4.44622802734375,
+      "changed_channel_fraction_mean": 0.7097117106119792
+    },
+    "gaussian_blur_075": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 0.4736429850260417,
+      "rgb_mae_0_255_min": 0.3561197916666667,
+      "rgb_mae_0_255_max": 0.73809814453125,
+      "changed_channel_fraction_mean": 0.34571329752604163
+    }
+  },
+  "records": [
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 11.200602213541666,
+      "rgb_max_abs_error_0_255": 24,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 9.46234130859375,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.74981689453125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 10.741434733072916,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.765625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 11.07476806640625,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.765625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "brightness_110",
+      "rgb_mae_0_255": 10.3358154296875,
+      "rgb_max_abs_error_0_255": 23,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_110",
+      "rgb_mae_0_255": 7.312601725260417,
+      "rgb_max_abs_error_0_255": 22,
+      "changed_channel_fraction": 0.74462890625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_110",
+      "rgb_mae_0_255": 8.2904052734375,
+      "rgb_max_abs_error_0_255": 23,
+      "changed_channel_fraction": 0.7356974283854166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_110",
+      "rgb_mae_0_255": 8.155904134114584,
+      "rgb_max_abs_error_0_255": 22,
+      "changed_channel_fraction": 0.7646687825520834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.2396240234375,
+      "rgb_max_abs_error_0_255": 12,
+      "changed_channel_fraction": 0.70660400390625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.25079345703125,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.7099202473958334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 5.11541748046875,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.74774169921875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.504150390625,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.71771240234375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_110",
+      "rgb_mae_0_255": 3.08953857421875,
+      "rgb_max_abs_error_0_255": 12,
+      "changed_channel_fraction": 0.6996866861979166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_110",
+      "rgb_mae_0_255": 3.68798828125,
+      "rgb_max_abs_error_0_255": 12,
+      "changed_channel_fraction": 0.7096150716145834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_110",
+      "rgb_mae_0_255": 4.44622802734375,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.7196858723958334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_110",
+      "rgb_mae_0_255": 2.7472330729166665,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.7098592122395834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.3561197916666667,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.2957763671875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.3771158854166667,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.3031209309895833,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.4232381184895833,
+      "rgb_max_abs_error_0_255": 9,
+      "changed_channel_fraction": 0.2767130533854167,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.73809814453125,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.5072428385416666,
+      "model_input_changed": true
+    }
+  ]
+}

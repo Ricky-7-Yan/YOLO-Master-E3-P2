@@ -57,3 +57,16 @@
 - Increased the unit suite to 33 passing tests and independently rehashed all 22 formal evidence files.
 - Corrected historical browser evidence wording: those passes used Playwright with installed Edge; they did not
   establish that the Codex Browser plugin was unavailable.
+
+## CPU appearance sensitivity
+
+- Added a committed 128px protocol for brightness ±10%, contrast ±10% and Gaussian blur 0.75 across three seeds,
+  four images and all MoT/MoA router layers.
+- Archived and hashed every transformed original and exact model-input canvas, including raw RGB-byte hashes.
+- Added a fail-closed input-effect audit proving every perturbation changes every configured sample.
+- Added margin-percentile agreement curves plus equal-weight summaries by transform, router module and seed.
+- Added foreground/background sensitivity on the raw token grids while excluding letterbox padding.
+- Generated 576 spatial captures, 1,536 raw arrays, 480 original-coordinate comparisons and 960 region comparisons.
+- Expanded the unit suite to 38 passing tests and independently rehashed all 72 formal evidence files.
+- Identified `model.16.m.0.router` as the highest-MAE MoA layer for every tested perturbation; kept this as a
+  cold-start diagnostic rather than a learned-vulnerability claim.

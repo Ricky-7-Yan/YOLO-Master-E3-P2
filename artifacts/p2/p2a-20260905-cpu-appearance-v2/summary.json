@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "scope": "CPU-only brightness, contrast and blur sensitivity for true MoT/MoA spatial router probabilities",
+  "run_id": "p2a-20260905-cpu-appearance-v2",
+  "official_locked_base_ref": "acce839c7e895d6b179de7f7093fa879e237cc7b",
+  "official_runtime_ref": "07d330325b5a26b75aabfc75389f9bcbc0d40245",
+  "tool_source": {
+    "commit": "bfebd950e7a3f5f1dc06419c3bf0f46856c1ea98",
+    "tree": "315ab9344ae306bbaff681170ce912ecef46089f",
+    "implementation_status_porcelain": [],
+    "implementation_clean": true
+  },
+  "source_fingerprint_validation": "PASS",
+  "source_fingerprint_count": 4,
+  "device": "cpu",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "resolution": 128,
+  "transformations": [
+    {
+      "name": "identity",
+      "kind": "identity"
+    },
+    {
+      "name": "brightness_090",
+      "kind": "brightness",
+      "factor": 0.9
+    },
+    {
+      "name": "brightness_110",
+      "kind": "brightness",
+      "factor": 1.1
+    },
+    {
+      "name": "contrast_090",
+      "kind": "contrast",
+      "factor": 0.9
+    },
+    {
+      "name": "contrast_110",
+      "kind": "contrast",
+      "factor": 1.1
+    },
+    {
+      "name": "gaussian_blur_075",
+      "kind": "gaussian_blur",
+      "radius": 0.75
+    }
+  ],
+  "transformation_effect": {
+    "brightness_090": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 10.619786580403645,
+      "rgb_mae_0_255_min": 9.46234130859375,
+      "rgb_mae_0_255_max": 11.200602213541666,
+      "changed_channel_fraction_mean": 0.7577667236328125
+    },
+    "brightness_110": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 8.523681640625,
+      "rgb_mae_0_255_min": 7.312601725260417,
+      "rgb_mae_0_255_max": 10.3358154296875,
+      "changed_channel_fraction_mean": 0.748748779296875
+    },
+    "contrast_090": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 4.027496337890625,
+      "rgb_mae_0_255_min": 3.2396240234375,
+      "rgb_mae_0_255_max": 5.11541748046875,
+      "changed_channel_fraction_mean": 0.7204945882161459
+    },
+    "contrast_110": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 3.4927469889322915,
+      "rgb_mae_0_255_min": 2.7472330729166665,
+      "rgb_mae_0_255_max": 4.44622802734375,
+      "changed_channel_fraction_mean": 0.7097117106119792
+    },
+    "gaussian_blur_075": {
+      "sample_count": 4,
+      "changed_sample_count": 4,
+      "rgb_mae_0_255_mean": 0.4736429850260417,
+      "rgb_mae_0_255_min": 0.3561197916666667,
+      "rgb_mae_0_255_max": 0.73809814453125,
+      "changed_channel_fraction_mean": 0.34571329752604163
+    }
+  },
+  "sample_count": 4,
+  "spatial_capture_count": 576,
+  "raw_array_count": 1536,
+  "aligned_comparison_count": 480,
+  "region_comparison_count": 960,
+  "representative_invariants": {
+    "mot:seed-0": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": true,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "mot:seed-1": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": true,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "mot:seed-2": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": true,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "moa:seed-0": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": null,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "moa:seed-1": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": null,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "moa:seed-2": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "repeat_indices_equal": null,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    }
+  },
+  "restoration_validation": {
+    "max_pre_normalization_expert_sum_error": 2.384185791015625e-07,
+    "max_post_normalization_expert_sum_error": 1.1920928955078125e-07
+  },
+  "interpretation_boundary": "random initialization; appearance sensitivity and pipeline evidence only",
+  "status_semantics": "PASS means input audit, capture, alignment, determinism and evidence integrity checks completed",
+  "duration_seconds_observation_only": 95.00401540000166
+}

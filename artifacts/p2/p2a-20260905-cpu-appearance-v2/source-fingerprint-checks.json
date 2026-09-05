@@ -1,0 +1,26 @@
+[
+  {
+    "path": "ultralytics/nn/modules/mot/router.py",
+    "expected_sha256": "0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1",
+    "actual_sha256": "0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1",
+    "match": true
+  },
+  {
+    "path": "ultralytics/nn/modules/moa/router.py",
+    "expected_sha256": "ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f",
+    "actual_sha256": "ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-mot-n.yaml",
+    "expected_sha256": "739aca4279cd2ae7813f4b0b5a16211efd68c74a1beaacc71d2431101dca6fda",
+    "actual_sha256": "739aca4279cd2ae7813f4b0b5a16211efd68c74a1beaacc71d2431101dca6fda",
+    "match": true
+  },
+  {
+    "path": "ultralytics/cfg/models/26/yolo26-master-moa-n.yaml",
+    "expected_sha256": "20a57222cd4a51b11b39d51ca959a2d250e46c5e42b4ecf9fe6a9808e3147310",
+    "actual_sha256": "20a57222cd4a51b11b39d51ca959a2d250e46c5e42b4ecf9fe6a9808e3147310",
+    "match": true
+  }
+]

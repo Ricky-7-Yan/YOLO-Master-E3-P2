@@ -1,0 +1,790 @@
+[
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "identity",
+    "spec": {
+      "name": "identity",
+      "kind": "identity"
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--identity.png",
+    "transformed_artifact_sha256": "87c2bce34bc30c27595daf15ad63ddf807e8dc56fd599abe381aa5e8a95f44ee",
+    "model_input_artifact": "model-inputs/sample-0--identity--128px.png",
+    "model_input_artifact_sha256": "4b7563fbf8c16c0ae6e9ac6c2a4c41c50bfeb6dd84c447b24c73699364fb7b4d",
+    "model_input_rgb_bytes_sha256": "192b5b49069f5b9247728cf9d3372804e46d29fc4da2456c3481965aa55029e4",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "brightness_090",
+    "spec": {
+      "name": "brightness_090",
+      "kind": "brightness",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--brightness_090.png",
+    "transformed_artifact_sha256": "85c5ed5da55aac04a822999502b01fd72c3cbbfd4c9b859f93f4761624bc3a8f",
+    "model_input_artifact": "model-inputs/sample-0--brightness_090--128px.png",
+    "model_input_artifact_sha256": "c62179935dee852088928e9ca9173d4b2f12c561fdbb9b7d4258f86db6dc6ce6",
+    "model_input_rgb_bytes_sha256": "46024e66266d56e79876c80bcde227b3a0e28db222f4d17a593bb97d41a07b5e",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "brightness_110",
+    "spec": {
+      "name": "brightness_110",
+      "kind": "brightness",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--brightness_110.png",
+    "transformed_artifact_sha256": "20e9586ed4f59ab3b19fbab45559de34ac3498788b1d19267c52efa318822e1e",
+    "model_input_artifact": "model-inputs/sample-0--brightness_110--128px.png",
+    "model_input_artifact_sha256": "2d6bd21c81d4279a44d69a68d42fb365096f607e4e030b4048c09b1c2b2db46b",
+    "model_input_rgb_bytes_sha256": "92dc213f0d15c266dbb1e7e229cf69acc5066491faa02bab71f3a4d4def5fd04",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "contrast_090",
+    "spec": {
+      "name": "contrast_090",
+      "kind": "contrast",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--contrast_090.png",
+    "transformed_artifact_sha256": "34923193bdb880373db9d921b45c8807c9e43f61c79e2de7cb8199513faff667",
+    "model_input_artifact": "model-inputs/sample-0--contrast_090--128px.png",
+    "model_input_artifact_sha256": "83dedf38d0e322fbb87e0160d4c5f294d431ba8e06dd837380dcd403eb7da15d",
+    "model_input_rgb_bytes_sha256": "7d446037f2f340b65d2e7df14bd1488f7b41219d1447f6e4f0219f7a67f0ee38",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "contrast_110",
+    "spec": {
+      "name": "contrast_110",
+      "kind": "contrast",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--contrast_110.png",
+    "transformed_artifact_sha256": "219800a5e880c3473b620d62240a2498e7483c02257262d1906d9120a1090496",
+    "model_input_artifact": "model-inputs/sample-0--contrast_110--128px.png",
+    "model_input_artifact_sha256": "706131de51cdacd74402141d3974a493aa73c497258d3c152c292ff21cabb9aa",
+    "model_input_rgb_bytes_sha256": "3b28173717d241c11dca3f4c53d997870554f81b489793cf3ab8fb7621ea8912",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 0,
+    "sample_name": "000000000036.jpg",
+    "transform": "gaussian_blur_075",
+    "spec": {
+      "name": "gaussian_blur_075",
+      "kind": "gaussian_blur",
+      "radius": 0.75
+    },
+    "geometry": {
+      "original_width": 481,
+      "original_height": 640,
+      "input_size": 128,
+      "resized_width": 96,
+      "resized_height": 128,
+      "pad_left": 16,
+      "pad_top": 0,
+      "pad_right": 16,
+      "pad_bottom": 0,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-0--gaussian_blur_075.png",
+    "transformed_artifact_sha256": "883aa4d1103e7d482560a687b8aacb03c8c7d8ac3cc02bd6bf0957b026f7a88f",
+    "model_input_artifact": "model-inputs/sample-0--gaussian_blur_075--128px.png",
+    "model_input_artifact_sha256": "4df921bb4702f76326eb7d9cdd31c256f2185e8a74b9d1d11b956584fdb98dab",
+    "model_input_rgb_bytes_sha256": "640deae103a2423f16ae7f782221e81bd5c0e4a2ff61745618827b09dfd6dcdf",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "identity",
+    "spec": {
+      "name": "identity",
+      "kind": "identity"
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--identity.png",
+    "transformed_artifact_sha256": "ebb45bdd713a7ac18c0605d4b57e773f126e8dea442362049e468ea2479e439d",
+    "model_input_artifact": "model-inputs/sample-1--identity--128px.png",
+    "model_input_artifact_sha256": "72b1998530a2e59aac8929b1b94b4d7475f0f533f87b15056f7bcc4362822134",
+    "model_input_rgb_bytes_sha256": "d23c587843f1646e428aea37c6ab13f4d7c35a63d81f716d32b5b847251ef0b4",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "brightness_090",
+    "spec": {
+      "name": "brightness_090",
+      "kind": "brightness",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--brightness_090.png",
+    "transformed_artifact_sha256": "fce86f32c5ef7d20c095512e1b20d22e3d390da9b5b6850c96a29695d189e899",
+    "model_input_artifact": "model-inputs/sample-1--brightness_090--128px.png",
+    "model_input_artifact_sha256": "c6ec332431f01375f2bdd07c0e4b2a57a7c47b3817267d7cd4f8f1d2f9c4082c",
+    "model_input_rgb_bytes_sha256": "ead447b9c1ebb9ba0c49211ff2a3cecac5cec735666a82eec4275db23c2577a5",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "brightness_110",
+    "spec": {
+      "name": "brightness_110",
+      "kind": "brightness",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--brightness_110.png",
+    "transformed_artifact_sha256": "064b465cc710038f769e688f84d45609676f9c8c85b66a3436e57395ce258b3d",
+    "model_input_artifact": "model-inputs/sample-1--brightness_110--128px.png",
+    "model_input_artifact_sha256": "385caa4b5f8de12267fe2c13369afb2a90786d0674b0ba257fac40f2522aaa25",
+    "model_input_rgb_bytes_sha256": "ba73e660eb7033ab4b3987cf49e8f26ad1e0dce182f1be52d9c876612866f8a5",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "contrast_090",
+    "spec": {
+      "name": "contrast_090",
+      "kind": "contrast",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--contrast_090.png",
+    "transformed_artifact_sha256": "e57137833dd81b670096144952c7ed721bb9dc1b479c5ec8af60111ea1457e9b",
+    "model_input_artifact": "model-inputs/sample-1--contrast_090--128px.png",
+    "model_input_artifact_sha256": "0d7df61c163af1a2d7c0dbdd3a36b9ad8a737e78a95a7333a900cde6ea40fc10",
+    "model_input_rgb_bytes_sha256": "e2f1908487476d72b154279933f938e99982925add42dfd41d2d2f6b13f38b22",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "contrast_110",
+    "spec": {
+      "name": "contrast_110",
+      "kind": "contrast",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--contrast_110.png",
+    "transformed_artifact_sha256": "aa3ab8e0598ab3ab260b9c49f16881aa8e538f4de2b3a05e01e5875ed8a765cf",
+    "model_input_artifact": "model-inputs/sample-1--contrast_110--128px.png",
+    "model_input_artifact_sha256": "cac6c2cf9a9c47d5ed553f7b15a61d318f6942361355ed252653620a8af8cbce",
+    "model_input_rgb_bytes_sha256": "fff0c7a2d8cc769eb9a45f0828bfeffe622327fcf2e1ba6f33271be63f2a6d3d",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 1,
+    "sample_name": "000000000042.jpg",
+    "transform": "gaussian_blur_075",
+    "spec": {
+      "name": "gaussian_blur_075",
+      "kind": "gaussian_blur",
+      "radius": 0.75
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 478,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 96,
+      "pad_left": 0,
+      "pad_top": 16,
+      "pad_right": 0,
+      "pad_bottom": 16,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-1--gaussian_blur_075.png",
+    "transformed_artifact_sha256": "ffaed41625f7653f535bce2a3fe3d3ec5c9f1367835237cec192193eede21355",
+    "model_input_artifact": "model-inputs/sample-1--gaussian_blur_075--128px.png",
+    "model_input_artifact_sha256": "0de41488bfb8ff225e505522ff80c8271848942be8608c4a24139f9037e43c43",
+    "model_input_rgb_bytes_sha256": "13910f556308b83adb9c104e093095540c5f79861616db85fafe461e9dac98b0",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "identity",
+    "spec": {
+      "name": "identity",
+      "kind": "identity"
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--identity.png",
+    "transformed_artifact_sha256": "14b658b90669d4a1942b54c7463635eb4568e22989b5b47c8914e8b501f1cc11",
+    "model_input_artifact": "model-inputs/sample-2--identity--128px.png",
+    "model_input_artifact_sha256": "a335bd144010f2674fb6c8944d62bdd71cd14df10cf80ee19b46ea34fc420ce3",
+    "model_input_rgb_bytes_sha256": "577ba43deb2b0caee6c6407eb79328b99a148d088d67d3ae1ae59a276bd9edd1",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "brightness_090",
+    "spec": {
+      "name": "brightness_090",
+      "kind": "brightness",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--brightness_090.png",
+    "transformed_artifact_sha256": "4c98d8e13b9671f3ca155dd92d581776ba132f626c31a386b22cf30580c80ca0",
+    "model_input_artifact": "model-inputs/sample-2--brightness_090--128px.png",
+    "model_input_artifact_sha256": "b30a1bdfce2b9e61ddf96c7982a4771f614f0f9e5020bd1a1934d079ef6864d6",
+    "model_input_rgb_bytes_sha256": "ad4e4c0bd9c03e0d39a218483764f44a1541cb2428d47b48e0dc4e7c81a437cf",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "brightness_110",
+    "spec": {
+      "name": "brightness_110",
+      "kind": "brightness",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--brightness_110.png",
+    "transformed_artifact_sha256": "d49b4f3e6a77edacc821f9e3a249350de95d723fe8b1e92897666df60c1d5f53",
+    "model_input_artifact": "model-inputs/sample-2--brightness_110--128px.png",
+    "model_input_artifact_sha256": "e4976d7bd41e4ba7c9d396006564fe12086bc688f1a6b84501b20fcc155e7c00",
+    "model_input_rgb_bytes_sha256": "c99aaa05867e0f8f379a2ed5fafb3bedb5dc182a952afff0a2aaac9d7121dba5",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "contrast_090",
+    "spec": {
+      "name": "contrast_090",
+      "kind": "contrast",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--contrast_090.png",
+    "transformed_artifact_sha256": "19dcca6b3124c28427306ec1d4f25ebe1c90f5db03a343aa1857754e57333b5f",
+    "model_input_artifact": "model-inputs/sample-2--contrast_090--128px.png",
+    "model_input_artifact_sha256": "ffda3082784b0bb2ef8a275ce04fa874f3f1373b64fcbc5a81735c48da3321d0",
+    "model_input_rgb_bytes_sha256": "e5d27b56deaeac914881decf65ca2da0a82fc6ebf8046e8dbad6ba068d7f24fb",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "contrast_110",
+    "spec": {
+      "name": "contrast_110",
+      "kind": "contrast",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--contrast_110.png",
+    "transformed_artifact_sha256": "80662f3bb010a5ab2f577986d81f3be2699a27a5f591b0572fe75d14db81ece6",
+    "model_input_artifact": "model-inputs/sample-2--contrast_110--128px.png",
+    "model_input_artifact_sha256": "97bdfc572c9fea4739a781995c8dbb7a919a10b1c2fbe9c7bf99c378c2b9d4bd",
+    "model_input_rgb_bytes_sha256": "f4c1482820750cd89a3dbf512abe022fc7411df15e2b6cd3f73c86d7e5ad4c56",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 2,
+    "sample_name": "000000000049.jpg",
+    "transform": "gaussian_blur_075",
+    "spec": {
+      "name": "gaussian_blur_075",
+      "kind": "gaussian_blur",
+      "radius": 0.75
+    },
+    "geometry": {
+      "original_width": 381,
+      "original_height": 500,
+      "input_size": 128,
+      "resized_width": 98,
+      "resized_height": 128,
+      "pad_left": 15,
+      "pad_top": 0,
+      "pad_right": 15,
+      "pad_bottom": 0,
+      "scale": 0.256
+    },
+    "transformed_artifact": "transformed-inputs/sample-2--gaussian_blur_075.png",
+    "transformed_artifact_sha256": "05e41716d5add83928d38fcbea4ccd2d987e8f0c8a80c26ec1dedb15237cc942",
+    "model_input_artifact": "model-inputs/sample-2--gaussian_blur_075--128px.png",
+    "model_input_artifact_sha256": "5fb848553173b4997d61f5210bda0607fda0e120d74d2a08886113faa8b26c1b",
+    "model_input_rgb_bytes_sha256": "6fe736aff2875365584f3402c6f6631f249f2cb1b1eb51aad65767e64cdd1452",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "identity",
+    "spec": {
+      "name": "identity",
+      "kind": "identity"
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--identity.png",
+    "transformed_artifact_sha256": "e66479d0580b8a5f2d82c095d2f9a6c23e804b5a3736ae34eaeed44759e151ba",
+    "model_input_artifact": "model-inputs/sample-3--identity--128px.png",
+    "model_input_artifact_sha256": "b7e466ac8644ca4e5536f6320af7dbfdc29ee77f9799136fdbf444f93280491e",
+    "model_input_rgb_bytes_sha256": "ed6f60d170f6feb25b8c5b608f4e706465005f969a181f2a6c84ddfeff5e3d6b",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "brightness_090",
+    "spec": {
+      "name": "brightness_090",
+      "kind": "brightness",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--brightness_090.png",
+    "transformed_artifact_sha256": "eb91bc5b6e4beb2b4b5007c67781d1546b2f2fe57c896b2c2559286c6fcdc01d",
+    "model_input_artifact": "model-inputs/sample-3--brightness_090--128px.png",
+    "model_input_artifact_sha256": "a97f60abc0066741bd338b02316e1a65ce0e9d6a025d99424c066de21ae97731",
+    "model_input_rgb_bytes_sha256": "d7ee4c030ffe6ff9923ef9af708b9e69ac0b8b935a6e64cb0e4b6adb28a9d7ed",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "brightness_110",
+    "spec": {
+      "name": "brightness_110",
+      "kind": "brightness",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--brightness_110.png",
+    "transformed_artifact_sha256": "aaa28e44df85b19adf18f4a22f48327c469c22f0287d333b5182f01eae00375b",
+    "model_input_artifact": "model-inputs/sample-3--brightness_110--128px.png",
+    "model_input_artifact_sha256": "7ccf010164f316c7161d76155ee867b29e51011694d97e5d69e11868d1d2d4a3",
+    "model_input_rgb_bytes_sha256": "52711e081e94c421baaf2cf67d250a23d355be077ed31ba27e81b6aecb44b8a6",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "contrast_090",
+    "spec": {
+      "name": "contrast_090",
+      "kind": "contrast",
+      "factor": 0.9
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--contrast_090.png",
+    "transformed_artifact_sha256": "931ee12d6d2dc8ab2a7717b735550e2554c74482be4ff4e5115852155b99581b",
+    "model_input_artifact": "model-inputs/sample-3--contrast_090--128px.png",
+    "model_input_artifact_sha256": "74830b6b20210b781ffb483f701792b4ab1108b60ac858bfb242f281589c4321",
+    "model_input_rgb_bytes_sha256": "00e5fd2cb43e8f617d7a8a13d0831b545f0914d5f1608c9ced678c4e00e59d93",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "contrast_110",
+    "spec": {
+      "name": "contrast_110",
+      "kind": "contrast",
+      "factor": 1.1
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--contrast_110.png",
+    "transformed_artifact_sha256": "85d7257f0ee159a600bfdc8632a83670ce999a6f55af6ce2ec4eb68c9bdb3b1f",
+    "model_input_artifact": "model-inputs/sample-3--contrast_110--128px.png",
+    "model_input_artifact_sha256": "2f35914d39082a40ed9de09f4eb5c62e8c964cf8122248193a909ac0d3f2d89a",
+    "model_input_rgb_bytes_sha256": "bfc88d26cdb850a06524ad41cf4f9948860162f732d2bc12ae11b6945eb1c975",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  },
+  {
+    "sample_index": 3,
+    "sample_name": "000000000061.jpg",
+    "transform": "gaussian_blur_075",
+    "spec": {
+      "name": "gaussian_blur_075",
+      "kind": "gaussian_blur",
+      "radius": 0.75
+    },
+    "geometry": {
+      "original_width": 640,
+      "original_height": 488,
+      "input_size": 128,
+      "resized_width": 128,
+      "resized_height": 98,
+      "pad_left": 0,
+      "pad_top": 15,
+      "pad_right": 0,
+      "pad_bottom": 15,
+      "scale": 0.2
+    },
+    "transformed_artifact": "transformed-inputs/sample-3--gaussian_blur_075.png",
+    "transformed_artifact_sha256": "00fe851ca796445d510ab5395ce1df923abf7a8b5c59fd23d8b370be88c0ac38",
+    "model_input_artifact": "model-inputs/sample-3--gaussian_blur_075--128px.png",
+    "model_input_artifact_sha256": "889a02955537086219cfe4e454f30f1c6b050e66d672b5dc8bec3ca3cdc44ee7",
+    "model_input_rgb_bytes_sha256": "17c8adfb93ef6c2609f4b4af70da700b53002df68a64ef53f7b964fccaedf92c",
+    "model_input_shape_hwc": [
+      128,
+      128,
+      3
+    ],
+    "normalization": "RGB uint8 / 255.0"
+  }
+]

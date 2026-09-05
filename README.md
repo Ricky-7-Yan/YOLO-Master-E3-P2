@@ -6,6 +6,8 @@
 
 ![CPU routing stability overview](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/robustness-overview.png)
 
+![CPU appearance sensitivity overview](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-overview.png)
+
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
 families. It deliberately refuses to turn sample-level vectors into visually plausible but semantically false
@@ -44,6 +46,14 @@ tied argmax. MoT comparisons were exactly equal, but its maps were spatially con
 therefore correctly marked undefined; this is not treated as learned robustness. Raising the input from 64 to 128
 removed all five `INSUFFICIENT_TOKENS` cases per family in this four-image mechanism test.
 
+The next CPU extension holds geometry at 128px and audits mild brightness ±10%, contrast ±10% and Gaussian blur
+0.75. Every transformed original and exact model-input canvas is archived and hashed; all five transformations
+changed all four configured inputs. Across another 576 captures and 480 aligned comparisons, MoA's dominant
+agreement was `95.54%–99.57%`, while probability MAE remained `6.29e-09–1.40e-07`. Agreement on pixels at or
+above the reference 90th-margin percentile rose to `98.96%–100%`. Pixels that changed dominant expert had only
+`3.4%–10.4%` of the mean reference margin of unchanged pixels, strengthening the near-tie explanation. Region
+effects had mixed direction and tiny magnitude, so no foreground-specific sensitivity is claimed.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -62,6 +72,7 @@ cd /d C:\path\to\YOLO-Master-E3-P2
 run_tests.cmd
 run_p2.cmd --run-id my-p2-run
 run_robustness.cmd --run-id my-robustness-run
+run_appearance.cmd --run-id my-appearance-run
 run_demo.cmd
 ```
 
@@ -86,6 +97,10 @@ model output changes.
 - [`Per-comparison evidence`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/stability-comparisons.json): all 480 aligned comparisons.
 - [`Resolution coverage`](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/region-resolution-coverage.json): foreground/background/padding counts and support status.
 - [`CPU robustness protocol`](docs/ROBUSTNESS_PROTOCOL.md) and [`formal result`](docs/ROBUSTNESS_RESULTS.md): predeclared method and interpretation.
+- [`Appearance summary`](artifacts/p2/p2a-20260905-cpu-appearance-v2/summary.json): audited inputs, invariants and evidence counts.
+- [`Appearance aggregate`](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-stability-aggregate.json): transform, module, seed and margin-stratified results.
+- [`Appearance region analysis`](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-region-analysis.json): foreground/background token sensitivity.
+- [`Appearance protocol`](docs/APPEARANCE_PROTOCOL.md) and [`formal result`](docs/APPEARANCE_RESULTS.md): controlled design and bounded conclusions.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

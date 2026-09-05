@@ -1,0 +1,26 @@
+2026-09-05 22:19:49,777 | INFO | scope=CPU appearance sensitivity resolution=128 transforms=['identity', 'brightness_090', 'brightness_110', 'contrast_090', 'contrast_110', 'gaussian_blur_075'] seeds=[0, 1, 2] samples=[0, 1, 2, 3]
+2026-09-05 22:19:54,822 | INFO | family=mot seed=0 sample=0 captures=24
+2026-09-05 22:19:59,072 | INFO | family=mot seed=0 sample=1 captures=24
+2026-09-05 22:20:01,344 | INFO | family=mot seed=0 sample=2 captures=24
+2026-09-05 22:20:05,428 | INFO | family=mot seed=0 sample=3 captures=24
+2026-09-05 22:20:09,470 | INFO | family=mot seed=1 sample=0 captures=24
+2026-09-05 22:20:12,855 | INFO | family=mot seed=1 sample=1 captures=24
+2026-09-05 22:20:14,946 | INFO | family=mot seed=1 sample=2 captures=24
+2026-09-05 22:20:18,421 | INFO | family=mot seed=1 sample=3 captures=24
+2026-09-05 22:20:22,283 | INFO | family=mot seed=2 sample=0 captures=24
+2026-09-05 22:20:26,145 | INFO | family=mot seed=2 sample=1 captures=24
+2026-09-05 22:20:28,597 | INFO | family=mot seed=2 sample=2 captures=24
+2026-09-05 22:20:32,208 | INFO | family=mot seed=2 sample=3 captures=24
+2026-09-05 22:20:38,160 | INFO | family=moa seed=0 sample=0 captures=24
+2026-09-05 22:20:41,665 | INFO | family=moa seed=0 sample=1 captures=24
+2026-09-05 22:20:43,832 | INFO | family=moa seed=0 sample=2 captures=24
+2026-09-05 22:20:48,069 | INFO | family=moa seed=0 sample=3 captures=24
+2026-09-05 22:20:53,425 | INFO | family=moa seed=1 sample=0 captures=24
+2026-09-05 22:20:56,726 | INFO | family=moa seed=1 sample=1 captures=24
+2026-09-05 22:20:59,245 | INFO | family=moa seed=1 sample=2 captures=24
+2026-09-05 22:21:04,014 | INFO | family=moa seed=1 sample=3 captures=24
+2026-09-05 22:21:09,287 | INFO | family=moa seed=2 sample=0 captures=24
+2026-09-05 22:21:12,711 | INFO | family=moa seed=2 sample=1 captures=24
+2026-09-05 22:21:14,749 | INFO | family=moa seed=2 sample=2 captures=24
+2026-09-05 22:21:18,824 | INFO | family=moa seed=2 sample=3 captures=24
+2026-09-05 22:21:20,535 | INFO | status=PASS captures=576 comparisons=480 region_comparisons=960 arrays=1536
