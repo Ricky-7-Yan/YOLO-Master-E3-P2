@@ -43,6 +43,12 @@ def main() -> None:
     driver_parser.add_argument("--config", type=Path, default=Path("configs/image_driver.yaml"))
     driver_parser.add_argument("--run-id")
     driver_parser.add_argument("--no-latest", action="store_true")
+    dose_parser = subparsers.add_parser(
+        "dose-response", help="run the predeclared 32-image MoA appearance-strength ladder"
+    )
+    dose_parser.add_argument("--config", type=Path, default=Path("configs/dose_response.yaml"))
+    dose_parser.add_argument("--run-id")
+    dose_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -79,6 +85,11 @@ def main() -> None:
 
         output = run_image_driver(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 image-driver evidence: {output}")
+    elif args.command == "dose-response":
+        from .dose_response_runner import run as run_dose_response
+
+        output = run_dose_response(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 dose-response evidence: {output}")
     else:
         from .demo import serve
 

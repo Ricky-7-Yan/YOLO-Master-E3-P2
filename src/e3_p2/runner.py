@@ -133,6 +133,7 @@ def _verify_project_source_state(require_committed: bool) -> dict[str, Any]:
         "run_layer_drilldown.cmd",
         "run_image_scale.cmd",
         "run_image_driver.cmd",
+        "run_dose_response.cmd",
         "run_demo.cmd",
         "run_tests.cmd",
     )
