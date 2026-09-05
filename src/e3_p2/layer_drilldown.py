@@ -353,7 +353,7 @@ def _save_case_figure(
     candidate: np.ndarray,
     valid: np.ndarray,
 ) -> None:
-    width, height, panel = 1130, 860, 320
+    width, height, panel = 1130, 950, 300
     canvas = Image.new("RGB", (width, height), "#050c1b")
     draw = ImageDraw.Draw(canvas)
     title, body, small, mono = _font(29), _font(18), _font(15), _font(16, mono=True)
@@ -385,13 +385,13 @@ def _save_case_figure(
     ]
     for index, (image, caption) in enumerate(panels):
         column, row = index % 3, index // 3
-        x, y = 56 + column * 352, 150 + row * 332
+        x, y = 66 + column * 344, 150 + row * 365
         resized = image.resize((panel, panel), Image.Resampling.NEAREST if index >= 2 else Image.Resampling.LANCZOS)
         canvas.paste(resized, (x, y))
         draw.text((x, y + panel + 8), caption, fill="#dcecff", font=small)
-    draw.rounded_rectangle((56, 816, 1074, 840), radius=8, fill="#10233c")
+    draw.rounded_rectangle((56, 875, 1074, 915), radius=8, fill="#10233c")
     draw.text(
-        (74, 819),
+        (74, 887),
         f"switch {case['dominant_switch_fraction'] * 100:.2f}%  |  MAE {case['probability_mae']:.2e}  |  "
         "padding is gray; maps are raw 16x16 tokens enlarged with nearest-neighbor",
         fill="#63e6a7",
