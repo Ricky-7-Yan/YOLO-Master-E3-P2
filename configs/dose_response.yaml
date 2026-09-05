@@ -1,5 +1,6 @@
 run_id: p2q-20260906-dose-response-v1
 require_committed_source: true
+study_kind: dose_response
 
 runtime_root: ../YOLO-Master-main-07d3303
 official_locked_base_ref: acce839c7e895d6b179de7f7093fa879e237cc7b

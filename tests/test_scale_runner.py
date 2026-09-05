@@ -4,12 +4,40 @@ import numpy as np
 import pytest
 
 from e3_p2.scale_runner import (
+    _load_config,
     archive_selected_inputs,
     bootstrap_layer_share_interval,
     bootstrap_mean_interval,
     deterministic_image_selection,
     summarize_image_level_attribution,
 )
+
+
+def test_scale_config_keeps_default_contract_but_allows_explicit_dose_mode(tmp_path: Path):
+    import yaml
+
+    base = {
+        "run_id": "test-dose",
+        "device": "cpu",
+        "resolution": 128,
+        "family": "moa",
+        "target_module": "target",
+        "seeds": [0, 1],
+        "selected_image_count": 16,
+        "expected_dataset_image_count": 16,
+        "selection_salt": "fixed",
+        "bootstrap_draws": 1000,
+        "max_evidence_bytes": 1_000_000,
+        "transformations": [{"name": "identity", "kind": "identity"}]
+        + [{"name": f"condition_{index}", "kind": "brightness", "factor": 0.9} for index in range(9)],
+    }
+    config_path = tmp_path / "config.yaml"
+    config_path.write_text(yaml.safe_dump(base), encoding="utf-8")
+    with pytest.raises(ValueError, match="transform contract must remain fixed"):
+        _load_config(config_path, None)
+    base["study_kind"] = "dose_response"
+    config_path.write_text(yaml.safe_dump(base), encoding="utf-8")
+    assert _load_config(config_path, None)["study_kind"] == "dose_response"
 
 
 def test_hash_selection_is_order_independent_and_not_content_driven():

@@ -60,10 +60,11 @@ def _load_config(path: Path, run_id_override: str | None) -> dict[str, Any]:
     if not str(config.get("selection_salt", "")):
         raise ValueError("selection_salt is required")
     transforms = config.get("transformations")
-    if not isinstance(transforms, list) or len(transforms) != 4:
-        raise ValueError("scale study requires identity plus exactly three perturbation families")
+    study_kind = str(config.get("study_kind", "image_scale"))
+    if not isinstance(transforms, list) or len(transforms) < 4:
+        raise ValueError("scale study requires identity plus at least three perturbations")
     names = [str(item.get("name", "")) for item in transforms if isinstance(item, dict)]
-    if len(names) != 4 or len(set(names)) != 4 or names[0] != "identity":
+    if len(names) != len(transforms) or len(set(names)) != len(names) or names[0] != "identity":
         raise ValueError("transform names must be unique and identity must be first")
     expected_transforms = [
         {"name": "identity", "kind": "identity"},
@@ -71,8 +72,12 @@ def _load_config(path: Path, run_id_override: str | None) -> dict[str, Any]:
         {"name": "contrast_090", "kind": "contrast", "factor": 0.9},
         {"name": "gaussian_blur_075", "kind": "gaussian_blur", "radius": 0.75},
     ]
-    if transforms != expected_transforms:
+    if study_kind == "image_scale" and transforms != expected_transforms:
         raise ValueError(f"transform contract must remain fixed: {expected_transforms}")
+    if study_kind not in {"image_scale", "dose_response"}:
+        raise ValueError(f"unsupported scale study_kind: {study_kind}")
+    if study_kind == "dose_response" and len(transforms) < 10:
+        raise ValueError("dose_response requires identity plus at least nine predeclared conditions")
     if int(config.get("bootstrap_draws", 0)) < 1000:
         raise ValueError("bootstrap_draws must be at least 1000")
     if int(config.get("max_evidence_bytes", 0)) < 1_000_000:
