@@ -30,5 +30,14 @@
   exposures are repeated measurements, not independent data points or a population sample.
 - The target-layer share is normalized by the sum of four descriptive mean MAEs. It localizes the observed
   numerical response but does not establish a causal layer contribution to detection output.
+- The image-level extension increases the image unit to 32 deterministic coco128 samples, but it is still a
+  fixed subset of a small training split under random initialization. It is not a random population sample, a
+  corruption benchmark or evidence of learned detector generalization.
+- Image bootstrap intervals quantify heterogeneity under resampling of the 32 selected images. They must not be
+  reported as model-accuracy confidence intervals or as guarantees for the full COCO distribution.
+- Two hash-selected coco128 images have no label file. They were retained rather than silently replaced and are
+  treated as empty-box records only because labels are not used by the padding-only image-level analysis.
+- The scaled run covers brightness 0.9, contrast 0.9 and blur 0.75 at one resolution. It does not establish a
+  monotone dose-response relationship or behavior under positive perturbation directions.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

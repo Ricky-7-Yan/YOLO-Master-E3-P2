@@ -1,0 +1,447 @@
+{
+  "method": {
+    "unit": "image",
+    "within_image_aggregation": "equal mean across seeds",
+    "bootstrap": "images resampled with replacement"
+  },
+  "by_transform": {
+    "brightness_090": {
+      "image_level_mean_switch_fraction": {
+        "unit_count": 32,
+        "draws": 10000,
+        "seed": 20261005,
+        "observed_mean": 0.03789122570860852,
+        "percentile_95_interval": [
+          0.032272901952467375,
+          0.04393430830869796
+        ],
+        "bootstrap_median": 0.03781125558469309
+      },
+      "image_min": 0.009114583333333334,
+      "image_max": 0.08125,
+      "zero_switch_image_count": 0,
+      "image_values": [
+        {
+          "sample_index": 0,
+          "mean_across_seeds": 0.016666666666666666
+        },
+        {
+          "sample_index": 1,
+          "mean_across_seeds": 0.05381944444444445
+        },
+        {
+          "sample_index": 2,
+          "mean_across_seeds": 0.0787037037037037
+        },
+        {
+          "sample_index": 3,
+          "mean_across_seeds": 0.034722222222222224
+        },
+        {
+          "sample_index": 4,
+          "mean_across_seeds": 0.04513888888888889
+        },
+        {
+          "sample_index": 5,
+          "mean_across_seeds": 0.022569444444444448
+        },
+        {
+          "sample_index": 6,
+          "mean_across_seeds": 0.04513888888888889
+        },
+        {
+          "sample_index": 7,
+          "mean_across_seeds": 0.041666666666666664
+        },
+        {
+          "sample_index": 8,
+          "mean_across_seeds": 0.03298611111111111
+        },
+        {
+          "sample_index": 9,
+          "mean_across_seeds": 0.02777777777777778
+        },
+        {
+          "sample_index": 10,
+          "mean_across_seeds": 0.022727272727272724
+        },
+        {
+          "sample_index": 11,
+          "mean_across_seeds": 0.009114583333333334
+        },
+        {
+          "sample_index": 12,
+          "mean_across_seeds": 0.0375
+        },
+        {
+          "sample_index": 13,
+          "mean_across_seeds": 0.024999999999999998
+        },
+        {
+          "sample_index": 14,
+          "mean_across_seeds": 0.07291666666666666
+        },
+        {
+          "sample_index": 15,
+          "mean_across_seeds": 0.02777777777777778
+        },
+        {
+          "sample_index": 16,
+          "mean_across_seeds": 0.03993055555555556
+        },
+        {
+          "sample_index": 17,
+          "mean_across_seeds": 0.020833333333333332
+        },
+        {
+          "sample_index": 18,
+          "mean_across_seeds": 0.04687499999999999
+        },
+        {
+          "sample_index": 19,
+          "mean_across_seeds": 0.041666666666666664
+        },
+        {
+          "sample_index": 20,
+          "mean_across_seeds": 0.035416666666666666
+        },
+        {
+          "sample_index": 21,
+          "mean_across_seeds": 0.026515151515151516
+        },
+        {
+          "sample_index": 22,
+          "mean_across_seeds": 0.016025641025641028
+        },
+        {
+          "sample_index": 23,
+          "mean_across_seeds": 0.02291666666666667
+        },
+        {
+          "sample_index": 24,
+          "mean_across_seeds": 0.08125
+        },
+        {
+          "sample_index": 25,
+          "mean_across_seeds": 0.03298611111111111
+        },
+        {
+          "sample_index": 26,
+          "mean_across_seeds": 0.046875
+        },
+        {
+          "sample_index": 27,
+          "mean_across_seeds": 0.028645833333333332
+        },
+        {
+          "sample_index": 28,
+          "mean_across_seeds": 0.037037037037037035
+        },
+        {
+          "sample_index": 29,
+          "mean_across_seeds": 0.05381944444444445
+        },
+        {
+          "sample_index": 30,
+          "mean_across_seeds": 0.043750000000000004
+        },
+        {
+          "sample_index": 31,
+          "mean_across_seeds": 0.043750000000000004
+        }
+      ]
+    },
+    "contrast_090": {
+      "image_level_mean_switch_fraction": {
+        "unit_count": 32,
+        "draws": 10000,
+        "seed": 20261006,
+        "observed_mean": 0.02207923460364867,
+        "percentile_95_interval": [
+          0.019375790247982628,
+          0.02495327941372863
+        ],
+        "bootstrap_median": 0.022039059844235626
+      },
+      "image_min": 0.008680555555555554,
+      "image_max": 0.041666666666666664,
+      "zero_switch_image_count": 0,
+      "image_values": [
+        {
+          "sample_index": 0,
+          "mean_across_seeds": 0.016666666666666666
+        },
+        {
+          "sample_index": 1,
+          "mean_across_seeds": 0.041666666666666664
+        },
+        {
+          "sample_index": 2,
+          "mean_across_seeds": 0.01388888888888889
+        },
+        {
+          "sample_index": 3,
+          "mean_across_seeds": 0.02777777777777778
+        },
+        {
+          "sample_index": 4,
+          "mean_across_seeds": 0.015625
+        },
+        {
+          "sample_index": 5,
+          "mean_across_seeds": 0.02951388888888889
+        },
+        {
+          "sample_index": 6,
+          "mean_across_seeds": 0.026041666666666668
+        },
+        {
+          "sample_index": 7,
+          "mean_across_seeds": 0.020833333333333332
+        },
+        {
+          "sample_index": 8,
+          "mean_across_seeds": 0.020833333333333332
+        },
+        {
+          "sample_index": 9,
+          "mean_across_seeds": 0.020833333333333332
+        },
+        {
+          "sample_index": 10,
+          "mean_across_seeds": 0.017045454545454548
+        },
+        {
+          "sample_index": 11,
+          "mean_across_seeds": 0.01953125
+        },
+        {
+          "sample_index": 12,
+          "mean_across_seeds": 0.010416666666666666
+        },
+        {
+          "sample_index": 13,
+          "mean_across_seeds": 0.018750000000000003
+        },
+        {
+          "sample_index": 14,
+          "mean_across_seeds": 0.041666666666666664
+        },
+        {
+          "sample_index": 15,
+          "mean_across_seeds": 0.022569444444444444
+        },
+        {
+          "sample_index": 16,
+          "mean_across_seeds": 0.02777777777777778
+        },
+        {
+          "sample_index": 17,
+          "mean_across_seeds": 0.013888888888888888
+        },
+        {
+          "sample_index": 18,
+          "mean_across_seeds": 0.008680555555555554
+        },
+        {
+          "sample_index": 19,
+          "mean_across_seeds": 0.018229166666666668
+        },
+        {
+          "sample_index": 20,
+          "mean_across_seeds": 0.020833333333333332
+        },
+        {
+          "sample_index": 21,
+          "mean_across_seeds": 0.01893939393939394
+        },
+        {
+          "sample_index": 22,
+          "mean_across_seeds": 0.01762820512820513
+        },
+        {
+          "sample_index": 23,
+          "mean_across_seeds": 0.02291666666666667
+        },
+        {
+          "sample_index": 24,
+          "mean_across_seeds": 0.03958333333333333
+        },
+        {
+          "sample_index": 25,
+          "mean_across_seeds": 0.02777777777777778
+        },
+        {
+          "sample_index": 26,
+          "mean_across_seeds": 0.03125
+        },
+        {
+          "sample_index": 27,
+          "mean_across_seeds": 0.015625
+        },
+        {
+          "sample_index": 28,
+          "mean_across_seeds": 0.023148148148148143
+        },
+        {
+          "sample_index": 29,
+          "mean_across_seeds": 0.019097222222222224
+        },
+        {
+          "sample_index": 30,
+          "mean_across_seeds": 0.012499999999999999
+        },
+        {
+          "sample_index": 31,
+          "mean_across_seeds": 0.024999999999999998
+        }
+      ]
+    },
+    "gaussian_blur_075": {
+      "image_level_mean_switch_fraction": {
+        "unit_count": 32,
+        "draws": 10000,
+        "seed": 20261007,
+        "observed_mean": 0.003978214891300828,
+        "percentile_95_interval": [
+          0.00300202530488175,
+          0.0050116006317178175
+        ],
+        "bootstrap_median": 0.003957831899726431
+      },
+      "image_min": 0.0,
+      "image_max": 0.010416666666666666,
+      "zero_switch_image_count": 4,
+      "image_values": [
+        {
+          "sample_index": 0,
+          "mean_across_seeds": 0.0
+        },
+        {
+          "sample_index": 1,
+          "mean_across_seeds": 0.001736111111111111
+        },
+        {
+          "sample_index": 2,
+          "mean_across_seeds": 0.0
+        },
+        {
+          "sample_index": 3,
+          "mean_across_seeds": 0.003472222222222222
+        },
+        {
+          "sample_index": 4,
+          "mean_across_seeds": 0.010416666666666666
+        },
+        {
+          "sample_index": 5,
+          "mean_across_seeds": 0.005208333333333333
+        },
+        {
+          "sample_index": 6,
+          "mean_across_seeds": 0.005208333333333333
+        },
+        {
+          "sample_index": 7,
+          "mean_across_seeds": 0.0062499999999999995
+        },
+        {
+          "sample_index": 8,
+          "mean_across_seeds": 0.010416666666666666
+        },
+        {
+          "sample_index": 9,
+          "mean_across_seeds": 0.001736111111111111
+        },
+        {
+          "sample_index": 10,
+          "mean_across_seeds": 0.001893939393939394
+        },
+        {
+          "sample_index": 11,
+          "mean_across_seeds": 0.0013020833333333333
+        },
+        {
+          "sample_index": 12,
+          "mean_across_seeds": 0.0020833333333333333
+        },
+        {
+          "sample_index": 13,
+          "mean_across_seeds": 0.006250000000000001
+        },
+        {
+          "sample_index": 14,
+          "mean_across_seeds": 0.008680555555555554
+        },
+        {
+          "sample_index": 15,
+          "mean_across_seeds": 0.003472222222222222
+        },
+        {
+          "sample_index": 16,
+          "mean_across_seeds": 0.001736111111111111
+        },
+        {
+          "sample_index": 17,
+          "mean_across_seeds": 0.003472222222222222
+        },
+        {
+          "sample_index": 18,
+          "mean_across_seeds": 0.005208333333333333
+        },
+        {
+          "sample_index": 19,
+          "mean_across_seeds": 0.0
+        },
+        {
+          "sample_index": 20,
+          "mean_across_seeds": 0.004166666666666667
+        },
+        {
+          "sample_index": 21,
+          "mean_across_seeds": 0.005681818181818181
+        },
+        {
+          "sample_index": 22,
+          "mean_across_seeds": 0.0032051282051282055
+        },
+        {
+          "sample_index": 23,
+          "mean_across_seeds": 0.004166666666666667
+        },
+        {
+          "sample_index": 24,
+          "mean_across_seeds": 0.008333333333333333
+        },
+        {
+          "sample_index": 25,
+          "mean_across_seeds": 0.003472222222222222
+        },
+        {
+          "sample_index": 26,
+          "mean_across_seeds": 0.008680555555555554
+        },
+        {
+          "sample_index": 27,
+          "mean_across_seeds": 0.0026041666666666665
+        },
+        {
+          "sample_index": 28,
+          "mean_across_seeds": 0.004629629629629629
+        },
+        {
+          "sample_index": 29,
+          "mean_across_seeds": 0.001736111111111111
+        },
+        {
+          "sample_index": 30,
+          "mean_across_seeds": 0.0020833333333333333
+        },
+        {
+          "sample_index": 31,
+          "mean_across_seeds": 0.0
+        }
+      ]
+    }
+  }
+}

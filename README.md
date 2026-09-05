@@ -1,6 +1,6 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · layer attribution · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · image-level layer attribution · reproducible local demo
 
 ![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
 
@@ -9,6 +9,8 @@
 ![CPU appearance sensitivity overview](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-overview.png)
 
 ![Model.16 layer attribution](artifacts/p2/p2d-20260905-layer16-attribution-v2/layer-attribution-overview.png)
+
+![Coco128 image-level scaling](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -63,6 +65,15 @@ exposures, the lowest reference-margin decile switched expert `22.60%` of the ti
 `3.35%` and `0.67%`, and deciles 4–10 had no switches. This is descriptive concentration within random
 initialization, not causal attribution or learned routing behavior.
 
+The image-level extension then moved the primary unit from repeated tokens to 32 images selected deterministically
+from the 128-image `coco128` split without inspecting pixels, labels or model results. Across 3 seeds and 3
+perturbations, `model.16.m.0.router` ranked first in all 288 image×seed×transform cases, all 96 image×transform
+aggregates and all 32 image aggregates; it also remained first in all 96 leave-one-image-out checks. Image-level
+bootstrap target-share intervals were `95.03%–95.23%` for brightness 0.9, `93.67%–94.02%` for contrast 0.9 and
+`91.33%–92.43%` for blur 0.75. These intervals describe heterogeneity inside the fixed selected subset, not
+population generalization. Of 53,424 raw target-layer token exposures, 99.38% of expert switches occurred in the
+lowest three reference-margin deciles and none occurred above the fifth decile.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -83,6 +94,7 @@ run_p2.cmd --run-id my-p2-run
 run_robustness.cmd --run-id my-robustness-run
 run_appearance.cmd --run-id my-appearance-run
 run_layer_drilldown.cmd --run-id my-layer-run
+run_image_scale.cmd --run-id my-image-scale-run
 run_demo.cmd
 ```
 
@@ -115,6 +127,10 @@ model output changes.
 - [`Layer ranking`](artifacts/p2/p2d-20260905-layer16-attribution-v2/layer-attribution.json): transform and seed-stratified evidence.
 - [`Margin deciles`](artifacts/p2/p2d-20260905-layer16-attribution-v2/margin-deciles.json): complete valid-token switch partition.
 - [`Layer-attribution protocol`](docs/LAYER_ATTRIBUTION_PROTOCOL.md) and [`formal result`](docs/LAYER_ATTRIBUTION_RESULTS.md): predeclared method and interpretation.
+- [`Image-scale summary`](artifacts/p2/p2s-20260905-coco128-32-v1/summary.json): source-bound verdict, coverage and invariants.
+- [`Image-level attribution`](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-attribution.json): case, image, leave-one-out and bootstrap rankings.
+- [`Image-level switches`](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-switches.json): per-image target-layer switch rates and image bootstrap intervals.
+- [`Image-scale protocol`](docs/IMAGE_SCALE_PROTOCOL.md) and [`formal result`](docs/IMAGE_SCALE_RESULTS.md): predeclared selection, method and bounded conclusions.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

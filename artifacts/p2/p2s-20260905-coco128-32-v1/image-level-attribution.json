@@ -1,0 +1,3623 @@
+{
+  "method": {
+    "metric": "original-coordinate probability MAE",
+    "primary_unit": "image",
+    "within_image_aggregation": "equal mean across configured seeds and/or transforms",
+    "bootstrap": "non-parametric resampling of images with replacement; descriptive for selected coco128 subset",
+    "rank_tie_policy": "stable module order"
+  },
+  "image_count": 32,
+  "seed_count": 3,
+  "transform_count": 3,
+  "module_order": [
+    "model.13.m.0.router",
+    "model.16.m.0.router",
+    "model.19.m.0.router",
+    "model.22.m.0.router"
+  ],
+  "case_rankings": [
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 4,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 5,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 6,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 7,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 8,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 9,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 10,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 11,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 12,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 13,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 14,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 15,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 16,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 17,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 18,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 19,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 20,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 21,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 22,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 23,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 24,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 25,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 26,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 27,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 28,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 29,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 30,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    },
+    {
+      "sample_index": 31,
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router"
+    }
+  ],
+  "target_rank_one_case_count": 288,
+  "case_count": 288,
+  "image_transform_rankings": [
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9506810669912974
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9331291647405813
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.923106440758014
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9438879659735909
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9249506031530622
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9129620723344918
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.946647208402027
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9246720220971949
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9471781992833413
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.950374575432341
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.937985531156228
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9152150363028082
+    },
+    {
+      "sample_index": 4,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9525190107922578
+    },
+    {
+      "sample_index": 4,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9382659417352236
+    },
+    {
+      "sample_index": 4,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9072886281243862
+    },
+    {
+      "sample_index": 5,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9493555239615661
+    },
+    {
+      "sample_index": 5,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9360238217739276
+    },
+    {
+      "sample_index": 5,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9042717837733445
+    },
+    {
+      "sample_index": 6,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9532054335622936
+    },
+    {
+      "sample_index": 6,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.938923782721936
+    },
+    {
+      "sample_index": 6,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9005018001401095
+    },
+    {
+      "sample_index": 7,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9486671329079788
+    },
+    {
+      "sample_index": 7,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9403701462796416
+    },
+    {
+      "sample_index": 7,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9415854797901841
+    },
+    {
+      "sample_index": 8,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9545118155396923
+    },
+    {
+      "sample_index": 8,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9469874186320612
+    },
+    {
+      "sample_index": 8,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9072930998654368
+    },
+    {
+      "sample_index": 9,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9493175216029743
+    },
+    {
+      "sample_index": 9,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.93695232904593
+    },
+    {
+      "sample_index": 9,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9194917586057196
+    },
+    {
+      "sample_index": 10,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9510403191245225
+    },
+    {
+      "sample_index": 10,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.936986543312015
+    },
+    {
+      "sample_index": 10,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9530121966482745
+    },
+    {
+      "sample_index": 11,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9540321409103999
+    },
+    {
+      "sample_index": 11,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9361798176862635
+    },
+    {
+      "sample_index": 11,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9070655691454936
+    },
+    {
+      "sample_index": 12,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9528568253763415
+    },
+    {
+      "sample_index": 12,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9481463866703002
+    },
+    {
+      "sample_index": 12,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9148980416818883
+    },
+    {
+      "sample_index": 13,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9496570321779794
+    },
+    {
+      "sample_index": 13,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9310829084508669
+    },
+    {
+      "sample_index": 13,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.877031792282994
+    },
+    {
+      "sample_index": 14,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9484815497804077
+    },
+    {
+      "sample_index": 14,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9347288330461367
+    },
+    {
+      "sample_index": 14,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9112824836608326
+    },
+    {
+      "sample_index": 15,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9558634951208791
+    },
+    {
+      "sample_index": 15,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9433572394653388
+    },
+    {
+      "sample_index": 15,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9351753252450805
+    },
+    {
+      "sample_index": 16,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9486343749047876
+    },
+    {
+      "sample_index": 16,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9312116122670667
+    },
+    {
+      "sample_index": 16,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9071362551049218
+    },
+    {
+      "sample_index": 17,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9537867834627957
+    },
+    {
+      "sample_index": 17,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9445325679169221
+    },
+    {
+      "sample_index": 17,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9406300448023797
+    },
+    {
+      "sample_index": 18,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9532299320740302
+    },
+    {
+      "sample_index": 18,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9434038322501059
+    },
+    {
+      "sample_index": 18,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9179214425804259
+    },
+    {
+      "sample_index": 19,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9553567329180843
+    },
+    {
+      "sample_index": 19,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9378890872273246
+    },
+    {
+      "sample_index": 19,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.954359992625247
+    },
+    {
+      "sample_index": 20,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.948836596486599
+    },
+    {
+      "sample_index": 20,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9352139782447303
+    },
+    {
+      "sample_index": 20,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9247745383404113
+    },
+    {
+      "sample_index": 21,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9537081568687905
+    },
+    {
+      "sample_index": 21,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9438347102718343
+    },
+    {
+      "sample_index": 21,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9095551278449181
+    },
+    {
+      "sample_index": 22,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9507320101500979
+    },
+    {
+      "sample_index": 22,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9402889312062954
+    },
+    {
+      "sample_index": 22,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.936654709607325
+    },
+    {
+      "sample_index": 23,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.949004731988987
+    },
+    {
+      "sample_index": 23,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.935097498252705
+    },
+    {
+      "sample_index": 23,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9219654249083798
+    },
+    {
+      "sample_index": 24,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9480135524104701
+    },
+    {
+      "sample_index": 24,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9301235627637597
+    },
+    {
+      "sample_index": 24,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.8869392321662897
+    },
+    {
+      "sample_index": 25,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9511366909192941
+    },
+    {
+      "sample_index": 25,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9398958960206518
+    },
+    {
+      "sample_index": 25,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9175877501314427
+    },
+    {
+      "sample_index": 26,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9518641162249248
+    },
+    {
+      "sample_index": 26,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9417811044589764
+    },
+    {
+      "sample_index": 26,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.928721716803676
+    },
+    {
+      "sample_index": 27,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9560611030385188
+    },
+    {
+      "sample_index": 27,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9388907489312214
+    },
+    {
+      "sample_index": 27,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9247621702634071
+    },
+    {
+      "sample_index": 28,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9492104525754335
+    },
+    {
+      "sample_index": 28,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9359861208896884
+    },
+    {
+      "sample_index": 28,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9374568390037291
+    },
+    {
+      "sample_index": 29,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9525871734325112
+    },
+    {
+      "sample_index": 29,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9376374148975132
+    },
+    {
+      "sample_index": 29,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.924294608641139
+    },
+    {
+      "sample_index": 30,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9503508011383822
+    },
+    {
+      "sample_index": 30,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9430055510332301
+    },
+    {
+      "sample_index": 30,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9266781492148882
+    },
+    {
+      "sample_index": 31,
+      "transform": "brightness_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9516331004455278
+    },
+    {
+      "sample_index": 31,
+      "transform": "contrast_090",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9419087282333998
+    },
+    {
+      "sample_index": 31,
+      "transform": "gaussian_blur_075",
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.910500414375047
+    }
+  ],
+  "target_rank_one_image_transform_count": 96,
+  "image_transform_count": 96,
+  "image_rankings": [
+    {
+      "sample_index": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9435625256723199
+    },
+    {
+      "sample_index": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9376547434819551
+    },
+    {
+      "sample_index": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9427410237881868
+    },
+    {
+      "sample_index": 3,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9454030689696887
+    },
+    {
+      "sample_index": 4,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9469483521518175
+    },
+    {
+      "sample_index": 5,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.94346445768986
+    },
+    {
+      "sample_index": 6,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.947374427564802
+    },
+    {
+      "sample_index": 7,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9457978778964646
+    },
+    {
+      "sample_index": 8,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9503590079247182
+    },
+    {
+      "sample_index": 9,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9444878423507986
+    },
+    {
+      "sample_index": 10,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9464609888263453
+    },
+    {
+      "sample_index": 11,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9463200409689544
+    },
+    {
+      "sample_index": 12,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9503044815388303
+    },
+    {
+      "sample_index": 13,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9402143533399641
+    },
+    {
+      "sample_index": 14,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9434402176060049
+    },
+    {
+      "sample_index": 15,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9511807698919019
+    },
+    {
+      "sample_index": 16,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9415260407752809
+    },
+    {
+      "sample_index": 17,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9501772950027758
+    },
+    {
+      "sample_index": 18,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9496336625184224
+    },
+    {
+      "sample_index": 19,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513790454627687
+    },
+    {
+      "sample_index": 20,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9436700470028327
+    },
+    {
+      "sample_index": 21,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.948885203680431
+    },
+    {
+      "sample_index": 22,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9457520146576215
+    },
+    {
+      "sample_index": 23,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9440758909687769
+    },
+    {
+      "sample_index": 24,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.941236351646158
+    },
+    {
+      "sample_index": 25,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9459772424685452
+    },
+    {
+      "sample_index": 26,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9480100326258506
+    },
+    {
+      "sample_index": 27,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9499448324856473
+    },
+    {
+      "sample_index": 28,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9445521684187392
+    },
+    {
+      "sample_index": 29,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9479811919769823
+    },
+    {
+      "sample_index": 30,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9478692065706685
+    },
+    {
+      "sample_index": 31,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9473961014272473
+    }
+  ],
+  "target_rank_one_image_count": 32,
+  "leave_one_image_out": [
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.951301933622042
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9515193030361364
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9514681425214392
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 3,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513244716898339
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 4,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512445276857486
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 5,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513463079891367
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 6,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512231440441372
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 7,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513880503624169
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 8,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9511844199589403
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 9,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513697879787993
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 10,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512963749010489
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 11,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512250580240235
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 12,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512292912848012
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 13,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513242969774652
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 14,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513796900675997
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 15,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9511389519291835
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 16,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513516568778434
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 17,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.951214173418321
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 18,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512037418139999
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 19,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9511099706600284
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 20,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513627649291776
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 21,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512033061462197
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 22,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513017475839866
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 23,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513386478756389
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 24,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513825198739359
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 25,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512944417699469
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 26,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512719561107029
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 27,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9510879662847498
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 28,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.95133765440417
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 29,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512413484537187
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 30,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9513281418247136
+    },
+    {
+      "transform": "brightness_090",
+      "omitted_sample_index": 31,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9512768042268196
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386660416866538
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9389291969875082
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9387920256302923
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 3,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385651462628188
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 4,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385487205496225
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 5,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386258894118968
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 6,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385279458149982
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 7,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9384670159626546
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 8,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9383186205843043
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 9,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386135728059465
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 10,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385856478447899
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 11,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386110469221898
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 12,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9381242895139874
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 13,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9387239302436639
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 14,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386498780497541
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 15,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9383682013590302
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 16,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9387213642380421
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 17,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9383106604644544
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 18,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9383249196039424
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 19,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.938559976893648
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 20,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386429213487612
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 21,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.938382824961799
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 22,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9384751464172543
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 23,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385964534794591
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 24,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9387681202443154
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 25,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9384924426634543
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 26,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9384454556781916
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 27,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385258592085101
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 28,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9386055012734988
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 29,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9385683231200448
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 30,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9383693869964814
+    },
+    {
+      "transform": "contrast_090",
+      "omitted_sample_index": 31,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.938397192757597
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9184802456659934
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9187594109272843
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9180577060928276
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 3,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9187369033478879
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 4,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.919277513060591
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 5,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9191018065817891
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 6,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9191994579969431
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 7,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9179515788030197
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 8,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9192016854425419
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 9,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.918600478969628
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 10,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9179739499777654
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 11,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9189295586615684
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 12,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9187618556030889
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 13,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9200745602953978
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 14,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9188684405941491
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 15,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9180501761144856
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 16,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9189980477416438
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 17,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9181274281242956
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 18,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9186455340117086
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 19,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9175492065880034
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 20,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9183755463989145
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 21,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.919175578537779
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 22,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9181152647894004
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 23,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9184966533806913
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 24,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9193242236209869
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 25,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9186733397604071
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 26,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9182124236424067
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 27,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9184594163292767
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 28,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9181582945157483
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 29,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9184745505208038
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 30,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9185114327632379
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "omitted_sample_index": 31,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_share_of_layer_mean_mae_sum": 0.9188948945076348
+    }
+  ],
+  "target_rank_one_leave_one_out_count": 96,
+  "leave_one_out_count": 96,
+  "bootstrap_target_share_by_transform": {
+    "brightness_090": {
+      "image_unit_count": 32,
+      "draws": 10000,
+      "seed": 20260905,
+      "observed_target_share": 0.9512899056029704,
+      "percentile_95_interval": [
+        0.9502567355880127,
+        0.9522676537150054
+      ],
+      "bootstrap_median": 0.9512950657179242,
+      "target_rank_one_draw_fraction": 1.0
+    },
+    "contrast_090": {
+      "image_unit_count": 32,
+      "draws": 10000,
+      "seed": 20260906,
+      "observed_target_share": 0.9385414334638371,
+      "percentile_95_interval": [
+        0.9367050445271542,
+        0.9401912698626774
+      ],
+      "bootstrap_median": 0.9385467264042463,
+      "target_rank_one_draw_fraction": 1.0
+    },
+    "gaussian_blur_075": {
+      "image_unit_count": 32,
+      "draws": 10000,
+      "seed": 20260907,
+      "observed_target_share": 0.9186300041359149,
+      "percentile_95_interval": [
+        0.9132560432676288,
+        0.9243041078115705
+      ],
+      "bootstrap_median": 0.9186394247631933,
+      "target_rank_one_draw_fraction": 1.0
+    }
+  }
+}

@@ -1,0 +1,1 @@
+run_image_scale.cmd

@@ -83,3 +83,20 @@
 - Analyzed 240 layer comparisons, 60 target-layer cases and 11,520 valid token-comparison exposures.
 - Expanded the unit suite to 42 passing tests and independently rehashed all 14 formal attribution files.
 - Kept layer share descriptive rather than causal and retained the random-initialization boundary in every result.
+
+## Coco128 image-level scaling
+
+- Added a committed CPU protocol that selects 32 of exactly 128 coco128 images by a filename-hash order that is
+  independent of image content, labels and model output.
+- Retained two selected images with missing dataset label files as `MISSING_DATASET_LABEL` instead of replacing
+  them after selection; this analysis does not use labels for its image-level metrics.
+- Captured all four MoA spatial routers for three fixed initializations and identity/brightness/contrast/blur
+  inputs at 128px, with exact transformed-input hashes and fail-closed effect checks.
+- Changed the primary aggregation unit from tokens to images; added image×seed×transform, image×transform,
+  per-image and leave-one-image-out layer rankings.
+- Added 10,000-draw image-level bootstrap intervals for target-layer share and target-layer switch rate, while
+  retaining margin deciles only as descriptive localization.
+- Generated 1,536 spatial captures, 1,568 raw arrays, 1,152 aligned layer comparisons and 288 target-layer cases.
+- Verified all three representative hook/repeat/cleanup invariants, 47 unit tests, Ruff checks and all 80 formal
+  evidence files by an independent exact-set SHA-256 rehash.
+- Kept the subset, random-initialization and non-causal interpretation boundaries beside the headline result.

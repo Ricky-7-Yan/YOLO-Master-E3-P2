@@ -27,6 +27,10 @@ The implementation runs against YOLO-Master runtime ref
 | Honest unsupported path | Singleton or absent spatial axes must fail closed | code + negative tests | PASS |
 | Two-minute demo | One command; paired original/overlay; select sample/layer/view; copy metadata; export PNG | `demo.html`, `demo-smoke.json` | PASS |
 | Reproducible evidence | Config, command, input hashes, environment, source hashes, full log, manifest | formal run directory | PASS |
+| Image-level scaling | Select 32/128 images without reading content, labels or model output | `input.json`, selection tests | PASS |
+| Cross-image layer ranking | Complete image×seed×transform matrices plus per-image and leave-one-out ranks | `image-level-attribution.json` | PASS |
+| Image-level uncertainty | Bootstrap image aggregates, never repeated tokens, with fixed seeds and 10,000 draws | attribution/switch JSON | PASS |
+| Dataset edge cases | Retain and label hash-selected missing-label records; never replace after selection | archived input ledger | PASS |
 
 ## Non-goals
 

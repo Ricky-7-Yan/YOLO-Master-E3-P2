@@ -1,0 +1,801 @@
+{
+  "reference": "identity model-input uint8 canvas",
+  "scale": "absolute RGB difference on [0,255]",
+  "all_candidate_samples_changed": true,
+  "by_transform": {
+    "brightness_090": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 8.069794972737629,
+      "rgb_mae_0_255_min": 4.001851399739583,
+      "rgb_mae_0_255_max": 15.570536295572916,
+      "changed_channel_fraction_mean": 0.7271232604980469
+    },
+    "contrast_090": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 3.6119003295898438,
+      "rgb_mae_0_255_min": 1.6692911783854167,
+      "rgb_mae_0_255_max": 5.965596516927083,
+      "changed_channel_fraction_mean": 0.6868813832600911
+    },
+    "gaussian_blur_075": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 0.3026472727457682,
+      "rgb_mae_0_255_min": 0.09193929036458333,
+      "rgb_mae_0_255_max": 0.7458902994791666,
+      "changed_channel_fraction_mean": 0.23952229817708334
+    }
+  },
+  "records": [
+    {
+      "sample_index": 0,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 4.001851399739583,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.6324462890625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.585795084635416,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.088399251302084,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.56243896484375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 9.362650553385416,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7471923828125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 4,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 11.0966796875,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7656046549479166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 5,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 6.602254231770833,
+      "rgb_max_abs_error_0_255": 25,
+      "changed_channel_fraction": 0.7423909505208334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 6,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 7.761637369791667,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 7,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.227498372395834,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.64825439453125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 8,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 9.188496907552084,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 9,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.84454345703125,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.73236083984375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 10,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 5.8563232421875,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.6926676432291666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 11,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 6.246927897135417,
+      "rgb_max_abs_error_0_255": 19,
+      "changed_channel_fraction": 0.9317423502604166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 12,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.4561767578125,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.6638590494791666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 13,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 4.664652506510417,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.6637166341145834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 14,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.862589518229166,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.74951171875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 15,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.058756510416666,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 16,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 7.976053873697917,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7498372395833334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 17,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 6.722615559895833,
+      "rgb_max_abs_error_0_255": 25,
+      "changed_channel_fraction": 0.7455037434895834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 18,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 11.693806966145834,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7488606770833334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 19,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 15.570536295572916,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.99993896484375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 20,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 6.90447998046875,
+      "rgb_max_abs_error_0_255": 25,
+      "changed_channel_fraction": 0.6636555989583334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 21,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.435038248697916,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.678466796875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 22,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 4.631062825520833,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7763468424479166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 23,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 5.445393880208333,
+      "rgb_max_abs_error_0_255": 25,
+      "changed_channel_fraction": 0.6640625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 24,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 7.3602294921875,
+      "rgb_max_abs_error_0_255": 24,
+      "changed_channel_fraction": 0.6640625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 25,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 6.938008626302083,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7005208333333334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 26,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 8.191975911458334,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.7499796549479166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 27,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 12.171630859375,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.9530029296875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 28,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 4.45330810546875,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.5625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 29,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 10.255615234375,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.75,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 30,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 9.614908854166666,
+      "rgb_max_abs_error_0_255": 22,
+      "changed_channel_fraction": 0.671875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 31,
+      "transform": "brightness_090",
+      "rgb_mae_0_255": 7.963541666666667,
+      "rgb_max_abs_error_0_255": 26,
+      "changed_channel_fraction": 0.6571451822916666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 2.2248738606770835,
+      "rgb_max_abs_error_0_255": 20,
+      "changed_channel_fraction": 0.5835367838541666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.5921834309895835,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.7034708658854166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 1.6692911783854167,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.4886678059895833,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.203592936197917,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.6930948893229166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 4,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.5474446614583335,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.7181193033854166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 5,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.6915690104166665,
+      "rgb_max_abs_error_0_255": 17,
+      "changed_channel_fraction": 0.70294189453125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 6,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.345845540364583,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.71295166015625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 7,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.7941691080729165,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.62103271484375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 8,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.0220743815104165,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.7031656901041666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 9,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 5.439839680989583,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.7295328776041666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 10,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 2.6414591471354165,
+      "rgb_max_abs_error_0_255": 18,
+      "changed_channel_fraction": 0.6013997395833334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 11,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.7865193684895835,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.8969319661458334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 12,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.8385416666666665,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.64630126953125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 13,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 2.13873291015625,
+      "rgb_max_abs_error_0_255": 19,
+      "changed_channel_fraction": 0.576416015625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 14,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.7937825520833335,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.7228190104166666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 15,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.240010579427083,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.7164103190104166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 16,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.1719970703125,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.68084716796875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 17,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.8322347005208335,
+      "rgb_max_abs_error_0_255": 16,
+      "changed_channel_fraction": 0.7073567708333334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 18,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.789652506510417,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.72381591796875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 19,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.34478759765625,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.9422810872395834,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 20,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.00872802734375,
+      "rgb_max_abs_error_0_255": 15,
+      "changed_channel_fraction": 0.62335205078125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 21,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.44207763671875,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.6420084635416666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 22,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.209574381510417,
+      "rgb_max_abs_error_0_255": 21,
+      "changed_channel_fraction": 0.755615234375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 23,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 1.9240926106770833,
+      "rgb_max_abs_error_0_255": 17,
+      "changed_channel_fraction": 0.5952962239583334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 24,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 2.8816731770833335,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.6287638346354166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 25,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.035847981770833,
+      "rgb_max_abs_error_0_255": 17,
+      "changed_channel_fraction": 0.7128499348958334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 26,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.5260213216145835,
+      "rgb_max_abs_error_0_255": 16,
+      "changed_channel_fraction": 0.70941162109375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 27,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 5.965596516927083,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.9075520833333334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 28,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 2.3115234375,
+      "rgb_max_abs_error_0_255": 18,
+      "changed_channel_fraction": 0.5245157877604166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 29,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.68707275390625,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.7077229817708334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 30,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 3.6909586588541665,
+      "rgb_max_abs_error_0_255": 13,
+      "changed_channel_fraction": 0.6564127604166666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 31,
+      "transform": "contrast_090",
+      "rgb_mae_0_255": 4.789042154947917,
+      "rgb_max_abs_error_0_255": 14,
+      "changed_channel_fraction": 0.6456095377604166,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 0,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2678629557291667,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.21659342447916666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 1,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.14516194661458334,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.11692301432291667,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 2,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.09450276692708333,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.0804443359375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 3,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2649129231770833,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.22552490234375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 4,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.7458902994791666,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.5048014322916666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 5,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2873128255208333,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.2459716796875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 6,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2782999674479167,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.2527669270833333,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 7,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.240234375,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.21470133463541666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 8,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.6346638997395834,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.46002197265625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 9,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.329833984375,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.2638956705729167,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 10,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.11826578776041667,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.10984293619791667,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 11,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.24068196614583334,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.18115234375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 12,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.30419921875,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.23236083984375,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 13,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2693888346354167,
+      "rgb_max_abs_error_0_255": 7,
+      "changed_channel_fraction": 0.21718343098958334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 14,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2852376302083333,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.20949300130208334,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 15,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.3356730143229167,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.2757364908854167,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 16,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.3317667643229167,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.3042399088541667,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 17,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.16109212239583334,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.14520263671875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 18,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.16444905598958334,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.13739013671875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 19,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.3800862630208333,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.3327229817708333,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 20,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.4145711263020833,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.3249104817708333,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 21,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.70068359375,
+      "rgb_max_abs_error_0_255": 10,
+      "changed_channel_fraction": 0.4231770833333333,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 22,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2857259114583333,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.21795654296875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 23,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.4235636393229167,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.35284423828125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 24,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.15238444010416666,
+      "rgb_max_abs_error_0_255": 5,
+      "changed_channel_fraction": 0.12821451822916666,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 25,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.4380289713541667,
+      "rgb_max_abs_error_0_255": 7,
+      "changed_channel_fraction": 0.3348388671875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 26,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.4053955078125,
+      "rgb_max_abs_error_0_255": 7,
+      "changed_channel_fraction": 0.2810872395833333,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 27,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.2830810546875,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.26123046875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 28,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.13450113932291666,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.12469482421875,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 29,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.23069254557291666,
+      "rgb_max_abs_error_0_255": 3,
+      "changed_channel_fraction": 0.20196533203125,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 30,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.09193929036458333,
+      "rgb_max_abs_error_0_255": 4,
+      "changed_channel_fraction": 0.08306884765625,
+      "model_input_changed": true
+    },
+    {
+      "sample_index": 31,
+      "transform": "gaussian_blur_075",
+      "rgb_mae_0_255": 0.24462890625,
+      "rgb_max_abs_error_0_255": 6,
+      "changed_channel_fraction": 0.20375569661458334,
+      "model_input_changed": true
+    }
+  ]
+}
