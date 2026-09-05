@@ -17,7 +17,8 @@ label. It does not prove causality, detector-output impact, learned behavior or 
 - Analysis units: 32 images × 3 transforms = 96 records, each endpoint averaged equally over 3 seeds
 - Statistic: tie-aware Spearman rank correlation within transform
 - Stability: 10,000 image bootstrap draws and 32 leave-one-image-out estimates for each of 6 analyses
-- Tool source: commit `0db9e3db2cdee995dc31120a86783d1b9c2e5364`, tree
+- Formal tool source: local commit `0db9e3db2cdee995dc31120a86783d1b9c2e5364`; publication-equivalent
+  GitHub commit `41bc37fcbacffeebf109b305ef756de98bfb4b5a`; both use exact tree
   `df4298c76c235f147380306aabaa4597f6e5eae9`
 - Tests/lint: 51 passed / Ruff passed
 - Evidence manifest: SHA-256 `9d731877eb47b2cd0055ad1e065d00dbc55fac0f3cdcd911494b3316a567a2a3`,
