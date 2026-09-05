@@ -31,6 +31,12 @@ def main() -> None:
     drilldown_parser.add_argument("--config", type=Path, default=Path("configs/layer_drilldown.yaml"))
     drilldown_parser.add_argument("--run-id")
     drilldown_parser.add_argument("--no-latest", action="store_true")
+    scale_parser = subparsers.add_parser(
+        "image-scale", help="run the CPU coco128 image-level MoA appearance audit"
+    )
+    scale_parser.add_argument("--config", type=Path, default=Path("configs/image_scale.yaml"))
+    scale_parser.add_argument("--run-id")
+    scale_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -57,6 +63,11 @@ def main() -> None:
 
         output = run_layer_drilldown(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 layer attribution evidence: {output}")
+    elif args.command == "image-scale":
+        from .scale_runner import run as run_image_scale
+
+        output = run_image_scale(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 image-scale evidence: {output}")
     else:
         from .demo import serve
 
