@@ -29,3 +29,6 @@ coverage, fixed detector tensor keys and shapes, finite values, unchanged hook i
 all predeclared associations regardless of sign, evidence below 64 MiB and an exact SHA-256 manifest.
 
 Correlation magnitude and direction are not pass criteria. Weak or mixed results must remain visible.
+If either vector is constant, the association is archived as undefined with its unique-value counts; no endpoint
+substitution, epsilon injection or fabricated zero correlation is permitted. The predeclared primary remains primary
+even if a secondary endpoint is the only one with measurable variation.

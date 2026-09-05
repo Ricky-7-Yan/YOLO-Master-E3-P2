@@ -11,7 +11,7 @@ import numpy as np
 import yaml
 from PIL import Image, ImageDraw, ImageFont
 
-from .image_driver_analysis import bootstrap_spearman, leave_one_out_spearman
+from .image_driver_analysis import bootstrap_spearman, leave_one_out_spearman, spearman
 from .io_utils import write_json, write_manifest
 from .runner import PROJECT_ROOT
 from .scale_runner import run as run_scale
@@ -114,12 +114,33 @@ def analyze_output_coupling(
             for route_index, (endpoint, field) in enumerate(ROUTE_FIELDS.items()):
                 x = np.asarray([item[field] for item in selected], dtype=np.float64)
                 analysis_seed = seed + transform_index * 1000 + tensor_index * 10 + route_index
-                route_results[endpoint] = {
+                observed = spearman(x, y)
+                result = {
                     "x_field": field,
                     "y_field": f"detector.{tensor}.mean_absolute_change",
-                    "bootstrap": bootstrap_spearman(x, y, draws, analysis_seed),
-                    "leave_one_image_out": leave_one_out_spearman(x, y),
+                    "x_unique_value_count": int(np.unique(x).size),
+                    "y_unique_value_count": int(np.unique(y).size),
                 }
+                if observed is None:
+                    result.update(
+                        {
+                            "status": "UNDEFINED_CONSTANT_VECTOR",
+                            "observed_spearman_rho": None,
+                            "reason": "Spearman is undefined because at least one ranked vector is constant",
+                            "bootstrap": None,
+                            "leave_one_image_out": None,
+                        }
+                    )
+                else:
+                    result.update(
+                        {
+                            "status": "DEFINED",
+                            "observed_spearman_rho": observed,
+                            "bootstrap": bootstrap_spearman(x, y, draws, analysis_seed),
+                            "leave_one_image_out": leave_one_out_spearman(x, y),
+                        }
+                    )
+                route_results[endpoint] = result
             tensor_results[tensor] = {"route_endpoints": route_results}
         by_transform[transform] = {"image_count": len(selected), "detector_tensors": tensor_results}
     return {
@@ -188,16 +209,19 @@ def _save_overview(records: list[dict[str, Any]], analysis: dict[str, Any], outp
             x = np.asarray([item[field] for item in selected], dtype=np.float64)
             result = analysis["by_transform"][transform]["detector_tensors"]["one2one_scores"][
                 "route_endpoints"
-            ][endpoint]["bootstrap"]
-            interval = result["percentile_95_interval"]
+            ][endpoint]
             panel_top = top + 38 + row * 292
             draw.text((left + 24, panel_top), labels[endpoint], fill="#dcecff", font=body)
-            draw.text(
-                (left + 24, panel_top + 34),
-                f"rho {result['observed_spearman_rho']:+.3f} | 95% [{interval[0]:+.3f}, {interval[1]:+.3f}]",
-                fill=colors[endpoint],
-                font=small,
-            )
+            if result["status"] == "DEFINED":
+                bootstrap = result["bootstrap"]
+                interval = bootstrap["percentile_95_interval"]
+                statistic = (
+                    f"rho {bootstrap['observed_spearman_rho']:+.3f} | "
+                    f"95% [{interval[0]:+.3f}, {interval[1]:+.3f}]"
+                )
+            else:
+                statistic = f"UNDEFINED | detector unique values = {result['y_unique_value_count']}"
+            draw.text((left + 24, panel_top + 34), statistic, fill=colors[endpoint], font=small)
             plot_left, plot_top = left + 58, panel_top + 83
             plot_right, plot_bottom = left + 490, panel_top + 238
             draw.line((plot_left, plot_bottom, plot_right, plot_bottom), fill="#496783", width=2)
@@ -246,16 +270,26 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
 
     primary = {
         transform: {
-            endpoint: values["bootstrap"]["observed_spearman_rho"]
+            endpoint: values["observed_spearman_rho"]
             for endpoint, values in result["detector_tensors"]["one2one_scores"]["route_endpoints"].items()
         }
         for transform, result in analysis["by_transform"].items()
     }
+    association_results = [
+        endpoint
+        for transform in analysis["by_transform"].values()
+        for tensor in transform["detector_tensors"].values()
+        for endpoint in tensor["route_endpoints"].values()
+    ]
     summary.update(
         {
             "scope": "CPU-only MoA target-router to detector-output image-level coupling audit",
             "output_coupling_record_count": len(records),
             "output_coupling_association_count": len(transforms) * len(DETECTOR_TENSORS) * len(ROUTE_FIELDS),
+            "defined_association_count": sum(item["status"] == "DEFINED" for item in association_results),
+            "undefined_constant_association_count": sum(
+                item["status"] == "UNDEFINED_CONSTANT_VECTOR" for item in association_results
+            ),
             "primary_detector_endpoint": "one2one_scores mean absolute change",
             "primary_observed_spearman_rho": primary,
             "pass_gate": "complete finite evidence matrix and reproducibility; association sign/magnitude not gated",

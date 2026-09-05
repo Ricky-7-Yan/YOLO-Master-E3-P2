@@ -1,4 +1,4 @@
-run_id: p2o-20260906-output-coupling-v1
+run_id: p2o-20260906-output-coupling-v2
 require_committed_source: true
 study_kind: output_coupling
 record_detector_outputs: true
