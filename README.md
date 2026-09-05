@@ -1,12 +1,14 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU resolution/flip diagnostics · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · layer attribution · reproducible local demo
 
 ![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
 
 ![CPU routing stability overview](artifacts/p2/p2r-20260905-cpu-resolution-flip-v4/robustness-overview.png)
 
 ![CPU appearance sensitivity overview](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-overview.png)
+
+![Model.16 layer attribution](artifacts/p2/p2d-20260905-layer16-attribution-v2/layer-attribution-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -54,6 +56,13 @@ above the reference 90th-margin percentile rose to `98.96%–100%`. Pixels that 
 `3.4%–10.4%` of the mean reference margin of unchanged pixels, strengthening the near-tie explanation. Region
 effects had mixed direction and tiny magnitude, so no foreground-specific sensitivity is claimed.
 
+An integrity-bound post-hoc analysis then traced the MoA appearance response to router depth and reference
+margin. `model.16.m.0.router` ranked first in all 15 transformation×seed strata and accounted for
+`92.90%–95.30%` of the sum of four layer-level mean MAEs. Across 11,520 valid target-layer token-comparison
+exposures, the lowest reference-margin decile switched expert `22.60%` of the time; the next two deciles fell to
+`3.35%` and `0.67%`, and deciles 4–10 had no switches. This is descriptive concentration within random
+initialization, not causal attribution or learned routing behavior.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -73,6 +82,7 @@ run_tests.cmd
 run_p2.cmd --run-id my-p2-run
 run_robustness.cmd --run-id my-robustness-run
 run_appearance.cmd --run-id my-appearance-run
+run_layer_drilldown.cmd --run-id my-layer-run
 run_demo.cmd
 ```
 
@@ -101,6 +111,10 @@ model output changes.
 - [`Appearance aggregate`](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-stability-aggregate.json): transform, module, seed and margin-stratified results.
 - [`Appearance region analysis`](artifacts/p2/p2a-20260905-cpu-appearance-v2/appearance-region-analysis.json): foreground/background token sensitivity.
 - [`Appearance protocol`](docs/APPEARANCE_PROTOCOL.md) and [`formal result`](docs/APPEARANCE_RESULTS.md): controlled design and bounded conclusions.
+- [`Layer-attribution summary`](artifacts/p2/p2d-20260905-layer16-attribution-v2/summary.json): locked lineage and headline checks.
+- [`Layer ranking`](artifacts/p2/p2d-20260905-layer16-attribution-v2/layer-attribution.json): transform and seed-stratified evidence.
+- [`Margin deciles`](artifacts/p2/p2d-20260905-layer16-attribution-v2/margin-deciles.json): complete valid-token switch partition.
+- [`Layer-attribution protocol`](docs/LAYER_ATTRIBUTION_PROTOCOL.md) and [`formal result`](docs/LAYER_ATTRIBUTION_RESULTS.md): predeclared method and interpretation.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

@@ -1,0 +1,76 @@
+{
+  "algorithm": "sha256",
+  "file_count": 14,
+  "files": [
+    {
+      "path": "cases/brightness_090.png",
+      "bytes": 239802,
+      "sha256": "fdd3b38e17a8861466a8c817a7ccea6938223d32bf41e5b5d2e26eca285d1ab1"
+    },
+    {
+      "path": "cases/brightness_110.png",
+      "bytes": 246458,
+      "sha256": "517585c5ee51d70563966229ac335533eda06a2e0ec3aafb1c8d515eb510cb16"
+    },
+    {
+      "path": "cases/contrast_090.png",
+      "bytes": 255695,
+      "sha256": "91926aa87e32b90b8e37141262a624b05dc44462f71dd407d791a5f4f8539eca"
+    },
+    {
+      "path": "cases/contrast_110.png",
+      "bytes": 244791,
+      "sha256": "a567de663c48f8fb8faf942a1777427f6ea1a99d0a07a2e9ddc0940cc904be95"
+    },
+    {
+      "path": "cases/gaussian_blur_075.png",
+      "bytes": 290865,
+      "sha256": "493a720b33001e433ffcf144b872aa8ac5f1b5734faba0443b356aeecf291abd"
+    },
+    {
+      "path": "command.txt",
+      "bytes": 25,
+      "sha256": "630f04d676236077291dd00415b4819f99478961c107911a77ade6f4eb8b60e7"
+    },
+    {
+      "path": "config.resolved.yaml",
+      "bytes": 481,
+      "sha256": "0d18cc3278fd3ce2f6157277336c86c185aa97e20e14fe939e74771b5ab48da9"
+    },
+    {
+      "path": "full.log",
+      "bytes": 115,
+      "sha256": "01f1fd052e1b4cee213bd0f7efde3728967042c4c57a487a4d23c070efc77eae"
+    },
+    {
+      "path": "layer-attribution-overview.png",
+      "bytes": 96851,
+      "sha256": "b7b959563d05a113ad053ca86f240b75b7136acccd5e87c41b31c105d9630df9"
+    },
+    {
+      "path": "layer-attribution.json",
+      "bytes": 8725,
+      "sha256": "3fe7f6b5910d5126b9c550cb412f1026eb5eb568792cd4d52e336979971c2311"
+    },
+    {
+      "path": "margin-deciles.json",
+      "bytes": 29253,
+      "sha256": "e420e10e36da7db9c2b0167a34087ebd1b508307ef9b8c32833938ebac0307e0"
+    },
+    {
+      "path": "parent-evidence-verification.json",
+      "bytes": 544,
+      "sha256": "000729dacfc480a33728d186e7f2ed8ecdce09fc5fe98e1df9b842080f836e10"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1981,
+      "sha256": "4b652ae5738eedb84e2f0e6be851fae3434c67cde4aed1e456241aec77a2484c"
+    },
+    {
+      "path": "target-layer-cases.json",
+      "bytes": 40189,
+      "sha256": "65108a1dd2033b94088392df62d4ee70d99669a9fd7ea77acc20df1f5574d582"
+    }
+  ]
+}

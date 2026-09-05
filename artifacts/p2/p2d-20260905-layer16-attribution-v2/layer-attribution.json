@@ -1,0 +1,278 @@
+{
+  "method": {
+    "metric": "probability_mae after exact restoration to original-image pixels",
+    "unit": "one seed x sample x module comparison",
+    "aggregation": "equal-weight mean within transform and module",
+    "share_denominator": "sum of the four module-level mean MAE values; descriptive, not causal"
+  },
+  "comparison_count": 240,
+  "target_module": "model.16.m.0.router",
+  "by_transform": {
+    "brightness_090": {
+      "layer_count": 4,
+      "ranking": [
+        {
+          "rank": 1,
+          "module": "model.16.m.0.router",
+          "mean_probability_mae": 5.341023004268869e-07,
+          "share_of_layer_mean_mae_sum": 0.9530091037111326
+        },
+        {
+          "rank": 2,
+          "module": "model.19.m.0.router",
+          "mean_probability_mae": 1.54621907226156e-08,
+          "share_of_layer_mean_mae_sum": 0.02758948708925779
+        },
+        {
+          "rank": 3,
+          "module": "model.13.m.0.router",
+          "mean_probability_mae": 1.007784589538777e-08,
+          "share_of_layer_mean_mae_sum": 0.01798209608239113
+        },
+        {
+          "rank": 4,
+          "module": "model.22.m.0.router",
+          "mean_probability_mae": 7.954366836377088e-10,
+          "share_of_layer_mean_mae_sum": 0.0014193131172186347
+        }
+      ],
+      "target_rank": 1,
+      "target_share_of_layer_mean_mae_sum": 0.9530091037111326
+    },
+    "brightness_110": {
+      "layer_count": 4,
+      "ranking": [
+        {
+          "rank": 1,
+          "module": "model.16.m.0.router",
+          "mean_probability_mae": 4.357012678490492e-07,
+          "share_of_layer_mean_mae_sum": 0.9505352087518169
+        },
+        {
+          "rank": 2,
+          "module": "model.19.m.0.router",
+          "mean_probability_mae": 1.297139986989224e-08,
+          "share_of_layer_mean_mae_sum": 0.028298683508543334
+        },
+        {
+          "rank": 3,
+          "module": "model.13.m.0.router",
+          "mean_probability_mae": 8.877307833118761e-09,
+          "share_of_layer_mean_mae_sum": 0.01936692471877574
+        },
+        {
+          "rank": 4,
+          "module": "model.22.m.0.router",
+          "mean_probability_mae": 8.246999333273552e-10,
+          "share_of_layer_mean_mae_sum": 0.0017991830208639998
+        }
+      ],
+      "target_rank": 1,
+      "target_share_of_layer_mean_mae_sum": 0.9505352087518169
+    },
+    "contrast_090": {
+      "layer_count": 4,
+      "ranking": [
+        {
+          "rank": 1,
+          "module": "model.16.m.0.router",
+          "mean_probability_mae": 2.2713530818227515e-07,
+          "share_of_layer_mean_mae_sum": 0.9415307838791248
+        },
+        {
+          "rank": 2,
+          "module": "model.19.m.0.router",
+          "mean_probability_mae": 8.266160209157949e-09,
+          "share_of_layer_mean_mae_sum": 0.034265233193745526
+        },
+        {
+          "rank": 3,
+          "module": "model.13.m.0.router",
+          "mean_probability_mae": 5.7012946197951464e-09,
+          "share_of_layer_mean_mae_sum": 0.023633245026765316
+        },
+        {
+          "rank": 4,
+          "module": "model.22.m.0.router",
+          "mean_probability_mae": 1.3768506681902472e-10,
+          "share_of_layer_mean_mae_sum": 0.0005707379003643708
+        }
+      ],
+      "target_rank": 1,
+      "target_share_of_layer_mean_mae_sum": 0.9415307838791248
+    },
+    "contrast_110": {
+      "layer_count": 4,
+      "ranking": [
+        {
+          "rank": 1,
+          "module": "model.16.m.0.router",
+          "mean_probability_mae": 1.9800124358007573e-07,
+          "share_of_layer_mean_mae_sum": 0.9407660716655815
+        },
+        {
+          "rank": 2,
+          "module": "model.19.m.0.router",
+          "mean_probability_mae": 7.191126609267208e-09,
+          "share_of_layer_mean_mae_sum": 0.034167300208466485
+        },
+        {
+          "rank": 3,
+          "module": "model.13.m.0.router",
+          "mean_probability_mae": 5.102586961658859e-09,
+          "share_of_layer_mean_mae_sum": 0.024243992635886977
+        },
+        {
+          "rank": 4,
+          "module": "model.22.m.0.router",
+          "mean_probability_mae": 1.731385250295095e-10,
+          "share_of_layer_mean_mae_sum": 0.0008226354900650483
+        }
+      ],
+      "target_rank": 1,
+      "target_share_of_layer_mean_mae_sum": 0.9407660716655815
+    },
+    "gaussian_blur_075": {
+      "layer_count": 4,
+      "ranking": [
+        {
+          "rank": 1,
+          "module": "model.16.m.0.router",
+          "mean_probability_mae": 2.337006735612457e-08,
+          "share_of_layer_mean_mae_sum": 0.9289966721428377
+        },
+        {
+          "rank": 2,
+          "module": "model.19.m.0.router",
+          "mean_probability_mae": 9.38413165572888e-10,
+          "share_of_layer_mean_mae_sum": 0.037303388759115895
+        },
+        {
+          "rank": 3,
+          "module": "model.13.m.0.router",
+          "mean_probability_mae": 8.477639051192939e-10,
+          "share_of_layer_mean_mae_sum": 0.03369993909804641
+        },
+        {
+          "rank": 4,
+          "module": "model.22.m.0.router",
+          "mean_probability_mae": 0.0,
+          "share_of_layer_mean_mae_sum": 0.0
+        }
+      ],
+      "target_rank": 1,
+      "target_share_of_layer_mean_mae_sum": 0.9289966721428377
+    }
+  },
+  "target_rank_one_transform_count": 5,
+  "transform_count": 5,
+  "seed_stratification": [
+    {
+      "transform": "brightness_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 5.728531184231059e-07
+    },
+    {
+      "transform": "brightness_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 7.428048049980726e-07
+    },
+    {
+      "transform": "brightness_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 2.866489778594819e-07
+    },
+    {
+      "transform": "brightness_110",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 4.7302593718278296e-07
+    },
+    {
+      "transform": "brightness_110",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 5.998506845410144e-07
+    },
+    {
+      "transform": "brightness_110",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 2.3422718182334992e-07
+    },
+    {
+      "transform": "contrast_090",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 3.581121130301576e-07
+    },
+    {
+      "transform": "contrast_090",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 1.8669175956754285e-07
+    },
+    {
+      "transform": "contrast_090",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 1.36602051949125e-07
+    },
+    {
+      "transform": "contrast_110",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 2.9825960772212944e-07
+    },
+    {
+      "transform": "contrast_110",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 1.6835491674797468e-07
+    },
+    {
+      "transform": "contrast_110",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 1.2738920627012295e-07
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "seed": 0,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 2.5134530076921215e-08
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "seed": 1,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 1.9553662773859388e-08
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "seed": 2,
+      "target_rank": 1,
+      "rank_one_module": "model.16.m.0.router",
+      "target_mean_probability_mae": 2.542200921759311e-08
+    }
+  ],
+  "target_rank_one_transform_seed_count": 15,
+  "transform_seed_group_count": 15
+}

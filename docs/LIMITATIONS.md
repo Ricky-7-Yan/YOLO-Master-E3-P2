@@ -26,5 +26,9 @@
   with probability error and Top-1 margin, never as a stand-alone robustness score.
 - Foreground/background appearance differences change direction across perturbations and remain extremely small;
   no semantic region-sensitivity conclusion is supported.
+- The layer-attribution extension reuses the same four-image appearance run. Its 11,520 token-comparison
+  exposures are repeated measurements, not independent data points or a population sample.
+- The target-layer share is normalized by the sum of four descriptive mean MAEs. It localizes the observed
+  numerical response but does not establish a causal layer contribution to detection output.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

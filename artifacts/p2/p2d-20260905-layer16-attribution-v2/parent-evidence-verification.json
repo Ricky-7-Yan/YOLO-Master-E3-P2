@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "7df8fbaf1d10d61d268559ff688cc81a67ab5c3e428b8deb45f1ea2904dd5d21",
+  "verified_file_count": 72,
+  "file_set_exact": true,
+  "hash_and_size_mismatch_count": 0,
+  "key_artifacts": {
+    "appearance-routing-raw.npz": "6bbbf0c6b0113fca79dcc85f64711b1e2b2bee3a03c4ffae0855e1bb934bdc63",
+    "appearance-stability-comparisons.json": "6ca0619280a00ca93fd47eb4057fb273df3db73fcf391a5cd30fa3b446767866",
+    "summary.json": "805fd2eb6d330cd4e0197d7e8c6888d62fa19e62e47f51d0cd638242372d7934"
+  }
+}

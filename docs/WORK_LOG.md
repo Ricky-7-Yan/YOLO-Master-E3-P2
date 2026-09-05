@@ -70,3 +70,16 @@
 - Expanded the unit suite to 38 passing tests and independently rehashed all 72 formal evidence files.
 - Identified `model.16.m.0.router` as the highest-MAE MoA layer for every tested perturbation; kept this as a
   cold-start diagnostic rather than a learned-vulnerability claim.
+
+## Model.16 layer attribution
+
+- Added a committed post-hoc protocol that binds analysis to the exact 72-file appearance manifest.
+- Added exact path-set, byte-count and SHA-256 verification before reading any parent result.
+- Ranked all four MoA router layers by equal-weight original-coordinate MAE for each transformation and each
+  transformation×seed stratum.
+- Added raw-token margin deciles with letterbox padding excluded and exact one-bin-per-exposure coverage.
+- Added deterministic worst-case selection and six-panel figures showing inputs, dominant maps, switch masks and
+  reference-margin ranks.
+- Analyzed 240 layer comparisons, 60 target-layer cases and 11,520 valid token-comparison exposures.
+- Expanded the unit suite to 42 passing tests and independently rehashed all 14 formal attribution files.
+- Kept layer share descriptive rather than causal and retained the random-initialization boundary in every result.
