@@ -25,6 +25,12 @@ def main() -> None:
     appearance_parser.add_argument("--config", type=Path, default=Path("configs/appearance.yaml"))
     appearance_parser.add_argument("--run-id")
     appearance_parser.add_argument("--no-latest", action="store_true")
+    drilldown_parser = subparsers.add_parser(
+        "layer-drilldown", help="analyze layer attribution and margin-conditioned switch locations"
+    )
+    drilldown_parser.add_argument("--config", type=Path, default=Path("configs/layer_drilldown.yaml"))
+    drilldown_parser.add_argument("--run-id")
+    drilldown_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -46,6 +52,11 @@ def main() -> None:
 
         output = run_appearance(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 appearance evidence: {output}")
+    elif args.command == "layer-drilldown":
+        from .layer_drilldown import run as run_layer_drilldown
+
+        output = run_layer_drilldown(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 layer attribution evidence: {output}")
     else:
         from .demo import serve
 
