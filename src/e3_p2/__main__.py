@@ -19,6 +19,12 @@ def main() -> None:
     robustness_parser.add_argument("--config", type=Path, default=Path("configs/robustness.yaml"))
     robustness_parser.add_argument("--run-id")
     robustness_parser.add_argument("--no-latest", action="store_true")
+    appearance_parser = subparsers.add_parser(
+        "appearance", help="run CPU brightness, contrast and blur diagnostics"
+    )
+    appearance_parser.add_argument("--config", type=Path, default=Path("configs/appearance.yaml"))
+    appearance_parser.add_argument("--run-id")
+    appearance_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -35,6 +41,11 @@ def main() -> None:
 
         output = run_robustness(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 robustness evidence: {output}")
+    elif args.command == "appearance":
+        from .appearance_runner import run as run_appearance
+
+        output = run_appearance(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 appearance evidence: {output}")
     else:
         from .demo import serve
 

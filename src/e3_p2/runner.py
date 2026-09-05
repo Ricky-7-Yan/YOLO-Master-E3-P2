@@ -129,6 +129,7 @@ def _verify_project_source_state(require_committed: bool) -> dict[str, Any]:
         "pyproject.toml",
         "run_p2.cmd",
         "run_robustness.cmd",
+        "run_appearance.cmd",
         "run_demo.cmd",
         "run_tests.cmd",
     )

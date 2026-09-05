@@ -101,6 +101,19 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
             )
     defined = [item["pearson"] for item in correlations if item["pearson"] is not None]
     dominant_agreement = np.argmax(left, axis=0) == np.argmax(right, axis=0)
+    margin_curve = []
+    for percentile in (0, 25, 50, 75, 90):
+        threshold = float(np.percentile(reference_margin, percentile))
+        selected = reference_margin >= threshold
+        margin_curve.append(
+            {
+                "reference_margin_percentile": percentile,
+                "threshold": threshold,
+                "pixel_count": int(selected.sum()),
+                "dominant_expert_agreement_fraction": float(dominant_agreement[selected].mean()),
+            }
+        )
+    changed = ~dominant_agreement
     return {
         "shape": [int(item) for item in left.shape],
         "probability_mae": float(difference.mean()),
@@ -115,6 +128,11 @@ def probability_map_comparison(reference: np.ndarray, candidate: np.ndarray) -> 
         "reference_top1_margin_max": float(reference_margin.max()),
         "candidate_top1_margin_mean": float(candidate_margin.mean()),
         "candidate_top1_margin_max": float(candidate_margin.max()),
+        "changed_pixel_reference_margin_mean": float(reference_margin[changed].mean()) if changed.any() else None,
+        "unchanged_pixel_reference_margin_mean": (
+            float(reference_margin[dominant_agreement].mean()) if dominant_agreement.any() else None
+        ),
+        "agreement_at_or_above_reference_margin_percentiles": margin_curve,
         "expert_pearson": correlations,
         "defined_pearson_count": len(defined),
         "undefined_pearson_count": len(correlations) - len(defined),
@@ -155,11 +173,45 @@ def aggregate_stability_comparisons(comparisons: list[dict[str, Any]]) -> dict[s
             "defined_min": float(np.min(correlations)) if correlations else None,
             "defined_max": float(np.max(correlations)) if correlations else None,
         }
+        for key in ("changed_pixel_reference_margin_mean", "unchanged_pixel_reference_margin_mean"):
+            values = [item["metrics"][key] for item in items if item["metrics"][key] is not None]
+            result[key] = {
+                "defined_comparison_count": len(values),
+                "mean": float(np.mean(values)) if values else None,
+                "min": float(np.min(values)) if values else None,
+                "max": float(np.max(values)) if values else None,
+            }
+        curve = {}
+        for percentile in (0, 25, 50, 75, 90):
+            entries = [
+                next(
+                    entry
+                    for entry in item["metrics"]["agreement_at_or_above_reference_margin_percentiles"]
+                    if entry["reference_margin_percentile"] == percentile
+                )
+                for item in items
+            ]
+            agreements = np.asarray(
+                [entry["dominant_expert_agreement_fraction"] for entry in entries], dtype=np.float64
+            )
+            curve[str(percentile)] = {
+                "comparison_count": len(entries),
+                "mean_threshold": float(np.mean([entry["threshold"] for entry in entries])),
+                "selected_pixel_count_total": sum(entry["pixel_count"] for entry in entries),
+                "agreement_mean": float(agreements.mean()),
+                "agreement_min": float(agreements.min()),
+                "agreement_max": float(agreements.max()),
+            }
+        result["agreement_at_or_above_reference_margin_percentiles"] = curve
         return result
 
-    grouped: dict[tuple[str, str, int], list[dict[str, Any]]] = defaultdict(list)
+    by_resolution: dict[tuple[str, str, int], list[dict[str, Any]]] = defaultdict(list)
+    by_module: dict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
+    by_seed: dict[tuple[str, str, int], list[dict[str, Any]]] = defaultdict(list)
     for item in comparisons:
-        grouped[(item["comparison_type"], item["family"], int(item["candidate_resolution"]))].append(item)
+        by_resolution[(item["comparison_type"], item["family"], int(item["candidate_resolution"]))].append(item)
+        by_module[(item["comparison_type"], item["family"], item["module"])].append(item)
+        by_seed[(item["comparison_type"], item["family"], int(item["seed"]))].append(item)
     return {
         "method": {
             "unit": "one seed x sample x router-module aligned comparison",
@@ -171,6 +223,14 @@ def aggregate_stability_comparisons(comparisons: list[dict[str, Any]]) -> dict[s
         "comparison_count": len(comparisons),
         "by_type_family_resolution": {
             f"{kind}:{family}:{resolution}": summarize(items)
-            for (kind, family, resolution), items in sorted(grouped.items())
+            for (kind, family, resolution), items in sorted(by_resolution.items())
+        },
+        "by_type_family_module": {
+            f"{kind}:{family}:{module}": summarize(items)
+            for (kind, family, module), items in sorted(by_module.items())
+        },
+        "by_type_family_seed": {
+            f"{kind}:{family}:seed-{seed}": summarize(items)
+            for (kind, family, seed), items in sorted(by_seed.items())
         },
     }

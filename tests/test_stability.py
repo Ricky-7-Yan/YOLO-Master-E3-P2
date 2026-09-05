@@ -37,6 +37,12 @@ def test_known_probability_change_has_expected_mae_tv_and_dominant_agreement():
     assert result["dominant_expert_agreement_fraction"] == pytest.approx(0.5)
     assert result["mean_jensen_shannon_divergence_nats"] >= 0.0
     assert result["reference_top1_margin_mean"] == pytest.approx(0.7)
+    curve = result["agreement_at_or_above_reference_margin_percentiles"]
+    assert curve[0]["dominant_expert_agreement_fraction"] == pytest.approx(0.5)
+    assert curve[3]["reference_margin_percentile"] == 75
+    assert curve[3]["dominant_expert_agreement_fraction"] == 1.0
+    assert result["changed_pixel_reference_margin_mean"] == pytest.approx(0.6)
+    assert result["unchanged_pixel_reference_margin_mean"] == pytest.approx(0.8)
 
 
 def test_horizontal_unflip_restores_the_same_coordinate_system():
@@ -75,6 +81,8 @@ def test_aggregate_counts_defined_and_undefined_correlations():
                 "comparison_type": "horizontal_flip",
                 "family": "mot",
                 "candidate_resolution": 64,
+                "module": "router",
+                "seed": 0,
                 "metrics": metrics,
             }
         )
@@ -83,3 +91,5 @@ def test_aggregate_counts_defined_and_undefined_correlations():
     assert summary["comparison_count"] == 2
     assert summary["expert_pearson"]["defined_count"] == 2
     assert summary["expert_pearson"]["undefined_count"] == 2
+    assert aggregate["by_type_family_module"]["horizontal_flip:mot:router"]["comparison_count"] == 2
+    assert aggregate["by_type_family_seed"]["horizontal_flip:mot:seed-0"]["comparison_count"] == 2
