@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "scope": "post-hoc within-transform image-level input-change and target-routing-change associations",
+  "run_id": "p2i-20260905-image-driver-v1",
+  "tool_source": {
+    "commit": "0db9e3db2cdee995dc31120a86783d1b9c2e5364",
+    "tree": "df4298c76c235f147380306aabaa4597f6e5eae9",
+    "implementation_status_porcelain": [],
+    "implementation_clean": true
+  },
+  "parent_run_id": "p2s-20260905-coco128-32-v1",
+  "parent_evidence_verification": {
+    "status": "PASS",
+    "manifest_sha256": "42d85cb411ef3776bc03b857025dcb77304b5530c4b4b2b4218d0d773d8d45c1",
+    "verified_file_count": 80,
+    "file_set_exact": true,
+    "hash_and_size_mismatch_count": 0,
+    "key_artifacts": {
+      "summary.json": "d9395ff568d97e19b122ef78687caafe17716d968c848446d3b99b8a19c5c6b2"
+    }
+  },
+  "image_count": 32,
+  "image_transform_record_count": 96,
+  "candidate_transformations": [
+    "brightness_090",
+    "contrast_090",
+    "gaussian_blur_075"
+  ],
+  "observed_spearman_rho": {
+    "brightness_090": {
+      "probability_mae": 0.8585830849000862,
+      "dominant_switch_fraction": 0.5488722635151269
+    },
+    "contrast_090": {
+      "probability_mae": 0.8489736070381232,
+      "dominant_switch_fraction": -0.058737214575229735
+    },
+    "gaussian_blur_075": {
+      "probability_mae": 0.9142228739002932,
+      "dominant_switch_fraction": 0.3384239902865411
+    }
+  },
+  "interpretation_boundary": "within-transform association in a deterministic subset under random initialization; not causal or population-generalizable",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "duration_seconds_observation_only": 4.157161399998586
+}

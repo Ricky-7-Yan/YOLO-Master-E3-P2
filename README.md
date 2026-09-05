@@ -12,6 +12,8 @@
 
 ![Coco128 image-level scaling](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-overview.png)
 
+![Image-level input-to-routing associations](artifacts/p2/p2i-20260905-image-driver-v1/image-driver-overview.png)
+
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
 families. It deliberately refuses to turn sample-level vectors into visually plausible but semantically false
@@ -74,6 +76,14 @@ bootstrap target-share intervals were `95.03%–95.23%` for brightness 0.9, `93.
 population generalization. Of 53,424 raw target-layer token exposures, 99.38% of expert switches occurred in the
 lowest three reference-margin deciles and none occurred above the fifth decile.
 
+An integrity-bound post-hoc analysis separated the three perturbation families and asked whether images with
+larger raw RGB changes also had larger target-router changes. Input RGB MAE had a strong positive rank
+association with continuous target-layer probability MAE for brightness, contrast and blur (`rho=0.849–0.914`;
+all three image-bootstrap intervals above zero). Dominant-expert switch rate did not follow one universal rule:
+brightness was moderately positive (`rho=0.549`), contrast was near zero (`rho=-0.059`) and blur was weaker with
+an interval crossing zero (`rho=0.338`). This separates continuous routing response from near-tie `argmax`
+behavior; it is an association, not a causal explanation.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -95,6 +105,7 @@ run_robustness.cmd --run-id my-robustness-run
 run_appearance.cmd --run-id my-appearance-run
 run_layer_drilldown.cmd --run-id my-layer-run
 run_image_scale.cmd --run-id my-image-scale-run
+run_image_driver.cmd --run-id my-image-driver-run
 run_demo.cmd
 ```
 
@@ -131,6 +142,8 @@ model output changes.
 - [`Image-level attribution`](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-attribution.json): case, image, leave-one-out and bootstrap rankings.
 - [`Image-level switches`](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-switches.json): per-image target-layer switch rates and image bootstrap intervals.
 - [`Image-scale protocol`](docs/IMAGE_SCALE_PROTOCOL.md) and [`formal result`](docs/IMAGE_SCALE_RESULTS.md): predeclared selection, method and bounded conclusions.
+- [`Image-driver associations`](artifacts/p2/p2i-20260905-image-driver-v1/image-driver-associations.json): within-transform correlations, image bootstrap and leave-one-out records.
+- [`Image-driver protocol`](docs/IMAGE_DRIVER_PROTOCOL.md) and [`formal result`](docs/IMAGE_DRIVER_RESULTS.md): locked post-hoc question and mixed-result interpretation.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

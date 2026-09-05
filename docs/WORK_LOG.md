@@ -100,3 +100,19 @@
 - Verified all three representative hook/repeat/cleanup invariants, 47 unit tests, Ruff checks and all 80 formal
   evidence files by an independent exact-set SHA-256 rehash.
 - Kept the subset, random-initialization and non-causal interpretation boundaries beside the headline result.
+
+## Image-level input-to-routing associations
+
+- Added an integrity-bound post-hoc analysis using the exact 80-file image-scale parent manifest.
+- Predeclared raw RGB canvas MAE as the only predictor and target probability MAE plus dominant-expert switch
+  fraction as the two endpoints; no result-driven alternate field was selected.
+- Kept brightness, contrast and blur as separate strata to avoid a mechanically strong but confounded pooled
+  relationship across perturbation families.
+- Averaged each routing endpoint across three seeds before analysis so all correlations and resampling use 32
+  image units rather than repeated token or seed observations.
+- Added tie-aware Spearman correlation, 10,000 image bootstrap draws and 32 leave-one-image-out checks per
+  transform and endpoint.
+- Preserved the mixed switch-rate result: continuous probability response was consistently associated with input
+  change, while discrete expert switching was transform-dependent.
+- Expanded the unit suite to 51 passing tests and independently rehashed all 8 formal non-manifest files with an
+  exact file set and zero mismatches.

@@ -1,0 +1,939 @@
+{
+  "method": {
+    "association": "tie-aware Spearman rank correlation",
+    "primary_unit": "image after equal averaging across seeds",
+    "predictor": "mean absolute raw RGB canvas difference on [0,255]",
+    "stratification": "each transformation analyzed separately; cross-transform pooling forbidden",
+    "bootstrap": "10,000 image resamples with replacement; descriptive for fixed selected subset",
+    "causal_status": "association only"
+  },
+  "by_transform": {
+    "brightness_090": {
+      "image_count": 32,
+      "endpoints": {
+        "probability_mae": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_probability_mae_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20260905,
+            "observed_spearman_rho": 0.8585830849000862,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              0.6844399175684303,
+              0.9425629840354819
+            ],
+            "bootstrap_median": 0.8551464976713974
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": 0.8444399679974584,
+            "maximum": 0.890815610939057,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": 0.8444399679974584
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": 0.8823470152714608
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": 0.8637967580948213
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": 0.8577477611893953
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": 0.8573444947290336
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": 0.8500856984425226
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": 0.8658130903966299
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": 0.8642000245551831
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": 0.8714588208416941
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": 0.8609738928722892
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": 0.8488758990614373
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": 0.8488758990614373
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": 0.8662163568569916
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": 0.846456300299267
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": 0.8714588208416941
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": 0.8637967580948213
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": 0.8758947519056731
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": 0.8556451612903225
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.8456497673785436
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": 0.8452465009181818
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": 0.8559330621177677
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": 0.8625869587137361
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": 0.8460530338389053
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": 0.846456300299267
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": 0.853715096585778
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": 0.8560483870967742
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": 0.859764093491204
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.8452465009181818
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": 0.8521020307443312
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": 0.8545216295065016
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": 0.849279165521799
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": 0.890815610939057
+              }
+            ]
+          }
+        },
+        "dominant_switch_fraction": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_dominant_switch_fraction_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20260906,
+            "observed_spearman_rho": 0.5488722635151269,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              0.23842938195766353,
+              0.7518717413403342
+            ],
+            "bootstrap_median": 0.5483726799588022
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": 0.5069599475936862,
+            "maximum": 0.5995562929758996,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": 0.5069599475936862
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": 0.5555220070958724
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": 0.5759533029765119
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": 0.5731290135748758
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": 0.5434191311242847
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": 0.5150293458840752
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": 0.5672214538684072
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": 0.5571357238920841
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": 0.575895181648045
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": 0.570247172861304
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": 0.516643225542153
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": 0.5186605751147503
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": 0.5527537828916437
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": 0.516643225542153
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": 0.5491225536609686
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": 0.5424105581266525
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": 0.5507364333190464
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": 0.5150293458840752
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.5402462155415407
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": 0.5539082902996607
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": 0.5428687699859172
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": 0.5608231811820326
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": 0.5126085263969585
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": 0.516643225542153
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": 0.5951181239161857
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": 0.5339385449465411
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": 0.5678839046861229
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.5995562929758996
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": 0.5747428932329536
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": 0.5355522617427528
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": 0.5472517085152875
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": 0.5615734450816662
+              }
+            ]
+          }
+        }
+      }
+    },
+    "contrast_090": {
+      "image_count": 32,
+      "endpoints": {
+        "probability_mae": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_probability_mae_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20261905,
+            "observed_spearman_rho": 0.8489736070381232,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              0.6531926176971333,
+              0.9374436524653373
+            ],
+            "bootstrap_median": 0.8462952748667034
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": 0.8338709677419355,
+            "maximum": 0.9012096774193549,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": 0.8379032258064516
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": 0.8491935483870968
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": 0.8338709677419355
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": 0.8491935483870968
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": 0.853225806451613
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": 0.847983870967742
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": 0.8516129032258064
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": 0.8508064516129032
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": 0.8548387096774194
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": 0.8346774193548387
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": 0.8403225806451613
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": 0.8612903225806452
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": 0.8508064516129032
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": 0.8379032258064516
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": 0.8556451612903225
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": 0.8487903225806451
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": 0.85
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": 0.8487903225806451
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.8346774193548387
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": 0.9012096774193549
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": 0.8608870967741935
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": 0.8544354838709678
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": 0.8540322580645161
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": 0.8338709677419355
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": 0.8375
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": 0.8504032258064517
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": 0.8544354838709678
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.8354838709677419
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": 0.8379032258064516
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": 0.8467741935483871
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": 0.8556451612903225
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": 0.8354838709677419
+              }
+            ]
+          }
+        },
+        "dominant_switch_fraction": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_dominant_switch_fraction_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20261906,
+            "observed_spearman_rho": -0.058737214575229735,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              -0.3893580593731543,
+              0.29914334980314233
+            ],
+            "bootstrap_median": -0.05826754132856556
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": -0.1304525127199765,
+            "maximum": 0.026655931391697984,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": -0.10702760331515099
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": -0.04603740766164307
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": -0.1304525127199765
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": -0.0833754629187983
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": -0.07046954067505891
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": -0.05896615126042281
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": -0.09289188212258388
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": -0.05630678951471612
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": -0.06538852975902518
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": -0.06760851070763405
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": -0.10177719258648321
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": -0.06058166225385905
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": -0.024232664901543622
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": -0.08844922689063421
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": -0.0718829698576532
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": -0.07067860596283557
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": -0.03694360705602927
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": -0.026252053643338925
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.026655931391697984
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": -0.03271409761708389
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": -0.06538852975902518
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": -0.07189023920791274
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": -0.036348997352315435
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": -0.042407163577701336
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": -0.018578376424516777
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": -0.0833754629187983
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": -0.03554124185559731
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.003432613729157597
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": -0.051292474041600665
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": -0.06138941775057717
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": -0.05694676251862751
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": -0.09289188212258388
+              }
+            ]
+          }
+        }
+      }
+    },
+    "gaussian_blur_075": {
+      "image_count": 32,
+      "endpoints": {
+        "probability_mae": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_probability_mae_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20262905,
+            "observed_spearman_rho": 0.9142228739002932,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              0.7709835814644043,
+              0.9705885055234883
+            ],
+            "bootstrap_median": 0.9135393671817513
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": 0.9056451612903226,
+            "maximum": 0.9310483870967742,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": 0.9310483870967742
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": 0.907258064516129
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": 0.9056451612903226
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": 0.915725806451613
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": 0.9060483870967742
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": 0.9193548387096774
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": 0.9213709677419355
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": 0.9137096774193548
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": 0.9056451612903226
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": 0.9153225806451613
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": 0.9056451612903226
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": 0.9084677419354839
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": 0.9133064516129032
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": 0.9282258064516129
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": 0.9181451612903225
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": 0.9100806451612903
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": 0.9229838709677419
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": 0.9076612903225807
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.9076612903225807
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": 0.9254032258064516
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": 0.907258064516129
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": 0.9060483870967742
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": 0.9278225806451613
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": 0.907258064516129
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": 0.907258064516129
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": 0.9064516129032258
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": 0.9064516129032258
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.9258064516129032
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": 0.9096774193548387
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": 0.9137096774193548
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": 0.9056451612903226
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": 0.9294354838709677
+              }
+            ]
+          }
+        },
+        "dominant_switch_fraction": {
+          "x_field": "input_rgb_mae_0_255",
+          "y_field": "target_dominant_switch_fraction_mean_across_seeds",
+          "bootstrap": {
+            "image_unit_count": 32,
+            "draws": 10000,
+            "seed": 20262906,
+            "observed_spearman_rho": 0.3384239902865411,
+            "defined_draw_count": 10000,
+            "undefined_draw_count": 0,
+            "percentile_95_interval": [
+              -0.025029143863112148,
+              0.6240780349004605
+            ],
+            "bootstrap_median": 0.33364558532718325
+          },
+          "leave_one_image_out": {
+            "count": 32,
+            "minimum": 0.27238883596186836,
+            "maximum": 0.39607659768347536,
+            "records": [
+              {
+                "omitted_position": 0,
+                "spearman_rho": 0.33818947324786475
+              },
+              {
+                "omitted_position": 1,
+                "spearman_rho": 0.3125016364640855
+              },
+              {
+                "omitted_position": 2,
+                "spearman_rho": 0.2851956682293596
+              },
+              {
+                "omitted_position": 3,
+                "spearman_rho": 0.34021213756154817
+              },
+              {
+                "omitted_position": 4,
+                "spearman_rho": 0.27238883596186836
+              },
+              {
+                "omitted_position": 5,
+                "spearman_rho": 0.34051806772287135
+              },
+              {
+                "omitted_position": 6,
+                "spearman_rho": 0.3453739403463704
+              },
+              {
+                "omitted_position": 7,
+                "spearman_rho": 0.38029020288566695
+              },
+              {
+                "omitted_position": 8,
+                "spearman_rho": 0.27481726540580775
+              },
+              {
+                "omitted_position": 9,
+                "spearman_rho": 0.3707543686981675
+              },
+              {
+                "omitted_position": 10,
+                "spearman_rho": 0.31613267530995837
+              },
+              {
+                "omitted_position": 11,
+                "spearman_rho": 0.33414535655361155
+              },
+              {
+                "omitted_position": 12,
+                "spearman_rho": 0.3541459605744945
+              },
+              {
+                "omitted_position": 13,
+                "spearman_rho": 0.3489198029669451
+              },
+              {
+                "omitted_position": 14,
+                "spearman_rho": 0.33876590742954504
+              },
+              {
+                "omitted_position": 15,
+                "spearman_rho": 0.3379872068164964
+              },
+              {
+                "omitted_position": 16,
+                "spearman_rho": 0.3707543686981675
+              },
+              {
+                "omitted_position": 17,
+                "spearman_rho": 0.3474937290908084
+              },
+              {
+                "omitted_position": 18,
+                "spearman_rho": 0.3747115041133439
+              },
+              {
+                "omitted_position": 19,
+                "spearman_rho": 0.3958354061878417
+              },
+              {
+                "omitted_position": 20,
+                "spearman_rho": 0.33148061909772686
+              },
+              {
+                "omitted_position": 21,
+                "spearman_rho": 0.30500124308073445
+              },
+              {
+                "omitted_position": 22,
+                "spearman_rho": 0.3454791784597304
+              },
+              {
+                "omitted_position": 23,
+                "spearman_rho": 0.33148061909772686
+              },
+              {
+                "omitted_position": 24,
+                "spearman_rho": 0.39607659768347536
+              },
+              {
+                "omitted_position": 25,
+                "spearman_rho": 0.3396053382674431
+              },
+              {
+                "omitted_position": 26,
+                "spearman_rho": 0.2899949494304289
+              },
+              {
+                "omitted_position": 27,
+                "spearman_rho": 0.33920509847598607
+              },
+              {
+                "omitted_position": 28,
+                "spearman_rho": 0.3756352403170824
+              },
+              {
+                "omitted_position": 29,
+                "spearman_rho": 0.3300988159931311
+              },
+              {
+                "omitted_position": 30,
+                "spearman_rho": 0.322981116043939
+              },
+              {
+                "omitted_position": 31,
+                "spearman_rho": 0.33272827960091955
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

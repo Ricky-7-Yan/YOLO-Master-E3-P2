@@ -31,6 +31,8 @@ The implementation runs against YOLO-Master runtime ref
 | Cross-image layer ranking | Complete image×seed×transform matrices plus per-image and leave-one-out ranks | `image-level-attribution.json` | PASS |
 | Image-level uncertainty | Bootstrap image aggregates, never repeated tokens, with fixed seeds and 10,000 draws | attribution/switch JSON | PASS |
 | Dataset edge cases | Retain and label hash-selected missing-label records; never replace after selection | archived input ledger | PASS |
+| Non-confounded association | Analyze input/routing changes within each transform using image units | image-driver association ledger | PASS |
+| Result-independent verdict | Correlation sign and magnitude are not PASS criteria; mixed results retained | protocol and result report | PASS |
 
 ## Non-goals
 

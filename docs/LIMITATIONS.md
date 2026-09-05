@@ -39,5 +39,11 @@
   treated as empty-box records only because labels are not used by the padding-only image-level analysis.
 - The scaled run covers brightness 0.9, contrast 0.9 and blur 0.75 at one resolution. It does not establish a
   monotone dose-response relationship or behavior under positive perturbation directions.
+- RGB MAE is a pixel-distance proxy, not a perceptual severity scale shared by brightness, contrast and blur.
+  The association analysis therefore keeps transforms separate and forbids a pooled correlation.
+- A positive input-change/probability-MAE rank association does not establish that pixel distance causes routing
+  change or that either quantity changes detector predictions. Image content can affect both quantities.
+- Dominant-expert switch rate is a thresholded `argmax` outcome under near-tied random-init probabilities. Its
+  mixed correlations must not be used to contradict or replace the continuous probability analysis.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

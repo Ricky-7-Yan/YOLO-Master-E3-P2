@@ -1,0 +1,677 @@
+{
+  "record_count": 96,
+  "records": [
+    {
+      "transform": "brightness_090",
+      "sample_index": 0,
+      "input_rgb_mae_0_255": 4.001851399739583,
+      "target_probability_mae_mean_across_seeds": 2.900552418496873e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.016666666666666666
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 1,
+      "input_rgb_mae_0_255": 8.585795084635416,
+      "target_probability_mae_mean_across_seeds": 4.1688757914083974e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05381944444444445
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 2,
+      "input_rgb_mae_0_255": 8.088399251302084,
+      "target_probability_mae_mean_across_seeds": 5.094449461242299e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0787037037037037
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 3,
+      "input_rgb_mae_0_255": 9.362650553385416,
+      "target_probability_mae_mean_across_seeds": 5.222132636441124e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.034722222222222224
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 4,
+      "input_rgb_mae_0_255": 11.0966796875,
+      "target_probability_mae_mean_across_seeds": 5.278184458061501e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04513888888888889
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 5,
+      "input_rgb_mae_0_255": 6.602254231770833,
+      "target_probability_mae_mean_across_seeds": 4.120067589812809e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.022569444444444448
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 6,
+      "input_rgb_mae_0_255": 7.761637369791667,
+      "target_probability_mae_mean_across_seeds": 4.855812423759037e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04513888888888889
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 7,
+      "input_rgb_mae_0_255": 8.227498372395834,
+      "target_probability_mae_mean_across_seeds": 5.265283915731641e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 8,
+      "input_rgb_mae_0_255": 9.188496907552084,
+      "target_probability_mae_mean_across_seeds": 4.7418116419403636e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03298611111111111
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 9,
+      "input_rgb_mae_0_255": 8.84454345703125,
+      "target_probability_mae_mean_across_seeds": 5.695382478060546e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02777777777777778
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 10,
+      "input_rgb_mae_0_255": 5.8563232421875,
+      "target_probability_mae_mean_across_seeds": 3.6731738634783813e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.022727272727272724
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 11,
+      "input_rgb_mae_0_255": 6.246927897135417,
+      "target_probability_mae_mean_across_seeds": 3.3050309866666794e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.009114583333333334
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 12,
+      "input_rgb_mae_0_255": 8.4561767578125,
+      "target_probability_mae_mean_across_seeds": 5.355932646327548e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0375
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 13,
+      "input_rgb_mae_0_255": 4.664652506510417,
+      "target_probability_mae_mean_across_seeds": 3.1139287683698866e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.024999999999999998
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 14,
+      "input_rgb_mae_0_255": 8.862589518229166,
+      "target_probability_mae_mean_across_seeds": 4.6150482915065915e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07291666666666666
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 15,
+      "input_rgb_mae_0_255": 8.058756510416666,
+      "target_probability_mae_mean_across_seeds": 4.835633767975702e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02777777777777778
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 16,
+      "input_rgb_mae_0_255": 7.976053873697917,
+      "target_probability_mae_mean_across_seeds": 3.261181215445201e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03993055555555556
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 17,
+      "input_rgb_mae_0_255": 6.722615559895833,
+      "target_probability_mae_mean_across_seeds": 4.272701011763679e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.020833333333333332
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 18,
+      "input_rgb_mae_0_255": 11.693806966145834,
+      "target_probability_mae_mean_across_seeds": 6.274354678613168e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04687499999999999
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 19,
+      "input_rgb_mae_0_255": 15.570536295572916,
+      "target_probability_mae_mean_across_seeds": 5.955419813593229e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 20,
+      "input_rgb_mae_0_255": 6.90447998046875,
+      "target_probability_mae_mean_across_seeds": 4.357761806911892e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.035416666666666666
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 21,
+      "input_rgb_mae_0_255": 8.435038248697916,
+      "target_probability_mae_mean_across_seeds": 4.984927598876183e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.026515151515151516
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 22,
+      "input_rgb_mae_0_255": 4.631062825520833,
+      "target_probability_mae_mean_across_seeds": 3.0022018995040503e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.016025641025641028
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 23,
+      "input_rgb_mae_0_255": 5.445393880208333,
+      "target_probability_mae_mean_across_seeds": 3.072536653942532e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02291666666666667
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 24,
+      "input_rgb_mae_0_255": 7.3602294921875,
+      "target_probability_mae_mean_across_seeds": 3.837462928560045e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.08125
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 25,
+      "input_rgb_mae_0_255": 6.938008626302083,
+      "target_probability_mae_mean_across_seeds": 4.272701011763679e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03298611111111111
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 26,
+      "input_rgb_mae_0_255": 8.191975911458334,
+      "target_probability_mae_mean_across_seeds": 4.412571865099448e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.046875
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 27,
+      "input_rgb_mae_0_255": 12.171630859375,
+      "target_probability_mae_mean_across_seeds": 5.91389834880829e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.028645833333333332
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 28,
+      "input_rgb_mae_0_255": 4.45330810546875,
+      "target_probability_mae_mean_across_seeds": 3.288143578870797e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.037037037037037035
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 29,
+      "input_rgb_mae_0_255": 10.255615234375,
+      "target_probability_mae_mean_across_seeds": 5.381319809842993e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05381944444444445
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 30,
+      "input_rgb_mae_0_255": 9.614908854166666,
+      "target_probability_mae_mean_across_seeds": 5.691415733761257e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.043750000000000004
+    },
+    {
+      "transform": "brightness_090",
+      "sample_index": 31,
+      "input_rgb_mae_0_255": 7.963541666666667,
+      "target_probability_mae_mean_across_seeds": 5.675479769706726e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.043750000000000004
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 0,
+      "input_rgb_mae_0_255": 2.2248738606770835,
+      "target_probability_mae_mean_across_seeds": 1.730397343635559e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.016666666666666666
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 1,
+      "input_rgb_mae_0_255": 3.5921834309895835,
+      "target_probability_mae_mean_across_seeds": 1.8174587576477616e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 2,
+      "input_rgb_mae_0_255": 1.6692911783854167,
+      "target_probability_mae_mean_across_seeds": 1.207729916513702e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01388888888888889
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 3,
+      "input_rgb_mae_0_255": 4.203592936197917,
+      "target_probability_mae_mean_across_seeds": 2.832082962548291e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02777777777777778
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 4,
+      "input_rgb_mae_0_255": 3.5474446614583335,
+      "target_probability_mae_mean_across_seeds": 1.9966521196895178e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.015625
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 5,
+      "input_rgb_mae_0_255": 3.6915690104166665,
+      "target_probability_mae_mean_across_seeds": 2.3655593395233154e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02951388888888889
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 6,
+      "input_rgb_mae_0_255": 4.345845540364583,
+      "target_probability_mae_mean_across_seeds": 2.460761202706231e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.026041666666666668
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 7,
+      "input_rgb_mae_0_255": 3.7941691080729165,
+      "target_probability_mae_mean_across_seeds": 2.788172827826606e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.020833333333333332
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 8,
+      "input_rgb_mae_0_255": 3.0220743815104165,
+      "target_probability_mae_mean_across_seeds": 2.0249367312148762e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.020833333333333332
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 9,
+      "input_rgb_mae_0_255": 5.439839680989583,
+      "target_probability_mae_mean_across_seeds": 3.148387703630659e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.020833333333333332
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 10,
+      "input_rgb_mae_0_255": 2.6414591471354165,
+      "target_probability_mae_mean_across_seeds": 1.8398794862959121e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.017045454545454548
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 11,
+      "input_rgb_mae_0_255": 3.7865193684895835,
+      "target_probability_mae_mean_across_seeds": 1.948663137025303e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01953125
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 12,
+      "input_rgb_mae_0_255": 3.8385416666666665,
+      "target_probability_mae_mean_across_seeds": 2.9407027694914074e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 13,
+      "input_rgb_mae_0_255": 2.13873291015625,
+      "target_probability_mae_mean_across_seeds": 1.7537838882870144e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.018750000000000003
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 14,
+      "input_rgb_mae_0_255": 3.7937825520833335,
+      "target_probability_mae_mean_across_seeds": 2.0765044071056225e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 15,
+      "input_rgb_mae_0_255": 4.240010579427083,
+      "target_probability_mae_mean_across_seeds": 2.687383029195998e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.022569444444444444
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 16,
+      "input_rgb_mae_0_255": 3.1719970703125,
+      "target_probability_mae_mean_across_seeds": 1.6787951743161237e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02777777777777778
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 17,
+      "input_rgb_mae_0_255": 3.8322347005208335,
+      "target_probability_mae_mean_across_seeds": 2.5985624503206325e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 18,
+      "input_rgb_mae_0_255": 4.789652506510417,
+      "target_probability_mae_mean_across_seeds": 2.972988618744744e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008680555555555554
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 19,
+      "input_rgb_mae_0_255": 4.34478759765625,
+      "target_probability_mae_mean_across_seeds": 1.8970523443486957e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.018229166666666668
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 20,
+      "input_rgb_mae_0_255": 3.00872802734375,
+      "target_probability_mae_mean_across_seeds": 2.175362573729621e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.020833333333333332
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 21,
+      "input_rgb_mae_0_255": 3.44207763671875,
+      "target_probability_mae_mean_across_seeds": 2.1465574250076758e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01893939393939394
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 22,
+      "input_rgb_mae_0_255": 4.209574381510417,
+      "target_probability_mae_mean_across_seeds": 2.4596467996254944e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01762820512820513
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 23,
+      "input_rgb_mae_0_255": 1.9240926106770833,
+      "target_probability_mae_mean_across_seeds": 1.279223296377394e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02291666666666667
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 24,
+      "input_rgb_mae_0_255": 2.8816731770833335,
+      "target_probability_mae_mean_across_seeds": 1.780688762664795e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03958333333333333
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 25,
+      "input_rgb_mae_0_255": 4.035847981770833,
+      "target_probability_mae_mean_across_seeds": 2.593905837447555e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.02777777777777778
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 26,
+      "input_rgb_mae_0_255": 3.5260213216145835,
+      "target_probability_mae_mean_across_seeds": 2.0821958228393835e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03125
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 27,
+      "input_rgb_mae_0_255": 5.965596516927083,
+      "target_probability_mae_mean_across_seeds": 2.975187574823697e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.015625
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 28,
+      "input_rgb_mae_0_255": 2.3115234375,
+      "target_probability_mae_mean_across_seeds": 1.7212220916041618e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.023148148148148143
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 29,
+      "input_rgb_mae_0_255": 3.68707275390625,
+      "target_probability_mae_mean_across_seeds": 2.2115461804248668e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.019097222222222224
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 30,
+      "input_rgb_mae_0_255": 3.6909586588541665,
+      "target_probability_mae_mean_across_seeds": 2.491805288526747e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.012499999999999999
+    },
+    {
+      "transform": "contrast_090",
+      "sample_index": 31,
+      "input_rgb_mae_0_255": 4.789042154947917,
+      "target_probability_mae_mean_across_seeds": 3.1201375855339894e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.024999999999999998
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 0,
+      "input_rgb_mae_0_255": 0.2678629557291667,
+      "target_probability_mae_mean_across_seeds": 2.6118424203660756e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 1,
+      "input_rgb_mae_0_255": 0.14516194661458334,
+      "target_probability_mae_mean_across_seeds": 1.5797990339773675e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.001736111111111111
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 2,
+      "input_rgb_mae_0_255": 0.09450276692708333,
+      "target_probability_mae_mean_across_seeds": 1.4073318905300562e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 3,
+      "input_rgb_mae_0_255": 0.2649129231770833,
+      "target_probability_mae_mean_across_seeds": 2.273116950635557e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.003472222222222222
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 4,
+      "input_rgb_mae_0_255": 0.7458902994791666,
+      "target_probability_mae_mean_across_seeds": 4.26683712888647e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 5,
+      "input_rgb_mae_0_255": 0.2873128255208333,
+      "target_probability_mae_mean_across_seeds": 2.4904255513791688e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005208333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 6,
+      "input_rgb_mae_0_255": 0.2782999674479167,
+      "target_probability_mae_mean_across_seeds": 2.2713922792010834e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005208333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 7,
+      "input_rgb_mae_0_255": 0.240234375,
+      "target_probability_mae_mean_across_seeds": 2.2268957561916775e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0062499999999999995
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 8,
+      "input_rgb_mae_0_255": 0.6346638997395834,
+      "target_probability_mae_mean_across_seeds": 3.8822353989989674e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 9,
+      "input_rgb_mae_0_255": 0.329833984375,
+      "target_probability_mae_mean_across_seeds": 2.6059785374888667e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.001736111111111111
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 10,
+      "input_rgb_mae_0_255": 0.11826578776041667,
+      "target_probability_mae_mean_across_seeds": 1.4280279477437338e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.001893939393939394
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 11,
+      "input_rgb_mae_0_255": 0.24068196614583334,
+      "target_probability_mae_mean_across_seeds": 1.9117982851134404e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0013020833333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 12,
+      "input_rgb_mae_0_255": 0.30419921875,
+      "target_probability_mae_mean_across_seeds": 2.7774108780754938e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0020833333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 13,
+      "input_rgb_mae_0_255": 0.2693888346354167,
+      "target_probability_mae_mean_across_seeds": 2.605633603201972e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.006250000000000001
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 14,
+      "input_rgb_mae_0_255": 0.2852376302083333,
+      "target_probability_mae_mean_across_seeds": 2.326581765104223e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008680555555555554
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 15,
+      "input_rgb_mae_0_255": 0.3356730143229167,
+      "target_probability_mae_mean_across_seeds": 2.730154880770931e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.003472222222222222
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 16,
+      "input_rgb_mae_0_255": 0.3317667643229167,
+      "target_probability_mae_mean_across_seeds": 2.383495922441836e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.001736111111111111
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 17,
+      "input_rgb_mae_0_255": 0.16109212239583334,
+      "target_probability_mae_mean_across_seeds": 1.7488168345557316e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.003472222222222222
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 18,
+      "input_rgb_mae_0_255": 0.16444905598958334,
+      "target_probability_mae_mean_across_seeds": 1.626365162708141e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005208333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 19,
+      "input_rgb_mae_0_255": 0.3800862630208333,
+      "target_probability_mae_mean_across_seeds": 2.3813400831487442e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 20,
+      "input_rgb_mae_0_255": 0.4145711263020833,
+      "target_probability_mae_mean_across_seeds": 3.212028079562717e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.004166666666666667
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 21,
+      "input_rgb_mae_0_255": 0.70068359375,
+      "target_probability_mae_mean_across_seeds": 4.5230292310618386e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005681818181818181
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 22,
+      "input_rgb_mae_0_255": 0.2857259114583333,
+      "target_probability_mae_mean_across_seeds": 2.0727897301698345e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0032051282051282055
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 23,
+      "input_rgb_mae_0_255": 0.4235636393229167,
+      "target_probability_mae_mean_across_seeds": 3.042320410410563e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.004166666666666667
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 24,
+      "input_rgb_mae_0_255": 0.15238444010416666,
+      "target_probability_mae_mean_across_seeds": 1.5811787711249458e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008333333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 25,
+      "input_rgb_mae_0_255": 0.4380289713541667,
+      "target_probability_mae_mean_across_seeds": 3.1802941251684116e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.003472222222222222
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 26,
+      "input_rgb_mae_0_255": 0.4053955078125,
+      "target_probability_mae_mean_across_seeds": 3.075089167665553e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008680555555555554
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 27,
+      "input_rgb_mae_0_255": 0.2830810546875,
+      "target_probability_mae_mean_across_seeds": 2.0398551391230687e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0026041666666666665
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 28,
+      "input_rgb_mae_0_255": 0.13450113932291666,
+      "target_probability_mae_mean_across_seeds": 1.860345587318326e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.004629629629629629
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 29,
+      "input_rgb_mae_0_255": 0.23069254557291666,
+      "target_probability_mae_mean_across_seeds": 2.074779735671149e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.001736111111111111
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 30,
+      "input_rgb_mae_0_255": 0.09193929036458333,
+      "target_probability_mae_mean_across_seeds": 1.0617077350616455e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0020833333333333333
+    },
+    {
+      "transform": "gaussian_blur_075",
+      "sample_index": 31,
+      "input_rgb_mae_0_255": 0.24462890625,
+      "target_probability_mae_mean_across_seeds": 2.5518238544464113e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0
+    }
+  ]
+}

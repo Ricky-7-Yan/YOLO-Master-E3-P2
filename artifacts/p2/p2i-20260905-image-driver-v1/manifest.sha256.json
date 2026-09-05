@@ -1,0 +1,46 @@
+{
+  "algorithm": "sha256",
+  "file_count": 8,
+  "files": [
+    {
+      "path": "command.txt",
+      "bytes": 22,
+      "sha256": "2c8515f571912d7f91d14b9c14da0c7e087046e2a0a99d770d2301c1df2c1751"
+    },
+    {
+      "path": "config.resolved.yaml",
+      "bytes": 528,
+      "sha256": "45fb5b2919ff8be6471eda751a3bdc4e90e66d87c99e9516d17fc5278f4b75c6"
+    },
+    {
+      "path": "full.log",
+      "bytes": 82,
+      "sha256": "69384c4a206198f5cbad623fea41db8454913b7bc7614a993067e3bfb5e21b5c"
+    },
+    {
+      "path": "image-driver-associations.json",
+      "bytes": 30246,
+      "sha256": "172cd9420d5583508ba79aa69a6b2c77433b37b17290960822e4fc7e916cf26a"
+    },
+    {
+      "path": "image-driver-overview.png",
+      "bytes": 82052,
+      "sha256": "5338d302fb4006ba09ea6d3c3920be31794e2445bd8af1ec23f833519d7b43c4"
+    },
+    {
+      "path": "image-level-records.json",
+      "bytes": 27185,
+      "sha256": "2c38e98aa49d5521603ae4a7a585c5f14cb7812f69ab5a2e9c744b523a45c5df"
+    },
+    {
+      "path": "parent-evidence-verification.json",
+      "bytes": 327,
+      "sha256": "35d57e1afa558c902932a3689bef01789c44882cbfa76c404c50e326c415b215"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1745,
+      "sha256": "5bdbf71de06349d55e36e2be9c6190bafda054576f5ae8cb976bb7d2fba2d85c"
+    }
+  ]
+}
