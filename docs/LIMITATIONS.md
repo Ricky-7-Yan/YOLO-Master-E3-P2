@@ -45,5 +45,16 @@
   change or that either quantity changes detector predictions. Image content can affect both quantities.
 - Dominant-expert switch rate is a thresholded `argmax` outcome under near-tied random-init probabilities. Its
   mixed correlations must not be used to contradict or replace the continuous probability analysis.
+- The strength ladder contains only three darker/lower-contrast levels and three Gaussian blur radii. It does not
+  cover brightening, contrast amplification, other corruptions, intermediate hold-out levels or a standard
+  perceptual severity calibration. Monotonicity describes only these predeclared values.
+- All dose-response intervals resample the same fixed 32-image subset. They describe within-subset heterogeneity,
+  not a population dose curve or model-accuracy uncertainty.
+- In the output-coupling run, randomly initialized classification scores and decoded Top-300 tensors were exactly
+  unchanged for all comparisons. Their correlations are undefined; this run cannot support a classification-
+  output or prediction-list coupling claim.
+- Box-tensor changes are finite but extremely small and one-to-one/one-to-many boxes are numerically identical in
+  the audited eval return. Their strong rank associations are descriptive numerical coupling, not independent
+  replication, causal mediation, detection correctness or accuracy impact.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

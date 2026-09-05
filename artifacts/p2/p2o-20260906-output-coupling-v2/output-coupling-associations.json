@@ -1,0 +1,2164 @@
+{
+  "method": {
+    "association": "tie-aware Spearman rank correlation",
+    "primary_unit": "image after equal averaging across three random-initialization seeds",
+    "stratification": "each transformation analyzed separately; cross-transform pooling forbidden",
+    "primary_detector_endpoint": "one2one_scores mean absolute change on fixed grid/channel order",
+    "secondary_detector_endpoints": [
+      "one2one_boxes",
+      "one2many_scores",
+      "one2many_boxes",
+      "decoded_top300 (row order not anchor-aligned)"
+    ],
+    "bootstrap": "10,000 image resamples with replacement; descriptive for fixed subset",
+    "pass_gate": "matrix completeness, finite metrics and reproducibility only; sign/magnitude are observations",
+    "causal_status": "association only; no accuracy or causal claim"
+  },
+  "by_transform": {
+    "brightness_080": {
+      "image_count": 32,
+      "detector_tensors": {
+        "one2one_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2one_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 31,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.9295206711204818,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20260916,
+                "observed_spearman_rho": 0.9295206711204818,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.8217927258428755,
+                  0.9683475876275954
+                ],
+                "bootstrap_median": 0.9235865996847947
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.9224720280774528,
+                "maximum": 0.9466680156991564,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.9381994200315601
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.9365863541901132
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.9329569560468577
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.9305373572846872
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.9349732883486663
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.9285210249828786
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.9321504231261342
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.9301340908243255
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.9325536895864959
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.9466680156991564
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.9337634889675811
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.9282258064516129
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.9228752945378145
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.9228752945378145
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.9252948932999848
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.9297308243639638
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.9282258064516129
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.9293275579036021
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.9285210249828786
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.9365863541901132
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.9345700218883045
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 31,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.6295142071494042,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20260917,
+                "observed_spearman_rho": 0.6295142071494042,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.34392184731446857,
+                  0.7843247299841785
+                ],
+                "bootstrap_median": 0.6264540149703928
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.5968945351885461,
+                "maximum": 0.6811857229280097,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.6035491026416616
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.6501310748134704
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.6715063520871143
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.6358136721113128
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.6358136721113128
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.6015325670498084
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.6255293405928615
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.6266760794021252
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.6344020971970156
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.6386368219399072
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.6057672917927002
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.6386368219399072
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.6273442226255294
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.632183908045977
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.617059891107078
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.6097388880669327
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.6371610073715301
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.6352087114337568
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.6243194192377496
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.6390401290582779
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.5968945351885461
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.6811857229280097
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.6085290886858475
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.6565839887074006
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.6483161927808025
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.6331921758419036
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.6245210727969349
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.6370235934664247
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.6305706795724945
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "one2many_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2many_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 31,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.9295206711204818,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20260936,
+                "observed_spearman_rho": 0.9295206711204818,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.8237988181988882,
+                  0.9692180833190254
+                ],
+                "bootstrap_median": 0.9235929373647479
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.9224720280774528,
+                "maximum": 0.9466680156991564,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.9381994200315601
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.9365863541901132
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.9329569560468577
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.9305373572846872
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.9349732883486663
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.9285210249828786
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.9321504231261342
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.9301340908243255
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.9325536895864959
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.9466680156991564
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.9337634889675811
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.9282258064516129
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.9228752945378145
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.9228752945378145
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.9252948932999848
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.9297308243639638
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.9240850939188996
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.9282258064516129
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.9293275579036021
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.9224720280774528
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.9256981597603465
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.9285210249828786
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.9365863541901132
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.9345700218883045
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 31,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.6295142071494042,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20260937,
+                "observed_spearman_rho": 0.6295142071494042,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.3388478741844344,
+                  0.782531785630375
+                ],
+                "bootstrap_median": 0.6271976216963885
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.5968945351885461,
+                "maximum": 0.6811857229280097,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.6035491026416616
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.6501310748134704
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.6715063520871143
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.6358136721113128
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.6358136721113128
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.6015325670498084
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.6255293405928615
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.6266760794021252
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.6344020971970156
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.6386368219399072
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.6057672917927002
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.6386368219399072
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.6273442226255294
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.632183908045977
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.617059891107078
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.6097388880669327
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.6371610073715301
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.6352087114337568
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.6243194192377496
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.6390401290582779
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.5968945351885461
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.6051623311151442
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.6811857229280097
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.6085290886858475
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.6565839887074006
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.6483161927808025
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.6331921758419036
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.6245210727969349
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.6370235934664247
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.6305706795724945
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "decoded_top300": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        }
+      }
+    },
+    "contrast_080": {
+      "image_count": 32,
+      "detector_tensors": {
+        "one2one_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 27,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2one_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8933284457478006,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20261916,
+                "observed_spearman_rho": 0.8933284457478006,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.747236073237242,
+                  0.9562582417474791
+                ],
+                "bootstrap_median": 0.8884799411115201
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.8826612903225807,
+                "maximum": 0.9193548387096774,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.8826612903225807
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.8943548387096775
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.8830645161290323
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.8887096774193548
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.8987903225806452
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.8955645161290322
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.8927419354838709
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.8887096774193548
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.8975806451612903
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.8834677419354838
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.8862903225806451
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.910483870967742
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.907258064516129
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.8842741935483871
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.896774193548387
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.8915322580645161
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.8915322580645161
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.8899193548387097
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.8846774193548387
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.8991935483870968
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.9016129032258065
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.8955645161290322
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.9193548387096774
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.8830645161290323
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.8842741935483871
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.8903225806451613
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.896774193548387
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.885483870967742
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.8826612903225807
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.9004032258064516
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.8935483870967742
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.8907258064516129
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 27,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": -0.026405063744531394,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20261917,
+                "observed_spearman_rho": -0.026405063744531394,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  -0.38756461123351305,
+                  0.3345808166352028
+                ],
+                "bootstrap_median": -0.027223398903450206
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": -0.11538075092913545,
+                "maximum": 0.04396934605420082,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.008068583981058423
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.004236006590055672
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": -0.11538075092913545
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": -0.06333199385788559
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": -0.01129487788548278
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": -0.05365608347403851
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": -0.06131505137833509
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": -0.020774507539370112
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": -0.020774507539370112
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": -0.0829047004053753
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": -0.04155320750245088
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": -0.014723680100718622
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": -0.029649054449392295
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": -0.05123550827972099
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.004236006590055672
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": -0.034089767319971834
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": -0.023398893545069428
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": -0.009681323901842382
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.03772063011144813
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": -0.025012610341281112
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": -0.0373172009123952
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": -0.012506305170640556
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": -0.0419566367015038
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": -0.012102875971587634
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.037518915511921665
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": -0.07443268722526396
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": -0.0006051437985793817
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.04396934605420082
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": -0.018961172355487294
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": -0.03428802215235844
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": -0.018961172355487294
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": -0.0695915368366289
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "one2many_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 27,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2many_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8933284457478006,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20261936,
+                "observed_spearman_rho": 0.8933284457478006,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.7480652110513496,
+                  0.9565465553721803
+                ],
+                "bootstrap_median": 0.8898172793942833
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.8826612903225807,
+                "maximum": 0.9193548387096774,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.8826612903225807
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.8943548387096775
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.8830645161290323
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.8887096774193548
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.8987903225806452
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.8955645161290322
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.8927419354838709
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.8887096774193548
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.8975806451612903
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.8834677419354838
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.8862903225806451
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.910483870967742
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.907258064516129
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.8842741935483871
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.896774193548387
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.8915322580645161
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.8915322580645161
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.8899193548387097
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.8846774193548387
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.8991935483870968
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.9016129032258065
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.8955645161290322
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.9193548387096774
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.8830645161290323
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.8842741935483871
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.8903225806451613
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.896774193548387
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.885483870967742
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.8826612903225807
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.9004032258064516
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.8935483870967742
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.8907258064516129
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 27,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": -0.026405063744531394,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20261937,
+                "observed_spearman_rho": -0.026405063744531394,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  -0.3903876882031083,
+                  0.3417502841838415
+                ],
+                "bootstrap_median": -0.028009428933601803
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": -0.11538075092913545,
+                "maximum": 0.04396934605420082,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.008068583981058423
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.004236006590055672
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": -0.11538075092913545
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": -0.06333199385788559
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": -0.01129487788548278
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": -0.05365608347403851
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": -0.06131505137833509
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": -0.020774507539370112
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": -0.020774507539370112
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": -0.0829047004053753
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": -0.04155320750245088
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": -0.014723680100718622
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": -0.029649054449392295
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": -0.05123550827972099
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.004236006590055672
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": -0.034089767319971834
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": -0.023398893545069428
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": -0.009681323901842382
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.03772063011144813
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": -0.025012610341281112
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": -0.0373172009123952
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": -0.012506305170640556
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": -0.0419566367015038
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": -0.012102875971587634
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.037518915511921665
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": -0.07443268722526396
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": -0.0006051437985793817
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.04396934605420082
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": -0.018961172355487294
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": -0.03428802215235844
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": -0.018961172355487294
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": -0.0695915368366289
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "decoded_top300": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 27,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        }
+      }
+    },
+    "gaussian_blur_150": {
+      "image_count": 32,
+      "detector_tensors": {
+        "one2one_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_scores.mean_absolute_change",
+              "x_unique_value_count": 23,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2one_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 29,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8603905357882538,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20262916,
+                "observed_spearman_rho": 0.8603905357882538,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.6861150008447224,
+                  0.9451466045382236
+                ],
+                "bootstrap_median": 0.8579059742558581
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.8464253689703825,
+                "maximum": 0.8881718667966557,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.8671977809322479
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.8613492377585188
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.8641726723941121
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.877281476059367
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.8468287167754672
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.8591308248305526
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.8736513458136042
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.858324129220383
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.8612623687917548
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.8678028026398751
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.8619542594661459
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.8881718667966557
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.8684078243475022
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.868811172152587
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.858324129220383
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.8532822816568234
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.8504588470212301
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.8866707177657096
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.8629626289788579
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.8468287167754672
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.8634805579878937
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.8592458331589012
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.8508621948263149
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.8512655426313996
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.8532822816568234
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.8616656759183255
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.8622706366081816
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2one_boxes.mean_absolute_change",
+              "x_unique_value_count": 23,
+              "y_unique_value_count": 29,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.5562215227834699,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20262917,
+                "observed_spearman_rho": 0.5562215227834699,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.21906952951908518,
+                  0.7978609783681375
+                ],
+                "bootstrap_median": 0.5540727237784444
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.5116865722594521,
+                "maximum": 0.6160254947276028,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.5690036615126711
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.5610924947143455
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.559986061564882
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.6142666798654396
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.5116865722594521
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.5596382201936119
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.5647307025330984
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.5657080490460372
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.5222076089369893
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.5502234357446742
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.5274681272757579
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.5992944353627905
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.6045549537015591
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.558626582051541
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.5430473546636495
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.5590712681483716
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.5982221040633511
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.5323239903576981
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.5578824101327148
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.6160254947276028
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.5430473546636495
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.5290867483030713
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.5775871223143862
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.5395533643476245
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.553636114151277
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.5153284695709073
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.5183107983125822
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.553636114151277
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.5539168484698869
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.5613390607092131
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.5262541615052728
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.5395533643476245
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "one2many_scores": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_scores.mean_absolute_change",
+              "x_unique_value_count": 23,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        },
+        "one2many_boxes": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 29,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8603905357882538,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20262936,
+                "observed_spearman_rho": 0.8603905357882538,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.6825595642865584,
+                  0.9463718405557474
+                ],
+                "bootstrap_median": 0.8576817665977922
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.8464253689703825,
+                "maximum": 0.8881718667966557,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.8671977809322479
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.8613492377585188
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.8641726723941121
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.877281476059367
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.8468287167754672
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.8591308248305526
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.8736513458136042
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.858324129220383
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.8612623687917548
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.8678028026398751
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.8619542594661459
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.8881718667966557
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.8684078243475022
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.868811172152587
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.858324129220383
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.8532822816568234
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.8504588470212301
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.8866707177657096
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.8629626289788579
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.8468287167754672
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.8634805579878937
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.8592458331589012
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.8508621948263149
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.8512655426313996
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.8532822816568234
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.8616656759183255
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.8464253689703825
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.8622706366081816
+                  }
+                ]
+              }
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.one2many_boxes.mean_absolute_change",
+              "x_unique_value_count": 23,
+              "y_unique_value_count": 29,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.5562215227834699,
+              "bootstrap": {
+                "image_unit_count": 32,
+                "draws": 10000,
+                "seed": 20262937,
+                "observed_spearman_rho": 0.5562215227834699,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "percentile_95_interval": [
+                  0.2120218570507863,
+                  0.8047863321234416
+                ],
+                "bootstrap_median": 0.5572819103759488
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "minimum": 0.5116865722594521,
+                "maximum": 0.6160254947276028,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "spearman_rho": 0.5690036615126711
+                  },
+                  {
+                    "omitted_position": 1,
+                    "spearman_rho": 0.5610924947143455
+                  },
+                  {
+                    "omitted_position": 2,
+                    "spearman_rho": 0.559986061564882
+                  },
+                  {
+                    "omitted_position": 3,
+                    "spearman_rho": 0.6142666798654396
+                  },
+                  {
+                    "omitted_position": 4,
+                    "spearman_rho": 0.5116865722594521
+                  },
+                  {
+                    "omitted_position": 5,
+                    "spearman_rho": 0.5596382201936119
+                  },
+                  {
+                    "omitted_position": 6,
+                    "spearman_rho": 0.5647307025330984
+                  },
+                  {
+                    "omitted_position": 7,
+                    "spearman_rho": 0.5657080490460372
+                  },
+                  {
+                    "omitted_position": 8,
+                    "spearman_rho": 0.5222076089369893
+                  },
+                  {
+                    "omitted_position": 9,
+                    "spearman_rho": 0.5502234357446742
+                  },
+                  {
+                    "omitted_position": 10,
+                    "spearman_rho": 0.5274681272757579
+                  },
+                  {
+                    "omitted_position": 11,
+                    "spearman_rho": 0.5992944353627905
+                  },
+                  {
+                    "omitted_position": 12,
+                    "spearman_rho": 0.6045549537015591
+                  },
+                  {
+                    "omitted_position": 13,
+                    "spearman_rho": 0.558626582051541
+                  },
+                  {
+                    "omitted_position": 14,
+                    "spearman_rho": 0.5430473546636495
+                  },
+                  {
+                    "omitted_position": 15,
+                    "spearman_rho": 0.5590712681483716
+                  },
+                  {
+                    "omitted_position": 16,
+                    "spearman_rho": 0.5982221040633511
+                  },
+                  {
+                    "omitted_position": 17,
+                    "spearman_rho": 0.5323239903576981
+                  },
+                  {
+                    "omitted_position": 18,
+                    "spearman_rho": 0.5578824101327148
+                  },
+                  {
+                    "omitted_position": 19,
+                    "spearman_rho": 0.6160254947276028
+                  },
+                  {
+                    "omitted_position": 20,
+                    "spearman_rho": 0.5430473546636495
+                  },
+                  {
+                    "omitted_position": 21,
+                    "spearman_rho": 0.5290867483030713
+                  },
+                  {
+                    "omitted_position": 22,
+                    "spearman_rho": 0.5775871223143862
+                  },
+                  {
+                    "omitted_position": 23,
+                    "spearman_rho": 0.5395533643476245
+                  },
+                  {
+                    "omitted_position": 24,
+                    "spearman_rho": 0.553636114151277
+                  },
+                  {
+                    "omitted_position": 25,
+                    "spearman_rho": 0.5153284695709073
+                  },
+                  {
+                    "omitted_position": 26,
+                    "spearman_rho": 0.5183107983125822
+                  },
+                  {
+                    "omitted_position": 27,
+                    "spearman_rho": 0.553636114151277
+                  },
+                  {
+                    "omitted_position": 28,
+                    "spearman_rho": 0.5539168484698869
+                  },
+                  {
+                    "omitted_position": 29,
+                    "spearman_rho": 0.5613390607092131
+                  },
+                  {
+                    "omitted_position": 30,
+                    "spearman_rho": 0.5262541615052728
+                  },
+                  {
+                    "omitted_position": 31,
+                    "spearman_rho": 0.5395533643476245
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "decoded_top300": {
+          "route_endpoints": {
+            "probability_mae": {
+              "x_field": "target_probability_mae_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            },
+            "dominant_switch_fraction": {
+              "x_field": "target_dominant_switch_fraction_mean_across_seeds",
+              "y_field": "detector.decoded_top300.mean_absolute_change",
+              "x_unique_value_count": 23,
+              "y_unique_value_count": 1,
+              "status": "UNDEFINED_CONSTANT_VECTOR",
+              "observed_spearman_rho": null,
+              "reason": "Spearman is undefined because at least one ranked vector is constant",
+              "bootstrap": null,
+              "leave_one_image_out": null
+            }
+          }
+        }
+      }
+    }
+  }
+}

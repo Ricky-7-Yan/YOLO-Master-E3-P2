@@ -1,0 +1,1349 @@
+{
+  "record_count": 96,
+  "records": [
+    {
+      "transform": "brightness_080",
+      "sample_index": 0,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.639468630154927e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.052083333333333336,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.4280279477437338e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.4280279477437338e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 1,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.191671912316922e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.11631944444444446,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.104408582051595e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.104408582051595e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 2,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.998265239927503e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.14583333333333334,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.9122309079245915e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.9122309079245915e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 3,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.0256448553668129e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.10069444444444443,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.568591579558357e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.568591579558357e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 4,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.035837663544549e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.09722222222222222,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.7903350497049e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.7903350497049e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 5,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.042487833234999e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05555555555555555,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.6224861069331096e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.6224861069331096e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 6,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.522945792586716e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07291666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.97136249996367e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.97136249996367e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 7,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.0354237424002752e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.09375,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.281803358168829e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.281803358168829e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 8,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.295979031810054e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.06770833333333334,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.196062549712166e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.196062549712166e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 9,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.1155692239602406e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0763888888888889,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.5656349999564034e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.5656349999564034e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 10,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.137881987022631e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.1908254850478398e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.1908254850478398e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 11,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.411121123366887e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.028645833333333332,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.332741305941627e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.332741305941627e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 12,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.049559149477217e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.10416666666666667,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.346848109411815e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.346848109411815e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 13,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.032072835498386e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.049999999999999996,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.7325556467449856e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.7325556467449856e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 14,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.052455425262451e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.15451388888888887,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.5390257835388184e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.5390257835388184e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 15,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.457408278076736e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.06250000000000001,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.09258226364378e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.09258226364378e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 16,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.380077037546371e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07465277777777778,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.4539610696217373e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.4539610696217373e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 17,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.335509509951981e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.029513888888888885,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.610659788525294e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.610659788525294e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 18,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.2327434012183436e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.09375,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 4.665482611883254e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 4.665482611883254e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 19,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.1745400519834623e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.09635416666666667,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 4.964097151680598e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 4.964097151680598e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 20,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.508356081114876e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07916666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.720053233797588e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.720053233797588e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 21,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.744268174123281e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05681818181818182,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.18423623130435e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.18423623130435e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 22,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.83358172677521e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.028846153846153844,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.4901161193847656e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.4901161193847656e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 23,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.974951717588636e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04999999999999999,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.9454293780856663e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.9454293780856663e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 24,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.517014940579732e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.16041666666666668,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.6520519029526485e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.6520519029526485e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 25,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.354135961444288e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.06597222222222222,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.610659788525294e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.610659788525294e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 26,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.638361813845458e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.1076388888888889,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.083712524837918e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.083712524837918e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 27,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.1611134848660893e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.078125,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 4.1983430347745384e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 4.1983430347745384e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 28,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.395541591408812e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07638888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.7266424875410775e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.7266424875410775e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 29,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.0578789644771152e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.12152777777777779,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.873119278559609e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.873119278559609e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 30,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.117980314625634e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.12708333333333333,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.293629676576645e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.293629676576645e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "brightness_080",
+      "sample_index": 31,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.1130960451232064e-06,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.08750000000000001,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.367544166625492e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.367544166625492e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 0,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.4434099992116294e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05416666666666667,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 8.8697388058617e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 8.8697388058617e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 1,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.614393925225293e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07118055555555557,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.179675261179606e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.179675261179606e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 2,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 2.3887849148408866e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.030092592592592598,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 7.775804353138756e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 7.775804353138756e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 3,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.610701110627916e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05381944444444444,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.596552985055106e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.596552985055106e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 4,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.9710559778743317e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.036458333333333336,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.2565463308304075e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.2565463308304075e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 5,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.7168039061405043e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.048611111111111105,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.395505572122241e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.395505572122241e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 6,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.907035165362887e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05381944444444444,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.504899017394535e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.504899017394535e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 7,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.579863985379537e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.5906398258511982e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.5906398258511982e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 8,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.0302122080767593e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04340277777777778,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.153066044762021e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.153066044762021e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 9,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.277631554338667e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05555555555555556,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.8182964552016487e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.8182964552016487e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 10,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.62801882955763e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03977272727272727,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.0200199626740957e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.0200199626740957e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 11,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.8688691953818005e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.033854166666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3955055721222407e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3955055721222407e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 12,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.853879782888625e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.041666666666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3925489925202868e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3925489925202868e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 13,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.498461511400011e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03958333333333333,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 9.313225746154787e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 9.313225746154787e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 14,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.105062948332893e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.07986111111111112,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.23585027361673e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.23585027361673e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 15,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.34492924257561e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03993055555555556,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.4989858581906273e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.4989858581906273e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 16,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.4558966203972146e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.046875,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.123500248742482e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.123500248742482e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 17,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.190053747759925e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.036458333333333336,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3984621517241949e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3984621517241949e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 18,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.924591311702022e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03298611111111111,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.7266424875410778e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.7266424875410778e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 19,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.7446928520997364e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.032552083333333336,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3127213432675316e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3127213432675316e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 20,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.3418258428573607e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03958333333333334,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.1560226243639748e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.1560226243639748e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 21,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.2884112006486065e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03409090909090909,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.271329228840177e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.271329228840177e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 22,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.86675745401627e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.038461538461538464,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.0821081343151274e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.0821081343151274e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 23,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 2.5716920693715413e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.043750000000000004,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 6.9183962685721255e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 6.9183962685721255e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 24,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.541095389260186e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.08125,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 9.904541666545565e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 9.904541666545565e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 25,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.198332170645396e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.060763888888888895,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.5788135074433826e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.5788135074433826e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 26,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.1055803497632343e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05902777777777777,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.2506331716264997e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.2506331716264997e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 27,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.93278350101577e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.033854166666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.9069938432602657e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.9069938432602657e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 28,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.407720798327599e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0462962962962963,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 8.012330721295069e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 8.012330721295069e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 29,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.392048275029218e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.04340277777777778,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.519681915404305e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.519681915404305e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 30,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.949669043223062e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.029166666666666664,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3186345024714394e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3186345024714394e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "contrast_080",
+      "sample_index": 31,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.199710898929172e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.05625,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.566987189035567e-08,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.566987189035567e-08,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 0,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.742775440216065e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.892210945250496e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.892210945250496e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 1,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.528987186926382e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.7739477611723401e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.7739477611723401e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 2,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.9989381660649806e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.009259259259259259,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.685250373113723e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.685250373113723e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 3,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.405429707633125e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008680555555555554,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.9861453979734388e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.9861453979734388e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 4,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.347140857466945e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.03125,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 5.4696722636147155e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 5.4696722636147155e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 5,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.226373310442324e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.012152777777777776,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.3652636815631203e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.3652636815631203e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 6,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.169149721110309e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.6556845770941841e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.6556845770941841e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 7,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.6955549452039933e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.014583333333333332,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.803513557191879e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.803513557191879e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 8,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.1593241382528234e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01909722222222222,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 4.257474626813617e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 4.257474626813617e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 9,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.942111955748665e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.749619029817127e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.749619029817127e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 10,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.384746084309588e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005681818181818181,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.153066044762021e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.153066044762021e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 11,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.2024713820881317e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.00390625,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.36526368156312e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.36526368156312e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 12,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 8.446060948901706e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.0020833333333333333,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.483526865641276e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.483526865641276e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 13,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.047007481257121e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.012499999999999999,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.596552985055106e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.596552985055106e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 14,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.853844280596133e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01736111111111111,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.5426584576803537e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.5426584576803537e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 15,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.964532684396814e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.187868905445886e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.187868905445886e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 16,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.7552285768367634e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.019097222222222224,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.862645149230957e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.862645149230957e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 17,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.9929238027996483e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.005208333333333333,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.3304608208792553e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.3304608208792553e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 18,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.3651434006514376e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.212197636801099e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.212197636801099e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 19,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.9061373273531594e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.006510416666666667,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.749619029817127e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.749619029817127e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 20,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.412566820780437e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.01875,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.513092661660815e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.513092661660815e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 21,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 1.4225717144783096e-07,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.017045454545454544,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 5.02618532332163e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 5.02618532332163e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 22,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 6.164241040873732e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.008012820512820514,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.1583031094263472e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.1583031094263472e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 23,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.315295351876153e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.016666666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.7200532337975883e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.7200532337975883e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 24,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.876371516121759e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.5078555969964888e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.5078555969964888e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 25,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.735770247600698e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.024305555555555556,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.873119278559609e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.873119278559609e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 26,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 9.583999161367063e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.019097222222222224,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 3.25223756214929e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 3.25223756214929e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 27,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.996804313527213e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.010416666666666666,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.566987189035567e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.566987189035567e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 28,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 4.612921196737407e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.009259259259259259,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 1.2713292288401773e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 1.2713292288401773e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 29,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 5.682792376588893e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.013888888888888888,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.1583031094263472e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.1583031094263472e-09,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 30,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 3.002997901704576e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.004166666666666667,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 9.75671268644787e-10,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 9.75671268644787e-10,
+        "decoded_top300": 0.0
+      }
+    },
+    {
+      "transform": "gaussian_blur_150",
+      "sample_index": 31,
+      "seed_count": 3,
+      "target_probability_mae_mean_across_seeds": 7.628566688961453e-08,
+      "target_dominant_switch_fraction_mean_across_seeds": 0.014583333333333335,
+      "detector_mean_absolute_change_mean_across_seeds": {
+        "one2one_scores": 0.0,
+        "one2one_boxes": 2.7200532337975883e-09,
+        "one2many_scores": 0.0,
+        "one2many_boxes": 2.7200532337975883e-09,
+        "decoded_top300": 0.0
+      }
+    }
+  ]
+}

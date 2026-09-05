@@ -116,3 +116,31 @@
   change, while discrete expert switching was transform-dependent.
 - Expanded the unit suite to 51 passing tests and independently rehashed all 8 formal non-manifest files with an
   exact file set and zero mismatches.
+
+## Appearance-strength dose response
+
+- Predeclared low, medium and high levels for brightness, contrast and Gaussian blur while keeping the same 32
+  deterministic images, three seeds, 128px geometry and target router.
+- Preserved the strict original image-scale contract and added an explicit study mode rather than silently
+  weakening its exact three-condition validation.
+- Added image-level and image×seed monotonicity records, 10,000-draw level means and paired high-minus-low image
+  bootstrap intervals for input distance, probability MAE and expert switching.
+- Produced 3,840 captures, 3,456 aligned comparisons and 864 target cases; all probability ladders were monotone
+  for 32/32 images and 96/96 image×seed units.
+- Retained one contrast and four blur seed-specific switch reversals instead of applying a tolerance or removing
+  cases after observation.
+- Verified 56 tests, Ruff, three exact hook/repeat invariants and every byte/hash in the 82-file formal manifest.
+
+## Router-to-detector-output coupling
+
+- Added stable extraction and shape/finite checks for decoded Top-300, one-to-one and one-to-many score and box
+  tensors without treating sorted decoded rows as anchor-aligned.
+- Predeclared fixed-grid one-to-one class scores as primary and box, one-to-many and decoded tensors as secondary;
+  all transforms remain separate and image is the aggregation/resampling unit.
+- The first post-processing attempt exposed a constant-vector boundary after successful forward capture. Added an
+  explicit undefined state and regression test instead of fabricating zero correlation or switching the primary.
+- Re-ran under a new formal ID and generated 288 detector comparisons, 96 image records and all 30 predeclared
+  associations; 12 box associations were defined and 18 score/decoded associations were transparently undefined.
+- Found strong within-transform probability-to-box rank associations (`rho=0.860–0.930`) but kept them secondary,
+  tiny-magnitude, random-initialization and non-causal.
+- Expanded the suite to 61 passing tests and independently verified the exact 84-file SHA-256 manifest.

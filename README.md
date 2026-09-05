@@ -1,6 +1,6 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · image-level layer attribution · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · image-level layer attribution · dose-response and detector-output coupling · reproducible local demo
 
 ![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
 
@@ -13,6 +13,10 @@
 ![Coco128 image-level scaling](artifacts/p2/p2s-20260905-coco128-32-v1/image-level-overview.png)
 
 ![Image-level input-to-routing associations](artifacts/p2/p2i-20260905-image-driver-v1/image-driver-overview.png)
+
+![Appearance-strength dose response](artifacts/p2/p2q-20260906-dose-response-v1/dose-response-overview.png)
+
+![Router-to-detector output coupling](artifacts/p2/p2o-20260906-output-coupling-v2/output-coupling-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -84,6 +88,20 @@ brightness was moderately positive (`rho=0.549`), contrast was near zero (`rho=-
 an interval crossing zero (`rho=0.338`). This separates continuous routing response from near-tie `argmax`
 behavior; it is an association, not a causal explanation.
 
+A predeclared three-level strength ladder then tested whether the target-router response was graded. Brightness,
+contrast and blur each produced non-decreasing seed-averaged probability MAE for all 32/32 images and all 96/96
+image×seed units. Mean expert-switch rates also rose at every level for all image averages, while contrast retained
+one and blur retained four seed-specific non-monotone cases. High-minus-low paired probability differences were
+positive with image-bootstrap intervals above zero for all three families. This supports a cold-start numerical
+dose response, not trained robustness or a shared perceptual severity scale.
+
+The detector-output extension kept its predeclared one-to-one class-score endpoint even when it yielded an
+important null boundary: every score comparison was exactly unchanged, so all six primary rank correlations are
+undefined rather than reported as zero. The secondary box tensors did vary. Target-router probability MAE was
+strongly associated with box-tensor MAE within brightness, contrast and blur (`rho=0.860–0.930`; all image-
+bootstrap intervals above zero). These tiny random-initialization changes show numerical coupling only; they do
+not establish route causality, correct detection or accuracy impact.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -106,6 +124,8 @@ run_appearance.cmd --run-id my-appearance-run
 run_layer_drilldown.cmd --run-id my-layer-run
 run_image_scale.cmd --run-id my-image-scale-run
 run_image_driver.cmd --run-id my-image-driver-run
+run_dose_response.cmd --run-id my-dose-response-run
+run_output_coupling.cmd --run-id my-output-coupling-run
 run_demo.cmd
 ```
 
@@ -144,6 +164,10 @@ model output changes.
 - [`Image-scale protocol`](docs/IMAGE_SCALE_PROTOCOL.md) and [`formal result`](docs/IMAGE_SCALE_RESULTS.md): predeclared selection, method and bounded conclusions.
 - [`Image-driver associations`](artifacts/p2/p2i-20260905-image-driver-v1/image-driver-associations.json): within-transform correlations, image bootstrap and leave-one-out records.
 - [`Image-driver protocol`](docs/IMAGE_DRIVER_PROTOCOL.md) and [`formal result`](docs/IMAGE_DRIVER_RESULTS.md): locked post-hoc question and mixed-result interpretation.
+- [`Dose-response ledger`](artifacts/p2/p2q-20260906-dose-response-v1/dose-response.json): all level means, monotonicity records, paired differences and image bootstrap intervals.
+- [`Dose-response protocol`](docs/DOSE_RESPONSE_PROTOCOL.md) and [`formal result`](docs/DOSE_RESPONSE_RESULTS.md): locked strength ladder and bounded result.
+- [`Output-coupling associations`](artifacts/p2/p2o-20260906-output-coupling-v2/output-coupling-associations.json): defined and constant-vector results for five detector tensors.
+- [`Output-coupling protocol`](docs/OUTPUT_COUPLING_PROTOCOL.md) and [`formal result`](docs/OUTPUT_COUPLING_RESULTS.md): predeclared endpoints, retained null primary and secondary box evidence.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

@@ -1,0 +1,14 @@
+2026-09-06 00:29:43,539 | INFO | scope=MoA image-level scale dataset=coco128.yaml images=32 transforms=['identity', 'brightness_080', 'contrast_080', 'gaussian_blur_150'] seeds=[0, 1, 2]
+2026-09-06 00:30:07,284 | INFO | seed=0 progress=8/32
+2026-09-06 00:30:47,251 | INFO | seed=0 progress=16/32
+2026-09-06 00:31:30,816 | INFO | seed=0 progress=24/32
+2026-09-06 00:31:55,954 | INFO | seed=0 progress=32/32
+2026-09-06 00:32:23,124 | INFO | seed=1 progress=8/32
+2026-09-06 00:33:09,454 | INFO | seed=1 progress=16/32
+2026-09-06 00:34:27,794 | INFO | seed=1 progress=24/32
+2026-09-06 00:34:51,352 | INFO | seed=1 progress=32/32
+2026-09-06 00:35:20,269 | INFO | seed=2 progress=8/32
+2026-09-06 00:36:00,582 | INFO | seed=2 progress=16/32
+2026-09-06 00:36:52,081 | INFO | seed=2 progress=24/32
+2026-09-06 00:37:29,002 | INFO | seed=2 progress=32/32
+2026-09-06 00:37:30,658 | INFO | status=PASS images=32 captures=1536 comparisons=1152 target_cases=288

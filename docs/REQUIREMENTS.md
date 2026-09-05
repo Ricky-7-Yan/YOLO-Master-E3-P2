@@ -33,6 +33,11 @@ The implementation runs against YOLO-Master runtime ref
 | Dataset edge cases | Retain and label hash-selected missing-label records; never replace after selection | archived input ledger | PASS |
 | Non-confounded association | Analyze input/routing changes within each transform using image units | image-driver association ledger | PASS |
 | Result-independent verdict | Correlation sign and magnitude are not PASS criteria; mixed results retained | protocol and result report | PASS |
+| Graded perturbation audit | Three predeclared levels per family; input order independently validated | `dose-response.json` | PASS |
+| Image-level dose evidence | Equal-seed image means, paired high−low bootstrap and explicit monotonicity ledgers | dose-response formal run | PASS |
+| Detector-output contract | Fixed tensor keys/shapes, finite comparison values and decoded-order caveat | `detector-output-comparisons.json` | PASS |
+| Honest constant endpoint | Preserve undefined Spearman state; no endpoint substitution or fabricated zero | output-coupling result | PASS |
+| Router/output association | Complete image×seed×transform join and within-transform image resampling | `output-coupling-associations.json` | PASS |
 
 ## Non-goals
 

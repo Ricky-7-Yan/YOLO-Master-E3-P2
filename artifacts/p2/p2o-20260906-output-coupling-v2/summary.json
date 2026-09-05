@@ -1,0 +1,154 @@
+{
+  "status": "PASS",
+  "scope": "CPU-only MoA target-router to detector-output image-level coupling audit",
+  "run_id": "p2o-20260906-output-coupling-v2",
+  "tool_source": {
+    "commit": "2fb30d82a9a0853d6cc7435a7abae94e46770d52",
+    "tree": "ff04d282059cb90cdb4f789f2b52eaa2df0943ee",
+    "implementation_status_porcelain": [],
+    "implementation_clean": true
+  },
+  "official_locked_base_ref": "acce839c7e895d6b179de7f7093fa879e237cc7b",
+  "official_runtime_ref": "07d330325b5a26b75aabfc75389f9bcbc0d40245",
+  "source_fingerprint_validation": "PASS",
+  "source_fingerprint_count": 2,
+  "device": "cpu",
+  "dataset": "coco128.yaml",
+  "dataset_split_image_count": 128,
+  "selected_image_count": 32,
+  "selection_salt": "e3-p2-coco128-image-v1",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "resolution": 128,
+  "transformations": [
+    {
+      "name": "identity",
+      "kind": "identity"
+    },
+    {
+      "name": "brightness_080",
+      "kind": "brightness",
+      "factor": 0.8
+    },
+    {
+      "name": "contrast_080",
+      "kind": "contrast",
+      "factor": 0.8
+    },
+    {
+      "name": "gaussian_blur_150",
+      "kind": "gaussian_blur",
+      "radius": 1.5
+    }
+  ],
+  "transformation_effect": {
+    "brightness_080": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 15.76738675435384,
+      "rgb_mae_0_255_min": 7.686869303385417,
+      "rgb_mae_0_255_max": 30.64447021484375,
+      "changed_channel_fraction_mean": 0.7280699412027994
+    },
+    "contrast_080": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 7.237984339396158,
+      "rgb_mae_0_255_min": 3.2985432942708335,
+      "rgb_mae_0_255_max": 11.989969889322916,
+      "changed_channel_fraction_mean": 0.7101669311523438
+    },
+    "gaussian_blur_150": {
+      "sample_count": 32,
+      "changed_sample_count": 32,
+      "rgb_mae_0_255_mean": 1.0339558919270835,
+      "rgb_mae_0_255_min": 0.3175252278645833,
+      "rgb_mae_0_255_max": 2.5550333658854165,
+      "changed_channel_fraction_mean": 0.42157872517903644
+    }
+  },
+  "spatial_capture_count": 1536,
+  "raw_array_count": 1568,
+  "aligned_comparison_count": 1152,
+  "target_case_count": 288,
+  "detector_output_comparison_count": 288,
+  "image_level_attribution": {
+    "target_rank_one_case_count": 288,
+    "case_count": 288,
+    "target_rank_one_image_count": 32,
+    "image_count": 32,
+    "target_rank_one_leave_one_out_count": 96,
+    "leave_one_out_count": 96
+  },
+  "representative_invariants": {
+    "seed-0": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "seed-1": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    },
+    "seed-2": {
+      "hook_output_max_abs_delta": 0.0,
+      "repeat_weight_max_abs_delta": 0.0,
+      "repeat_logit_max_abs_delta": 0.0,
+      "module_order": [
+        "model.13.m.0.router",
+        "model.16.m.0.router",
+        "model.19.m.0.router",
+        "model.22.m.0.router"
+      ],
+      "hook_cleanup": true,
+      "status": "PASS"
+    }
+  },
+  "restoration_validation": {
+    "max_pre_normalization_expert_sum_error": 2.384185791015625e-07,
+    "max_post_normalization_expert_sum_error": 1.1920928955078125e-07
+  },
+  "interpretation_boundary": "within-transform association on a deterministic coco128 subset under random initialization; no causal, learned-accuracy or population claim",
+  "duration_seconds_observation_only": 471.666137799999,
+  "evidence_bytes_before_manifest": 9547427,
+  "output_coupling_record_count": 96,
+  "output_coupling_association_count": 30,
+  "defined_association_count": 12,
+  "undefined_constant_association_count": 18,
+  "primary_detector_endpoint": "one2one_scores mean absolute change",
+  "primary_observed_spearman_rho": {
+    "brightness_080": {
+      "probability_mae": null,
+      "dominant_switch_fraction": null
+    },
+    "contrast_080": {
+      "probability_mae": null,
+      "dominant_switch_fraction": null
+    },
+    "gaussian_blur_150": {
+      "probability_mae": null,
+      "dominant_switch_fraction": null
+    }
+  },
+  "pass_gate": "complete finite evidence matrix and reproducibility; association sign/magnitude not gated"
+}
