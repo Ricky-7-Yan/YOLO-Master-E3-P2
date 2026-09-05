@@ -49,6 +49,12 @@ def main() -> None:
     dose_parser.add_argument("--config", type=Path, default=Path("configs/dose_response.yaml"))
     dose_parser.add_argument("--run-id")
     dose_parser.add_argument("--no-latest", action="store_true")
+    coupling_parser = subparsers.add_parser(
+        "output-coupling", help="run image-level router-to-detector-output association diagnostics"
+    )
+    coupling_parser.add_argument("--config", type=Path, default=Path("configs/output_coupling.yaml"))
+    coupling_parser.add_argument("--run-id")
+    coupling_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -90,6 +96,11 @@ def main() -> None:
 
         output = run_dose_response(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 dose-response evidence: {output}")
+    elif args.command == "output-coupling":
+        from .output_coupling_runner import run as run_output_coupling
+
+        output = run_output_coupling(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 output-coupling evidence: {output}")
     else:
         from .demo import serve
 

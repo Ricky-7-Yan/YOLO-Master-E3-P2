@@ -18,6 +18,7 @@ from PIL import Image, ImageDraw
 
 from .appearance_runner import _apply_transform, _font, _summarize_input_effects, _tensor
 from .capture import max_output_delta
+from .detector_output import detector_output_comparison
 from .geometry import LetterboxMeta, letterbox
 from .io_utils import environment, sha256_file, write_json, write_manifest
 from .layer_drilldown import margin_bin_summary
@@ -74,10 +75,12 @@ def _load_config(path: Path, run_id_override: str | None) -> dict[str, Any]:
     ]
     if study_kind == "image_scale" and transforms != expected_transforms:
         raise ValueError(f"transform contract must remain fixed: {expected_transforms}")
-    if study_kind not in {"image_scale", "dose_response"}:
+    if study_kind not in {"image_scale", "dose_response", "output_coupling"}:
         raise ValueError(f"unsupported scale study_kind: {study_kind}")
     if study_kind == "dose_response" and len(transforms) < 10:
         raise ValueError("dose_response requires identity plus at least nine predeclared conditions")
+    if study_kind == "output_coupling" and (len(transforms) != 4 or not config.get("record_detector_outputs")):
+        raise ValueError("output_coupling requires identity plus three conditions and detector-output recording")
     if int(config.get("bootstrap_draws", 0)) < 1000:
         raise ValueError("bootstrap_draws must be at least 1000")
     if int(config.get("max_evidence_bytes", 0)) < 1_000_000:
@@ -537,6 +540,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
     captures = []
     comparisons = []
     target_cases = []
+    detector_comparisons = []
     all_margins: dict[str, list[np.ndarray]] = defaultdict(list)
     all_switches: dict[str, list[np.ndarray]] = defaultdict(list)
     invariants = {}
@@ -587,10 +591,15 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         for sample_index, path in enumerate(paths):
             restored = {}
             raw_weights = {}
+            detector_outputs = {}
             for transform in transform_names:
                 prepared_item = prepared[(sample_index, transform)]
                 tensor = _tensor(prepared_item["canvas"], torch)
-                _, records, registered = _capture_once(model, family, profile["router_class"], tensor, torch)
+                current_output, records, registered = _capture_once(
+                    model, family, profile["router_class"], tensor, torch
+                )
+                if config.get("record_detector_outputs"):
+                    detector_outputs[transform] = current_output
                 if registered != module_order:
                     raise RuntimeError("module order changed during image-level capture")
                 meta: LetterboxMeta = prepared_item["meta"]
@@ -635,6 +644,19 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
                             "candidate_resolution": resolution,
                             "alignment": "same geometry; both maps restored to original-image pixels",
                             "metrics": probability_map_comparison(reference, restored[(transform, module)]),
+                        }
+                    )
+            if config.get("record_detector_outputs"):
+                for transform in candidate_names:
+                    detector_comparisons.append(
+                        {
+                            "seed": seed,
+                            "sample_index": sample_index,
+                            "transform": transform,
+                            "reference": "identity",
+                            "metrics": detector_output_comparison(
+                                detector_outputs["identity"], detector_outputs[transform]
+                            ),
                         }
                     )
             reference_target = raw_weights[("identity", target_module)]
@@ -686,6 +708,8 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
     write_json(run_dir / "spatial-captures.json", captures)
     write_json(run_dir / "image-scale-comparisons.json", comparisons)
     write_json(run_dir / "target-layer-cases.json", target_cases)
+    if config.get("record_detector_outputs"):
+        write_json(run_dir / "detector-output-comparisons.json", detector_comparisons)
     attribution = summarize_image_level_attribution(
         comparisons,
         candidate_names,
@@ -737,6 +761,7 @@ def run(config_path: Path, *, run_id: str | None = None, update_latest: bool = T
         "raw_array_count": len(arrays),
         "aligned_comparison_count": len(comparisons),
         "target_case_count": len(target_cases),
+        "detector_output_comparison_count": len(detector_comparisons),
         "image_level_attribution": {
             "target_rank_one_case_count": attribution["target_rank_one_case_count"],
             "case_count": attribution["case_count"],

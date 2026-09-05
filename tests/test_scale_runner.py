@@ -13,7 +13,7 @@ from e3_p2.scale_runner import (
 )
 
 
-def test_scale_config_keeps_default_contract_but_allows_explicit_dose_mode(tmp_path: Path):
+def test_scale_config_keeps_default_contract_but_allows_explicit_extended_modes(tmp_path: Path):
     import yaml
 
     base = {
@@ -38,6 +38,15 @@ def test_scale_config_keeps_default_contract_but_allows_explicit_dose_mode(tmp_p
     base["study_kind"] = "dose_response"
     config_path.write_text(yaml.safe_dump(base), encoding="utf-8")
     assert _load_config(config_path, None)["study_kind"] == "dose_response"
+    base["study_kind"] = "output_coupling"
+    base["record_detector_outputs"] = True
+    base["transformations"] = base["transformations"][:4]
+    config_path.write_text(yaml.safe_dump(base), encoding="utf-8")
+    assert _load_config(config_path, None)["study_kind"] == "output_coupling"
+    base["record_detector_outputs"] = False
+    config_path.write_text(yaml.safe_dump(base), encoding="utf-8")
+    with pytest.raises(ValueError, match="detector-output recording"):
+        _load_config(config_path, None)
 
 
 def test_hash_selection_is_order_independent_and_not_content_driven():
