@@ -37,6 +37,12 @@ def main() -> None:
     scale_parser.add_argument("--config", type=Path, default=Path("configs/image_scale.yaml"))
     scale_parser.add_argument("--run-id")
     scale_parser.add_argument("--no-latest", action="store_true")
+    driver_parser = subparsers.add_parser(
+        "image-driver", help="analyze within-transform image-level input and routing change associations"
+    )
+    driver_parser.add_argument("--config", type=Path, default=Path("configs/image_driver.yaml"))
+    driver_parser.add_argument("--run-id")
+    driver_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -68,6 +74,11 @@ def main() -> None:
 
         output = run_image_scale(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 image-scale evidence: {output}")
+    elif args.command == "image-driver":
+        from .image_driver_analysis import run as run_image_driver
+
+        output = run_image_driver(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 image-driver evidence: {output}")
     else:
         from .demo import serve
 
