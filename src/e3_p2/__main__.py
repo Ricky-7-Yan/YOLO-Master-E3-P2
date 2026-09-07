@@ -55,6 +55,12 @@ def main() -> None:
     coupling_parser.add_argument("--config", type=Path, default=Path("configs/output_coupling.yaml"))
     coupling_parser.add_argument("--run-id")
     coupling_parser.add_argument("--no-latest", action="store_true")
+    holdout_parser = subparsers.add_parser(
+        "dose-holdout", help="validate the held middle dose from low/high endpoint evidence"
+    )
+    holdout_parser.add_argument("--config", type=Path, default=Path("configs/dose_holdout.yaml"))
+    holdout_parser.add_argument("--run-id")
+    holdout_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -101,6 +107,11 @@ def main() -> None:
 
         output = run_output_coupling(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 output-coupling evidence: {output}")
+    elif args.command == "dose-holdout":
+        from .dose_holdout_runner import run as run_dose_holdout
+
+        output = run_dose_holdout(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 dose-holdout evidence: {output}")
     else:
         from .demo import serve
 
