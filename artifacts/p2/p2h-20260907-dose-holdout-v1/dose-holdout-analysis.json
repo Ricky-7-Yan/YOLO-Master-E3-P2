@@ -1,0 +1,3836 @@
+{
+  "method": {
+    "unit": "image after equal averaging across seeds",
+    "held_level": "middle",
+    "predictor": "linear interpolation in per-image actual RGB MAE using low/high route endpoints",
+    "baseline": "unweighted arithmetic midpoint of low/high route endpoints",
+    "primary_endpoint": "probability_mae",
+    "secondary_endpoint": "dominant_switch_fraction",
+    "bootstrap": "10,000 image resamples; descriptive for the fixed selected subset",
+    "pass_gate": "integrity and completeness only; predictive performance is not gated"
+  },
+  "by_family": {
+    "brightness": {
+      "endpoints": {
+        "probability_mae": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20260907,
+            "observed_mean": 7.724805828900002e-10,
+            "percentile_95_interval": [
+              5.840413330795955e-10,
+              9.848820511067801e-10
+            ],
+            "bootstrap_median": 7.680312127343354e-10
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20260908,
+            "observed_mean": 1.087269995505269e-07,
+            "percentile_95_interval": [
+              1.0071079242923949e-07,
+              1.1698057213080203e-07
+            ],
+            "bootstrap_median": 1.088710686621858e-07
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20260909,
+            "observed_mean": 1.0795451896763689e-07,
+            "percentile_95_interval": [
+              9.992268799954483e-08,
+              1.1606262996283114e-07
+            ],
+            "bootstrap_median": 1.079101704871432e-07
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20260910,
+            "observed_mean": 6.053941907409681e-10,
+            "percentile_95_interval": [
+              3.489426473135427e-10,
+              8.670350125262915e-10
+            ],
+            "bootstrap_median": 6.05654792043026e-10
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.0011705587508292206,
+            "median": 0.0011493579709322328,
+            "p90": 0.002062053642281577,
+            "fraction_at_or_below_0_10": 1.0,
+            "fraction_at_or_below_0_20": 1.0
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.26722873900293254,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20261007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.12275382956104354,
+                  0.6050111570099956
+                ],
+                "bootstrap_median": 0.26677701735851517
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.19516129032258064,
+                "maximum": 0.3564516129032258,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20806451612903226
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.27741935483870966
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3133064516129032
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.26814516129032256
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2314516129032258
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2608870967741935
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.26491935483870965
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.24435483870967742
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.25564516129032255
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.27741935483870966
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.25967741935483873
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2786290322580645
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2620967741935484
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2346774193548387
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2814516129032258
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2931451612903226
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2064516129032258
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.330241935483871
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.26975806451612905
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19516129032258064
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2584677419354839
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.27419354838709675
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3564516129032258
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2907258064516129
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3338709677419355
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2786290322580645
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.275
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.26411290322580644
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.23024193548387098
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2592741935483871
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.26733870967741935
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.24193548387096775
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.6275659824046921,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20261008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.31321105794790005,
+                  0.8290475848958841
+                ],
+                "bootstrap_median": 0.6234017159246474
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.5963709677419354,
+                "maximum": 0.7137096774193549,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6016129032258064
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6040322580645161
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6758064516129032
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6165322580645162
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6024193548387097
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6294354838709677
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6564516129032258
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6366935483870968
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6189516129032258
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6274193548387097
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6306451612903226
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6189516129032258
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6278225806451613
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6274193548387097
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6161290322580645
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6286290322580645
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6068548387096774
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6318548387096774
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6318548387096774
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.597983870967742
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6326612903225807
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.657258064516129
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6318548387096774
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7137096774193549
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.603225806451613
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6366935483870968
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6129032258064516
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.644758064516129
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5963709677419354
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6100806451612903
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6266129032258064
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6112903225806452
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.4809384164222874,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20261009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.13758541589819256,
+                  0.7262198250633267
+                ],
+                "bootstrap_median": 0.47809314959760985
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.42943548387096775,
+                "maximum": 0.5516129032258065,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.43911290322580643
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49838709677419357
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.44556451612903225
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4798387096774194
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.45241935483870965
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47943548387096774
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.530241935483871
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4866935483870968
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.48024193548387095
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49798387096774194
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47338709677419355
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.48104838709677417
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.48951612903225805
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4520161290322581
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5044354838709677
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4870967741935484
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.46048387096774196
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5028225806451613
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4774193548387097
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.42943548387096775
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4713709677419355
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49193548387096775
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5221774193548387
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47016129032258064
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5516129032258065
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4870967741935484
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4975806451612903
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.42943548387096775
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4504032258064516
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4729838709677419
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5177419354838709
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4653225806451613
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "dominant_switch_fraction": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20261907,
+            "observed_mean": 0.0037598256047116415,
+            "percentile_95_interval": [
+              0.0027415538654567296,
+              0.004826804768553366
+            ],
+            "bootstrap_median": 0.0037547947703679588
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20261908,
+            "observed_mean": 0.013186673172024732,
+            "percentile_95_interval": [
+              0.010892915565156775,
+              0.015427595295149005
+            ],
+            "bootstrap_median": 0.01317008729118104
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20261909,
+            "observed_mean": 0.009426847567313091,
+            "percentile_95_interval": [
+              0.0074165186369590805,
+              0.011341335968292262
+            ],
+            "bootstrap_median": 0.009446050763471988
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20261910,
+            "observed_mean": -0.0024986613377352704,
+            "percentile_95_interval": [
+              -0.0039206256458491255,
+              -0.001075223020887053
+            ],
+            "bootstrap_median": -0.002507439007027143
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.06648032185977722,
+            "median": 0.06020618563682255,
+            "p90": 0.13217727717138936,
+            "fraction_at_or_below_0_10": 0.71875,
+            "fraction_at_or_below_0_20": 0.96875
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": -0.06671554252199413,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20262007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.4560777342090983,
+                  0.3219486064833303
+                ],
+                "bootstrap_median": -0.06452206100380017
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": -0.14637096774193548,
+                "maximum": 0.024596774193548387,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.02056451612903226
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.08508064516129032
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1310483870967742
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.0407258064516129
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.07096774193548387
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06370967741935483
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.038306451612903226
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06975806451612904
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.05040322580645161
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.034274193548387094
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.09435483870967742
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.08225806451612903
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06330645161290323
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06612903225806452
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12580645161290321
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.045564516129032256
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.0008064516129032258
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14637096774193548
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06330645161290323
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.05887096774193548
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.02258064516129032
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.07540322580645162
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.07540322580645162
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.03588709677419355
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14637096774193548
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.075
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11129032258064517
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06814516129032258
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.024596774193548387
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06814516129032258
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.07580645161290323
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.050806451612903224
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.48167155425219943,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20262008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.09278188987600361,
+                  0.768783992100535
+                ],
+                "bootstrap_median": 0.4878721042053853
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.43185483870967745,
+                "maximum": 0.5850806451612903,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.44233870967741934
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4790322580645161
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5850806451612903
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49435483870967745
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47258064516129034
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5032258064516129
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49274193548387096
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47701612903225804
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5004032258064516
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4814516129032258
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4729838709677419
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4693548387096774
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4899193548387097
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.49959677419354837
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4669354838709677
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4915322580645161
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5008064516129033
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.43306451612903224
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4528225806451613
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4346774193548387
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.455241935483871
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4959677419354839
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.45806451612903226
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4814516129032258
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.44233870967741934
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5024193548387097
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4971774193548387
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4685483870967742
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.43185483870967745
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.47580645161290325
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4879032258064516
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5653225806451613
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.11473607038123167,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20262009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.2497302655846551,
+                  0.4645304047800309
+                ],
+                "bootstrap_median": 0.11362589642273332
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.04879032258064516,
+                "maximum": 0.2064516129032258,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1782258064516129
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.0967741935483871
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.16653225806451613
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10241935483870968
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12943548387096773
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13185483870967743
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.0935483870967742
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11612903225806452
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07056451612903226
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1282258064516129
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06814516129032258
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10725806451612903
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08991935483870968
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11895161290322581
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07741935483870968
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10443548387096774
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1060483870967742
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.059274193548387095
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15120967741935484
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15120967741935484
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15806451612903225
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10483870967741936
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10846774193548388
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1254032258064516
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.04879032258064516
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12217741935483871
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12137096774193548
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1064516129032258
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2064516129032258
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12580645161290321
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10766129032258065
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08669354838709678
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "contrast": {
+      "endpoints": {
+        "probability_mae": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20270907,
+            "observed_mean": 6.612577793689537e-10,
+            "percentile_95_interval": [
+              4.953503517007957e-10,
+              8.33314647657968e-10
+            ],
+            "bootstrap_median": 6.600753611892778e-10
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20270908,
+            "observed_mean": 5.616010351709838e-08,
+            "percentile_95_interval": [
+              5.17784411918075e-08,
+              6.052437997763222e-08
+            ],
+            "bootstrap_median": 5.613851833321587e-08
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20270909,
+            "observed_mean": 5.5498845737729427e-08,
+            "percentile_95_interval": [
+              5.111922057606549e-08,
+              5.980134284595376e-08
+            ],
+            "bootstrap_median": 5.548904345331999e-08
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20270910,
+            "observed_mean": -4.910080829156219e-10,
+            "percentile_95_interval": [
+              -7.199930695492708e-10,
+              -2.6371486302457505e-10
+            ],
+            "bootstrap_median": -4.936032795949654e-10
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.002164853378434299,
+            "median": 0.0016067745418987026,
+            "p90": 0.00421579038001666,
+            "fraction_at_or_below_0_10": 1.0,
+            "fraction_at_or_below_0_20": 1.0
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.5626832844574781,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20271007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.18033965291214316,
+                  0.8382180895003986
+                ],
+                "bootstrap_median": 0.565073499906652
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.5314516129032258,
+                "maximum": 0.7189516129032258,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5576612903225806
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5866935483870968
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5379032258064517
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5665322580645161
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5524193548387096
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.557258064516129
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5387096774193548
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5350806451612903
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.592741935483871
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5532258064516129
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5419354838709678
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5443548387096774
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5379032258064517
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5314516129032258
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5479838709677419
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5762096774193548
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7189516129032258
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5588709677419355
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5705645161290323
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5370967741935484
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5419354838709678
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5641129032258064
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5689516129032258
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5653225806451613
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5887096774193549
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5556451612903226
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5592741935483871
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5487903225806452
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5524193548387096
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.589516129032258
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5600806451612903
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.5564516129032258
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.3581378299120235,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20271008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.03539986465767218,
+                  0.6720080370755565
+                ],
+                "bootstrap_median": 0.3590804774043064
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.3016129032258065,
+                "maximum": 0.4350806451612903,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3125
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3100806451612903
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.36008064516129035
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3604838709677419
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.34919354838709676
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.357258064516129
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4350806451612903
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4088709677419355
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3495967741935484
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.39395161290322583
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.40524193548387094
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3092741935483871
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.31048387096774194
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3379032258064516
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3471774193548387
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3625
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3463709677419355
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3495967741935484
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.35201612903225804
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3016129032258065
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.34233870967741936
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.357258064516129
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.34153225806451615
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3717741935483871
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4153225806451613
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3604838709677419
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3532258064516129
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.3282258064516129
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.357258064516129
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.4088709677419355
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.39475806451612905
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.36008064516129035
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.12976539589442815,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20271009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.2571743929359823,
+                  0.5063568598846447
+                ],
+                "bootstrap_median": 0.13137074961752548
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.04395161290322581,
+                "maximum": 0.21169354838709678,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11491935483870967
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1060483870967742
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13951612903225807
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15080645161290324
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1314516129032258
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12943548387096773
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21169354838709678
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17137096774193547
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15161290322580645
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1939516129032258
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.16370967741935483
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07016129032258064
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07540322580645162
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09758064516129032
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12338709677419354
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15524193548387097
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17661290322580644
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12943548387096773
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.14879032258064517
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.04395161290322581
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1217741935483871
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13830645161290323
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11854838709677419
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15080645161290324
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11814516129032258
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12943548387096773
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12338709677419354
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06491935483870968
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10040322580645161
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08870967741935484
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.18024193548387096
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12943548387096773
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "dominant_switch_fraction": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20271907,
+            "observed_mean": 0.002867292984929567,
+            "percentile_95_interval": [
+              0.002102124797563161,
+              0.0037186901772539075
+            ],
+            "bootstrap_median": 0.0028510184915999234
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20271908,
+            "observed_mean": 0.006533057057959401,
+            "percentile_95_interval": [
+              0.005329634896895638,
+              0.007772759331597221
+            ],
+            "bootstrap_median": 0.006519792463395978
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20271909,
+            "observed_mean": 0.0036657640730298337,
+            "percentile_95_interval": [
+              0.0023060131009850597,
+              0.004828167440912014
+            ],
+            "bootstrap_median": 0.003694265378457858
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20271910,
+            "observed_mean": -0.0005620135138681245,
+            "percentile_95_interval": [
+              -0.0018010170580909312,
+              0.0007240442741215795
+            ],
+            "bootstrap_median": -0.0005757549342857754
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.08224554827268582,
+            "median": 0.06901995111886249,
+            "p90": 0.16221844681254574,
+            "fraction_at_or_below_0_10": 0.71875,
+            "fraction_at_or_below_0_20": 0.9375
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.20181468327817995,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20272007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.20737773171978713,
+                  0.5627610770213506
+                ],
+                "bootstrap_median": 0.2026934073245675
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.1219881042594227,
+                "maximum": 0.2748260927365176,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1534428881676375
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15747555277125477
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.14295796019823256
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19155156867182077
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2014315969506831
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20909365969755594
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19336626774344856
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1865107379172992
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2554693026391547
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20062506402995967
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2748260927365176
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2127230578408115
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.22482105165166333
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.194172800664172
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.16675068135957452
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21675572244442878
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2699868952121769
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.23306451612903226
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21635245598406705
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.22482105165166333
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20586752801466213
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.18610747145693746
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21514265660298187
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13005343346665726
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1219881042594227
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19316463451326768
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1663474148992128
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17723560932897944
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.25063010511481393
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21514265660298187
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.21957858766696087
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.2435483870967742
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.06048941460653895,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20272008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.278386225315489,
+                  0.38752853013441524
+                ],
+                "bootstrap_median": 0.06427256203251705
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.007662062746872832,
+                "maximum": 0.13025506669683815,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.010484927969404928
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.010484927969404928
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08871862127958015
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07520919485746226
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06633733272950425
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06956346441239808
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06210303489570611
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08408105698542027
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.02379272116134195
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07823369331017523
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07924185946107955
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.026615586383874044
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.11654400704453938
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.058473636752450556
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.020163323018086397
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07662062746872832
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13025506669683815
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.042741935483870966
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.007662062746872832
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08549248959668633
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.04516584356051353
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07379776224619622
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.024599254082065404
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.0744026619367388
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.075612461317824
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06613569949932338
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07137816348402586
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.012097993810851838
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.03286621651948083
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07762879361963264
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06411936719751475
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10362903225806451
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.17265395894428154,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20272009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.217937656492008,
+                  0.5153408047032886
+                ],
+                "bootstrap_median": 0.1775202486898504
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.10443548387096774,
+                "maximum": 0.25725806451612904,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10443548387096774
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12903225806451613
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19274193548387097
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17258064516129032
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19516129032258064
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19032258064516128
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17540322580645162
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20080645161290323
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.24596774193548387
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20887096774193548
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.18467741935483872
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15604838709677418
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.16129032258064516
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19274193548387097
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1060483870967742
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1620967741935484
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1254032258064516
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.17620967741935484
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15604838709677418
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13064516129032258
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.175
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.25725806451612904
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1629032258064516
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20362903225806453
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19193548387096773
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15403225806451612
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.20161290322580644
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1254032258064516
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.19516129032258064
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1786290322580645
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1528225806451613
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.15685483870967742
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "gaussian_blur": {
+      "endpoints": {
+        "probability_mae": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20280907,
+            "observed_mean": 1.6388864297940551e-09,
+            "percentile_95_interval": [
+              1.1975152544206209e-09,
+              2.1262059170350988e-09
+            ],
+            "bootstrap_median": 1.6300078925458855e-09
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20280908,
+            "observed_mean": 1.4491523209773376e-08,
+            "percentile_95_interval": [
+              1.2054819040195409e-08,
+              1.7085810512839083e-08
+            ],
+            "bootstrap_median": 1.4442268846180495e-08
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20280909,
+            "observed_mean": 1.285263677997932e-08,
+            "percentile_95_interval": [
+              1.0451023148960014e-08,
+              1.54381807726539e-08
+            ],
+            "bootstrap_median": 1.2798473318974089e-08
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20280910,
+            "observed_mean": 2.6733523068595775e-10,
+            "percentile_95_interval": [
+              -4.555390993684963e-10,
+              1.0023197125541741e-09
+            ],
+            "bootstrap_median": 2.64742377047202e-10
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.029328364626617448,
+            "median": 0.02647294323894535,
+            "p90": 0.0533112016072449,
+            "fraction_at_or_below_0_10": 0.9375,
+            "fraction_at_or_below_0_20": 1.0
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8607038123167156,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20281007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.6708392013837681,
+                  0.951400456938329
+                ],
+                "bootstrap_median": 0.8617774089970486
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.8467741935483871,
+                "maximum": 0.9145161290322581,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8548387096774194
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8495967741935484
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8467741935483871
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8588709677419355
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8600806451612903
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.853225806451613
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8689516129032258
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8673387096774193
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8568548387096774
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8649193548387096
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8508064516129032
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8592741935483871
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8540322580645161
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8508064516129032
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.9145161290322581
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8653225806451613
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8612903225806452
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8774193548387097
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8495967741935484
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8564516129032258
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8641129032258065
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8653225806451613
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8709677419354839
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8733870967741936
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8491935483870968
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8641129032258065
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8604838709677419
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8520161290322581
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8491935483870968
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8596774193548387
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8467741935483871
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8512096774193548
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.8394428152492669,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20281008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.6359838879689445,
+                  0.9445016398385209
+                ],
+                "bootstrap_median": 0.8382650248116155
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.8233870967741935,
+                "maximum": 0.8895161290322581,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8403225806451613
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8274193548387097
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8233870967741935
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8439516129032258
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8237903225806451
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8403225806451613
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8379032258064516
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8439516129032258
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8233870967741935
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8403225806451613
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8391129032258065
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8556451612903225
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.839516129032258
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8306451612903226
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.847983870967742
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8423387096774193
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8237903225806451
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8681451612903226
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8407258064516129
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8237903225806451
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8895161290322581
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8411290322580646
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8487903225806451
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8419354838709677
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8411290322580646
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8379032258064516
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8423387096774193
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8237903225806451
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8254032258064516
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8443548387096774
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8241935483870968
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8298387096774194
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 32,
+              "y_unique_value_count": 32,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.6950146627565983,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20281009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  0.3715354819709857,
+                  0.8957647523781525
+                ],
+                "bootstrap_median": 0.6992730258881557
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.6645161290322581,
+                "maximum": 0.8068548387096774,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6907258064516129
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6653225806451613
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6645161290322581
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6983870967741935
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6806451612903226
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6879032258064516
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7149193548387097
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6774193548387096
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7036290322580645
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6919354838709677
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7096774193548387
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6891129032258064
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6862903225806452
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.8068548387096774
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7068548387096775
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6826612903225806
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7008064516129032
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6935483870967742
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6762096774193549
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7266129032258064
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6939516129032258
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7161290322580646
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6987903225806451
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6891129032258064
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6915322580645161
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6991935483870968
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6673387096774194
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.665725806451613
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.7052419354838709
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.6653225806451613
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.680241935483871
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "dominant_switch_fraction": {
+          "image_count": 32,
+          "input_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20281907,
+            "observed_mean": 0.002001127175574412,
+            "percentile_95_interval": [
+              0.0015664327228788256,
+              0.002447070393037064
+            ],
+            "bootstrap_median": 0.0019966769602772615
+          },
+          "naive_midpoint_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20281908,
+            "observed_mean": 0.0030876991570350943,
+            "percentile_95_interval": [
+              0.0021925301441903006,
+              0.004024792730237066
+            ],
+            "bootstrap_median": 0.003091809268567081
+          },
+          "paired_naive_minus_weighted_absolute_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20281909,
+            "observed_mean": 0.0010865719814606824,
+            "percentile_95_interval": [
+              0.00013498385786544874,
+              0.00198991268390291
+            ],
+            "bootstrap_median": 0.0010934659629280616
+          },
+          "input_weighted_signed_error": {
+            "unit_count": 32,
+            "draws": 10000,
+            "seed": 20281910,
+            "observed_mean": -1.3682945641874046e-05,
+            "percentile_95_interval": [
+              -0.0008417452992733454,
+              0.0008022565247775365
+            ],
+            "bootstrap_median": -1.224669827603582e-05
+          },
+          "normalized_absolute_error": {
+            "defined_image_count": 32,
+            "zero_span_image_count": 0,
+            "mean": 0.1978460807970899,
+            "median": 0.22527947861903844,
+            "p90": 0.2886888224979369,
+            "fraction_at_or_below_0_10": 0.21875,
+            "fraction_at_or_below_0_20": 0.46875
+          },
+          "actual_middle_within_endpoints_count": 32,
+          "cross_seed_low_to_high_slope_associations": [
+            {
+              "seed_pair": [
+                0,
+                1
+              ],
+              "x_unique_value_count": 25,
+              "y_unique_value_count": 31,
+              "status": "DEFINED",
+              "observed_spearman_rho": -0.1541561876738492,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20282007,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.5257980192439352,
+                  0.24390168722847166
+                ],
+                "bootstrap_median": -0.15159004974466633
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": -0.2339686775823432,
+                "maximum": -0.06883824194839042,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.15709761271826173
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.19288943127931552
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.2339686775823432
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.13920170343773483
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.17519688460424915
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14519134800750905
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1498631307692381
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1562841622964196
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.15364044842543267
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.15791106314010386
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06883824194839042
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.22670939535250714
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.19385883895974673
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12085760253139022
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.10096953361115463
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1459126694179324
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.10096953361115463
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.22952519120541987
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.18699191572096008
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1514034597653668
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1581144257455644
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.16319849088207772
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14367568075786655
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1459126694179324
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.15160682237082734
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.13208401224661617
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14245550512510335
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14519134800750905
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.10787960494412684
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14672611983977454
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.10787960494412684
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.19736340859944726
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                0,
+                2
+              ],
+              "x_unique_value_count": 25,
+              "y_unique_value_count": 26,
+              "status": "DEFINED",
+              "observed_spearman_rho": -0.11214297075395845,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20282008,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.4767979018467599,
+                  0.279213531807213
+                ],
+                "bootstrap_median": -0.10536097648619602
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": -0.1796728080898534,
+                "maximum": -0.04387362248790647,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11513339619255304
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11676939471749163
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06448402188920208
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.0963194131557593
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.08916191960915298
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06851549755301795
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11676939471749163
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1216773902923074
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.09120691776532622
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12372238844848063
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.04387362248790647
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12928221859706363
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1796728080898534
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.05831973898858075
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.17791483958707133
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.06591246541206414
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.09468341463082071
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11174551386623165
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.14989836484749802
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.15243533022542388
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11676939471749163
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12392688826409795
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1473337462152022
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.07975492809075611
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.16768984880620516
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11063440024897193
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.11411089711446643
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.10929853181076672
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.0534257748776509
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.12576738660465386
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.1796728080898534
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": -0.08916191960915298
+                  }
+                ]
+              }
+            },
+            {
+              "seed_pair": [
+                1,
+                2
+              ],
+              "x_unique_value_count": 31,
+              "y_unique_value_count": 26,
+              "status": "DEFINED",
+              "observed_spearman_rho": 0.09654661009428538,
+              "bootstrap": {
+                "draws": 10000,
+                "seed": 20282009,
+                "defined_draw_count": 10000,
+                "undefined_draw_count": 0,
+                "defined_draw_fraction": 1.0,
+                "interval_status": "DEFINED",
+                "percentile_95_interval": [
+                  -0.2763011805494002,
+                  0.44183441582174127
+                ],
+                "bootstrap_median": 0.097344692212302
+              },
+              "leave_one_image_out": {
+                "count": 32,
+                "defined_count": 32,
+                "undefined_count": 0,
+                "minimum": 0.028531127929804508,
+                "maximum": 0.18535115733121227,
+                "records": [
+                  {
+                    "omitted_position": 0,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.12329097707900209
+                  },
+                  {
+                    "omitted_position": 1,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.05312867762285946
+                  },
+                  {
+                    "omitted_position": 2,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.18535115733121227
+                  },
+                  {
+                    "omitted_position": 3,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09692941947987337
+                  },
+                  {
+                    "omitted_position": 4,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10747404251952486
+                  },
+                  {
+                    "omitted_position": 5,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.07624573582517236
+                  },
+                  {
+                    "omitted_position": 6,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13584971564278384
+                  },
+                  {
+                    "omitted_position": 7,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.060834363690297086
+                  },
+                  {
+                    "omitted_position": 8,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09490160735686345
+                  },
+                  {
+                    "omitted_position": 9,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10564901160881594
+                  },
+                  {
+                    "omitted_position": 10,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.028531127929804508
+                  },
+                  {
+                    "omitted_position": 11,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.0876014837140278
+                  },
+                  {
+                    "omitted_position": 12,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.06960785821172163
+                  },
+                  {
+                    "omitted_position": 13,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.05312867762285946
+                  },
+                  {
+                    "omitted_position": 14,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.146408035281315
+                  },
+                  {
+                    "omitted_position": 15,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08943800386506094
+                  },
+                  {
+                    "omitted_position": 16,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09692941947987337
+                  },
+                  {
+                    "omitted_position": 17,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08880921709184973
+                  },
+                  {
+                    "omitted_position": 18,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08212639098190107
+                  },
+                  {
+                    "omitted_position": 19,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09085444284029946
+                  },
+                  {
+                    "omitted_position": 20,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13038831950953675
+                  },
+                  {
+                    "omitted_position": 21,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10098504372589316
+                  },
+                  {
+                    "omitted_position": 22,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.10198360621717356
+                  },
+                  {
+                    "omitted_position": 23,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09327935765845553
+                  },
+                  {
+                    "omitted_position": 24,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09003485826163969
+                  },
+                  {
+                    "omitted_position": 25,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.09064320189854266
+                  },
+                  {
+                    "omitted_position": 26,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.0857764528033189
+                  },
+                  {
+                    "omitted_position": 27,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08374864068030899
+                  },
+                  {
+                    "omitted_position": 28,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.03609505578957627
+                  },
+                  {
+                    "omitted_position": 29,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.08496532795411493
+                  },
+                  {
+                    "omitted_position": 30,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.1770548719048152
+                  },
+                  {
+                    "omitted_position": 31,
+                    "status": "DEFINED",
+                    "spearman_rho": 0.13667453709086747
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

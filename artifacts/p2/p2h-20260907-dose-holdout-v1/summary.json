@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "scope": "integrity-bound held-middle validation of the formal MoA dose-response evidence",
+  "run_id": "p2h-20260907-dose-holdout-v1",
+  "tool_source": {
+    "commit": "9e3cec7615a2817c40b1162ccd3673c07bacbce8",
+    "tree": "52e99d29d82dd24cb390c1132490125104b2f79b",
+    "implementation_status_porcelain": [],
+    "implementation_clean": true
+  },
+  "parent_run_id": "p2q-20260906-dose-response-v1",
+  "parent_evidence_verification": {
+    "status": "PASS",
+    "manifest_sha256": "c1917ad0d254b01d33ce9883c33d7d085c3147633915c2cab6213dde95ecaafe",
+    "verified_file_count": 82,
+    "file_set_exact": true,
+    "hash_and_size_mismatch_count": 0,
+    "key_artifacts": {
+      "summary.json": "1b43dfbc6f717d3cde5e1acee66d3e19a85cf29402a849f2063c4647c8583b9b"
+    }
+  },
+  "image_count": 32,
+  "family_count": 3,
+  "holdout_record_count": 96,
+  "seed_slope_association_count": 18,
+  "headline_probability_metrics": {
+    "brightness": {
+      "weighted_absolute_error": 7.724805828900002e-10,
+      "normalized_absolute_error_median": 0.0011493579709322328,
+      "naive_minus_weighted_error": 1.0795451896763689e-07
+    },
+    "contrast": {
+      "weighted_absolute_error": 6.612577793689537e-10,
+      "normalized_absolute_error_median": 0.0016067745418987026,
+      "naive_minus_weighted_error": 5.5498845737729427e-08
+    },
+    "gaussian_blur": {
+      "weighted_absolute_error": 1.6388864297940551e-09,
+      "normalized_absolute_error_median": 0.02647294323894535,
+      "naive_minus_weighted_error": 1.285263677997932e-08
+    }
+  },
+  "interpretation_boundary": "retrospectively specified fixed-subset random-initialization interpolation audit; not blind validation, trained robustness or accuracy",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "duration_seconds_observation_only": 10.244977399997879,
+  "evidence_bytes_before_manifest": 603611
+}

@@ -56,5 +56,12 @@
 - Box-tensor changes are finite but extremely small and one-to-one/one-to-many boxes are numerically identical in
   the audited eval return. Their strong rank associations are descriptive numerical coupling, not independent
   replication, causal mediation, detection correctness or accuracy impact.
+- The middle-dose prediction protocol was specified after the parent dose data existed. Although implementation
+  and endpoints were committed before inspecting per-image residuals, it is retrospective held-level analysis,
+  not a prospectively blind experiment or independent validation dataset.
+- Very low interpolation errors cover only one middle point between two endpoints. They do not prove global
+  linearity, extrapolation beyond the tested range or a perceptual corruption-response law.
+- Cross-seed low-to-high slope rankings are mixed for brightness/contrast probability response and generally weak
+  for discrete switching. Seed-averaged curve precision must not be described as initialization independence.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.

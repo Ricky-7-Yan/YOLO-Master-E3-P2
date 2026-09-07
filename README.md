@@ -18,6 +18,8 @@
 
 ![Router-to-detector output coupling](artifacts/p2/p2o-20260906-output-coupling-v2/output-coupling-overview.png)
 
+![Held-middle dose prediction](artifacts/p2/p2h-20260907-dose-holdout-v1/dose-holdout-overview.png)
+
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
 families. It deliberately refuses to turn sample-level vectors into visually plausible but semantically false
@@ -102,6 +104,13 @@ strongly associated with box-tensor MAE within brightness, contrast and blur (`r
 bootstrap intervals above zero). These tiny random-initialization changes show numerical coupling only; they do
 not establish route causality, correct detection or accuracy impact.
 
+An integrity-bound held-level analysis then tested whether the low and high dose endpoints could predict the
+middle response. Interpolation weighted by each image's actual RGB distance reduced probability prediction error
+relative to an unweighted endpoint midpoint for all three transformations; every paired image-bootstrap
+improvement interval was above zero. Median span-normalized probability errors were `0.115%` for brightness,
+`0.161%` for contrast and `2.647%` for blur. Cross-seed slope rankings were much less uniform except for blur,
+preventing the precise image-averaged curve from being misreported as initialization-independent behavior.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -126,6 +135,7 @@ run_image_scale.cmd --run-id my-image-scale-run
 run_image_driver.cmd --run-id my-image-driver-run
 run_dose_response.cmd --run-id my-dose-response-run
 run_output_coupling.cmd --run-id my-output-coupling-run
+run_dose_holdout.cmd --run-id my-dose-holdout-run
 run_demo.cmd
 ```
 
@@ -168,6 +178,8 @@ model output changes.
 - [`Dose-response protocol`](docs/DOSE_RESPONSE_PROTOCOL.md) and [`formal result`](docs/DOSE_RESPONSE_RESULTS.md): locked strength ladder and bounded result.
 - [`Output-coupling associations`](artifacts/p2/p2o-20260906-output-coupling-v2/output-coupling-associations.json): defined and constant-vector results for five detector tensors.
 - [`Output-coupling protocol`](docs/OUTPUT_COUPLING_PROTOCOL.md) and [`formal result`](docs/OUTPUT_COUPLING_RESULTS.md): predeclared endpoints, retained null primary and secondary box evidence.
+- [`Held-dose analysis`](artifacts/p2/p2h-20260907-dose-holdout-v1/dose-holdout-analysis.json): prediction errors, baseline comparison and cross-seed slope checks.
+- [`Held-dose protocol`](docs/DOSE_HOLDOUT_PROTOCOL.md) and [`formal result`](docs/DOSE_HOLDOUT_RESULTS.md): integrity-bound middle-level interpolation validation.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 

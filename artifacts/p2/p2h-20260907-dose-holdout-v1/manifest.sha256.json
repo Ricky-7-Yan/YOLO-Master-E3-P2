@@ -1,0 +1,46 @@
+{
+  "algorithm": "sha256",
+  "file_count": 8,
+  "files": [
+    {
+      "path": "command.txt",
+      "bytes": 22,
+      "sha256": "962024e6b9f2b585a6240a6b8ab45d53addd20651bedc7e9d3899984d33b39c2"
+    },
+    {
+      "path": "config.resolved.yaml",
+      "bytes": 721,
+      "sha256": "10b5e0a5cdc0d2a2766b392249fa69e515714310c75acb85ffaaa1c2ff508f99"
+    },
+    {
+      "path": "dose-holdout-analysis.json",
+      "bytes": 140833,
+      "sha256": "cfa313758661b058a715a608e5e99a6e97e0894aaeefa3f342bdf56e78d8bc78"
+    },
+    {
+      "path": "dose-holdout-overview.png",
+      "bytes": 68960,
+      "sha256": "254335604b940ff186df56e9c1b6fe6c15d290d5a1336789a88d29e83a50afc9"
+    },
+    {
+      "path": "dose-holdout-records.json",
+      "bytes": 390746,
+      "sha256": "9b621dfbcbccc974e7b4c2df619f02d384a499f213f5887d3b558f4a7ba067d1"
+    },
+    {
+      "path": "full.log",
+      "bytes": 68,
+      "sha256": "0740da0d3a39b612604054cec1388d1f1a41f1f51b044178608c3eb21f2d4d3d"
+    },
+    {
+      "path": "parent-evidence-verification.json",
+      "bytes": 327,
+      "sha256": "989771b7cc47d0cc4b3526f89b47fe5296fa4ec7d49539ceb7f4da270f7f16bd"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 1979,
+      "sha256": "02999ccccca81fe0b70ac5eb01b8f2bc16a4bb2e505336a64ee904e8f9ad4379"
+    }
+  ]
+}

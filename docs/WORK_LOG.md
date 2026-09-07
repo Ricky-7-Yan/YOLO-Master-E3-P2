@@ -144,3 +144,17 @@
 - Found strong within-transform probability-to-box rank associations (`rho=0.860–0.930`) but kept them secondary,
   tiny-magnitude, random-initialization and non-causal.
 - Expanded the suite to 61 passing tests and independently verified the exact 84-file SHA-256 manifest.
+
+## Held-middle dose prediction
+
+- Bound the analysis to the exact 82-file dose-response parent manifest before reading per-image values.
+- Held out the middle level and predicted it from low/high route endpoints using each image's actual RGB-distance
+  interpolation weight; compared against a predeclared unweighted endpoint-midpoint baseline.
+- Preserved zero route spans with null normalized error and counted undefined bootstrap/leave-one-out Spearman
+  results for tied seed-slope vectors instead of inventing coefficients.
+- Added image-level absolute, signed and span-normalized residuals, paired baseline improvement, 10,000-draw image
+  bootstrap intervals and all three pairwise cross-seed slope associations per endpoint and transform.
+- Found median normalized probability errors of 0.115%, 0.161% and 2.647%; all three paired baseline-improvement
+  intervals remained above zero, while cross-seed slope rankings were intentionally reported as mixed.
+- Expanded the suite to 66 passing tests and independently verified all 8 non-manifest files with an exact-set
+  SHA-256 rehash.

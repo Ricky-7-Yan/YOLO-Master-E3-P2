@@ -38,6 +38,8 @@ The implementation runs against YOLO-Master runtime ref
 | Detector-output contract | Fixed tensor keys/shapes, finite comparison values and decoded-order caveat | `detector-output-comparisons.json` | PASS |
 | Honest constant endpoint | Preserve undefined Spearman state; no endpoint substitution or fabricated zero | output-coupling result | PASS |
 | Router/output association | Complete image×seed×transform join and within-transform image resampling | `output-coupling-associations.json` | PASS |
+| Held-level predictability | Predict middle only from low/high endpoints and actual input-distance weight | `dose-holdout-analysis.json` | PASS |
+| Baseline and seed sensitivity | Paired midpoint comparison plus all seed-pair slope associations | held-dose formal run | PASS |
 
 ## Non-goals
 
