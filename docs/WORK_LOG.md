@@ -158,3 +158,5 @@
   intervals remained above zero, while cross-seed slope rankings were intentionally reported as mixed.
 - Expanded the suite to 66 passing tests and independently verified all 8 non-manifest files with an exact-set
   SHA-256 rehash.
+- Added the repository `src` directory to pytest's checked-in configuration so both `run_tests.cmd` and a direct
+  `python -m pytest` invocation from the repository root resolve the package without an editable installation.
