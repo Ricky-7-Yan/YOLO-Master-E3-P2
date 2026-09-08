@@ -136,6 +136,7 @@ def _verify_project_source_state(require_committed: bool) -> dict[str, Any]:
         "run_dose_response.cmd",
         "run_output_coupling.cmd",
         "run_dose_holdout.cmd",
+        "run_blur_residual.cmd",
         "run_demo.cmd",
         "run_tests.cmd",
     )

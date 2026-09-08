@@ -61,6 +61,12 @@ def main() -> None:
     holdout_parser.add_argument("--config", type=Path, default=Path("configs/dose_holdout.yaml"))
     holdout_parser.add_argument("--run-id")
     holdout_parser.add_argument("--no-latest", action="store_true")
+    residual_parser = subparsers.add_parser(
+        "blur-residual", help="diagnose held-middle Gaussian-blur residuals from locked input-only features"
+    )
+    residual_parser.add_argument("--config", type=Path, default=Path("configs/blur_residual.yaml"))
+    residual_parser.add_argument("--run-id")
+    residual_parser.add_argument("--no-latest", action="store_true")
     demo_parser = subparsers.add_parser("demo", help="serve the latest evidence demo")
     demo_parser.add_argument("--host", default="127.0.0.1")
     demo_parser.add_argument("--port", type=int, default=8766)
@@ -112,6 +118,11 @@ def main() -> None:
 
         output = run_dose_holdout(args.config, run_id=args.run_id, update_latest=not args.no_latest)
         print(f"P2 dose-holdout evidence: {output}")
+    elif args.command == "blur-residual":
+        from .blur_residual_runner import run as run_blur_residual
+
+        output = run_blur_residual(args.config, run_id=args.run_id, update_latest=not args.no_latest)
+        print(f"P2 blur-residual evidence: {output}")
     else:
         from .demo import serve
 
