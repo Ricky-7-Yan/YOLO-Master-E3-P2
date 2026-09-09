@@ -160,3 +160,17 @@
   SHA-256 rehash.
 - Added the repository `src` directory to pytest's checked-in configuration so both `run_tests.cmd` and a direct
   `python -m pytest` invocation from the repository root resolve the package without an editable installation.
+
+## Gaussian-blur residual diagnosis
+
+- Locked both the held-middle evidence manifest and the original 32-image evidence manifest before reading
+  residuals or source images.
+- Predeclared exactly three input-only features, 10,000 image-bootstrap draws, 20,000 two-sided permutations,
+  Holm family-wise correction and all leave-one-image-out coefficients.
+- Found no Holm-rejected feature: letterbox fraction `rho=-0.117`, luminance `rho=-0.052`, edge total variation
+  `rho=-0.289`; all bootstrap intervals crossed zero and the smallest adjusted p-value was `0.318`.
+- Preserved edge variation as a weak follow-up lead because all leave-one-out coefficients were negative, while
+  explicitly refusing to relabel it as a confirmed driver.
+- Archived a scatter overview and a descriptive contact sheet for the six largest residuals; two of 32 images
+  exceeded 10% normalized error.
+- Expanded the suite to 73 passing tests and independently verified the exact 10-file SHA-256 evidence manifest.

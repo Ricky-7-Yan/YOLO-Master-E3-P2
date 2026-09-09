@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "integrity-bound input-side diagnosis of held-middle Gaussian-blur probability residuals",
+  "run_id": "p2x-20260908-blur-residual-v1",
+  "tool_source": {
+    "commit": "efe6763fb5f0e710a0be25a439d672d24eaca232",
+    "tree": "e528c88e67574ea025e34ef69db936afc249d7bc",
+    "implementation_status_porcelain": [],
+    "implementation_clean": true
+  },
+  "holdout_parent_run_id": "p2h-20260907-dose-holdout-v1",
+  "holdout_parent_verification": {
+    "status": "PASS",
+    "manifest_sha256": "1beeb20bf31d2ad153ecfde466cbd8f66e9e45dd322f13c6c66e57eae82b2b2e",
+    "verified_file_count": 8,
+    "file_set_exact": true,
+    "hash_and_size_mismatch_count": 0,
+    "key_artifacts": {
+      "summary.json": "02999ccccca81fe0b70ac5eb01b8f2bc16a4bb2e505336a64ee904e8f9ad4379"
+    }
+  },
+  "image_source_verification": {
+    "status": "PASS",
+    "manifest_sha256": "c1917ad0d254b01d33ce9883c33d7d085c3147633915c2cab6213dde95ecaafe",
+    "verified_file_count": 82,
+    "file_set_exact": true,
+    "hash_and_size_mismatch_count": 0,
+    "key_artifacts": {
+      "summary.json": "1b43dfbc6f717d3cde5e1acee66d3e19a85cf29402a849f2063c4647c8583b9b"
+    }
+  },
+  "image_count": 32,
+  "predeclared_feature_count": 3,
+  "holm_rejected_features": [],
+  "headline_associations": {
+    "letterbox_content_fraction": {
+      "spearman_rho": -0.11712775124893184,
+      "bootstrap_95_interval": [
+        -0.46202211294229617,
+        0.25259538150413546
+      ],
+      "raw_permutation_p": 0.519874006299685,
+      "holm_adjusted_p": 1.0,
+      "leave_one_out_sign_stable": true
+    },
+    "luminance_mean_0_255": {
+      "spearman_rho": -0.05241935483870968,
+      "bootstrap_95_interval": [
+        -0.40522693273281846,
+        0.292637533753485
+      ],
+      "raw_permutation_p": 0.7735113244337783,
+      "holm_adjusted_p": 1.0,
+      "leave_one_out_sign_stable": false
+    },
+    "edge_total_variation_0_1": {
+      "spearman_rho": -0.2892228739002933,
+      "bootstrap_95_interval": [
+        -0.6066983766569524,
+        0.12039986167833182
+      ],
+      "raw_permutation_p": 0.10589470526473677,
+      "holm_adjusted_p": 0.3176841157942103,
+      "leave_one_out_sign_stable": true
+    }
+  },
+  "interpretation_boundary": "fixed selected images and random initialization; association is not mechanism, causality or trained accuracy",
+  "environment": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0"
+  },
+  "duration_seconds_observation_only": 7.635451899999964,
+  "evidence_bytes_before_manifest": 774725
+}

@@ -40,6 +40,9 @@ The implementation runs against YOLO-Master runtime ref
 | Router/output association | Complete image×seed×transform join and within-transform image resampling | `output-coupling-associations.json` | PASS |
 | Held-level predictability | Predict middle only from low/high endpoints and actual input-distance weight | `dose-holdout-analysis.json` | PASS |
 | Baseline and seed sensitivity | Paired midpoint comparison plus all seed-pair slope associations | held-dose formal run | PASS |
+| Locked residual diagnosis | Verify held-dose and source-image manifests before joining residuals to input features | dual verification ledgers | PASS |
+| Multiplicity-safe feature test | Three fixed predictors, image bootstrap, permutation p-values and Holm correction | blur-residual analysis | PASS |
+| Controlled null result | PASS independent of significance; retain non-rejected coefficients and top residual cases | protocol and result report | PASS |
 
 ## Non-goals
 

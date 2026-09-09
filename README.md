@@ -1,6 +1,6 @@
 # YOLO-Master E3 P2 · Spatial Routing Lens
 
-> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · image-level layer attribution · dose-response and detector-output coupling · reproducible local demo
+> **P2 status: PASS** · five-family feasibility audit · true MoT/MoA token overlays · ground-truth region analysis · CPU perturbation diagnostics · image-level layer attribution · dose-response, detector-output coupling and residual diagnosis · reproducible local demo
 
 ![P2 routing overview](artifacts/p2/p2-20260904-cpu-region-analysis-v7/routing-overview.png)
 
@@ -19,6 +19,8 @@
 ![Router-to-detector output coupling](artifacts/p2/p2o-20260906-output-coupling-v2/output-coupling-overview.png)
 
 ![Held-middle dose prediction](artifacts/p2/p2h-20260907-dose-holdout-v1/dose-holdout-overview.png)
+
+![Gaussian-blur residual diagnosis](artifacts/p2/p2x-20260908-blur-residual-v1/blur-residual-overview.png)
 
 This repository implements the P2 deliverable for E3: map real token/spatial routing tensors back to the
 original image, provide a demo that can be explained in two minutes, and extend the audit beyond the three P0
@@ -111,6 +113,13 @@ improvement interval was above zero. Median span-normalized probability errors w
 `0.161%` for contrast and `2.647%` for blur. Cross-seed slope rankings were much less uniform except for blur,
 preventing the precise image-averaged curve from being misreported as initialization-independent behavior.
 
+A locked residual follow-up then tested three input-only explanations for blur's larger normalized interpolation
+error. Letterbox content fraction (`rho=-0.117`), mean luminance (`rho=-0.052`) and edge total variation
+(`rho=-0.289`) all had bootstrap intervals crossing zero and none passed Holm correction over three fixed tests.
+The edge trend remained negative under every leave-one-image-out check but had adjusted `p=0.318`, so it is kept
+as a follow-up lead rather than a finding. This controlled null result rules out three simple global explanations
+on the fixed subset without claiming image content is irrelevant.
+
 ## Reproduce
 
 Place this repository beside the pinned YOLO-Master source directory and the existing project-local environment:
@@ -136,6 +145,7 @@ run_image_driver.cmd --run-id my-image-driver-run
 run_dose_response.cmd --run-id my-dose-response-run
 run_output_coupling.cmd --run-id my-output-coupling-run
 run_dose_holdout.cmd --run-id my-dose-holdout-run
+run_blur_residual.cmd --run-id my-blur-residual-run
 run_demo.cmd
 ```
 

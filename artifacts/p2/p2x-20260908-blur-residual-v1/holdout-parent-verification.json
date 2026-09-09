@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "manifest_sha256": "1beeb20bf31d2ad153ecfde466cbd8f66e9e45dd322f13c6c66e57eae82b2b2e",
+  "verified_file_count": 8,
+  "file_set_exact": true,
+  "hash_and_size_mismatch_count": 0,
+  "key_artifacts": {
+    "summary.json": "02999ccccca81fe0b70ac5eb01b8f2bc16a4bb2e505336a64ee904e8f9ad4379"
+  }
+}

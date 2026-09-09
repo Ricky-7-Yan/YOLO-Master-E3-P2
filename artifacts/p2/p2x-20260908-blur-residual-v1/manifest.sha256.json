@@ -1,0 +1,56 @@
+{
+  "algorithm": "sha256",
+  "file_count": 10,
+  "files": [
+    {
+      "path": "blur-residual-analysis.json",
+      "bytes": 17755,
+      "sha256": "fab4d85abb14dc76afbf1525afc6e155f68d6a997ca62a1568849ee759f0024a"
+    },
+    {
+      "path": "blur-residual-feature-records.json",
+      "bytes": 21987,
+      "sha256": "1146785f6e3140a793beaaf4200a79a4e6b75a0e57f11b3a22d278e57ac3ebb8"
+    },
+    {
+      "path": "blur-residual-overview.png",
+      "bytes": 92658,
+      "sha256": "2293b489e42dbf342464dd5d922cb6884e16a754acf6d152de924da1a22544af"
+    },
+    {
+      "path": "command.txt",
+      "bytes": 23,
+      "sha256": "6bcbc407e42de0a28224d8eb977d08d9da2b8f2121f61efbaa6045d08e1f1181"
+    },
+    {
+      "path": "config.resolved.yaml",
+      "bytes": 912,
+      "sha256": "6b3c1460385c42a361810522e4b365843a74818e08dadfb008e96aa9eb8910a0"
+    },
+    {
+      "path": "full.log",
+      "bytes": 83,
+      "sha256": "33033f54850b7542cde01ff3523b80b0aa1ba92acdfea46a61d57213bd3c8d5d"
+    },
+    {
+      "path": "holdout-parent-verification.json",
+      "bytes": 326,
+      "sha256": "6416b41c7ed37dfcd87efbf0643b4037a83335a0d3ef05174658262398f80a4c"
+    },
+    {
+      "path": "image-source-verification.json",
+      "bytes": 327,
+      "sha256": "989771b7cc47d0cc4b3526f89b47fe5296fa4ec7d49539ceb7f4da270f7f16bd"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 2623,
+      "sha256": "1dc3823b9d1a200ed8efdd7cbbbc9d82882779531dd4b9926209e2c280324a05"
+    },
+    {
+      "path": "top-residual-images.png",
+      "bytes": 638076,
+      "sha256": "a12cf87ba0e18832a3b1965f7128eca545e912f010b6153d982064beef55f96a"
+    }
+  ]
+}

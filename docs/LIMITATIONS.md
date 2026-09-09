@@ -63,5 +63,11 @@
   linearity, extrapolation beyond the tested range or a perceptual corruption-response law.
 - Cross-seed low-to-high slope rankings are mixed for brightness/contrast probability response and generally weak
   for discrete switching. Seed-averaged curve precision must not be described as initialization independence.
+- The blur-residual diagnostic tests only three global source-image features on the same fixed 32 images. Holm
+  non-rejection does not prove that image content is irrelevant, and the negative edge trend is not a finding.
+- The six highest-residual images and their labels are descriptive inspection aids. They were selected by the
+  observed endpoint and cannot be used to create confirmatory post-hoc hypotheses under the same run ID.
+- Localized edge loss, object scale, frequency content and interactions remain untested. Adding any of them
+  requires a separately locked protocol and new run rather than expanding the current three-test family.
 - The demo was rendered in Microsoft Edge at 1440×1000 and 390×844. Other browsers and assistive
   technology were not exhaustively tested.
