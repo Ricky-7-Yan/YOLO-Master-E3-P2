@@ -190,6 +190,8 @@ model output changes.
 - [`Output-coupling protocol`](docs/OUTPUT_COUPLING_PROTOCOL.md) and [`formal result`](docs/OUTPUT_COUPLING_RESULTS.md): predeclared endpoints, retained null primary and secondary box evidence.
 - [`Held-dose analysis`](artifacts/p2/p2h-20260907-dose-holdout-v1/dose-holdout-analysis.json): prediction errors, baseline comparison and cross-seed slope checks.
 - [`Held-dose protocol`](docs/DOSE_HOLDOUT_PROTOCOL.md) and [`formal result`](docs/DOSE_HOLDOUT_RESULTS.md): integrity-bound middle-level interpolation validation.
+- [`Blur residual analysis`](artifacts/p2/p2x-20260908-blur-residual-v1/blur-residual-analysis.json): three predeclared input-feature associations, permutation tests, Holm correction and leave-one-out checks.
+- [`Blur residual protocol`](docs/BLUR_RESIDUAL_PROTOCOL.md) and [`formal result`](docs/BLUR_RESIDUAL_RESULTS.md): controlled null diagnosis and bounded follow-up lead.
 
 Design, feasibility reasoning, experiment interpretation and the two-minute flow are documented in [`docs/`](docs/).
 
